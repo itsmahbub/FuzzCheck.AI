@@ -2,7 +2,7 @@
 
 This repository contains all artifacts necessary to independently verify the results reported in the paper:
 
-> **SoK: SoK: FuzzCheck.AI: On the Limitations of DNN Fuzzing to Discover Security Failures**
+> **SoK: FuzzCheck.AI: On the Limitations of DNN Fuzzing to Discover Security Failures**
 
 ## Repository Structure
 
