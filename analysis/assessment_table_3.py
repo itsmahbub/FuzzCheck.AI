@@ -9,9 +9,9 @@ with open("results/assessments.json", "r") as f:
 assessment_fields = [
     "Failure Severity",
     "Targeted Attack Discovery",
-    "Root-Cause Analysis",
     "Input Plausibility",
     "Failure Reproducibility",
+    "Root-Cause Analysis",
     "Attack Transferability",
 ]
 
@@ -67,7 +67,7 @@ def build_row(paper):
         try:
             metric = paper["assessments"][field]["manual"]["value"]
             if not metric:
-                metric = paper["assessments"][field]["llm"]["value"]
+                metric = paper["assessments"][field]["arbitrator"]["value"]
             row.append(format_value(metric))
         except Exception as e:
             print("Error processing:", paper_info, field)
@@ -97,7 +97,7 @@ def emit_table_rows(records):
         n = len(group)
         print(f"% ===== {level.upper()} FUZZERS =====")
         print("\\hline")
-        print(f"\\multicolumn{{12}}{{|c|}}{{\\cellcolor{{gray!10}} \\textbf{{{level}}}}} \\\\")
+        print(f"\\multicolumn{{11}}{{|c|}}{{\\cellcolor{{gray!10}} \\textbf{{{level}}}}} \\\\")
         print("\\arrayrulecolor{black!50}")
         print("\\hline")
         print("\\hline")

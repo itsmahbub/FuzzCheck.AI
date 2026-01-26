@@ -1,15 +1,15 @@
 import json
 
 # Load file
-with open("results/top_papers.json") as f:
+with open("results/assessments.json") as f:
     data = json.load(f)
 
 metrics = [
     "Failure Severity",
     "Targeted Attack Discovery",
-    "Root-Cause Analysis",
     "Input Plausibility",
     "Failure Reproducibility",
+    "Root-Cause Analysis",
     "Attack Transferability"
 ]
 
@@ -20,18 +20,11 @@ arb_chat = arb_gem = man_chat = man_gem = 0
 
 for entry in data.values():
     for metric in metrics:
-        if metric not in entry["assessments"]:
-            print("Wrong")
-            continue
         m = entry["assessments"][metric]
         arb = m.get("arbitrator", {}).get("value", "").lower()
         chat = m.get("chatgpt", {}).get("value", "").lower()
         gem = m.get("gemini", {}).get("value", "").lower()
         manual = m.get("manual", {}).get("value", "").lower()
-
-        if not all([arb, chat, gem, manual]):
-            print("Something wrong")
-            continue
         overall +=1
         if manual == chat:
             man_chat += 1

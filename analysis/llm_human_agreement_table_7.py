@@ -9,9 +9,9 @@ with open("results/assessments.json", "r") as f:
 metrics = {
     "Failure Severity": "Failure Severity",
     "Targeted Attack Discovery": "Targeted Attack Discovery",
-    "Root-Cause Analysis": "Root-Cause Analysis",
     "Input Plausibility": "Input Plausibility",
     "Failure Reproducibility": "Failure Reproducibility",
+    "Root-Cause Analysis": "Root-Cause Analysis",
     "Attack Transferability": "Attack Transferability"
 }
 # Initialize counters
@@ -24,7 +24,7 @@ for paper in data.values():
     for metric in metrics:
         if metric in assessments:
             manual = assessments[metric]["manual"]["value"]
-            llm = assessments[metric]["llm"]["value"]
+            llm = assessments[metric]["arbitrator"]["value"]
             total_counts[metric] += 1
             if manual == llm:
                 agreement_counts[metric] += 1

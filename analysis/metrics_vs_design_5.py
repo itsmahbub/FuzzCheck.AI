@@ -4,27 +4,22 @@ from collections import defaultdict
 # ---------- CONFIG ----------
 input_file = "results/assessments.json"
 
-metric_blocks = {
-    "Diagnostic Capability": [
-        "Failure Severity",
-        "Targeted Attack Discovery",
-        "Root-Cause Analysis",
-    ],
-    "Functional Integrity": [
-        "Input Plausibility",
-        "Failure Reproducibility",
-    ],
-    "Generality": [
-        "Attack Transferability",
-    ],
-}
+metrics = [
+    "Failure Severity",
+    "Targeted Attack Discovery",
+    "Input Plausibility",
+    "Failure Reproducibility",
+    "Root-Cause Analysis",
+    "Attack Transferability",
+]
+
 
 metric_levels = {
     "Failure Severity": ["High", "Medium", "Low"],
     "Targeted Attack Discovery": ["High", "Medium", "Low"],
-    "Root-Cause Analysis": ["High", "Medium", "Low"],
     "Input Plausibility": ["High", "Medium", "Low"],
     "Failure Reproducibility": ["High", "Medium", "Low"],
+    "Root-Cause Analysis": ["High", "Medium", "Low"],
     "Attack Transferability": ["High", "Medium", "Low"]
 }
 
@@ -48,8 +43,6 @@ with open(input_file, "r") as f:
     data = json.load(f)
 
 # ---------- COUNT ----------
-# counts[metric][group][category]['__total__'] -> int
-# counts[metric][group][category][level] -> int
 counts = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(int))))
 
 for paper_id, info in data.items():
@@ -66,11 +59,7 @@ for paper_id, info in data.items():
                 if cat not in GROUP_CATEGORY_ORDER[group]:
                     raise Exception(f"Unrecognized category {cat}")
                 counts[metric][group][cat]["__total__"] += 1
-                # if cat == "Feedback-informed" and level == "High" and metric=="Failure Reproducibility":
-                #     print(paper_id)
-                #     print(m)
-                #     raise Exception("Invalid case")
-                
+
                 counts[metric][group][cat][level] += 1
 
 # Ensure all combinations exist for printing
@@ -85,11 +74,8 @@ def pct_cell(numer, denom):
     pct = 0 if denom == 0 else round(100 * numer / denom)
     return f"\\cellcolor{{gray!15}}{pct}" if pct > 50 else f"{pct}"
 
-def print_metric_block(block_name, metrics):
-    print("\\hline\n\\hline")
-    print(f"\\multicolumn{{15}}{{|c|}}{{\\cellcolor{{gray!10}}\\textbf{{{block_name}}}}}\\\\")
-    print("\\arrayrulecolor{black!50}\n\\hline\n\\hline")
-
+def print_metrics(metrics):
+  
     for metric in metrics:
         levels = metric_levels[metric]
         nrows = len(levels)
@@ -110,5 +96,4 @@ def print_metric_block(block_name, metrics):
         print("\\hline\n")
 
 # ---------- GENERATE FULL TABLE ----------
-for block_name, metrics in metric_blocks.items():
-    print_metric_block(block_name, metrics)
+print_metrics(metrics)

@@ -6,11 +6,11 @@ with open("results/assessments.json", "r") as f:
 
 # Metrics in your desired order
 assessment_fields = [
-     "Failure Severity",
+    "Failure Severity",
     "Targeted Attack Discovery",
-    "Root-Cause Analysis",
     "Input Plausibility",
     "Failure Reproducibility",
+    "Root-Cause Analysis",
     "Attack Transferability"
 ]
 
@@ -32,7 +32,7 @@ def to_latex_row(paper_key, paper):
     year = str(paper.get("year", ""))
     row = [paper_info]  # Year is now second column
     for field in assessment_fields:
-        llm = format_value(paper["assessments"][field]["llm"]["value"])
+        llm = format_value(paper["assessments"][field]["arbitrator"]["value"])
         human = format_value(paper["assessments"][field]["manual"]["value"])
         # Check for mismatch (but ignore if both are "-")
         if llm != human:
@@ -54,4 +54,4 @@ for paper_title, paper in data.items():
 records.sort()
 for _, _, row in records:
     print(row)
-    print("\\cline{2-15}")
+    print("\\cline{2-13}")
