@@ -1,0 +1,51 @@
+{
+  "Failure Severity": {
+    "description": "This metric captures the type and consequence of failures a fuzzer reveals, distinguishing violations of functional correctness, behavioral expectations, and explicit safety or security boundaries. At the lowest level, a fuzzer triggers functionality or robustness errors, such as misclassification in discriminative models or flawed output generation in generative ones. These failures expose brittle decision boundaries, instability under perturbation, or violations of functional invariances such as metamorphic relations. At the behavioral level, it uncovers misaligned or undesirable behaviors that remain functionally valid but violate normative, ethical, or specification-level expectations. Examples include biased, toxic, or misleading outputs and contradictions with domain logic. At the highest level, it reveals vulnerabilities that bypass explicit safety, policy, or security mechanisms, such as jailbreaks, privacy leaks, or unauthorized actions. These indicate the fuzzer’s ability to penetrate safeguards and expose system-level flaws. By separating these layers, the metric reflects how deeply a fuzzer probes a model’s trust boundary, from robustness failures to behavioral misalignments to policy or safety breaches.",
+    "values": {
+      "High": "Uncovers vulnerabilities that bypass explicit safety, policy, or security mechanisms.",
+      "Medium": "Exposes behaviors that remain functionally valid but violate normative, ethical, or specification-level expectations.",
+      "Low": "Triggers low-level functional errors, such as misclassification in discriminative models or flawed outputs in generative models."
+    }
+  },
+  "Targeted Attack Discovery": {
+    "description": "This metric measures how purposefully a fuzzing approach steers its exploration, reflecting whether it targets specific faults or performs broad, untargeted testing. A highly directed fuzzer deliberately pursues specific, predefined faults, such as forcing a classifier to predict a chosen label or making a speech model output a particular phrase, emulating attacker intent in targeted adversarial settings. A medium level of directedness indicates pursuit of semantic or category-level faults, for example jailbreaks, toxicity, bias, or unsafe behaviors, without constraining the exact output, representing partially guided but not fully targeted exploration. A low level corresponds to untargeted exploration, where the fuzzer searches broadly for generic faults such as misclassifications or unstable predictions, focusing on robustness evaluation rather than intentional fault induction.",
+    "values": {
+      "High": "Steers exploration toward specific, predefined faults, such as forcing a classifier to predict a chosen label or making a speech model output a particular phrase.",
+      "Medium": "Aims to trigger semantic or category-level faults, such as jailbreaks, toxicity, bias, or unsafe behaviors, without fixing the exact output.",
+      "Low": "Performs untargeted exploration to reveal generic faults, such as misclassifications, inaccuracies, or unstable predictions, without any predefined behavioral goal."
+    }
+  },
+ 
+  "Root-Cause Analysis": {
+    "description": "This metric captures the extent to which a fuzzing approach explains why discovered vulnerabilities occur, revealing whether it merely exposes failure symptoms or contributes to understanding their internal causes. A fuzzer with high root-cause insight performs diagnostic analysis of model internals, such as feature activations, decision boundaries, or gradient behavior, to identify the mechanisms that lead to specific failures. At intermediate levels, the fuzzer provides heuristic or correlational explanations that clarify where and how failures arise, either by linking internal behaviors (e.g., activation or coverage correlations) to failures or by interpreting failure patterns externally (e.g., class-level bias, overfitting, or semantic feature confusion). These explanations reveal plausible contributing factors but stop short of establishing causal mechanisms. At lower levels, the fuzzer only reports faulty cases as observable phenomena without investigating their origins or patterns. Fuzzers with stronger diagnostic insight not only uncover when models fail, but also illuminate how model architecture, representation learning, or optimization dynamics give rise to those failures, guiding more principled approaches to robustness improvement.",
+    "values": {
+      "High": "Establishes why vulnerabilities occur by identifying causal links to specific architectural, training, or data-related weaknesses within the model.",
+      "Medium": "Explains where and how failures manifest, either through correlational analysis of internal signals or through external interpretation of behavioral patterns (e.g., bias, overfitting, feature confusion).",
+      "Low": "Focuses solely on what fails, reporting faulty cases without analyzing internal signals or external behavioral patterns to infer possible causes."
+    }
+  },
+  "Input Plausibility": {
+    "description": "This metric assesses whether a fuzzing approach enforces input naturalness throughout the fuzzing process. It distinguishes among fuzzers that explicitly enforce naturalness across fuzzing iterations and validate the realism of fault-triggering inputs, those that apply local mutation constraints to encourage plausibility without end-to-end verification, and those that ignore input realism altogether. Naturalness validation may rely on human evaluation or quantitative measures, such as LPIPS and SSIM for visual similarity, PESQ and STOI for speech quality, and Perplexity for linguistic fluency. Medium-rated fuzzers enforce plausibility only in individual mutation steps through norm-bounded perturbations or rule-based transformations but overlook the cumulative effects of chained mutations across iterations. As a result, the final fault-inducing inputs may drift away from natural distributions. In contrast, low-rated fuzzers apply random or heuristic mutations without any mechanism to enforce input realism, prioritizing exploration diversity over plausibility.",
+      "values": {
+      "High": "Enforces naturalness throughout fuzzing iterations and provides empirical evidence (e.g., naturalness metrics or human evaluation) that final fault-inducing inputs remain perceptually or semantically realistic.",
+      "Medium": "Enforces naturalness in individual mutation steps through bounded or rule-based constraints but overlooks cumulative effects across fuzzing iterations.",
+      "Low": "Applies random or heuristic mutations without enforcing or evaluating input naturalness."
+    }
+  },
+   "Failure Reproducibility": {
+    "description": "This metric evaluates whether discovered failures remain stable after the fuzzed inputs are processed through standard I/O operations that may alter their low-level representation, such as rounding, quantization, or encoding into storage formats (e.g., PNG, JPEG, WAV, MP3, or text). Fault stability reflects whether the observed vulnerability stems from the model's decision logic or from fragile floating-point artifacts that disappear once the input leaves memory. For instance, a pixel value may change from 155.0 to 155.4 after mutation; when saved as an 8-bit image, this value is rounded to 155, effectively erasing the perturbation that caused the misclassification. Similar precision loss occurs in audio when floating-point amplitudes are quantized to 16-bit integers. Large, semantic-level changes such as rotation, brightness, or texture modifications are generally assumed to remain stable under I/O operations, as adopted in prior DNN testing works. However, when these transformations are applied without clipping or rounding, small numerical variations may be eliminated during serialization. This effect is further amplified when the input is normalized before mutation, as the reduced dynamic range makes such perturbations more likely to disappear after quantization. In contrast, model-generated fuzzed inputs, such as synthesized speech, rendered images, or generated text. are inherently stable under I/O operations because they originate from self-contained generation processes that produce finalized artifacts rather than transient numeric states.",
+    "values": {
+      "High": "Discovered faults remain stable under I/O operations because mutations are explicitly validated to remain I/O-stable, such as through clipping and rounding. Synthesized inputs are also inherently stable across I/O transformations.",
+      "Medium": "Discovered faults arise from semantic-level transformations applied on continuous representations that may not persist through I/O operations due to missing clipping and rounding.",
+      "Low": "Discovered faults arise from small continuous perturbations that depend on floating-point precision and may disappear after I/O operations due to missing clipping and rounding."
+    }
+  },
+  "Attack Transferability": {
+    "description": "This metric assesses whether failures discovered by a fuzzer on one model also manifest across other models performing the same task, indicating shared vulnerability sources rather than model-specific idiosyncrasies. High fault transferability reflects input-level reproducibility, where the same failing inputs cause equivalent erroneous behaviors across models. Medium transferability reflects mutation-level generalization, where different inputs subjected to the same mutation pattern induce similar failure behaviors across models. Low transferability indicates that failures were evaluated only within individual models, without analyzing cross-model consistency in how mutations relate to failures.",
+    "values": {
+      "High": "Empirically demonstrates that the same failing inputs cause equivalent erroneous behaviors across multiple models performing the same task.",
+      "Medium": "Analyzes cross-model correlations showing that the same mutation pattern systematically induces similar failure behaviors across models.",
+      "Low": "Evaluates only one model, or multiple models independently, without analyzing cross-model consistency in mutation–failure relationships."
+    }
+  }
+}
