@@ -1,3 +1,6 @@
+"""
+Computes per-metric agreement between preliminary LLM labels and expert-validated labels
+"""
 import json
 from collections import defaultdict
 

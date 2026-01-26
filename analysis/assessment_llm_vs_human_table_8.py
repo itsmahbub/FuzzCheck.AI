@@ -1,10 +1,8 @@
 import json
 
-# Path to your JSON file
 with open("results/assessments.json", "r") as f:
     data = json.load(f)
 
-# Metrics in your desired order
 assessment_fields = [
     "Failure Severity",
     "Targeted Attack Discovery",
@@ -30,11 +28,10 @@ def gray_cell(val):
 def to_latex_row(paper_key, paper):
     paper_info = paper["name"] + " \\cite{" + paper["key"] + "}"
     year = str(paper.get("year", ""))
-    row = [paper_info]  # Year is now second column
+    row = [paper_info]  
     for field in assessment_fields:
         llm = format_value(paper["assessments"][field]["arbitrator"]["value"])
         human = format_value(paper["assessments"][field]["manual"]["value"])
-        # Check for mismatch (but ignore if both are "-")
         if llm != human:
             row.append(gray_cell(llm))
             row.append(gray_cell(human))

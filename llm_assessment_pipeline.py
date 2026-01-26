@@ -177,7 +177,7 @@ def process_paper(paper_path, assessments, papers, results_dir, output_json_path
     
 
     if paper_name not in papers:
-        print("Paper not found in papers.json, skipping:", paper_name)
+        print("Paper not found in assessments.json, skipping:", paper_name)
         os.remove(paper_path)
         return
     print(papers[paper_name]['name'])
@@ -252,7 +252,7 @@ def process_paper(paper_path, assessments, papers, results_dir, output_json_path
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--paper-directory", default="papers")
-    parser.add_argument("-a", "--assessment-json", default="assessments/assessment_metrics.json")
+    parser.add_argument("-c", "--codebook", default="codebook.json")
     parser.add_argument("-o", "--output-json", default="results/assessments.json")
     parser.add_argument("--override", action="store_true")
     parser.add_argument("--no-cache", action="store_true")
@@ -267,10 +267,9 @@ def main():
     else:
         papers = {}
 
-    assessments = read_assessment_metrics(args.assessment_json)
+    assessments = read_assessment_metrics(args.codebook)
 
     paper_paths = [os.path.join(args.paper_directory, f) for f in os.listdir(args.paper_directory) if f.endswith(".pdf")]
-
 
     for paper_path in paper_paths:
         process_paper(

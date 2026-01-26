@@ -1,3 +1,7 @@
+"""
+Computes arbitrator and human alignment with ChatGPT vs. Gemini in disagreement cases.
+"""
+
 import json
 
 # Load file
