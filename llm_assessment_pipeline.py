@@ -7,8 +7,9 @@ from google import genai
 from google.genai import types
 import pathlib
 
-OPENAI_MODEL = "o4-mini"
-GEMINI_MODEL = "gemini-2.5-flash"
+ARBITRATOR_MODEL = "o4-mini"
+OPENAI_MODEL = "gpt-5-mini"
+GEMINI_MODEL = "gemini-2.5-pro"
 
 chatgpt_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 gemini_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
@@ -121,7 +122,7 @@ def evaluate_with_model(model, paper_path, metric_name, metric_info):
             return "Error generating response"
         return response.text.strip()
 
-def reconcile(chat_output, gemini_output, paper_path, metric_name, metric_info):
+def arbitration(chat_output, gemini_output, paper_path, metric_name, metric_info):
     paper_file = file_for_chatgpt(paper_path)
     messages = [
         {"role": "system", "content": (
@@ -167,7 +168,7 @@ def reconcile(chat_output, gemini_output, paper_path, metric_name, metric_info):
     
     ]
     response = chatgpt_client.responses.create(
-        model=OPENAI_MODEL,
+        model=ARBITRATOR_MODEL,
         input=messages
     )
     return response.output_text.strip()
@@ -192,7 +193,7 @@ def process_paper(paper_path, assessments, papers, results_dir, output_json_path
 
         chatgpt_file = os.path.join(results_dir, f"{paper_key}-{metric_name}.chatgpt")
         gemini_file = os.path.join(results_dir, f"{paper_key}-{metric_name}.gemini")
-        reconciled_file = os.path.join(results_dir, f"{paper_key}-{metric_name}.reconciled")
+        arbitrated_file = os.path.join(results_dir, f"{paper_key}-{metric_name}.arbitrated")
 
         if not no_cache and os.path.exists(chatgpt_file):
             with open(chatgpt_file, "r", encoding="utf-8") as f:
@@ -220,18 +221,18 @@ def process_paper(paper_path, assessments, papers, results_dir, output_json_path
         if chat_result["value"] == gemini_result["value"]:
             final_result = chat_result
         else:
-            if not no_cache and os.path.exists(reconciled_file):
-                with open(reconciled_file, "r", encoding="utf-8") as f:
-                    reconciliation_response = f.read()
+            if not no_cache and os.path.exists(arbitrated_file):
+                with open(arbitrated_file, "r", encoding="utf-8") as f:
+                    arbitrated_response = f.read()
             else:
-                reconciliation_response = reconcile(chat_output, gemini_output, paper_path, metric_name, metric_info)
-                with open(reconciled_file, "w", encoding="utf-8") as f:
-                    f.write(reconciliation_response)
+                arbitrated_response = arbitration(chat_output, gemini_output, paper_path, metric_name, metric_info)
+                with open(arbitrated_file, "w", encoding="utf-8") as f:
+                    f.write(arbitrated_response)
 
             try:
-                final_result = extract_llm_output(reconciliation_response)
+                final_result = extract_llm_output(arbitrated_response)
             except:
-                print(f"Skipping {paper_name} - {metric_name}: Reconciliation failed")
+                print(f"Skipping {paper_name} - {metric_name}: Arbitration failed")
                 continue
 
 
