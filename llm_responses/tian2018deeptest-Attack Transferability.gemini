@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper introduces DeepTest, a method for finding erroneous behaviors in a single Deep Neural Network (DNN) by generating synthetic inputs that maximize neuron coverage. The evaluation is performed on three separate DNN models (Chauffeur, Rambo, and Epoch) that perform the same task of autonomous driving. However, the paper's methodology and experiments focus on testing each model in isolation. The results are presented separately for each model, highlighting which types of transformations induce errors in which models. There is no experiment or discussion where a fault-inducing input generated for one model is then used to test another model to check for transferability. The paper does not demonstrate whether the discovered failures are model-specific or shared across different architectures.",
+  "evidence": "Page 10, Section 5. RESULTS, Table 8: 'Number of unique erroneous behaviors reported by DeepTest for different models with λ = 5'. The accompanying text states: 'Interestingly, some models are more prone to erroneous behaviors for some transformations than others. For example, Rambo produces 23 erroneous cases for shear, while the other two models do not show any such cases. Similarly, DeepTest finds 650 instances of erroneous behavior in Chauffeur for rain but only 64 and 27 for Epoch and Rambo respectively.' This evidence shows that bugs were identified and counted for each model independently, rather than testing if a bug found in one model transfers to others."
+}
+```

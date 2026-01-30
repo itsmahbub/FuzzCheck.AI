@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper does not investigate whether the fault-inducing inputs generated for one model transfer to other models. The evaluation is conducted on four distinct Question Answering (QA) systems, but each is treated as an independent target. The experiments generate test cases from a seed dataset and apply them to a corresponding QA system to find failures. There is no mention of reusing the failure-inducing questions found on one model (e.g., ALBERT) to test another model (e.g., UnifiedQA). The research questions and experimental results focus on the effectiveness, efficiency, and diversity of the fuzzing framework for individual systems. The design of the fuzzer, including its guidance criteria (N-Gram coverage and perplexity priority), is aimed at improving bug detection on a single target rather than discovering shared vulnerabilities or transferable attacks across models.",
+  "evidence": "Page 8, Section 5.1, \"Answer to RQ1: Metamorphic Transformations\": \"To evaluate the effectiveness of each type of MR applied by QATest, we select 500 test cases from each data set and apply the MRs proposed in Section 3.2 to generate test data sets. Then, we record the number of failed tests in the generated test set on the corresponding QA systems, which is shown in Table 3.\" This statement describes an experimental process where each QA system is tested independently. The results presented in Tables 3, 4, and 5 consistently show separate evaluations for each system, with no cross-testing of generated inputs."
+}
+```

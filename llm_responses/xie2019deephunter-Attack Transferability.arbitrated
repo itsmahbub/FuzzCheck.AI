@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "DeepHunter explicitly evaluates the transferability of fault‐inducing inputs by first generating mutants on an original (32‐bit) DNN model and then reusing those same tests to detect errors in its quantized counterparts. Definition 3 formalizes the notion of a “quantization erroneous behavior” (i.e., faults that appear in one model version but not the other), and RQ4’s experimental setup and results demonstrate this cross‐model reuse. This matches the “High” level of the Attack Transferability metric, since the framework both reuses inputs across models performing the same task (original versus quantized) and incorporates mechanisms to discover these transferable failures.",
+  "evidence": "Page 149, Section 3.2.1 – Definition 3: Formalizes “quantization erroneous behavior” between F and its quantized version F′, describing tests generated on one model and applied to the other.\nPage 154, Section 5.4 – RQ4: Describes running DeepHunter on the original model and applying the generated tests to quantized versions, with Table 6 summarizing the errors detected across models."
+}
+```

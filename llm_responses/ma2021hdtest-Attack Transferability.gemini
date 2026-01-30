@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper introduces HDTest, a differential fuzz testing method specifically designed for Hyperdimensional Computing (HDC) models. The evaluation of HDTest is conducted on a single HDC model architecture trained for the MNIST classification task. The experiments focus on generating adversarial inputs that cause mispredictions in this specific model and then using these generated inputs to retrain and improve the robustness of that same model. The paper does not perform any experiments to test whether the fault-inducing inputs generated for this one model also cause failures in other, independently trained HDC models or in models based on different architectures (e.g., DNNs) performing the same task. Therefore, the transferability of the generated attacks is not demonstrated.",
+  "evidence": "Page 4, Section V-A, Experimental Setup: \"We use the MNIST database of handwritten digits [30] as our dataset for training and testing the HDC model at an accuracy around 90%.\"\n\nPage 6, Section V-D, Case Study on Defense Against Adversarial Attacks: \"First, for a specific HDC model, we run HDTest to generate 1000 adversarial images... We feed the first subset of adversarial images to the HDC model with correct labels to retrain the HDC model, i.e., updating the reference HVs. Next, we use the second subset of adversarial images to attack the HDC model.\" This section describes a process of retraining and then re-attacking the same model, not testing a different one."
+}
+```

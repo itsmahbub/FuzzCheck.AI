@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper explicitly evaluates the transferability of its generated jailbreak prompts. It conducts cross-model experiments where prompts generated on a source model are tested against other target models, and the results are presented in a dedicated table (Table 2). However, the design of the attack method, AutoDAN, does not incorporate explicit mechanisms aimed at discovering transferable attacks. The method uses a hierarchical genetic algorithm to generate semantically meaningful prompts. The authors speculate that the observed high transferability is a beneficial consequence of their semantic-level optimization approach, which avoids the overfitting common in gradient-based methods, rather than being an explicit design goal with specific supporting mechanisms.",
+  "evidence": "Page 8, Section 'Transferability': 'We further investigate the transferability of our method... We conduct the evaluations by taking the jailbreak prompts with their corresponding requests and targeting another LLM. The results are shown in Tab. 2. AutoDAN exhibits a much better transferability in attacking the black-box LLMs compared with the baseline. We speculate that the potential reason is the semantically meaningful jailbreak prompts may be inherently more transferable than the methods based on tokens’ gradients.'"
+}
+```

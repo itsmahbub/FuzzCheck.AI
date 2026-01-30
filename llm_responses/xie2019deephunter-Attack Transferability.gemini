@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's proposed framework, DeepHunter, is designed and evaluated for testing a single Deep Neural Network (DNN) model. The methodology, including the test generation algorithm and oracles, is focused on finding defects within one specific target model or between that model and its quantized version. The experimental evaluation is conducted on several different DNNs, but each is tested in isolation. The paper does not include any experiments where fault-inducing inputs generated for one model (e.g., LeNet-5) are used to test another model performing the same task (e.g., a different MNIST classifier). The authors explicitly state this single-model focus in the related work section, distinguishing their approach from differential testing techniques that compare multiple DNNs.",
+  "evidence": "Page 11, Section 6 RELATED WORK, 'Different from DeepXplore and DiffChaser which focus on differential testing, DeepHunter is a grey-box testing technique focusing on a single DNN model.'"
+}
+```

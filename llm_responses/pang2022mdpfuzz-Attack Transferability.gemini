@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper evaluates the proposed fuzzer, MDPFuzz, on five distinct models, including a Reinforcement Learning (RL) and an Imitation Learning (IL) model for the same autonomous driving task (CARLA). However, the evaluation is conducted independently for each model. The paper reports the number of crash-triggering inputs found for each model in isolation and does not perform any experiments to test if the inputs that cause a failure in one model also cause a failure in another model, even those performing the same task. The design of MDPFuzz focuses on finding failures for a single model under test and lacks any mechanism explicitly designed to discover transferable attacks or shared vulnerabilities across different models.",
+  "evidence": "Page 10, Section 7.1 RQ1: Performance on Finding Crashes, Setup: \"We use the evaluation setup described in Sec. 6. That is, we launch MDPFuzz to fuzz each MDP model (listed in Table 3) and detect crashes. We collect all error-triggering inputs for analysis.\" This statement indicates that each model was fuzzed as a separate, independent target. Table 3 on the same page presents the results for each model as a distinct line item, with no cross-model evaluation or mention of transferring discovered failure-inducing inputs."
+}
+```

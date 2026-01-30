@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper focuses on designing a new coverage criterion (NLC) and evaluating its effectiveness for assessing test suites and guiding fuzzing for a single, specific DNN model at a time. The experiments involve generating fault-inducing inputs (either through adversarial attacks or fuzzing) on a given model and then evaluating the outcome on that same model. The paper does not contain any experiments or discussion on whether the fault-inducing inputs generated for one model (e.g., ResNet50) can also trigger failures in other models performing the same task (e.g., VGG16 or MobileNetV2). The fuzzing design and the NLC metric itself are aimed at exploring the internal state of a single model, not at finding shared vulnerabilities across different models.",
+  "evidence": "Page 10, Section VI-B, \"Guiding Input Mutation in DNN Testing\", Algorithm 1: The fuzzing algorithm is defined with a single \"Tested DNN: D\" as input. The core feedback loop in line 7, `if is_valid($,s) and coverage_inc(C,D) then`, clearly shows that the decision to keep a mutated input is based on its ability to increase the coverage metric `C` on that specific DNN `D`. This demonstrates that the fuzzing process is tailored to a single model, not designed for finding transferable inputs. The subsequent results in Table XI also report fault-triggering rates for individual models that were fuzzed, with no cross-evaluation."
+}
+```

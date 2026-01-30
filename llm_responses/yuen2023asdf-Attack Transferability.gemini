@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper describes a differential testing framework, ASDF, where a failure is defined by a disagreement among multiple Automated Speech Recognition (ASR) models. A test case is considered a failure for a specific ASR system only if at least one other system under test transcribes the audio correctly. This design principle means the framework is explicitly built to find model-specific failures, not failures that transfer across different models. The methodology does not involve generating a fault-inducing input on one model and then reusing it to test for transferability on others; rather, it tests a single input on all models simultaneously to find discrepancies. Furthermore, the framework discards inputs that cannot be correctly transcribed by at least one ASR service, which would include cases where a failure might be transferable across all tested models. Therefore, the paper does not demonstrate whether fault-inducing inputs discovered for one model also trigger failures in others.",
+  "evidence": "Page 1, Section II, TOOL DESIGN: \"If there exists at least one system that can correctly transcribe the audio while a specific ASR system fails to do so, we say that a failed test case is uncovered for this specific ASR system.\" \n\nPage 2, Section IV, USAGE: \"A transformed text input must be transcribed correctly by at least one ASR service to be deemed valid (or determinable); otherwise, it is deemed indeterminable and discarded.\""
+}
+```

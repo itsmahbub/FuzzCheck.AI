@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper introduces CUREFUZZ, a fuzzing method to find crash-triggering scenarios for sequential decision-makers (SDMs). The evaluation is conducted across multiple SDMs in various environments (e.g., two different models for the CARLA autonomous driving task, one based on DRL and one on IL). However, each SDM is treated as an independent and isolated target for the fuzzer. The experiments aim to demonstrate the effectiveness of the CUREFUZZ method on each target individually compared to baseline methods. The paper does not perform any experiments to test whether the crash-triggering scenarios discovered for one SDM would also cause failures (i.e., transfer) to another SDM performing the same task. The design of the fuzzer is focused on finding novel and diverse scenarios for the specific model under test, with no explicit mechanisms for discovering transferable failures.",
+  "evidence": "Page 8, Section 5 EXPERIMENT RESULTS, Tables 1, 2, and 3: The results for different models, even within the same environment, are presented in separate rows. For instance, 'Carla (RL)' and 'Carla (IL)' are evaluated independently. The paper discusses the performance of CUREFUZZ on each of these models but does not mention reusing the crash scenarios found for 'Carla (RL)' to test 'Carla (IL)' or vice-versa. The research questions also do not address transferability. For example, RQ1 asks: \"How effective is CUREFUZZ in finding crash-triggering scenarios?\" which is evaluated per model, not across models."
+}
+```

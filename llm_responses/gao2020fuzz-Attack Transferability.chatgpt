@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper does not evaluate or claim that fault-inducing inputs found on one (surrogate) model transfer to other models. Sensei is designed as an in-training data-augmentation method that generates variants per model/seed during that model's training; the experiments measure per-model robust accuracy after applying Sensei to each model independently. The paper explicitly contrasts its approach with multi-model differential testing (DeepXplore) and states that Sensei does not require multiple models, indicating the design and evaluation do not target discovering or measuring transferable faults across models.",
+  "evidence": "p.1148, Abstract: \"We instantiate this technique in two tools, Sensei and Sensei-SA, and evaluate them on 15 DNN models spanning 5 popular image data-sets.\"; p.1150, Section 3.2 (Overview): \"Note that, Sensei is in-training data augmentation approach, i.e., data generation and augmentation happen on-the-fly during training.\"; p.1156, Section 6 (Related Work): \"DeepXplore [24] generates test inputs that lead to exhibit different behaviors by different models for the same task. Our approach does not require multiple models.\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While the paper clearly evaluates whether fault-inducing prompts generated on one model transfer to others (via cross-model experiments in Section 4.2 and Table 2), the core AutoDAN design does not include mechanisms explicitly tailored for transferability (e.g. multi-model surrogate optimization or fitness functions that aggregate performance across targets). The authors observe that semantic-level optimization ‘inherently’ improves transfer, but they do not incorporate transferability as an explicit objective or design feature of their hierarchical genetic algorithm.",
+  "evidence": "Page 8, Section 4.2 (“Transferability”): “We conduct the evaluations by taking the jailbreak prompts with their corresponding requests and targeting another LLM. The results are shown in Tab. 2. AutoDAN exhibits a much better transferability … We speculate that the potential reason is the semantically meaningful jailbreak prompts may be inherently more transferable…”; Table 2 – cross-model ASR results; no mention of multi-model or transfer-focused optimization in Method (Sections 3.2–3.4)."
+}
+```

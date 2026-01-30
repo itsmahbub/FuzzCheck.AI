@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's entire evaluation is conducted on a single, specific deep learning model for Automated Speech Recognition (ASR). The authors explicitly state they use Mozilla's DeepSpeech-0.3.0 model for all their experiments. The goal of the proposed framework, DeepCruiser, is to generate tests that increase coverage and find defects within this specific model. The paper does not mention testing the fault-inducing audio inputs generated for DeepSpeech on any other ASR models to check for transferability. Consequently, it does not demonstrate whether the discovered failures are specific to this one model or represent shared vulnerabilities across different models.",
+  "evidence": "Page 15, Section 7.1 Datasets and Experiment Setup: \"We selected Mozilla's implementation of DeepSpeech-0.3.0 [42] which produces one of the state-of-the-art open source ASR models. All our experiments were conducted on a pre-trained English model released along with DeepSpeech-0.3.0, which was trained with Fisher [43], LibriSpeech [44], Switchboard [45], and a pre-release snapshot of the English Common Voice training corpus [46].\""
+}
+```

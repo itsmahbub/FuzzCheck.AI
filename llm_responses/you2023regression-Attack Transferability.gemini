@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's entire methodology and evaluation are focused on 'regression fuzzing', which it defines as finding faults between a prior version of a model (M1) and its subsequent version (M2). The goal is to find inputs that were correctly classified by M1 but are misclassified by M2 after an evolution event (e.g., fine-tuning, pruning). The experiments are designed around creating these M1/M2 pairs and evaluating the proposed fuzzer, DRFuzz, in its ability to find such regression-specific faults. The paper does not perform any experiments to check if the fault-inducing inputs found for a specific model (e.g., LeNet-5) also trigger failures in other, different model architectures (e.g., VGG16) performing the same task. Therefore, it does not demonstrate attack transferability across models.",
+  "evidence": "Page 2, Section II. DEFINITION, Definition 2. Regression fault: \"Given a prior version model M1, its regression model M2, a test input x, and its ground truth label y, x is called to trigger a regression fault if x is correctly predicted by M1, yet wrongly predicted by M2, i.e., cM1 [x] = y ∧ cM2 [x] != y.\" This definition explicitly frames the problem as a comparison between two versions of the same model, not between different models."
+}
+```

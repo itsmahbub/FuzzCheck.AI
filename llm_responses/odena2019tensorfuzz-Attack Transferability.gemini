@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper does not evaluate whether the fault-inducing inputs discovered through fuzzing on one model can trigger failures in other, distinct models performing the same task. The experiments focus on finding bugs within a single model instance (e.g., numerical errors), comparing a model to its own quantized version, or testing the correctness of specific code implementations. There is no investigation into the transferability of these discovered faults to different model architectures or independently trained models, which is the core of the Attack Transferability metric.",
+  "evidence": "Page 7, Section \"TensorFuzz surfaces disagreements between models and their quantized versions\": The paper describes an experiment comparing a 32-bit MNIST classifier to its 16-bit quantized version. It states, \"We then compared the predictions of the 32-bit and the 16-bit model on the MNIST test set and found 0 disagreements. We then ran the fuzzer... the fuzzer was able to generate disagreements for 70% of the examples we tried.\" While this involves two model variants, it is a test of a model against its direct, transformed derivative, not a test of transferability to a separate, independently trained model. The other experiments in the paper similarly focus on single models or codebases without testing for transferability."
+}
+```

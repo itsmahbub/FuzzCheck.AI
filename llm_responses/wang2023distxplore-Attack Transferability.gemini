@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's methodology and evaluation focus exclusively on generating fault-inducing inputs for a single model under test and then evaluating the properties of those inputs (e.g., their ability to bypass defenses) on that same model. The concept of attack transferability—testing if inputs that cause faults on one model also cause faults on another model performing the same task—is never discussed or evaluated. The experimental setup, described in Section 4, details procedures for generating errors, evaluating their strength against defenses, and using them for retraining. All these steps are performed within the context of the specific model for which the errors were generated. There is no mention of reusing these inputs to test other models.",
+  "evidence": "Page 7, Section 4.1.4, Experiment Setup, RQ Setup: \"To demonstrate the capability of DistXplore in generating strong errors for model evaluation (RQ1), we collect the test suite in the last iteration for every pair (c, c') (i.e., the best chromosome returns from Algo 1). For each model, we collect a total number of 90 chromosomes over 90 pairs, which are used to evaluate the strength of these errors. The strength of errors is measured by the success rate of bypassing defenses.\"\n\nThis quote illustrates that the evaluation is conducted on a per-model basis, where errors are generated for a specific model and their strength is evaluated against defenses on that same model, without assessing transferability to other models."
+}
+```

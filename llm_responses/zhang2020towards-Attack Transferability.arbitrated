@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper does not include any experiments or analysis of whether fault-inducing inputs generated on one model transfer to other, independently trained model implementations performing the same task. All adversarial and uncommon inputs are crafted and evaluated per target model (including defense-retrained variants of that same model), but no inputs generated on one architecture are tested on a different architecture or distinct model instance without access. Therefore it does not demonstrate cross-model transferability.",
+  "evidence": "Page 743 (§3.1.3 Data Preparation): adversarial examples are generated “for each input in BenignData… on each model,” with no mention of re-using those inputs on different models. \nPage 748 (§5.2 RQ4): discussion of “transfer attack scenario” refers only to attacks against a retrained/defended version of the same model, not to separate model implementations (e.g., LeNet-5→NIN or ResNet→MobileNet). \nThroughout (e.g. Tables 2, 4–6) all results report attacks and defenses per model, with no cross-model evaluation of transferability."
+}
+```

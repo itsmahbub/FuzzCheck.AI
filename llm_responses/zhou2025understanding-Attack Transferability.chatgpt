@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper does not demonstrate or evaluate whether fault-inducing inputs (jailbreak prompts) crafted on one model transfer to other models. The generation experiments and the coverage-guided jailbreak-case generation are conducted targeting a single model (Llama-2-7b-chat). Detection and prioritization experiments are performed per-model (training/validating classifiers or thresholds for each model), but the paper does not report experiments where inputs crafted on a surrogate model are reused to test different target models, nor does it describe mechanisms explicitly designed to discover transferable attacks across models.",
+  "evidence": "Section V.C (Jailbreak Case Generation), p. 739: \"Setup: We use Llama-2-7b-chat as the target model, initializing with five jailbreak queries as seeds. Over five iterations, GPT-4 generates ten new jailbreak queries per round ... Each method ultimately generates 250 new jailbreak queries to evaluate effectiveness.\"; Section V.A (Jailbreak Detection), p. 738: \"... we train an MLP model that uses the number of activated neurons as input ... We validate its effectiveness on OPT-125M, Llama-2-7B-Chat, and Pythia-12B.\"; Section III.A (Motivation: A Cluster Analysis Experiment), p. 732: \"Experimental Setup: We first introduce the setup for our cluster analysis experiments using the Llama-2-7b-chat [38] model as our target.\""
+}
+```

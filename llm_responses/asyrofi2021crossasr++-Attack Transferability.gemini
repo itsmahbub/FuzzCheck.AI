@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method, CrossASR++, is a differential testing framework. A test case is defined as a failure for a specific System Under Test (SUT) if that SUT fails to transcribe an audio input correctly, while at least one other ASR system succeeds. This design inherently focuses on finding disagreements between models, rather than shared vulnerabilities or transferable failures. The case where all ASR models fail on the same input is categorized as an \"indeterminable test case\" and is not treated as a successful discovery of a fault. The paper does not reuse the inputs that are found to cause failures in one model to evaluate if they also induce failures in other models. Therefore, it does not demonstrate the transferability of fault-inducing inputs.",
+  "evidence": "Page 3, Section 2.1 Workflow, \"For a piece of audio and its corresponding transcription, there are three possible situations: ... 2) If the SUT fails to recognize the audio file successfully, but at least one of the other ASR systems succeeds, we take this audio file (and the corresponding input text) as a failed test case for the SUT. 3) If all the ASR systems cannot recognize the audio correctly, we call it an indeterminable test case because a TTS may generate an invalid audio.\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper evaluates DeepCruiser only on a single RNN-based ASR implementation (Mozilla DeepSpeech-0.3.0) and does not report reusing fault-inducing inputs to test other models nor describe design mechanisms explicitly intended to discover transferable attacks across different models. Therefore it does not demonstrate whether faults found on one model transfer to other models performing the same task.",
+  "evidence": "Page 16, Section 7.1 Datasets and Experiment Setup: \"We selected Mozilla’s implementation of DeepSpeech-0.3.0 [42]... All our experiments were conducted on a pre-trained English model released along with DeepSpeech-0.3.0, which was trained with Fisher [43], LibriSpeech [44], Switchboard [45], and a pre-release snapshot of the English Common Voice training corpus [46].\"; Page 3, Introduction / contribution summary: \"We implement our testing framework, DeepCruiser, and perform in-depth evaluation on a state-of-the-art practical RNN based ASR system to demonstrate the usefulness.\" (demonstrates evaluation on a single ASR system and no cross-model transfer tests are reported)."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's core methodology, differential testing, is explicitly designed to discover transferable failures by finding inputs that cause different behaviors across multiple deep learning models with similar functionality. The method does not simply generate a fault-inducing input for one model and then test its transferability on others as a secondary step. Instead, it uses multiple models as 'cross-referencing oracles' from the outset. The fuzzing design incorporates an explicit mechanism—a joint optimization function—that directly aims to maximize the behavioral differences between the models under test. This process inherently generates inputs that demonstrate failures across different models.",
+  "evidence": "Page 7, Section 4.2, 'Maximizing differential behaviors': 'The first objective of the optimization problem is to generate test inputs that can induce different behaviors in the tested DNNs, i.e., different DNNs will classify the same input into different classes.' and Page 8, Equation (2) and its description: 'obj1(x) = ∑k≠j Fk(x)[c] - λ1 · Fj(x)[c] where λ1 is a parameter to balance the objective terms between the DNNs Fk≠j that maintain the same class outputs as before and the DNN Fj that produce different class outputs.' This objective function is the explicit mechanism to find transferable/differential failures."
+}
+```

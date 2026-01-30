@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper proposes and evaluates methods for jailbreak detection, prioritization, and generation using coverage criteria. The experiments are conducted across four different LLMs. However, the evaluation of fault-inducing inputs (jailbreak attacks) is performed on a per-model basis. Specifically, in the 'Jailbreak Case Generation' application, new jailbreak queries are generated using coverage guidance from a single target model (Llama-2-7b-chat). The paper evaluates the success of this generation method for that specific model but does not subsequently test whether these generated queries are effective (i.e., transferable) in causing failures in the other models studied in the paper (OPT-125M, Pythia-12B, Gemma-2-27B-it). The research does not demonstrate or test whether fault-inducing inputs discovered on one model trigger failures in others.",
+  "evidence": "Page 11, Section V. APPLICATION, C. Jailbreak Case Generation: \"Setup: We use Llama-2-7b-chat as the target model, initializing with five jailbreak queries as seeds. Over five iterations, GPT-4 generates ten new jailbreak queries per round through prompt rewriting. The query with the highest coverage increase is selected as the next seed in the coverage-guided approach. For comparison, a random strategy selects seeds randomly from rewritten candidates. Each method ultimately generates 250 new jailbreak queries to evaluate effectiveness.\""
+}
+```

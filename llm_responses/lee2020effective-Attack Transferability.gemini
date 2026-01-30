@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's methodology and experimental evaluation focus on generating fault-inducing inputs for a single, white-box model at a time. The proposed method, ADAPT, is designed to optimize its neuron-selection strategy based on the internal structure and feedback from the specific model under test. The experiments are conducted independently for each of the four models (LeNet-4, LeNet-5, VGG-19, ResNet-50). The results report the number of adversarial inputs found for each model individually. There is no procedure or result mentioned where fault-inducing inputs generated for one model (e.g., LeNet-4) are tested against another model performing the same task (e.g., LeNet-5) to assess transferability. The paper even notes that it adapted a baseline technique, DeepXplore, to work with a single DNN, moving away from its original multi-DNN differential testing approach.",
+  "evidence": "Page 7, Section 4.1, \"Experimental Setup\": \"DeepXplore originally performs differential testing requiring multiple DNNs without labeled data but we used it with a single DNN and labeled data in our experiments.\" This quote shows a deliberate choice to focus on single-model testing, not cross-model transferability. Additionally, Table 3 on page 9, \"Effectiveness for finding adversarial inputs,\" presents results for each model in separate, independent sections, with no indication that inputs generated for one model were ever tested on another."
+}
+```

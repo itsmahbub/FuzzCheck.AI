@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method, evolutionary differential testing, uses multiple Automatic Speech Recognition (ASR) models for cross-referencing. However, this is done to create a reliable test oracle—a test case is deemed valid if at least one model can correctly transcribe the audio. A failure is then identified specifically for the System Under Test (SUT) if it fails on this valid test case. The paper does not investigate or demonstrate whether these fault-inducing inputs for one SUT also trigger failures in other ASR models. The generated failed test cases are used to fine-tune and improve the SUT itself, rather than being reused to test for attack transferability across different models. The core focus is on improving a single model or the testing tool, not on discovering shared vulnerabilities.",
+  "evidence": "Page 2, Section II-A, \"CrossASR++\": \"A valid test case can be either a failed test case or a successful test case. If the SUT transcription is different from the input text, it means that CrossASR++ uncovers a failed test case for the SUT. Otherwise, a successful test case is found.\" This quote illustrates that a failure is defined and recorded for a single, specific SUT, not in the context of transferability to other models."
+}
+```
