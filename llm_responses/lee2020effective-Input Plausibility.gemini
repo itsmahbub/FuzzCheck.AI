@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper enforces a plausibility constraint during input generation and provides a qualitative assessment of the final fault-inducing inputs. A bounded L2-distance constraint is maintained between the initial seed and any mutated input, which helps control the cumulative effect of perturbations. The authors also qualitatively assess the realism of the generated inputs, stating that for the large ImageNet models, the adversarial examples were 'visually indistinguishable from the original ones' and providing visual examples in Figure 3. However, this does not meet the 'High' standard because the plausibility assessment is not a formal human study or based on quantitative perceptual metrics (e.g., LPIPS, SSIM), and the L2-norm is a simple proxy for maintaining inputs within a truly plausible distribution.",
+  "evidence": "Page 7, Section 4.1, Experimental Setup: \"All the techniques, including ADAPT, performed testing while maintaining the L2-distance between the initial and mutated inputs within 0.05 on average.\"\n\nPage 10, Section 4.3, Correlation between Coverage and Adversarial Inputs: \"In particular, the adversarial images found for VGG-19 and ResNet-50 were visually indistinguishable from the original ones.\""
+}
+```

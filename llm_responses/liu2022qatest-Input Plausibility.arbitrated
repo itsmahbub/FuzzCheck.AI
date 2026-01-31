@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "QATest incorporates per‐step plausibility checks—filtering each mutated question by a ROUGE‐1 similarity threshold and prioritizing seeds with low perplexity to encourage fluent, realistic inputs—but it does not formally bound cumulative drift across multiple iterations nor does it perform an explicit human or task‐specific quantitative evaluation of the final fault‐inducing inputs. Thus, while individual mutation steps are plausibility‐constrained, the framework relies on heuristics rather than a strict mechanism or empirical validation to ensure that deeply mutated inputs remain within the realistic question distribution, which aligns with the “Medium” level.",
+  "evidence": "Section 3.2.5 (Quality Assessment): uses ROUGE‐1 to discard low‐quality transformations on each step\nSection 3.3.2 (Perplexity Priority): guides seed retention by selecting the lowest‐perplexity (most fluent) questions\nSection 6.3 (Threats to Validity): acknowledges absence of manual inspection or human study and reliance on automatic metrics rather than external plausibility validation of final failing inputs"
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper enforces plausibility via per-step, rule-based validity checks (bounding pixel changes in each mutation) and reports quantitative measures (Inception Score and FID) showing that the final fault-inducing images are natural-looking. However, it does not introduce any mechanism to bound or assess cumulative drift over multiple fuzzing iterations, nor does it include a human evaluation of plausibility. Thus it validates plausibility at each mutation and on the final outputs, but overlooks aggregate guarantees across the entire fuzzing process.",
+  "evidence": "Section VI-B (Fuzzing setup) and Algorithm 1 (page 1209): “is_valid() is adopted from [47], which deems a mutation as valid if 1) the #changed-pixels is less than α×#pixels or 2) the maximum of changed pixel value is less than β×255. We set α to 0.2 and β to 0.4.”\n\nSection VI-B (Naturalness of Mutations) and Table XI (pages 1209–1210): “We measure the naturalness of mutated inputs … We use Inception Score (IS) [39] and Fréchet Inception Distance (FID) [18] … Overall, mutated images guided by NLC have the best scores for both IS and FID.”\n\nNo section in the paper describes any global or cumulative‐plausibility constraint over multiple iterations of fuzzing."
+}
+```

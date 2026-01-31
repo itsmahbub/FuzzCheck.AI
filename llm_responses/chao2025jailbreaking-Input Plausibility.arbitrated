@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While PAIR’s design clearly constrains each generated prompt to remain semantically coherent—via role-playing, logical-appeal and authority-endorsement system prompts, JSON formatting, and chain-of-thought refinements—it does not include any explicit mechanism to prevent cumulative semantic drift over multiple iterations, nor does it report quantitative or human-study assessments (e.g. perplexity scores or user judgments) of the final fault-inducing prompts’ realism. Thus, PAIR enforces plausibility at the individual mutation step level but overlooks validation of the aggregate effect of those mutations, fitting the Medium category.",
+  "evidence": "III-A Attacker’s system prompt design (p.25): uses structured templates and in-context examples to keep each prompt plausible; III-B Algorithm 1 (p.25): iterative refinement with no bounded-perturbation or plausibility filter; IV Evaluation (p.26): reports only jailbreak success rates and query counts, with no perceptual/linguistic plausibility metrics or human evaluation of final prompts."
+}
+```

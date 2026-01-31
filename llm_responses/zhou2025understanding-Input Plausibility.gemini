@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper proposes a coverage-guided method for generating jailbreak attack prompts. The generation process uses GPT-4 for 'prompt rewriting,' and the selection of subsequent prompts is guided entirely by maximizing 'coverage increase.' The evaluation of the generated prompts is based on their success rate in triggering a jailbreak, not on their plausibility or realism as user queries. The paper does not describe any mechanism to enforce input plausibility during the generation process, nor does it report any assessment of the plausibility of the final, successful jailbreak prompts, either through human evaluation or quantitative metrics like perplexity for linguistic fluency. The focus is entirely on the efficacy of the generated attacks, without consideration for whether the inputs are realistic within a normal threat model.",
+  "evidence": "Page 11, Section V-C, Jailbreak Case Generation: 'Setup: We use Llama-2-7b-chat as the target model, initializing with five jailbreak queries as seeds. Over five iterations, GPT-4 generates ten new jailbreak queries per round through prompt rewriting. The query with the highest coverage increase is selected as the next seed in the coverage-guided approach.' and 'Evaluation results: As shown in Figure 6, the coverage-guided method outperforms the random strategy in generating successful jailbreak queries.' This demonstrates that the generation and selection process is driven by coverage and success rate, with no mention of plausibility constraints or validation."
+}
+```

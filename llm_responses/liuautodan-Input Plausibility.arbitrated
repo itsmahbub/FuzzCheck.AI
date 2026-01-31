@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "AutoDAN incorporates per-step mechanisms to preserve semantic plausibility—initializing with human-crafted prompts, using an LLM to rewrite rather than randomly perturb text, employing a low mutation rate, and validating final prompts with sentence-level perplexity and a perplexity-based defense. However, the paper does not enforce or measure plausibility cumulatively across iterations (e.g., via intermediate PPL traces or explicit drift bounds), nor does it report any plausibility assessments for inputs generated mid-fuzzing. As a result, it constrains individual mutation steps and validates only the final outputs, matching the \"Medium\" level of the Input Plausibility metric.",
+  "evidence": "Section 3.2 (page 4): LLM-based diversification ensures each mutation preserves meaning; Section 3.4.2 (page 5): low mutation probability and LLM-based mutation function to maintain semantic coherence; Section 4.1 (page 6): final stealthiness evaluated via Sentence Perplexity (PPL); Section 4.2 Table 1 (pages 6–7): reports final PPL scores and perplexity-defense results—no intermediate plausibility measures or cumulative drift analysis are provided."
+}
+```

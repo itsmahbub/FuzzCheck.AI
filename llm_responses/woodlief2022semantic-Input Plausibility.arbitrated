@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "semSensFuzz builds in strong, per-mutation plausibility constraints (semantic preconditions, real data parameterization, perspective & lighting checks) and even conducts a human validation of final fault-inducing inputs, but it does not enforce a global, iterative plausibility guarantee across successive mutations (no cumulative-drift control) nor apply quantitative perceptual metrics (e.g. LPIPS/SSIM) on the full mutated distribution. Thus it validates individual steps and final cases empirically, but stops short of the end-to-end, iteration-aware enforcement required for a “High” rating.",
+  "evidence": "Section 3.2 (p. 1960): “we associate a set of preconditions Prec with each mutation δ… If Prec(interp) is not satisfied, then δ is not applicable…”\n\nSection 4.3.1 (p. 1962–1963): Perspective quadrant matching, on-road bounding-box check, occlusion filtering, and median HSV brightness checks are all applied before each ‘add entity’ mutation.\n\nSection 4.4.4 (p. 1964): “We explored… a discriminator… but it could not differentiate conforming versus nonconforming images.”\n\nSection 6.4.1 & Table 2 (p. 1966–1967): Authors manually inspect all high-impact and a sampled set of moderate-impact fault inputs, reporting substantial false-positive rates (e.g. 43%–75% nonconforming in some bins)."
+}
+```
