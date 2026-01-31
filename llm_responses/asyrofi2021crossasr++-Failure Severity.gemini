@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method, CrossASR++, uses differential testing to find failures in Automatic Speech Recognition (ASR) systems. A failure is defined as an instance where the ASR system under test incorrectly transcribes an audio file generated from a known text, while another ASR system transcribes it correctly. This process identifies prediction inconsistencies and mispredictions, which are classic model robustness errors. The paper does not describe any attempt to generate or identify failures related to unsafe, biased, or toxic content, nor does it target the bypassing of any safety or security mechanisms. The sole focus is on the correctness of the speech-to-text transcription.",
+  "evidence": "Page 2, Section 1, Introduction: 'If the transcribed text recognized by the ASR system under test does not match the text input to TTS while another ASR's transcribed text does, this input audio is viewed as a failed test case.'"
+}
+```

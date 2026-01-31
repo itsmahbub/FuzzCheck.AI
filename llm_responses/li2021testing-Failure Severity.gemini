@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method, TACTIC, is designed to uncover model robustness errors by identifying inconsistencies in the model's predictions. An 'erroneous behaviour' is explicitly defined using a metamorphic relation where the steering angle predicted for a scene with synthesized environmental conditions is compared to the steering angle for the original scene. A failure is registered if the difference between these two angles exceeds a predefined error bound (ε). This approach directly corresponds to finding 'prediction inconsistencies under semantically preserving input mutations', which is the definition for the 'Low' severity level. The paper does not evaluate whether these steering angle divergences lead to concretely unsafe outcomes (like collisions) nor does it test against models with explicit safety or security mechanisms that could be bypassed.",
+  "evidence": "Page 5, Section 3.2.2. METAMORPHIC ERROR ANALYSIS.: \"Formally, let x_o be an original driving scene and x_t be a newly generated driving scene synthesised based on x_o in a target environmental type. The θ_o and θ_t represent the steering angles for x_o and x_t, respectively. Then the MR is defined as |θ_o - θ_t| < ε, where the ε is a user-defined error bound.\""
+}
+```

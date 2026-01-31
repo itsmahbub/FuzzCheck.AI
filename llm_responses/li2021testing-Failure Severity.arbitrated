@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The failures uncovered by TACTIC are solely model robustness errors—steering‐angle prediction inconsistencies under semantically preserving input mutations (realistic environmental variations). The paper measures these errors via a metamorphic relation on steering angles and does not evaluate or demonstrate bypassing any explicit safety, policy, or security mechanisms in defended or safety‐aligned models, nor does it induce higher‐level unsafe behaviors (e.g., collisions, unauthorized actions, data leakage). Accordingly, under the metric definition, these are low‐severity robustness failures.",
+  "evidence": "Section 3.2.2 (Metamorphic Error Analysis): ‘‘Formally, let x_o be an original driving scene and x_t be a newly generated driving scene … Then the MR is defined as |θ_o - θ_t| < ε … If the new driving scenes … have larger steering‐angle divergences … the style vector is considered to be able to detect more erroneous behaviours.’’\n\nNo sections in the paper describe testing against defended or safety‐aligned models, or any bypass of explicit safety/policy/security mechanisms."
+}
+```

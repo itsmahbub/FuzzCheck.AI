@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The method generates test cases by synthesizing speech from text using Text-to-Speech (TTS) engines. This process directly creates audio files in a standard, serialized format (e.g., WAV). The metric definition explicitly states that approaches generating inputs directly in serialized formats, such as synthesized speech, are considered reproducible because they are inherently stable with respect to standard I/O operations. The framework does not apply fine-grained numerical mutations to in-memory audio tensors, thus bypassing the problem of perturbations being lost during serialization (e.g., through quantization or rounding). The generated audio file itself is the test case, ensuring its reproducibility.",
+  "evidence": "Page 3, Section 2.1 Workflow, Algorithm 1: The paper describes the core workflow where text is converted directly into audio. The algorithm states: 'audios = tts.generateAudio(texts);' (Line 9). This shows that the test inputs are synthesized directly into an audio format. The abstract also confirms this approach: 'This method first utilizes Text-to-Speech (TTS) to generate audios from texts automatically and then feed these audios into different ASR systems for cross-referencing to uncover failed test cases.'"
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper describes ASDF, a framework for testing Automatic Speech Recognition (ASR) systems. The failures it aims to uncover are incorrect transcriptions. ASDF generates test cases by applying various text transformations (e.g., changing tense, substituting homophones) to an initial text, converting it to audio, and then checking if the ASR's transcription matches the original text. A failure is explicitly defined as a mismatch between the transcription and the source text. This process fits the definition of uncovering \"model robustness errors, such as mispredictions or prediction inconsistencies under semantically preserving input mutations.\" The paper does not mention any goal or capability related to uncovering unsafe, biased, or toxic outputs (Medium severity), nor does it discuss bypassing any safety or security mechanisms (High severity). The entire focus is on the correctness and robustness of the speech-to-text transcription.",
+  "evidence": "Page 2, Section IV. USAGE: \"A failed test case is defined as a specific text output from an individual ASR service that does not match its corresponding input text.\" and \"A failed text is defined as an audio file that is incorrectly transcribed by at least one ASR system.\""
+}
+```

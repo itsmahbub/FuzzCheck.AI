@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's method, BET, is explicitly designed to avoid the loss of fault-inducing perturbations during standard I/O operations by operating directly on integer pixel values. The authors identify this problem as the \"inactivation issue,\" where perturbations calculated in a continuous domain (floating-point) are lost when converted back to discrete integer values for storage or use. BET's mutation strategy involves adding integer values directly to the bytes of the input image, ensuring that the perturbations are inherently robust to rounding and quantization. The paper provides empirical evidence for this by measuring an \"Inact-Rate\" of 0.0% for BET, demonstrating that all discovered failures are reproducible after discretization, which directly addresses the core requirement of this metric.",
+  "evidence": "Page 10, Section 4.3, \"Result of Inact-Rate\": \"The Inact-Rate of BET is 0.0%. The perturbations are directly added on pixel values as integers, BET does not suffer the inactivation issue. However, baseline methods, especially the ones that use gradient-based methods suffer from this problem.\""
+}
+```

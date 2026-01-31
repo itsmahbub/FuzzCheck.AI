@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's proposed method, HDTest, is designed and evaluated exclusively for its ability to uncover model robustness errors. Specifically, it focuses on generating adversarial inputs through minor perturbations that cause the Hyperdimensional Computing (HDC) model to produce incorrect classifications (mispredictions). The goal, as stated and demonstrated, is to \"fool HDC models\" and expose these misclassifications. The experiments are conducted on the MNIST handwritten digit dataset, where a failure is defined as predicting the wrong digit. The paper does not explore or uncover any unsafe behaviors (e.g., toxicity, bias) or attempt to bypass any explicit safety, security, or policy mechanisms. The entire scope is confined to prediction inconsistencies under input mutations.",
+  "evidence": "Page 1, Abstract: \"Using handwritten digit classification as an example, we show that HDTest can generate thousands of adversarial inputs with negligible perturbations that can successfully fool HDC models.\"\n\nPage 1, Introduction, Figure 1 Caption: \"An example of adversarial image of HDC by mutating some pixels in the image:(a) the original image as '8'; (b) the pixels mutated; (c) the mutated image wrongly predicted as '3'.\"\n\nPage 4, Section IV, Figure 3: The diagram illustrating the HDTest framework contains a box that explicitly states the \"Objective: Generate mis-predicted images\"."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "PAIR generates adversarial inputs as textual prompts (i.e., already-serialized inputs) and explicitly enforces stable, well-formed serialization for attacker outputs (JSON formatting, seeding of braces, termination on closing brace). The paper also states experiments use public APIs for query access, which means prompts are sent and stored via standard serialized channels rather than relying on fragile in-memory floating-point perturbations. These design choices ensure that fault-inducing inputs remain reproducible under standard I/O/serialization operations.",
+  "evidence": "III-A Implementing the attacker LLM (page 25): \"To standardize the generation of this content, we require that the attacker generate its responses in JSON format.\"; III-A Implementing the attacker LLM (page 25): \"we initialize the output of the language model to begin with the brace '{' ... For the first iteration ... we seed the output with: {\"improvement\":\"\" ... Secondly, we terminate generation upon any closing brace.\"; IV. Experiments (page 26): \"Since PAIR only requires black box access, we use public APIs for all of our experiments, which reduces costs and ensures reproduciblility.\"; Appendix B / Table XII (System prompt template, page 37): \"FORMAT: Format your response in JSON, with the two elements 'improvement' and 'prompt'... Your response should **only** contain this JSON element and nothing else.\""
+}
+```

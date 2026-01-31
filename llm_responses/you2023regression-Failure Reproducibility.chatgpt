@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper describes in-memory, floating-point mutations (pixel-level and image-level) and a GAN-based fidelity filter, but it does not describe any handling of standard I/O serialization effects (e.g., quantization, rounding, clipping) to ensure perturbations survive disk storage or common image encodings. It even explicitly states that the quantization scenario (which would exercise serialization/precision effects) is not considered. Therefore failures found by DRFuzz may rely on fragile, in-memory numerical perturbations that would be lost or altered by standard I/O serialization, and the approach does not explicitly enforce reproducibility under such operations.",
+  "evidence": "Page 84, Section III (Overview): \"DRFuzz selects a seed input each time to conduct mutation, and the mutated inputs are passed into the GAN-based Fidelity Assurance model to identify inputs with high fidelity, which are then executed by both the original model and the regression model.\" \n\nPage 85, Section III-C (Mutation Rules): \"Pixel-Level Mutation aims to change a small set of pixels in an image to generate a new test input. ... DRFuzz randomly selects a small set of pixels (i.e., 0.5% total pixels) for mutation.\" \n\nPage 88, Section IV-A2 (Regression Scenarios): \"Please note that the quantization scenario targeted by DiffChaser is not a regression scenario since quantization is conducted once-for-all without the characteristics of continuous evolution for regression. Hence, we do not consider it in our study.\""
+}
+```

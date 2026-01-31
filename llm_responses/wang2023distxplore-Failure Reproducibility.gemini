@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper's method, DistXplore, uses semantic-preserving metamorphic transformations (e.g., translation, rotation, brightness) as its mutation operators for generating test cases. According to the metric definition, using such transformations provides partial enforcement of failure reproducibility. However, the paper does not describe any explicit mechanism to account for serialization effects like quantization or rounding. The constraints mentioned (L0 and L∞ norms) are used to guarantee the general validity of the generated inputs by limiting the perturbation magnitude, not to ensure that the fault-inducing perturbations survive standard I/O operations. This lack of explicit handling of serialization effects prevents a 'High' rating, placing the method in the 'Medium' category.",
+  "evidence": "Page 6, Section 3.2, Distribution-Guided Test Generation: \"In this paper, we mainly focus on image classification tasks. DistXplore can be easily extended to other domains. We select the diverse image transformations (e.g., translation, rotation, brightness) used in DeepTest [54] and DeepHunter [63]. ... To guarantee the validity of the generated inputs, we adopt the conservative strategy [63] that constrains the transformation with both L0 and L∞.\""
+}
+```

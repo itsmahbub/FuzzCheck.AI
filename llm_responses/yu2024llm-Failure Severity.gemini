@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper introduces LLM-Fuzzer, a method explicitly designed to find and scale the assessment of \"jailbreaks\" in Large Language Models. A jailbreak is, by definition, a bypass of a model's explicit safety and policy mechanisms to elicit harmful or prohibited content. The method is evaluated against contemporary, safety-aligned models such as gpt-3.5-turbo-0125 and Llama-2-7B-Chat. The stated goal is to generate prompts that successfully cause these models to produce outputs for \"unethical questions\" that they would normally refuse, which directly corresponds to the \"High\" severity category of uncovering high-impact failures by bypassing explicit safety mechanisms in defended models.",
+  "evidence": "Page 10, Section 4.2, Experiment Design: \"Can our fuzzer generate new templates to successfully facilitate jailbreak attempts for unethical questions that the seed templates fail to exploit against gpt-3.5-turbo-0125 and Llama-2-7B-Chat? If so, what is the average query budget and token budget required for each unethical question?\" This quote clearly states that the fuzzer's objective is to create successful jailbreak attempts against specific, well-known, safety-aligned LLMs for questions they are designed to resist."
+}
+```

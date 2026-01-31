@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper's method, semImFuzz, uncovers failures that violate safety expectations by producing unsafe outputs, which aligns with the 'Medium' severity definition. The fuzzer operates by applying semantic mutations, such as adding cars or pedestrians to an existing scene. The evaluation shows that these mutations can cause state-of-the-art perception systems to make critical misinterpretations, such as misclassifying a truck as a building after another car is added to the scene. These are not mere robustness errors (as in the 'Low' definition) but significant perception failures that could lead to unsafe behavior in an autonomous vehicle. The work does not meet the 'High' criteria because it does not test against models with explicit, bypassable safety or security mechanisms; instead, it tests standard perception models.",
+  "evidence": "Page 10, Section 6.4.1, \"For contextualizing the magnitude of the inconsistencies, Figure 12 shows three mutations produced by semImFuzz and their interpretations by the EfficientPS SUT before and after the mutation. ... The rightmost column shows an extreme inconsistency; an added car occludes a truck, causing EfficientPS to misclassify the truck, labelling portions as 'do not care' and the rest as building.\""
+}
+```

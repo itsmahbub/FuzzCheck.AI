@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper frames and evaluates Sensei as a data-augmentation/search technique to improve DNN robustness to natural, benign input variations (rotation, translation, brightness, etc.). The method is explicitly targeted at reducing mispredictions under semantically-preserving mutations and improving 'robust accuracy' on perturbed images. The authors explicitly state they do not target adversarial (security) perturbations and do not claim to bypass safety, policy, or defense mechanisms; no experiments attempt jailbreaks, data exfiltration, or violations of explicit safety mechanisms. Therefore the failures the fuzzer exposes are standard robustness errors (mispredictions/inconsistencies under input mutations), not high- or medium-severity safety/security violations.",
+  "evidence": "Page 1148, Introduction: \"In this work, we focus on the latter scenario and investigate how software testing techniques can be applied for the robust generalization of Deep Neural Networks (DNNs) to natural environmental variations.\"; Page 1149, Section 2.3 (Robustness of DNNs): \"As discussed earlier, this work targets robustness issues arising from natural, environmental perturbations δ in the input data and not perturbations δ constructed adversarially, in a security context.\"; Page 1153, Section 4.3 (Evaluation Metric): \"robust accuracy is the proportion of images in the testing dataset where the prediction of a DNN does not fluctuate with any small realistic perturbations.\""
+}
+```

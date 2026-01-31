@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The method, AutoDAN, generates jailbreak prompts, which are a form of text. Text is inherently a discrete and serialized format. Unlike continuous data such as images or audio, text does not suffer from information loss or alteration due to standard I/O operations like rounding, quantization, or clipping. The fault-inducing properties of the generated prompts are based on their lexical, semantic, and structural content, all of which are perfectly preserved when saved to and loaded from a file. The assessment metric explicitly states that approaches generating inputs 'directly in serialized formats (e.g., ... generated text)' are considered reproducible and rated as 'High' because they are 'inherently stable with respect to standard I/O operations'. The paper's method falls directly into this category by operating on and producing text-based prompts.",
+  "evidence": "Page 2, Section 2, Introduction: \"Based on the aforementioned insights, we propose AutoDAN, a hierarchical genetic algorithm tailored specifically for structured discrete data like prompt text.\"\n\nAnd from the metric definition itself: \"We also consider fuzzing approaches that generate inputs directly in serialized formats (e.g., synthesized speech, rendered images, or generated text) as reproducible under this metric, since such inputs are inherently stable with respect to standard I/O operations.\""
+}
+```

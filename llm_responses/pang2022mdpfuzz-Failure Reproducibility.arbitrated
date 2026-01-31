@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "MDPFuzz’s mutations operate at the level of environment/state parameters (e.g. shifting vehicle positions, angles, ground types) rather than injecting ephemeral floating-point noise directly into the model’s tensor inputs. These are semantic, metamorphic transformations that naturally persist through the simulator’s rendering pipeline (and any associated rounding or quantization) but the paper does not describe any explicit handling or analysis of standard I/O effects (such as pixel‐level quantization, rounding or clipping). Under the Failure Reproducibility metric, this precisely matches the “semantic‐preserving metamorphic transformations without explicit enforcement of reproducibility under serialization” category, which corresponds to a Medium rating.",
+  "evidence": "Section 4 (p. 381): “Mutating Initial States vs. Mutating Intermediate States. … We thus decide to only mutate the initial state (e.g., re-arrange the environment at timestep 0), allowing to preserve the coherence of the entire MDP state sequence.”\n\nSection 6 (p. 385): “MDPFuzz randomly mutates initial states with small noise. … adding small Gaussian float numbers from N(0, 1) to vehicles’ initial positions, and adding small uniform integers from U(0, 4) to the ground type in BipedalWalker.”\n\nMetric Definition: “Medium: Considers serialization effects partially (e.g., clipping but not rounding), or applies semantic‐preserving metamorphic transformations without explicit enforcement of reproducibility under serialization.”"
+}
+```

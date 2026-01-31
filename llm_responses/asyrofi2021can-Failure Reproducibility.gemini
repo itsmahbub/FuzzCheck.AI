@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The method generates test cases by synthesizing audio from text using a Text-To-Speech (TTS) system. This process creates test inputs directly in a serialized audio format. The metric definition explicitly states that fuzzing approaches generating inputs directly in serialized formats (e.g., synthesized speech) are considered reproducible, as such inputs are inherently stable with respect to standard I/O operations. The fault-inducing properties are embedded within the synthesized audio file itself, not in fragile, in-memory numerical perturbations that could be lost during serialization processes like rounding or quantization.",
+  "evidence": "Page 2, Section II-A, CrossASR++: 'Specifically, given a piece of text from the corpus, it first employs a TTS system to synthesize an audio file from the text. The generated audio file is then fed to all ASR systems inside CrossASR++ (SUT and ASR1 to ASRm in Fig. 1).'"
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The method generates test inputs (speech audio) directly in a serialized format using Text-To-Speech (TTS) engines. As stated in the metric definition, inputs generated this way are considered inherently stable and reproducible under standard I/O operations. The approach does not rely on applying fine-grained numerical perturbations to in-memory data representations, thus avoiding the issue of fault-inducing changes being lost during serialization (e.g., through quantization or clipping). The generated audio file is the stable test case, and failures are determined by the ASR's ability to transcribe it correctly.",
+  "evidence": "Page 3, Section II-A. Architecture: 'Given a Text Collection, the Test Selection Engine selects a Text Batch. Each Text in the Text Batch is then fed into the Text-To-Speech Engine (TTS). The TTS converts the Text into a Speech Audio. The Speech Audio is then fed to the Automatic Speech Recognition (ASR) Engines.' This quote, supported by Figure 1, demonstrates that the test cases are synthesized directly into a serialized audio format, ensuring they are reproducible by design."
+}
+```

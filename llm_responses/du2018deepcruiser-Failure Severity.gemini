@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The method, DeepCruiser, is designed to uncover model robustness errors in Automated Speech Recognition (ASR) systems. It operates by applying semantically preserving 'metamorphic transformations' to audio inputs (e.g., adding white noise, changing pitch, altering speed). A failure, referred to as a 'defect', is identified when the ASR model produces an incorrect transcription for the mutated audio, which is quantified by the Word/Character Error Rate (W/CER). This process directly corresponds to the definition of uncovering 'mispredictions or prediction inconsistencies under semantically preserving input mutations'. The paper's scope and evaluation are confined to these transcription errors and do not extend to exposing unsafe behaviors (like toxic or biased content) or bypassing explicit safety or security mechanisms.",
+  "evidence": "Page 13, Section 6.1: 'For defect detection, our goal is to generate audios which sounds normal to human but are incorrectly transcribed by ASRs.'\nPage 14, Section 6.2: 'If the prediction result is inconsistent with the original seed, a′ will be added into the failed tests. For audio in ASR, we decide a failed test by checking whether the Word/Character Error Rate (W/CER) exceeds a certain threshold.'\nPage 18, Section 7.5: 'To answer the question, we measure the WER of the generated audio in Fig. 8. WER represents the erroneous degree of the RNN prediction.'"
+}
+```

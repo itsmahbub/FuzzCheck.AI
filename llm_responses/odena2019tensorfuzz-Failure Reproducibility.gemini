@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper states that the mutation process for images includes a clipping step to ensure the resulting values remain within the valid range of the training data. This explicitly accounts for one type of serialization effect (clipping). However, the paper does not mention any handling of other common I/O effects like rounding or quantization. Mutations are applied to floating-point representations, and small perturbations (e.g., changing a pixel value from 155.0 to 155.4) would be preserved by clipping but lost when serialized to an 8-bit integer format (which would round it to 155). This partial consideration of I/O effects aligns with the 'Medium' rating, as fault-inducing inputs are not fully guaranteed to be reproducible after standard serialization.",
+  "evidence": "Page 5, Section 5. Details of the TensorFuzz Library, Mutator: \"In both types of image mutation we clip the image after mutation so that it lies in the same range as the inputs used to train the neural network being fuzzed.\""
+}
+```

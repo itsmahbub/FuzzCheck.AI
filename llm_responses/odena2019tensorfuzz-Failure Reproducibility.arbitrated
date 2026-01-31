@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "TensorFuzz’s mutation and oracle procedures operate entirely on floating-point tensors and only clip mutated inputs to lie within the model’s training value range. The paper does not describe serializing mutated inputs to common on-disk formats (e.g. 8-bit PNG/JPEG) nor modeling or enforcing that perturbations survive typical quantization or rounding steps during I/O. Clipping to the floating-point input range is not equivalent to handling integer quantization or encoding effects. Therefore the approach ignores standard I/O effects and may produce failures that vanish after serialization, matching the “Low” category.",
+  "evidence": "Section 5 (“Mutator”): “In both types of image mutation we clip the image after mutation so that it lies in the same range as the inputs used to train the neural network being fuzzed.” \n\nNo mention in Sections 4–6 of writing mutated inputs to disk or accounting for 8-bit quantization, rounding, or file encoding. The only quantization discussed (Section 6) applies to model weights/activations, not to input serialization."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "QATest generates mutated questions directly as text strings—the final serialized format consumed by QA systems—using semantic and adversarial perturbations at the character and word level. Because these inputs are already in their serialized form (plain text), they are inherently stable under standard I/O operations (no floating‐point quantization or clipping applies). This aligns with the metric’s definition that approaches producing inputs directly in serialized formats (e.g., generated text) fully ensure failure reproducibility.",
+  "evidence": "Metric definition: “We also consider fuzzing approaches that generate inputs directly in serialized formats (e.g., … generated text) as reproducible under this metric, since such inputs are inherently stable with respect to standard I/O operations.”\n\nPaper, Section 3.2 (page 4): “we implement three textual semantically consistent transformations … grammatical component‐based, sentence structure‐based, and adversarial perturbation‐based transformations.”\n\nTable 1 (page 6): Examples of text‐level mutations (e.g., keyboard mistakes, synonym substitution) producing final question strings without floating‐point artifacts."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper's fuzzing methodology relies on a set of semantic-preserving metamorphic transformations, such as contrast, brightness, rotation, blurring, and stylizing, applied to image inputs. According to the metric definition, using such transformations without explicitly enforcing reproducibility under serialization qualifies for a 'Medium' rating. The paper describes a validity check for mutations (`is_valid()`) that constrains the number of changed pixels and the maximum change in pixel value. However, this check does not explicitly account for I/O effects like rounding or quantization that occur when saving an image to a standard format (e.g., PNG). The check `the maximum of changed pixel value is less than β × 255` constrains the magnitude of the floating-point perturbation but does not guarantee the change will persist after being quantized to an 8-bit integer. The paper does not mention any procedure to save and reload the mutated inputs to verify that the failure is reproducible after standard I/O operations.",
+  "evidence": "Page 10, Section VI-B, Guiding Input Mutation in DNN Testing: 'mutations in Table IX are representative, for example, blurring and stylizing (see Fig. 9) reveal the texture-bias (i.e., rely on texture to make decisions) of DNNs [7, 14].' and 'is_valid() is adopted from [47], which deems a mutation as valid if 1) the #changed-pixels is less than α × #pixels or 2) the maximum of changed pixel value is less than β × 255. We set α to 0.2 and β to 0.4.'"
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "ASDF generates test inputs as serialized audio files via a TTS engine (gTTS) and feeds those audio files into ASR systems for evaluation. Because inputs are produced and saved in a serialized audio format before being consumed by the oracle (the ASR systems), the fault-inducing perturbations are inherently preserved across standard I/O serialization; the paper therefore produces reproducible failures under standard I/O operations.",
+  "evidence": "Page 461, Section II (Tool Design): \"A Text-To-Speech (TTS) service is used to generate audio from the text, which is then fed into the ASR systems to obtain their transcriptions.\"; Page 462, Section III (Core Functionalities): \"Each line of text in the file is converted into an audio file by gTTS [18].\"; Page 462, Section V (Challenges and Future Work): \"ASDF generates an audio test suite using a TTS library.\""
+}
+```

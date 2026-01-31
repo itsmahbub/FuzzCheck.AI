@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "All failures the paper reports are robustness-style errors (misclassifications / 'erroneous behaviors') and divergences between original and quantized models (quantization defects). The authors evaluate DeepEvolution by generating semantically-preserving input mutations that increase neuron coverage and then report misclassified synthetic inputs and difference-inducing inputs for quantized models. The paper does not claim or show that DeepEvolution discovers unsafe/ toxic outputs, policy/safety bypasses, data leakage, jailbreaks, or other security-critical violations of defended or safety-aligned models; therefore the uncovered failures correspond to low-severity robustness errors under the provided metric.",
+  "evidence": "Page 456, Section V.C (RQ2) — Motivation: \"The objective is to assess the effectiveness of our approach in testing the robustness of the DNN; by finding misclassified synthetic inputs.\" \n\nPage 456, Section V.C (RQ2) — Findings: \"DeepEvolution can effectively generate test cases that trigger erroneous behaviors of the DNN.\" \n\nPage 457, Section V.D (RQ3) — Findings: \"DeepEvolution can effectively detect defects introduced during DNN quantization, outperforming the coverage-guided fuzzing tool TensorFuzz.\" \n\nPage 454, Abstract: \"we could successfully find several corner-case behaviors\" and \"DeepEvolution outperformed Tensorfuzz ... in detecting latent defects introduced during the quantization of the models.\""
+}
+```

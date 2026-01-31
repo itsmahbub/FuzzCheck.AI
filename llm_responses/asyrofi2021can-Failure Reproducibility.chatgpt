@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's test-generation pipeline synthesizes and uses audio files directly via a TTS system (i.e., inputs are created in serialized audio form and stored as audio–text pairs). According to the metric, approaches that generate inputs directly in serialized formats (such as synthesized speech) are reproducible under standard I/O operations because the fault-inducing perturbations exist in the saved audio files rather than only in transient in-memory floating-point tensors. The paper both (1) synthesizes and feeds audio files to ASR systems and (2) stores those audio–text pairs and fine-tunes models on them, which indicates failures are tied to persisted audio files rather than fragile in-memory numerical perturbations that could be lost by serialization.",
+  "evidence": "Page 675, Section II.A (CrossASR++): \"Specifically, given a piece of text from the corpus, it first employs a TTS system to synthesize an audio file from the text. The generated audio file is then fed to all ASR systems inside CrossASR++ (SUT and ASR1 to ASRm in Fig. 1).\"; Page 675, Section II.B (Improving ASR Systems) and Fig.1 caption: \"We store test cases for both the ASR system under test (SUT) and cross-referenced AS systems and then fine-tune these ASR systems on their corresponding test cases.\"; Abstract: \"It employs a Text-To-Speech (TTS) system to synthesize audios from texts and then reveals failed test cases by feeding them to multiple ASR systems for cross-referencing.\""
+}
+```

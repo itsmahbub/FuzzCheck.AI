@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The CrossASR method is designed to uncover correctness errors in Automatic Speech Recognition (ASR) systems, which manifest as mispredictions. A failure is identified when an ASR's transcribed text does not match the ground-truth text used to generate the audio input. The paper provides examples of such failures, like transcribing 'consulted' as 'controlled', which are transcription errors. The methodology does not aim to generate or identify unsafe, biased, or toxic behavior, nor does it test the model against any explicit safety or security mechanisms. The paper explicitly states its focus is on 'correctness' rather than other types of failures. This aligns with the definition of uncovering model robustness errors or mispredictions without exposing unsafe behaviors.",
+  "evidence": "Page 3, Section II-A, Case 2: 'In this case, CrossASR considers cases where the transcribed text does not match input text as failed test cases...'\n\nPage 1, Abstract: '...we found that most samples are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR)...'\n\nPage 8, Section IV-A and Table IX: 'DeepSpeech mistakenly transcribed “consulted” to “controlled”.'\n\nPage 10, Section V-A: 'Also, CrossASR is concerned in assessing correctness of ASRs instead of their robustness.'"
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "DRFuzz applies a variety of semantic-preserving metamorphic image transformations (e.g., rotation, scaling, brightness/contrast adjustment) which introduce coarse input changes that tend to survive standard serialization, but it does not explicitly account for or constrain the fine-grained numerical perturbations (e.g. pixel-level Gaussian or salt-and-pepper noise) to ensure they survive quantization, rounding or clipping when images are saved or transmitted. The paper makes no mention of handling I/O effects or verifying that mutations persist through common image formats, so serialization effects are only partially considered via the use of metamorphic transformations, yielding a “Medium” rating under the metric.",
+  "evidence": "Page 4, Table I (“MUTATION RULES”): lists both pixel-level numerical mutations and image-level metamorphic transformations (e.g. rotation, brightness adjustment).\n\nPage 4, Section III-C: “According to the usage of each mutation rule, we classify them into two categories, i.e., Pixel-Level Mutation and Image-Level Mutation.”  There is no discussion of serialization, quantization, rounding, or clipping effects in the mutation or oracle evaluation steps."
+}
+```

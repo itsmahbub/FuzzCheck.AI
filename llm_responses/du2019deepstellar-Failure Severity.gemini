@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's proposed method, DeepStellar, focuses on generating and detecting 'adversarial samples' in Recurrent Neural Network (RNN) based systems. These failures are defined as inputs that are slightly perturbed from benign samples to cause incorrect predictions. The evaluation is conducted on image classification (MNIST) and automated speech recognition (DeepSpeech) models. The uncovered failures are misclassifications or incorrect transcriptions, which fall squarely under the definition of 'model robustness errors, such as mispredictions or prediction inconsistencies under semantically preserving input mutations'. The paper does not describe generating or uncovering any unsafe, biased, or toxic behaviors, nor does it test against models with explicit safety or security mechanisms that could be bypassed.",
+  "evidence": "Page 7, Section 5.2 Coverage-Guided Testing of RNNs: 'In this section, we propose a Coverage-Guided Testing (CGT) technique which aims to generate adversarial samples incorrectly recognized by an RNN.' and later in the description of Algorithm 2: 'A mutant is an adversarial sample if it is predicted incorrectly by the network.' This explicitly defines a failure as a misprediction, which is a robustness error."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "DeepEvolution relies exclusively on in-memory, semantic-preserving metamorphic transformations (pixel-value and affine changes) and filters by SSIM to ensure semantic equivalence, but never addresses or constrains the numerical perturbations with respect to standard I/O serialization (e.g. 8-bit image quantization, rounding, clipping or encoding). According to the metric, methods that apply metamorphic transformations without explicit handling of serialization effects should be rated ‘Medium’.",
+  "evidence": "Section IV.A (p. 455): ‘‘First, we gather a list of parametric image-based transformations… pixel-value transformations… affine transformations… To verify that generated inputs remain semantically equivalent… we compute a Structural Similarity Index (SSIM)…’’  Nowhere does the paper mention applying or evaluating inputs after standard image serialization (rounding, quantization, clipping or encoding)."
+}
+```

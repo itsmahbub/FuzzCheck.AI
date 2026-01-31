@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "CrossASR++ generates test inputs by synthesizing and saving audio files via TTS (i.e., it produces serialized audio inputs that are used for cross-referencing). Because the tool produces and persists TTS-generated audio files (and even provides these audio files in its repository for reuse), the failure-inducing inputs are inherently serialized and thus stable with respect to standard I/O operations (they are not ephemeral in-memory floating‑point perturbations that would be lost by quantization/rounding). The paper therefore meets the metric criterion that inputs are generated in serialized form and remain reproducible under standard I/O operations.",
+  "evidence": "Section 2.1 Workflow (page 1576): \"Then, TTS is used to generate an audio file for each piece of selected text (Line 9).\" (Algorithm 1 shows: audios = tts.generateAudio(texts);). Section 2.4.2 Configuration and Execution (page 1577): \"In the Github repository, we also provide all the TTS-generated audios we use. Users can set recompute as false to use them directly.\" Section 2.2 Extensibility (page 1576): \"In TTS class, the method generateAudio() which converts a text into audio must be overrided by derived classes.\""
+}
+```
