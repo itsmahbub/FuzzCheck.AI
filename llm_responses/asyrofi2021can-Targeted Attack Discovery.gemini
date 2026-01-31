@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method, which utilizes the CrossASR++ tool, performs untargeted exploration to discover generic failures in Automatic Speech Recognition (ASR) systems. The objective is to find any input that causes a mis-transcription, not to steer the system towards a specific, attacker-chosen output phrase (High) or a broad class of security-violating behaviors (Medium). A failure is defined simply as a discrepancy between the ASR system's output and the original input text used to generate the audio. This approach aligns perfectly with the metric's definition for 'Low' as it discovers generic inaccuracies and inconsistent predictions.",
+  "evidence": "Page 2, Section II-A, \"A valid test case can be either a failed test case or a successful test case. If the SUT transcription is different from the input text, it means that CrossASR++ uncovers a failed test case for the SUT. Otherwise, a successful test case is found.\""
+}
+```

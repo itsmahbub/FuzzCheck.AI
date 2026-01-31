@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The QATest framework uses metamorphic testing as its core principle for discovering faults. The test oracle is defined by the expectation that a semantically equivalent question (generated via transformation) should yield the same answer as the original question. A bug is detected if the transformed question produces a different answer, i.e., `M(q') ≠ M(q)`. This approach is inherently untargeted, as it seeks to find any inconsistent prediction rather than steering the system towards a specific, attacker-chosen output or a predefined class of security-violating behavior. The guidance criteria, N-Gram coverage and perplexity priority, are designed to increase the diversity and quality of input test cases, not to guide the search towards a particular target output.",
+  "evidence": "Page 5, Section 3.2.1, Definition 3.1: 'Given a QA system M, a semantic transformation set T, and a seed question set Q, a mutant question corresponding to q ∈ Q with transformation t ∈ T can be represented as q' = t(q). A mutant q' ∈ T(q) is regarded as a bug case of M if M(q') ≠ M(q).'"
+}
+```

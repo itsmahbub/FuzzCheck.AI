@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "DLFuzz is designed to induce generic misclassifications by maximizing neuron coverage and the prediction difference from the original label (i.e., make the mutated input be predicted as any class different from the original). The optimization objective (obj = sum(top-k scores) - original_score + λ·neuron_terms) steers inputs away from the original class toward the top-k alternative classes, but does not allow the tester to specify a single attacker-chosen target output. The framework treats an input as adversarial when its predicted label differs from the original, i.e., untargeted misclassification, rather than steering exploration to a specific predefined target label or attacker-chosen output.",
+  "evidence": "Page 740, Section 3.1 Architecture: \"If the mutated input t' and the original input t are both fed to the CNN but classified to be of different class labels, we treat this as an incorrect behavior and t' to be one of the adversarial inputs.\"; Page 741, Section 3.2 Algorithm (Algorithm 1 inputs): \"k <- top k labels different from the original label\"; Page 741, Section 3.2 Algorithm (objective definition and explanation): \"obj = Σ_{i=0}^k c_i - c + λ · Σ_{i=0}^m n_i\" and \"Maximizing the first part guides the input to cross the decision boundary of the original class and lie in the decision space of top k other classes. Such modified inputs are more likely to be classified incorrectly.\""
+}
+```

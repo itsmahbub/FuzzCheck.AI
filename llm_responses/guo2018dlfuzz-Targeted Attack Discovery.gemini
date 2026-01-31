@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The method performs untargeted exploration to discover generic misclassifications. The goal of DLFuzz is to generate an input that is classified differently from the original seed input, without specifying what the new, incorrect classification label should be. This is explicitly defined by its oracle and its optimization objective. The oracle triggers when the prediction for the mutated input is simply not the same as the original. The optimization function aims to guide the input to cross the decision boundary into the space of 'top k other classes,' rather than steering it toward a single, predefined target label chosen by an attacker.",
+  "evidence": "Page 4, Algorithm 1, line 18 and Section 3.1, Architecture. The condition for identifying an adversarial example is `if c' != c then`, which means the mutated input's class `c'` is simply different from the original class `c`. The architecture description states: 'If the mutated input t' and the original input t are both fed to the CNN but classified to be of different class labels, we treat this as an incorrect behavior'. Furthermore, the description of the optimization objective on Page 4 states its goal is to 'guide the input to cross the decision boundary of the original class and lie in the decision space of top k other classes. Such modified inputs are more likely to be classified incorrectly.'"
+}
+```

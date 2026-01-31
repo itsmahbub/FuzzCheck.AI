@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's proposed method, KuK, is designed for untargeted exploration to find generic failures. The goal is to generate adversarial examples (AEs) that exhibit specific, \"uncommon\" uncertainty patterns, rather than inducing predefined, attacker-chosen outputs. The paper defines an AE as any input that causes a misclassification, without specifying what the incorrect prediction should be. The method's genetic algorithm uses fitness functions that guide the search towards inputs that are misclassified and also have certain uncertainty characteristics (e.g., high prediction confidence and low variation ratio). There is no mechanism described to steer the mutations towards a specific target label. Therefore, the method performs untargeted exploration to find generic misclassifications.",
+  "evidence": "Page 9, Section 4: The objective for generating a specific type of adversarial example (HL AEs) is defined as 'PCS(x, M) > p ∧ VRO(x, M) < v ∧ x is an AE'. The associated fitness function includes a term 'where AE(x) is 1 if x is an AE. Otherwise, it is 0.' An AE is earlier defined on Page 4, Section 2.1 as an input `x'` causing 'a different prediction decision of a DNN M (i.e., LM(x') ≠ LM(x))'. This demonstrates the goal is to achieve any misclassification that fits the uncertainty profile, not a specific target output."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "Although TESTRNN employs a ‘targeted mutation’ procedure, its fitness functions are geared toward satisfying internal coverage conditions (boundary, stepwise, temporal) rather than steering the model to produce any specific, attacker-chosen output. The oracle simply flags any change in the model’s label within the norm‐ball as a failure (generic misclassification or backdoor activation), and no part of the fuzzer’s design optimizes for inducing a predefined target label or phrase. Therefore, TESTRNN performs untargeted exploration of faults rather than targeted attack discovery.",
+  "evidence": "– Section VI.B (Targeted Mutation / Fitness): the fitness J(x) measures distance to internal coverage goals (e.g., J_BC(x)=α_max−Nm(ξ), J_SC(x)=α_SC−Nm(Δξ), J_TC(x)=∑dist(Nz(ĥξ),u)), not distance toward any particular output label.\n– Section VI.C.1 (Test Oracle): “x' is said to not pass the oracle if ||x−x'||₂≤r_oracle and ϕ(x)≠ϕ(x')”; the failure condition is merely a label change, not matching a predefined attacker‐chosen label.\n– Throughout the paper, TESTRNN’s objective is framed as maximizing coverage and uncovering diverse adversarial/backdoor behaviors, without any mechanism for specifying or directing attacks toward specific target outputs."
+}
+```

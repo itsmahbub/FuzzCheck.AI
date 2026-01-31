@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's HDTest design seeks to cause any change in the model's predicted label relative to the original input (i.e., produce a mis-prediction), rather than steering the fuzzer toward a specific attacker-chosen target output or class. HDTest obtains the original predicted label as a reference and judges success when a mutated seed's prediction differs from that reference. Its fitness metric reduces similarity to the original class vector (to encourage misclassification), and the framework explicitly states it works without knowing the true label. These design choices indicate untargeted exploration that discovers generic misclassifications rather than targeted attacks.",
+  "evidence": "IV. HDTest Framework (Alg. 1 & description), p.393: \"HDTest takes the original input image t without necessarily knowing the label of it.\"; Algorithm 1 (lines quoted in paper): \"y = HDC(t)\" and \"if y' in y_seeds != y then /* Indicating successful mis-predcited image generated. */\"; Fig.3 (HDTest overview), p.393: diagram label \"Objective: Generate mis-predicted images\"; IV. HDTest Framework (fitness definition), p.393: \"fitness = 1 - Cosim(AM[y], HDC(seed)), where AM[y] is the reference vector in the associative memory and HDC(seed) is the query HV of the seed.\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "TACTIC does not steer its exploration toward any specific, attacker-chosen output. Instead, it performs an untargeted search over environmental condition styles to maximize generic fault metrics (neuron coverage increase and steering-angle divergence). Its oracle is a metamorphic relation that flags any significant deviation in steering angle rather than a match to a predefined target steering value, so it discovers generic misbehaviors rather than targeted attacks.",
+  "evidence": "Section 3 (The TACTIC Approach), p.3: “Then TACTIC sets a search objective which is to maximise the number and diversity of erroneous behaviours….”; Section 3.2.2 (Metamorphic Error Analysis), p.4: “the MR used in TACTIC is defined as that the steering angles should be consistent… the MR is further relaxed to a steering angle divergence within an error bound.”; Section 3.2.3 (Fitness Function Definition), p.4: “F(s) = w_c·F_c(s) + w_d·norm(F_d(s))”, where F_d measures mean |θ_o – θ_t|, with no attacker-specified target output."
+}
+```

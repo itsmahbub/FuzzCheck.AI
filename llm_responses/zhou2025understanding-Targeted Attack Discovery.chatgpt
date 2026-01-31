@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper's methods explicitly steer testing toward discovering jailbreaks — a broad class of security-violating behaviors — using coverage-guided generation and a binary jailbreak detector. The exploration and mutation components (coverage-guided selection of rewritten prompts) prioritize inputs that increase coverage and produce jailbreak successes, while the oracle is a binary jailbreak classifier. However, the work does not aim to induce attacker-chosen specific model outputs (specific labels, phrases, or commands); it seeks to find inputs that cause the model to exhibit the broader 'jailbreak' behavior. Therefore it supports discovery of broader classes of security-violating behaviors rather than targeted outputs.",
+  "evidence": "Page 730, Abstract: \"we introduce a coverage-guided approach for generating jailbreak attack examples, enabling systematic refinement of prompts to uncover vulnerabilities.\"; Page 733, Section III.C (Standards for Coverage Evaluation): \"In the context of LLMs, we regard abnormal behaviors caused by jailbreak attacks as faults.\"; Page 738, Section V.A (Jailbreak Detection): \"Specifically, we train an MLP model that uses the number of activated neurons as input to derive a binary result indicating whether a query triggers a jailbreak response.\"; Page 739, Section V.C (Jailbreak Case Generation): \"the query with the highest coverage increase is selected as the next seed in the coverage-guided approach.\""
+}
+```

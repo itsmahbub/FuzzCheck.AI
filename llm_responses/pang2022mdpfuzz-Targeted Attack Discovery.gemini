@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper's method, MDPFuzz, is designed to discover broad classes of security-violating or unsafe behaviors, which aligns with the 'Medium' rating. The testing oracle is explicitly defined to detect 'abnormal and dangerous states' such as collisions or falls, rather than any generic failure (Low) or a specific, pre-determined output state (High). The entire fuzzing process is guided towards finding inputs that lead to these general categories of undesirable outcomes.",
+  "evidence": "Page 9, Section 6, \"Testing Oracles (Crash Definition)\": \"For RL and IL models in CARLA, we examine whether the model-controlled vehicle collides with other vehicles or buildings. For DNN-based ACAS Xu, we check collisions of the DNN-controlled airplane with other airplanes. For Coop Navi, we check collisions between MARL-controlled agents. For BipedalWalker, we check whether the RL-controlled walking agent falls (i.e., its head touches the ground). As expected, the crash or abnormal state is defined case by case, and orthogonal to MDPFuzz. Users can configure MDPFuzz with other undesired behaviors as long as such abnormal states can induce reasonably low rewards.\""
+}
+```

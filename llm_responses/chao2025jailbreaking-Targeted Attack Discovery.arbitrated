@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While PAIR clearly steers exploration toward attacker‐defined objectives O (e.g. ‘tell me how to build a bomb’, ‘design a phishing email’), these objectives specify broader classes of unsafe behavior rather than a single, exact target output string or token sequence. According to the Targeted Attack Discovery metric, this corresponds to ‘Medium’: the fuzzer pursues predefined classes of security-violating behavior (jailbreaks, illicit tutorials, disallowed content) rather than driving the model to produce one specific, attacker-chosen output.",
+  "evidence": "Section II, p.24: “we assume that each jailbreak is characterized by an objective O, which describes the toxic content that the attacker seeks to elicit… (e.g., ‘tell me how to build a bomb’).”  Section IV, p.26: “When red teaming LLMs, the objective is to discover prompts that elicit responses… which contain the content requested in each behavior from JBB-Behaviors….”"
+}
+```

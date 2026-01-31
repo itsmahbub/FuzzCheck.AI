@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's proposed method, DeepHunter, performs untargeted exploration to discover generic failures. The test oracle is based on metamorphic testing, where an error is defined as any misclassification of a validly mutated input. The goal is to find inputs `x'` where the model's prediction `F(x')` is different from the original correct prediction `F(x)`, without specifying what `F(x')` should be. This constitutes a search for general misclassifications. A secondary error definition involves finding inconsistencies between a full-precision model and its quantized version, which is also an untargeted approach. The framework does not include any mechanism to steer the fuzzing process toward a specific, attacker-chosen output label or a broader class of security-violating behaviors.",
+  "evidence": "Page 5, Section 3.2.1 Test Oracle, Definition 2: \"Given a DNN F, a human oracle O, a metamorphic mutation strategy M and a test x satisfying F(x) = O(x), a mutant x' ∈ M(x) is an erroneous behavior of F if F(x') ≠ F(x).\""
+}
+```

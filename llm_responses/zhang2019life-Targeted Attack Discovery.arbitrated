@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "LipFuzzer is designed to generate misinterpreted voice commands (LAPSUS) that cause unintended vApp behaviors (e.g., wrong invocation or installation) but it does not require the operator to specify a particular malicious target outcome in advance. Instead, it explores any misinterpretations of seed templates that lead to security-relevant failures. This aligns with ‘Medium,’ where the fuzzer discovers broader classes of security-violating behaviors rather than steering toward a single, predefined model output.",
+  "evidence": "Section I (Our Approach): “Our goal is to systematically evaluate how Intent Classifier behaves when inputting different forms of voice commands … any voice commands that can lead to such inconsistency as LAPSUS.”\nSection IV-C (Verification): “We define that a LAPSUS is verified to be effective when it is incorrectly interpreted by the VA system.”\nSection VI-C (vApp Store-wide Results): LipFuzzer flags thousands of potentially vulnerable vApps without requiring a pre-specified malicious invocation name."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's method, BET, is explicitly designed to support targeted attack discovery by steering exploration towards specific, predefined class labels. This is achieved through a 'tunable objective function' that aims to maximize the output confidence for a target label `li`. The paper clearly states that this function can be used to target a specific label to explore its decision boundary and that users are allowed to prioritize labels for ad-hoc testing. This mechanism directly aligns with the definition of steering exploration toward a specific, predefined target outcome.",
+  "evidence": "Page 5, Section 3.3, Tunable Objective Function: 'If the objective function targets a specific label, the testing process will be led to enter the decision boundary of this specific label to explore corner cases, i.e., generate error-inducing inputs with the corresponding label.'\n\nPage 6, Section 3.3, Tunable objective function for ST: 'The tunable objective function for ST is given in Equation 6. SOF(x) = C(x) [li]... In Equation 6, we only optimize C(x) [li]...'\n\nPage 6, Section 3.3: 'We also allow users to prioritize labels as they want to support ad-hoc testing cases.'"
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's proposed method, DeepCruiser, performs untargeted exploration to discover generic failures in Recurrent Neural Network (RNN) based systems, specifically Automated Speech Recognition (ASR). The testing objective is not to guide the model towards a specific, attacker-chosen output (like a particular phrase). Instead, the system's oracle identifies a failure when a mutated input leads to a prediction that is merely inconsistent with the original input's prediction. For ASR, this inconsistency is quantified by the Word/Character Error Rate (W/CER) exceeding a predefined threshold. The goal is to find *any* input that causes a high transcription error, which constitutes a generic failure, rather than achieving a targeted attack.",
+  "evidence": "Page 14, Section 6.2, Coverage-Guided Testing: \"If the prediction result is inconsistent with the original seed, a' will be added into the failed tests. For audio in ASR, we decide a failed test by checking whether the Word/Character Error Rate (W/CER) exceeds a certain threshold.\""
+}
+```

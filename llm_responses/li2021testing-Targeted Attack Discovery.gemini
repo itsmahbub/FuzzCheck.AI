@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method, TACTIC, performs untargeted exploration to find generic failures. The goal is to identify environmental conditions under which the autonomous driving system is 'more prone to errors'. An error is defined via a metamorphic relation, which checks for inconsistency in predictions. Specifically, it measures if the steering angle for a synthesized image diverges significantly from the steering angle for the original image. The search objective is to maximize this divergence and neuron coverage, not to steer the model towards a specific, predefined steering angle. This aligns with the definition of untargeted exploration for discovering generic failures like prediction inconsistencies.",
+  "evidence": "Page 5, Section 3.2.2, METAMORPHIC ERROR ANALYSIS: 'In particular, the MR used in TACTIC is defined as that the steering angles should be consistent among the driving scenes transformed from the same ones by applying different style vectors, i.e., retain behaviour consistency. ... Formally, let x_o be an original driving scene and x_t be a newly generated driving scene synthesised based on x_o in a target environmental type. The θ_o and θ_t represent the steering angles for x_o and x_t, respectively. Then the MR is defined as |θ_o - θ_t| < ϵ, where the ϵ is a user-defined error bound.'"
+}
+```

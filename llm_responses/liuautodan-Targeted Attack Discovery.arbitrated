@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "AutoDAN explicitly defines a precise attacker‐chosen target output (the affirmative prefix “Sure, here is how to [Qi]…”) and uses a fitness function that maximizes the likelihood of that exact token sequence. The genetic search is driven to produce prompts that induce the model to emit this specific target response rather than merely discovering generic misbehavior, satisfying the ‘High’ level of targeted attack discovery.",
+  "evidence": "Sec. 3.1 (Formulation): “a common solution … is to designate the target response as affirmative, such as answers beginning with ‘Sure, here is how to [Qi]…’ … express the attack loss function … in terms of conditional probability.”; Sec. 3.3 (Fitness Evaluation): “L_Ji = –log P(r_{m+1},…,r_{m+k} | t_1,…,t_m)… define the fitness score of Ji as S_Ji = –L_Ji.”; Alg. 2 & Sec. 3.5 (Termination Criteria): loop “while model responses have [refusal] word …”, showing search is steered against refusals toward the specific affirmative output."
+}
+```

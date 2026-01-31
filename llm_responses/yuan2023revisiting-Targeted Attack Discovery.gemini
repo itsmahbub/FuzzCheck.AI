@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper proposes a coverage criterion, Neural Coverage (NLC), to guide input mutation in DNN testing. The goal of the fuzzing process is to maximize this coverage metric. The evaluation focuses on the fuzzer's ability to discover generic faults, specifically misclassifications. The paper explicitly measures and values the *diversity* of the discovered errors, which is the opposite of a targeted attack. The methodology does not include any mechanism to steer the fuzzer towards a predefined target output or a specific class of security-violating behavior. The exploration is entirely untargeted, aiming to find any input that increases coverage and, consequently, reveals any prediction error.",
+  "evidence": "Page 11, Section VI-B, \"Diversity of Erroneous Behaviors\": \"A higher diversity of erroneous behaviors indicates uncovering a practically larger vulnerability surface of DNN models. Overall, a collection of fault-triggering images are regarded as more diverse if they cover more classes. In case that #covered classes is equal, we further use the scaled entropy... to assess the diversity: a higher entropy is better.\" This shows the objective is to find a wide range of different errors, not a specific, targeted one. Table XI further reinforces this by reporting '#C' (number of classes) and 'E' (scaled entropy) for the discovered faults, where higher values are considered better."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The framework performs untargeted exploration to discover generic failures in Automatic Speech Recognition (ASR) systems. The objective is to find any discrepancy between the input text used to generate an audio file and the transcription produced by an ASR system. The system's oracle is based on differential testing, where a failure is defined as an incorrect transcription by one system that is correctly transcribed by at least one other system. The paper's text transformation modules are designed to generate more test cases that are likely to cause *any* transcription error, not to steer the output toward a specific, predefined phrase or a broader class of security-violating behavior. The entire process is aimed at uncovering general inaccuracies and inconsistencies.",
+  "evidence": "Page 462, Section IV. USAGE: 'A failed test case is defined as a specific text output from an individual ASR service that does not match its corresponding input text.' This quote explicitly defines a failure as any mismatch with the ground truth, which is characteristic of untargeted exploration for generic faults. The differential testing approach is described on Page 461, Section II. TOOL DESIGN: 'If there exists at least one system that can correctly transcribe the audio while a specific ASR system fails to do so, we say that a failed test case is uncovered for this specific ASR system.' This establishes the oracle as one that finds inconsistencies rather than guiding toward a specific target output."
+}
+```

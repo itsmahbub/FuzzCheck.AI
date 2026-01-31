@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "DeepTest is designed to discover broad classes of safety-violating behaviors (e.g., corner-case steering errors under rain, fog, lighting changes) rather than to induce a specific, attacker-chosen steering angle or output. Its mutation engine applies realistic transformations and coverage-guided search to explore unsafe conditions, and its oracle flags any outputs that deviate beyond an acceptable tolerance under those transformations. While it steers exploration toward unsafe behavior classes, it does not target precise, predefined outputs, placing it in the “Medium” category.",
+  "evidence": "Page 304 (Abstract/Introduction): “DeepTest found thousands of erroneous behaviors under different realistic driving conditions (e.g., blurring, rain, fog, etc.) many of which lead to potentially fatal crashes.”\nPage 310 (Section 3.4): “We redefine a new metamorphic relation as: (θ̂_i – θ_t_i)² ≤ λ MSE_orig … the errors produced by a model for the transformed images … should be within a range …”\nPage 308 (Table 5 and accompanying text): DeepTest maximizes neuron coverage to explore diverse behaviors, not to drive the model to a specific steering output."
+}
+```

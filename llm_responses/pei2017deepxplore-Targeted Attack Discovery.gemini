@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The method proposed in the paper, DeepXplore, uses differential testing to find inputs that cause disagreements among multiple deep neural networks (DNNs). The explicit goal is to discover inputs that are classified differently by at least one DNN compared to its peers. The optimization objective is formulated to decrease one model's confidence in the original input's class while maintaining the other models' confidence. This approach is inherently untargeted, as it searches for *any* inconsistent prediction or misclassification, rather than steering the input transformation toward a specific, predefined target class or behavior. The framework's purpose is to find generic faults revealed by model disagreement, which aligns with the definition of untargeted exploration.",
+  "evidence": "Page 8, Section 4.2, 'Maximizing differential behaviors': 'Given an arbitrary x as seed that gets classified to the same class by all DNNs, our goal is to modify x such that the modified input x' will be classified differently by at least one of the n DNNs.' This statement clearly defines the goal as inducing any difference in classification, not a specific target output. This is further formalized in Equation 2 on the same page, which aims to minimize the confidence of one selected DNN for the original class, thereby causing it to predict any other class."
+}
+```

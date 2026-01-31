@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper's method, AutoDAN, is designed to automatically generate 'jailbreak prompts' that cause a Large Language Model (LLM) to bypass its safety features and respond to malicious queries. This goal falls into the category of discovering a 'broader class of security-violating behavior' (i.e., jailbreaks), rather than steering the model towards a specific, predefined output string. The optimization process does not target a complete, attacker-chosen response. Instead, its fitness function is designed to maximize the probability of the LLM producing an affirmative prefix (e.g., 'Sure, here is how to...'), which serves as a proxy for a successful jailbreak. This indicates the exploration is guided toward a class of unsafe behavior, aligning with the 'Medium' definition.",
+  "evidence": "Page 4, Section 3.1, Formulation: 'Intuitively, it is impractical to set a specific target for the response to a single malicious question, as pinpointing an appropriate answer for a given malicious query is challenging and might compromise generalizability to other questions. Consequently, a common solution (Zou et al., 2023; Lapid et al., 2023) is to designate the target response as affirmative, such as answers beginning with “Sure, here is how to [Qi].\" By anchoring the target response to text with consistent beginnings, it becomes feasible to express the attack loss function used for optimization in terms of conditional probability.'"
+}
+```

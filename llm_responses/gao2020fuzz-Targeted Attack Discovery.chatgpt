@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The Sensei fuzzer (genetic search) is designed to find high-loss, label-preserving natural variants (the \"worst\" variants) to improve robust generalization to environmental perturbations. Its objective and fitness function maximize model loss (L(θ,x',y)) rather than steering generation toward attacker-chosen specific outputs or target labels. The paper explicitly frames the task as finding variants that produce high loss / cause misclassification under natural perturbations and states it is not addressing adversarially constructed, targeted attacks. Therefore the approach performs untargeted exploration that discovers generic failures (lossy variants / misclassifications) rather than targeted attacker-chosen outputs.",
+  "evidence": "p.1150, Section 3.1 (Problem Formulation): \"Definition 1 (Augmentation target). ... find ρ yielding the optimal variant x' ... to optimize: max_{ρ ∈ S} L(θ, t(ρ, x), y) (4)\"; p.1150, Section 3.3.3 (Fitness function): \"floss(x') = L(θ, x', y) (5) ... the variant that suffers more loss by the DNN should be used in the augmented training\"; p.1149, Section 2.3 (Robustness of DNNs): \"As discussed earlier, this work targets robustness issues arising from natural, environmental perturbations δ in the input data and not perturbations δ constructed adversarially, in a security context.\"; p.1150, Section 3 (Overview): \"Sensei ... uses genetic search on a space of the natural environmental variants of each training input data, to identify the worst variant for augmentation.\""
+}
+```

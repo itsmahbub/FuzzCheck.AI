@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper presents PAPILLON, a fuzz testing framework explicitly designed to discover 'jailbreaks' in Large Language Models (LLMs). The goal is to automatically generate prompts that cause an LLM to produce harmful, offensive, or otherwise policy-violating content in response to a harmful question. This aligns with the 'Medium' value, as it supports the discovery of a broader class of security-violating behaviors (i.e., jailbreaks) rather than steering exploration toward a specific, predefined output string (High) or performing untargeted exploration for generic failures (Low). The framework's mutation operators and its two-level judge oracle are specifically designed to guide the search process toward finding successful jailbreak responses, which are defined by their harmfulness and relevance to the input query.",
+  "evidence": "Page 8, Section 3, Threat Model: 'The objective of the attack is to craft jailbreak prompts for a collection of harmful or unethical questions that compel the target LLM to provide actual responses. Specifically, our goals are: 1) To circumvent the safety mechanisms of the target LLM, ensuring that it responds to a harmful query instead of opting not to answer. 2) To ensure that the responses to these questions are not only correct and relevant but also contain the harmful content intended by the query.'"
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper describes CrossASR++, a differential testing framework. The goal of this framework is to find 'failed test cases'. A failed test case is defined as an instance where the Automatic Speech Recognition (ASR) system under test produces a transcription that does not match the original text used to generate the audio, while at least one other ASR system produces the correct transcription. This approach is designed to discover generic failures (incorrect transcriptions) through inconsistent predictions between different models. The exploration is untargeted because it does not aim to steer the ASR system towards producing a specific, predefined phrase or a broader class of security-violating content. Instead, it seeks any deviation from the expected transcription, which is characteristic of untargeted exploration.",
+  "evidence": "Page 2, Section 1 Introduction: \"If the transcribed text recognized by the ASR system under test does not match the text input to TTS while another ASR's transcribed text does, this input audio is viewed as a failed test case.\""
+}
+```

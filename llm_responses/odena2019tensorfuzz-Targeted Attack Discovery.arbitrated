@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "TensorFuzz’s design includes a user-defined objective function that steers the fuzzing process toward inputs violating specified properties, but all examples in the paper target broad classes of failures (e.g., numerical errors, model/quantization disagreements, broken loss behavior) rather than forcing a model to produce a particular attacker-chosen output. Thus, while it supports discovery of security-relevant behaviors beyond untargeted misclassification, it does not demonstrate steering toward specific, predefined output values.",
+  "evidence": "Section 5 (Objective Function): “The objective function is used to assess whether that state has been reached…flags inputs that caused the objective to be satisfied.” \nSection 6 (Experimental Results) – Numerical Errors: “We focus on finding inputs that result in not-a-number (NaN) values.” \nSection 6 (Experimental Results) – Quantized Model Disagreements: “With these settings, the fuzzer was able to generate disagreements for 70% of the examples we tried.”"
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "CrossASR++ performs black-box differential testing that seeks inputs which produce mismatched or failed transcriptions (i.e., generic recognition failures) rather than steering generation toward any attacker-chosen or specific target outputs or classes of unsafe behaviour. Its failure estimator ranks texts by likelihood of producing failures (mismatches), but there is no mechanism described to direct the fuzzer to induce a predefined target transcription or targeted unsafe output. Thus the method enables untargeted discovery of misrecognitions/inconsistencies rather than targeted attack discovery.",
+  "evidence": "(p.1575, Abstract) \"[CrossASR] performs black-box differential testing on ASR systems by cross-referencing multiple ASRs to detect different transcriptions.\"; (p.1575, Introduction) \"If the transcribed text recognized by the ASR system under test does not match the text input to TTS while another ASR’s transcribed text does, this input audio is viewed as a failed test case.\"; (p.1576, Section 2.1 Workflow) \"If the SUT fails to recognize the audio file successfully, but at least one of the other ASR systems succeeds, we take this audio file (and the corresponding input text) as a failed test case for the SUT.\"; (p.1576, Section 2.1 Workflow) \"This estimator can estimate the probability of a piece of text leading to a failed test cases. We rank the texts to be chosen in the iteration and prioritize texts with a higher ranking to be processed...\""
+}
+```

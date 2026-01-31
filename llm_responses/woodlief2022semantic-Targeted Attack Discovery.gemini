@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method, semSensFuzz, performs untargeted exploration to find generic perception failures. It applies semantic mutations (e.g., adding a car) to an input image and simultaneously updates the ground-truth interpretation to reflect this change. The oracle then checks for inconsistencies by comparing the model's output on the mutated image against the new, mutated ground truth. A failure is defined as a significant drop in the overall pixel-wise classification accuracy, not as the successful generation of a specific, attacker-chosen misclassification (e.g., forcing the model to classify a newly added car as a 'bicycle'). The goal is to uncover any misinterpretation that results from the mutation, which constitutes a generic failure.",
+  "evidence": "Page 10, Section 6.4, \"Results\": \"More formally, for a given SUT Percep, test case (r, interp), and corresponding mutation (r', interp'), the drop is given by drop = eval(Percep(r), interp) – eval(Percep(r'), interp'). The larger the value, the more error the mutation induced in the SUT... We categorize drops between 1 and 5 p.p. as moderate inconsistencies, between 5 and 10 as significant, and those greater than 10 as extreme inconsistencies.\" This evidence shows that the metric for failure is a general drop in performance (an inconsistency), not the achievement of a specific, predefined output."
+}
+```

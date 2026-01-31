@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper describes HDTest as a tool based on differential fuzz testing. The method's objective is to generate inputs that cause a different prediction compared to the original, unmutated input. The success condition for finding an adversarial input is explicitly defined as a discrepancy between the prediction for the original input and the prediction for the mutated input. The fuzzer does not attempt to steer the model towards a specific, attacker-chosen output label. Instead, it performs an untargeted search for any misclassification, which corresponds to the definition of untargeted exploration for generic failures.",
+  "evidence": "Page 3, Section IV, HDTest Framework: \"HDTest takes the original input image t without necessarily knowing the label of it. HDTest then applies mutation algorithms on the original input t to generate new input t'. Both the generated input and the original input are then sent to the HDC classifier for prediction. We then check if the two predicted labels are different, and if yes, this indicates a successful generation of an adversarial input.\""
+}
+```

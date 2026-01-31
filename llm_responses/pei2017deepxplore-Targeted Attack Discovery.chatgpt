@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "DeepXplore is designed to find inputs that cause differential behaviors between multiple models and to maximize neuron coverage, not to drive a model toward a specific attacker-chosen output. The paper formulates the objective as maximizing differences (making at least one DNN produce a different prediction) and neuron activation; it selects a class c from the seed input and a random target model to reduce that model's confidence relative to others, but it does not provide a mechanism to specify an arbitrary attacker-chosen target label or output (e.g., force output = specific label/phrase). Thus the exploration is untargeted (aimed at discovering disagreements/misbehaviors), rather than targeted to induce a predefined specific output.",
+  "evidence": "Page 5, Section 3 (Overview): \"we solve a joint optimization problem that maximizes both differential behaviors and neuron coverage.\"; Page 6, Section 4.2 (Maximizing differential behaviors): \"Given an arbitrary x as seed that gets classified to the same class by all DNNs, our goal is to modify x such that the modified input x' will be classified differently by at least one of the n DNNs.\"; Page 6, Algorithm 1 / Equation 2: Algorithm 1 lines show \"c = dnns[0].predict(x)\" and \"d = randomly select one dnn from dnns\", and Equation 2 defines obj1 as \"obj1(x) = Σ_k F_k(x)[c] − λ1 · F_j(x)[c]\", i.e., an objective to induce differential predictions rather than to force a specific attacker-chosen target output."
+}
+```

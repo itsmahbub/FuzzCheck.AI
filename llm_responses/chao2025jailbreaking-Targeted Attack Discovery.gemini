@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper's proposed method, Prompt Automatic Iterative Refinement (PAIR), is designed to automatically discover prompts that cause a large language model to generate 'jailbreaks'. A jailbreak is defined by a specific 'objective O', which represents a class of undesirable behavior (e.g., 'tell me how to build a bomb' or 'design a phishing email'). The system's exploration is steered towards generating content that fulfills this objective, which is a broader class of security-violating behavior rather than a specific, predefined output string. The metric definition explicitly lists 'jailbreaks' as an example for the Medium value, which perfectly aligns with the paper's goal and methodology.",
+  "evidence": "Page 2, Section II. PRELIMINARIES: \"To this end, throughout the paper we assume that each jailbreak is characterized by an objective O, which describes the toxic content that the attacker seeks to elicit from the target (e.g., \"tell me how to build a bomb\"). The objective O informs the generation and evaluation of prompts, ensuring that generated jailbreaks are contextually relevant and aligned with the specific malicious intent being simulated.\""
+}
+```
