@@ -1,6 +1,6 @@
 import json
 
-REMOVE_KEYS = {"chatgpt", "gemini", "arbitrator"}
+REMOVE_KEYS = {"manual1"}
 
 def clean_assessments(data):
     for paper in data.values():
@@ -10,11 +10,6 @@ def clean_assessments(data):
             for k in list(entries.keys()):
                 if k in REMOVE_KEYS:
                     del entries[k]
-
-            # Rename manual -> manual1
-            if "manual" in entries:
-                entries["manual1"] = entries.pop("manual")
-
     return data
 
 
@@ -27,7 +22,7 @@ if __name__ == "__main__":
     data = clean_assessments(data)
 
     # Save output
-    with open("results/assessments_cleaned.json", "w") as f:
-        json.dump(data, f, indent=2)
+    with open("results/assessments.json", "w") as f:
+        json.dump(data, f, indent=4)
 
-    print("Done: chatgpt/gemini/arbitrator removed, manual → manual1")
+    print("Done: manual1")
