@@ -47,7 +47,7 @@
           "why": "Guides towared output that start with a predified content"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "AutoDAN focuses solely on generating and evaluating jailbreak prompts by measuring attack success rates and perplexity, without any diagnostic or correlational analysis of the model\u2019s internal mechanisms (e.g. activations, gradients, decision boundaries) to explain why the vulnerabilities occur. The paper does not include sections that investigate the root causes of failures or identify causal links to architectural or training weaknesses.",
@@ -196,7 +196,7 @@
           "why": "Steer toward safetly faults (crash-triggering scenarios) in in autonomous driving and other sequential decision-making systems"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "CureFuzz is a purely black-box fuzzing approach that focuses on exposing crash-triggering scenarios without inspecting or interpreting any internal model signals (activations, gradients, feature maps) or external failure patterns to suggest diagnostic causes. It reports when and where crashes occur but does not analyze the underlying architectural, training, or data weaknesses that lead to those failures.",
@@ -407,7 +407,7 @@
           "why": "No analysis of fault transferability in input level of mutation level"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "The paper performs correlational analysis of internal signals\u2014e.g., clustering hidden\u2010state activations and measuring neuron coverage differences across layers and tokens\u2014to explain where and how jailbreak failures manifest. However, it does not establish causal mechanisms linking specific architectural or training shortcomings to these vulnerabilities.",
@@ -492,7 +492,7 @@
           "why": "Optimizes toward semantic policy-violation behavior (jailbreak) but not a specific output."
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "PAPILLON focuses solely on generating and evaluating jailbreak prompts (i.e., reporting which inputs cause the model to fail) without performing any diagnostic analysis of the model\u2019s internals or providing even correlational explanations for why the failures occur. There is no investigation of feature activations, decision boundaries, gradient behavior, or broader failure patterns\u2014only a black-box measure of attack success.",
@@ -640,7 +640,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "DeepCruiser focuses on generating test inputs guided by coverage criteria and reporting observed failures (e.g., increased WER) but does not perform any analysis of internal activations, gradients, or architectural factors to explain why those failures occur. It simply labels faulty cases without investigating their origins or causal mechanisms.",
@@ -788,7 +788,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "The NLC approach performs a correlational analysis of internal signals\u2014specifically layer-wise output distributions\u2014and links these distribution properties to the test suite\u2019s ability to expose failures. However, it stops short of identifying causal mechanisms in the model\u2019s architecture, training process, or data that give rise to those failures.",
@@ -936,7 +936,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "DeepHunter is designed to generate and select test inputs that expose incorrect behaviors of DNNs (i.e. \u2018what fails\u2019) based on coverage metrics, but does not perform any diagnostic analysis of internal signals (activations, gradients, decision boundaries) or infer contributing factors to explain why these failures occur.",
@@ -1086,7 +1086,7 @@
           "why": "Finds generic misclassifications"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "DLFuzz focuses solely on generating adversarial inputs and maximizing neuron coverage to expose incorrect behaviors, without performing any diagnostic or correlational analysis of model internals to explain why the failures occur.",
@@ -1236,7 +1236,7 @@
           "why": "aims to generate many jailbreak templates that trigger harmful content without specifying exact outcomes"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "LLM-Fuzzer focuses exclusively on generating and reporting jailbreak prompts that cause harmful outputs, without performing any analysis of model internals (e.g., activations, gradients, coverage) or correlational/external behavioral analyses to explain why these failures occur.",
@@ -1385,7 +1385,7 @@
           "why": "Aims to find errors in steering angle predictions under realistic environmental variations."
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "DeepTest focuses on uncovering when and under what transformed inputs the DNN fails (e.g., rain, fog, affine changes) but does not analyze or explain the internal causal mechanisms\u2014such as specific feature activations, architectural weaknesses, or optimization dynamics\u2014that lead to those failures. It reports symptoms detected via metamorphic relations and neuron\u2010coverage differences without diagnosing their root causes.",
@@ -1534,7 +1534,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "ASDF goes beyond merely reporting failed test cases by performing a phonetic analysis of the error-inducing terms to highlight which phonemes are most challenging for ASR systems. This external, correlational interpretation of failure patterns provides insight into where and how failures arise, but ASDF does not examine internal model activations, gradients, or architectural/training causal mechanisms.",
@@ -1683,7 +1683,7 @@
           "why": "does not deliberately target particular outputs or behaviors. Objective function mechanism allows arbitrary user-defined checks to enable diverse failure detection but the exploration is not targeted toward any specific class of outputs "
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "TensorFuzz focuses on generating inputs that trigger failures (e.g., NaNs, prediction disagreements) and uses activations only as a coverage metric. It does not perform any analysis of internal signals or patterns to explain why these failures occur or identify contributing factors within the model\u2019s architecture or training.",
@@ -1833,7 +1833,7 @@
           "why": "Targets specific malicious intents (e.g. bomb-making, phishing) but does not enforce a fixed phrase or label."
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "The PAIR method focuses solely on discovering and reporting prompt\u2010level vulnerabilities (i.e. when the target LLM produces objectionable outputs) via black\u2010box queries. It does not perform any diagnostic analysis of model internals (e.g. activations, gradients, decision boundaries) nor does it offer correlational or causal explanations for why these failures occur.",
@@ -1981,7 +1981,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "CrossASR is designed as a black-box differential testing tool that detects mismatches among ASR outputs but does not inspect or analyze any internal model signals (e.g., activations, gradients) nor provide correlations or interpretations of the ASR\u2019s internal behaviors. It therefore only reports what fails without offering insight into why the failures occur.",
@@ -2129,7 +2129,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "CrossASR++ is designed to generate and prioritize audio\u2013text test cases that expose failures in ASR systems, but it does not analyze internal model signals, feature activations, or decision boundaries to explain why the failures occur. The tool reports faulty cases (what fails) without investigating their origins or providing correlational or causal insights into the model\u2019s internal behavior.",
@@ -2277,7 +2277,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "The proposed method focuses on generating and leveraging failed test cases to fine-tune ASR models, but does not perform any diagnostic analysis of model internals (e.g., feature activations, decision boundaries, or gradient behavior) nor offers correlational interpretations of failure patterns. It reports and uses failures purely as training data without investigating their origins or mechanisms.",
@@ -2425,7 +2425,7 @@
           "why": "performs untargeted exploration to reveal generic model faults (differential behaviour, inaccuracies). No targeted misclassification."
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "DeepXplore is designed to generate inputs that expose failures in deep learning models and to measure coverage, but it does not perform any analysis of the internal causes of those failures\u2014neither diagnosing which architectural, training, or data\u2010related factors lead to errors nor providing correlational explanations of failure patterns. It simply reports faulty cases (differential behaviors) without investigating their origins or offering heuristic insights into why the model failed.",
@@ -2574,7 +2574,7 @@
           "why": "Aims to find generic misclassifications"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "The Sensei approach focuses solely on generating and using input variants that induce high loss (i.e., where the model fails) but does not perform any diagnostic analysis of model internals (e.g., activations, decision boundaries, gradient behavior) or infer behavioral patterns to explain why those failures occur. It treats the model as a black box, optimizing only for worst\u2010case loss without probing causal mechanisms underlying the brittleness to natural perturbations.",
@@ -2724,7 +2724,7 @@
           "why": "Intargeted exploration for generic regression misclassifications - any inputs that cause the new model to misclassify examples previously classified correctly"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "DRFuzz goes beyond merely reporting faulty inputs by analyzing the patterns of regression faults at the class and behavior level (e.g., identifying which classes suffer the most faults and the most common mis\u2010predictions), providing heuristic explanations of where and how failures arise (class\u2010level bias and overfitting). However, it does not perform deeper diagnostic analysis of internal model signals (activations, gradients, decision boundaries) to establish causal links to architectural, training, or data\u2010related weaknesses.",
@@ -2873,7 +2873,7 @@
           "why": "untargeted exploration to expose semantic or intent-classification inconsistencies, sometimes aligning with attacker intent (e.g., LAPSUS examples), though its discovery of attacker intent is incidental rather than goal-optimized."
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "The paper goes beyond merely reporting which voice commands fail\u2014it systematically correlates failure cases with specific linguistic mutation types (pronunciation, vocabulary, grammar) by building statistical LAPSUS Models and interpreting failure patterns externally (e.g. blends, category approximations, portmanteaux). However, it does not probe internal model activations, decision boundaries, or gradients to establish causal links to architectural or training weaknesses within the NLU component.",
@@ -3022,7 +3022,7 @@
           "why": "generates safety-critical scenarios (cars, pedestrians, obstacles) to expose perception failures."
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "The paper\u2019s approach treats each perception system as a black box, reporting only observable misclassifications (drops in pixel\u2010wise IoU) induced by semantic mutations, without performing any analysis of internal signals (e.g., feature activations, gradients, decision boundaries) or correlational behavioral studies to explain why those failures occur.",
@@ -3171,7 +3171,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "The paper goes beyond merely reporting adversarial inputs (failure symptoms) by analyzing which neuron\u2010selection features correlate with increased coverage and adversarial\u2010input discovery. However, it does not establish causal mechanisms linking these failures to specific architectural or training weaknesses.",
@@ -3320,7 +3320,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "DeepEvolution focuses on generating test inputs and reporting failures (misclassifications and quantization divergences) guided by neuron coverage metrics, but it does not analyze or explain the internal mechanisms\u2014such as specific feature activations, decision boundary shifts, or gradient behaviors\u2014that cause these failures. There is no diagnostic or correlational study of model internals beyond using coverage to drive search.",
@@ -3470,7 +3470,7 @@
           "why": "Finds generic misclassifications"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "HDTest focuses on discovering and generating adversarial inputs that cause HDC model failures but does not investigate or explain the internal mechanisms or model properties that lead to these failures. It uses hypervector distance purely as a heuristic to guide input mutations, without performing any diagnostic analysis of feature activations, decision boundaries, training dynamics, or semantic confusion patterns that underlie the vulnerabilities.",
@@ -3619,7 +3619,7 @@
           "why": "Broad exploration to uncover functional errors"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "DeepStellar analyzes internal RNN signals\u2014state\u2010vector activations, transition frequencies, and trace divergences\u2014and shows how these correlate with adversarial failures (e.g. via trace similarity and coverage sensitivity). This provides heuristic or correlational explanations of where and how failures arise, but does not establish causal links to specific architectural or training/data weaknesses.",
@@ -3769,7 +3769,7 @@
           "why": "broadly explore the model's internal behavior and flag any unexpected classification (adversarial or backdoor) as a defect."
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "The TESTRNN approach goes beyond merely reporting faulty cases by analyzing internal LSTM signals\u2014such as gate activations, hidden\u2010state coverage and their temporal patterns\u2014to reveal where and how failures (e.g., adversarial or backdoor inputs) manifest. However, it does not establish causal links back to specific architectural or training weaknesses, relying instead on correlational insights.",
@@ -3919,7 +3919,7 @@
           "why": "Finds inconsistent steering under environmental variations"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "TACTIC focuses on discovering under which environmental conditions a DNN\u2010based ADS produces erroneous steering outputs and uses internal neuron\u2010coverage metrics purely as heuristics to guide test\u2010case generation. It does not perform any diagnostic or causal analysis of the model\u2019s internal representations, gradients, or architectural/training weaknesses to explain why those failures occur.",
@@ -4069,7 +4069,7 @@
           "why": "Guides test generation to minimize distribution differences between source class inputs and target class."
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "DistXplore provides a correlational explanation of failures by measuring the distribution difference (via MMD) on an internal layer (the logits) and showing that test suites whose logits distributions closely match those of another class tend to induce misclassifications. However, it does not identify causal architectural, training, or data\u2010related mechanisms that give rise to the observed failures.",
@@ -4218,7 +4218,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "QATest focuses exclusively on generating and reporting QA system failures via input metamorphic transformations and external test\u2010case patterns, without examining model internals (e.g., activations, gradients, decision boundaries) or tracing failures back to specific architectural, training, or data causes.",
@@ -4367,7 +4367,7 @@
           "why": ""
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Low",
           "why": "BET is purely a black-box testing approach that generates and queries perturbed inputs to find misclassifications, without inspecting or analyzing any internal model signals (activations, gradients, feature representations) or establishing causal links between model internals and failures. It thus only reports \u2018what\u2019 fails (error-inducing inputs) rather than \u2018why\u2019 failures occur.",
@@ -4517,7 +4517,7 @@
           "why": "aims to maximize model uncertainty and reveal generic misclassifications"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "The approach characterizes adversarial failures by correlating them with uncertainty patterns (e.g. low PCS & high VRO for AEs, high PCS & low VRO for BEs) rather than diagnosing specific causal mechanisms within the model (such as particular architectural components, learned representations or optimization dynamics) that give rise to those failures.",
@@ -4666,7 +4666,7 @@
           "why": "Targets a class of faults (collission or dangerous states)"
         }
       },
-      "Root-Cause Analysis": {
+      "Failure Diagnostics": {
         "chatgpt": {
           "value": "Medium",
           "why": "MDPFuzz goes beyond merely reporting crash\u2010triggering cases by analyzing the models\u2019 internal neuron activation patterns and showing that crash\u2010triggering states induce distinct activation clusters. However, it does not trace these failures back to specific architectural, training, or data\u2010related causal factors.",

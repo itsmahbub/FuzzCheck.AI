@@ -14,7 +14,7 @@ metrics = {
     "Targeted Attack Discovery": "Targeted Attack Discovery",
     "Input Plausibility": "Input Plausibility",
     "Failure Reproducibility": "Failure Reproducibility",
-    "Root-Cause Analysis": "Root-Cause Analysis",
+    "Failure Diagnostics": "Failure Diagnostics",
     "Attack Transferability": "Attack Transferability"
 }
 # Initialize counters
