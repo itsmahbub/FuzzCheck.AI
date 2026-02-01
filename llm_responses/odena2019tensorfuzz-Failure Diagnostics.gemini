@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper provides diagnostic insight for discovered failures by analyzing observable model internals. For instance, when finding numerical errors (NaNs), the authors inspect the model's state and identify that the failure is caused by specific internal values (one very positive logit and one very negative logit) that break the loss calculation. Similarly, when finding a bug in a DCGAN implementation, they diagnose the failure as being caused by the discriminator's output having too high a magnitude, leading to saturating gradients in the loss function. This level of analysis goes beyond merely reporting failures and explains the immediate mechanical cause by looking at internal model states, which aligns with the 'Medium' criteria. However, it does not connect these failures to deeper underlying vulnerabilities like dataset bias or overfitting, which would be required for a 'High' rating.",
+  "evidence": "Page 7, Section 6: \"Inspecting the classifier when exposed to the image on the right, we see that the NaN surfaces because there was one logit with a very positive value and one logit with a very negative value, which broke the loss calculation.\" \n\nPage 8, Section 6: \"The input was one in which the output of the discriminator had too high a magnitude, which caused the incorrectly implemented loss function to have saturating gradients. In this way, TensorFuzz was able to reproduce a known issue in a real, heavily used piece of TensorFlow code.\""
+}
+```

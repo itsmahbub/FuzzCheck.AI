@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While DistXplore goes beyond merely reporting failures by providing a statistical analysis of how distributional closeness (measured via MMD on the logits layer) correlates with rising error rates and lower detectability, it stops short of a deeper causal diagnosis. The paper shows that as the distributions of two classes overlap, the model’s decision boundary fails—linking failures to distribution shift—but does not dissect specific non-robust or spurious features, dataset bias sources, or per-neuron activations beyond the logits. Thus it provides solid statistical diagnostics but not the finer-grained, feature-level vulnerability analysis required for a “High” rating.",
+  "evidence": "• Section 3.1.1 (p. 71): Defines DF(S,c′)=MMD(f_c(S),f_{c′}(T_{c′})) on the logits layer and motivates minimizing it to generate undetectable errors.  \n• Section 4.2.1 (p. 75): Shows that as MMD_target decreases, both Error Rate and Error_target Rate rise and defenses (Dissector, A2D) fail more often—i.e., statistical failure patterns linked to distribution shift.  \n• Throughout (e.g., Sec 2.1.3, Sec 4.2.4): The paper ties failures to distribution shift vulnerabilities but does not analyze specific spurious features or neuron-level activations beyond the logits layer."
+}
+```

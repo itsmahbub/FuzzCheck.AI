@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper focuses on using discovered failures as training data to improve the ASR models (a process they call 'evolutionary differential testing'), rather than performing diagnostic analysis to understand the root cause of these failures. The evaluation is purely quantitative, measuring the change in the number of failed test cases and the Word Error Rate (WER) before and after fine-tuning. The paper reports the existence and quantity of failures but does not analyze model internals (e.g., neuron coverage, activation patterns) or statistical failure patterns (e.g., characteristics of inputs that cause failures) to provide any diagnostic insight into why the models fail.",
+  "evidence": "Page 3, Section III-C, Experiment Design: 'We evaluate the performance of the evolved SUT using 2 metrics, i.e., the number of failed test cases found and the word error rate (WER). ... We measure the number of failed test cases found in a static SUT (non-evolving SUT from CrossASR++) and an evolved SUT. We then calculate the reduction of the number of failed test cases after evolution.'\n\nPage 4, Section III-C, Answers to RQ1: 'Answers to RQ1: By fine-tuning the ASR system under test using generated test cases, the number of failed test cases uncovered decreases by 25.81% and the WER decreases by 45.81%.'\n\nThis evidence shows that the paper's contribution and evaluation are centered on the reduction of failure counts and WER, not on diagnosing the nature or cause of the original failures."
+}
+```

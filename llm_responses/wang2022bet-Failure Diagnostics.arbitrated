@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "Although the paper presents a theoretical rationale for why CNNs are vulnerable to continuous perturbations (Section 3.1), it does not perform any empirical diagnostic analysis of the actual failures it discovers. The evaluation reports only aggregate performance metrics (Err-Num, Label-Num, SR, Inact-Rate) but never examines model internals (e.g. neuron activations, layer‐wise behavior) or statistics of the failures (e.g. class‐wise error concentration, correlations with input structure) to explain why the model fails in particular cases. The authors even cite as future work the need to develop new metrics to understand internal states in black‐box testing, confirming that no such diagnostics are present in this study.",
+  "evidence": "– Sections 4.1–4.3 report only Err-Num, Label-Num, SR and Inact-Rate, with no analysis of failure patterns or internals.\n– Section 5 (“Novel metrics in black‐box testing”) states: “we need new metrics for black‐box testing methods to understand the inner status of the target models… we list as future work… specifying a new metric to reflect the inner states of target models.”"
+}
+```
