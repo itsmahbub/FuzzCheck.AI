@@ -9,7 +9,7 @@ metrics = [
     "Targeted Attack Discovery",
     "Input Plausibility",
     "Failure Reproducibility",
-    "Root-Cause Analysis",
+    "Failure Diagnostics",
     "Attack Transferability",
 ]
 
@@ -19,7 +19,7 @@ metric_levels = {
     "Targeted Attack Discovery": ["High", "Medium", "Low"],
     "Input Plausibility": ["High", "Medium", "Low"],
     "Failure Reproducibility": ["High", "Medium", "Low"],
-    "Root-Cause Analysis": ["High", "Medium", "Low"],
+    "Failure Diagnostics": ["High", "Medium", "Low"],
     "Attack Transferability": ["High", "Medium", "Low"]
 }
 

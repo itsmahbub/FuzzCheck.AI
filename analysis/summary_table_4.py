@@ -8,7 +8,7 @@ metrics = [
     "Targeted Attack Discovery",
     "Input Plausibility",
     "Failure Reproducibility",
-    "Root-Cause Analysis",
+    "Failure Diagnostics",
     "Attack Transferability"
 ]
 

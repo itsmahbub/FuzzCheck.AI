@@ -1,0 +1,64 @@
+PAIR \cite{chao2025jailbreaking} & \high & \high & \medium & \medium & \medium & \medium & \high & \high & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low & \medium & \medium \\
+\cline{2-13}
+Zhou et al. \cite{zhou2025understanding} & \high & \high & \medium & \medium & \cellcolor{gray!20}\low & \cellcolor{gray!20}\medium & \high & \high & \medium & \medium & \low & \low \\
+\cline{2-13}
+PAPILLON \cite{gong2025papillon} & \high & \high & \medium & \medium & \high & \high & \high & \high & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low & \medium & \medium \\
+\cline{2-13}
+AutoDAN \cite{liuautodan} & \high & \high & \high & \high & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\high & \high & \high & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low & \medium & \medium \\
+\cline{2-13}
+LLM-Fuzzer \cite{yu2024llm} & \high & \high & \medium & \medium & \medium & \medium & \high & \high & \low & \low & \high & \high \\
+\cline{2-13}
+CureFuzz \cite{he2024curiosity} & \medium & \medium & \medium & \medium & \medium & \medium & \cellcolor{gray!20}\low & \cellcolor{gray!20}\high & \medium & \medium & \low & \low \\
+\cline{2-13}
+NLC \cite{yuan2023revisiting} & \low & \low & \low & \low & \medium & \medium & \medium & \medium & \medium & \medium & \low & \low \\
+\cline{2-13}
+DRFuzz \cite{you2023regression} & \low & \low & \low & \low & \high & \high & \medium & \medium & \high & \high & \low & \low \\
+\cline{2-13}
+DistXplore \cite{wang2023distxplore} & \low & \low & \high & \high & \medium & \medium & \medium & \medium & \medium & \medium & \low & \low \\
+\cline{2-13}
+ASDF \cite{yuen2023asdf} & \low & \low & \low & \low & \medium & \medium & \high & \high & \medium & \medium & \low & \low \\
+\cline{2-13}
+MDPFuzz \cite{pang2022mdpfuzz} & \medium & \medium & \medium & \medium & \medium & \medium & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\high & \medium & \medium & \low & \low \\
+\cline{2-13}
+BET \cite{wang2022bet} & \low & \low & \high & \high & \medium & \medium & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\high & \low & \low & \cellcolor{gray!20}\high & \cellcolor{gray!20}\low \\
+\cline{2-13}
+QATest \cite{liu2022qatest} & \low & \low & \low & \low & \medium & \medium & \high & \high & \medium & \medium & \low & \low \\
+\cline{2-13}
+semSensFuzz \cite{woodlief2022semantic} & \medium & \medium & \cellcolor{gray!20}\low & \cellcolor{gray!20}\medium & \medium & \medium & \medium & \medium & \medium & \medium & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low \\
+\cline{2-13}
+TESTRNN \cite{huang2021coverage} & \low & \low & \low & \low & \medium & \medium & \medium & \medium & \medium & \medium & \low & \low \\
+\cline{2-13}
+TACTIC \cite{li2021testing} & \low & \low & \low & \low & \high & \high & \medium & \medium & \medium & \medium & \low & \low \\
+\cline{2-13}
+HDTest \cite{ma2021hdtest} & \low & \low & \low & \low & \medium & \medium & \low & \low & \medium & \medium & \low & \low \\
+\cline{2-13}
+CrossASR++ \cite{asyrofi2021crossasr++} & \low & \low & \low & \low & \medium & \medium & \high & \high & \low & \low & \low & \low \\
+\cline{2-13}
+Asyrofi et al. \cite{asyrofi2021can} & \low & \low & \low & \low & \medium & \medium & \high & \high & \low & \low & \low & \low \\
+\cline{2-13}
+Sensei \cite{gao2020fuzz} & \low & \low & \low & \low & \medium & \medium & \medium & \medium & \low & \low & \low & \low \\
+\cline{2-13}
+KuK \cite{zhang2020towards} & \high & \high & \low & \low & \medium & \medium & \low & \low & \medium & \medium & \cellcolor{gray!20}\low & \cellcolor{gray!20}\medium \\
+\cline{2-13}
+ADAPT \cite{lee2020effective} & \low & \low & \low & \low & \medium & \medium & \low & \low & \medium & \medium & \low & \low \\
+\cline{2-13}
+CrossASR \cite{asyrofi2020crossasr} & \low & \low & \low & \low & \high & \high & \high & \high & \low & \low & \low & \low \\
+\cline{2-13}
+DeepHunter \cite{xie2019deephunter} & \low & \low & \low & \low & \cellcolor{gray!20}\high & \cellcolor{gray!20}\medium & \medium & \medium & \medium & \medium & \cellcolor{gray!20}\high & \cellcolor{gray!20}\low \\
+\cline{2-13}
+TensorFuzz \cite{odena2019tensorfuzz} & \low & \low & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low & \medium & \medium & \low & \low & \medium & \medium & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low \\
+\cline{2-13}
+DeepStellar \cite{du2019deepstellar} & \low & \low & \low & \low & \medium & \medium & \medium & \medium & \medium & \medium & \low & \low \\
+\cline{2-13}
+LipFuzzer \cite{zhang2019life} & \medium & \medium & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low & \cellcolor{gray!20}\high & \cellcolor{gray!20}\medium & \high & \high & \high & \high & \low & \low \\
+\cline{2-13}
+DeepEvolution \cite{braiek2019deepevolution} & \low & \low & \low & \low & \high & \high & \medium & \medium & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low & \low & \low \\
+\cline{2-13}
+DeepTest \cite{tian2018deeptest} & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low & \medium & \medium & \medium & \medium & \medium & \medium & \low & \low \\
+\cline{2-13}
+DLFuzz \cite{guo2018dlfuzz} & \low & \low & \low & \low & \cellcolor{gray!20}\high & \cellcolor{gray!20}\medium & \low & \low & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low & \low & \low \\
+\cline{2-13}
+DeepCruiser \cite{du2018deepcruiser} & \low & \low & \low & \low & \medium & \medium & \medium & \medium & \medium & \medium & \low & \low \\
+\cline{2-13}
+DeepXplore \cite{pei2017deepxplore} & \cellcolor{gray!20}\medium & \cellcolor{gray!20}\low & \low & \low & \medium & \medium & \medium & \medium & \cellcolor{gray!20}\high & \cellcolor{gray!20}\medium & \low & \low \\
+\cline{2-13}
