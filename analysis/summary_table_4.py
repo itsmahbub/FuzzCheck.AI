@@ -44,7 +44,7 @@ for level in ["High", "Medium", "Low"]:
     for metric in metrics:
         count = counts[metric][level]
         pct = round(100 * counts[metric][level] / total_papers, 1)
-        row.append(f"{pct:.0f}\\%")
+        row.append(f"{pct:.1f}\\%")
     rows.append(" & ".join(row) + r" \\")
 
 for row in rows:

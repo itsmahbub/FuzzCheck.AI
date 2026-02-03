@@ -1,15 +1,16 @@
 import json
 
-REMOVE_KEYS = {"manual1"}
+REMOVE_KEYS = {"chatgpt", "gemini", "arbitrator"}
 
 def clean_assessments(data):
     for paper in data.values():
         assessments = paper.get("assessments", {})
         for metric, entries in assessments.items():
-            # Remove unwanted keys
-            for k in list(entries.keys()):
-                if k in REMOVE_KEYS:
-                    del entries[k]
+            if metric == "Input Plausibility":
+                # Remove unwanted keys
+                for k in list(entries.keys()):
+                    if k in REMOVE_KEYS:
+                        del entries[k]
     return data
 
 
