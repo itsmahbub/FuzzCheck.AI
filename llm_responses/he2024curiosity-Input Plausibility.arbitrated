@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While CureFuzz enforces plausibility at each individual mutation—by applying only small, bounded perturbations and discarding any mutated seed that falls outside the environment’s legitimate state ranges—it does not include any mechanism to bound or monitor the cumulative effect of successive mutations over many iterations. There is no mention of limiting the total distance from an original seed, projecting back into a plausible distribution based on the original, or filtering out inputs that have drifted too far through repeated small perturbations. Thus, plausibility is enforced between successive mutation steps but the paper overlooks the potential accumulation of unrealistic drift over multiple iterations.",
+  "evidence": "Section 3.4 (Seed Mutation): “The SeedMutation function generates a new mutated state by applying a small random perturbation to a selected state. … We need to ensure that the mutated seed lies in the legitimate state spaces, and the mutated seed would not trigger an initial crash.”; Section 4.2 (per‐environment descriptions): “We use the simulator’s own validation checks to discard any illegal states” (CARLA, ACAS Xu, Coop Navi, BipedalWalker). Nowhere does the paper describe a mechanism to constrain the total accumulated perturbation or enforce plausibility relative to the original seed across multiple fuzzing iterations."
+}
+```

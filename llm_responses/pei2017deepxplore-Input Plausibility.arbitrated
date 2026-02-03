@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "DeepXplore incorporates domain-specific, rule-based constraints on each mutation step—e.g., clamping pixel values, limiting brightness adjustments, restricting occlusion shapes, and only adding (not removing) manifest features—to ensure each intermediate input remains realistic. However, it does not include a mechanism to enforce or project the test inputs onto a global plausible input distribution (e.g., via a learned generative model) or to prevent cumulative drift beyond these per-step checks. As such, it guarantees plausibility between successive mutations but does not explicitly address the possibility that many small valid steps could accumulate into an implausible final input.",
+  "evidence": "Section 4.2 (DeepXplore algorithm), p. 6: “Our algorithm ensures this property by modifying the gradient grad (line 13 in Algorithm 1) such that x_{i+1} = x_i + s·grad still satisfies the constraints.”\n\nSection 6.2 (Domain-specific constraints), p. 9: “DeepXplore used three different types of constraints for simulating different environment conditions of images: (1) lighting effects…, (2) occlusion by a single small rectangle…, and (3) occlusion by multiple tiny black rectangles…”\n\nThese per-iteration, rule-based enforcements do not incorporate a distribution-level plausibility check or manifold projection to prevent cumulative drift across many iterations."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "PAPILLON incorporates per-mutation plausibility controls—using an LLM helper with system-prompt instructions to maintain semantic coherence, bounding each template’s length, and targeting low perplexity—but it does not introduce any explicit mechanism to monitor or constrain cumulative drift of inputs over multiple fuzzing iterations (e.g., by enforcing a global distance constraint to the original seed distribution or by filtering implausible candidates across rounds). Thus, while successive mutations remain locally plausible, the framework lacks formal safeguards against the gradual accumulation of unrealistic perturbations over many iterations.",
+  "evidence": "Section 4.2 (Template Mutation and Optimization) describes per-step controls: “We control both semantic coherence and prompt length through system prompt instructions and the hyperparameter of the output length respectively,” and “using GPT-driven mutation operators … preserve the semantic integrity … experiments show the average perplexity … as low as 34.61.” There is no further discussion of mechanisms (such as distance-to-seed constraints or distributional projection) to enforce plausibility across the entire fuzzing process."
+}
+```

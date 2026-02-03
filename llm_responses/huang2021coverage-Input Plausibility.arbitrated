@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While TESTRNN employs domain‐aware, rule‐based mutation functions (e.g. Gaussian noise for images, EDA lexical edits for text, RDKit enumeration for SMILES) to ensure each individual mutation remains plausible, it does not impose a global constraint or filtering step to prevent cumulative drift over successive iterations. The oracle’s norm‐ball check is applied only to identify adversarial samples and does not discard or bound mutated inputs throughout fuzzing. Thus plausibility is enforced between parent and child inputs but not maintained across the entire mutation chain.",
+  "evidence": "Algorithm 1 (page 1197): each x' ← m(x) is added to T unconditionally, and the oracle check “||orig(x)−x'||2 ≤ r_oracle” (line 9) is used only to label adversarial samples, not to filter or bound inputs during fuzzing. Mutation policies (Section VI.B, page 1197–1198; Section VII.A.3, page 1199) describe stepwise, domain‐aware mutations but no mechanism to enforce a cumulative perturbation bound."
+}
+```
