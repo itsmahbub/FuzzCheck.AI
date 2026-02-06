@@ -51,4 +51,4 @@ for paper_title, paper in data.items():
 records.sort()
 for _, _, row in records:
     print(row)
-    print("\\cline{2-13}")
+    print("\\hline")

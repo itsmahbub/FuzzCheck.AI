@@ -1411,8 +1411,8 @@
                     "evidence": "Page 303, Abstract: \"DeepTest found thousands of erroneous behaviors under different realistic driving conditions (e.g., blurring, rain, fog, etc.) many of which lead to potentially fatal crashes in three top performing DNNs in the Udacity self-driving car challenge.\"; Page 306, Section 3.4 (Creating a Test Oracle with Metamorphic Relations): \"the autonomous car\u2019s steering angle should not change significantly for the same image under any lighting/weather conditions, blurring, or any affine transformations with small parameter values.\"; Page 311, Results / RQ4: \"In total, DeepTest detects 6339 erroneous behaviors across all three models.\"; Page 308, Section 4 (Implementation): \"We evaluate our techniques on three DNN models that won top positions in the Udacity self-driving challenge ... Rambo, Chauffeur, and Epoch.\" (no mention of testing defended/adversarially-trained or safety-aligned models or bypassing explicit safety or security mechanisms)"
                 },
                 "manual": {
-                    "value": "Low",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "Violates safety expectation that enviornmental change cause incorrect steering",
                     "evidence": ""
                 }
             },
@@ -2491,7 +2491,7 @@
                 },
                 "manual": {
                     "value": "Low",
-                    "why": "reveals incorrect corner-case behaviors but does not bypass explicity safety mechinasims",
+                    "why": "It just discovers mispredictions caused by the mutations, and the authors later show that some of those happen to be unsafe (malware classified as benign).",
                     "evidence": ""
                 }
             },
