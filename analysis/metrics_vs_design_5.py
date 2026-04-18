@@ -34,7 +34,7 @@ taxonomy_groups = {
 GROUP_CATEGORY_ORDER = {
     "Access": ["Whitebox", "Greybox", "Blackbox"],
     "Mutation": ["Feedback-informed", "Rule-based", "Generative Synthesized"],
-    "Exploration": ["Coverage-guided", "Prediction-guided", "Oracle-guided", "Data-driven"],
+    "Exploration": ["Coverage-guided", "Prediction-guided", "Data-driven"],
     "Oracle": ["Metamorphic", "Differential", "Property-based"],
 }
 

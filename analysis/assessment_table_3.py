@@ -32,7 +32,6 @@ taxonomy_label_map = {
     "Generative Synthesized": "G",
     "Coverage-guided": "C",
     "Prediction-guided": "P",
-    "Oracle-guided": "O",
     "Data-driven": "D",
 }
 
