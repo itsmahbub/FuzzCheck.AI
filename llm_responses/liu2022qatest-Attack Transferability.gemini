@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper evaluates the proposed fuzzing framework, QATest, on four distinct Question Answering (QA) systems (UnifiedQA, ALBERT, DrQA, and MARL). However, the experimental methodology involves running the fuzzing process and evaluating its results independently for each system. The paper reports the number of failures found for each model in isolation. There is no experiment or discussion demonstrating that the fault-inducing inputs discovered on one model were reused to test for failures on any of the other models. The fuzzing design itself does not incorporate any explicit mechanisms to support or guide the discovery of transferable failures.",
+  "evidence": "Page 9, Section 5.1, Table 3. The results are presented in tables that list each QA system separately. For instance, Table 3 shows the number of failed tests for UnifiedQA, ALBERT, DrQA, and MARL in separate sections, indicating that each system was fuzzed and evaluated independently. The text in Section 5.1 describes this process: \"Then, we record the number of failed tests in the generated test set on the corresponding QA systems, which is shown in Table 3.\" This confirms that the evaluation is contained within each system under test, with no cross-model transferability assessment."
+}
+```

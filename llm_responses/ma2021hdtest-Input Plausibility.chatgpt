@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The fuzzer explicitly enforces input plausibility throughout fuzzing by measuring distances between each mutated input and the original seed and discarding mutants that exceed a preset threshold (e.g., L2 < 1). The paper reports normalized L1/L2 distances to the original image as primary metrics and states that out-of-limit generations are regarded as unacceptable and discarded, which amounts to controlling perturbation magnitude relative to the original seed across iterations.",
+  "evidence": "Page 4, Section IV (HDTest Framework): \"To ensure the added perturbations are within an 'invisible' range, we set a threshold for the distance metric during fuzzing (e.g., L2 < 1). When generated images are beyond this limit, it is regarded as unacceptable and then discarded.\"; Page 4–5, Section V.A (Experimental Setup): \"We use different metrics to evaluate HDTest: normalized L1 distance and normalized L2 distance between the mutated image and original image...\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "DeepEvolution applies in-memory image transformations such as brightness, contrast, blur, and affine operations, which are inherently less sensitive to serialization‐induced precision loss, but it does not explicitly enforce serialization constraints (e.g., clipping pixel values to [0,255] or rounding to integer precision). Under the metric, this aligns with the ‘Medium’ category: using transformations that survive typical serialization without explicit handling of format constraints.",
+  "evidence": "Section IV.A (Page 455): “Pixel‐value transformations: change image contrast, image brightness, image blur, image sharpness and random perturbations within a limited interval.” “To infer the valid domain interval of each transformation’s parameters, we manually tune them to set up the appropriate range of values….” No mention of clipping or rounding to enforce [0,255] integer pixel constraints during mutation."
+}
+```

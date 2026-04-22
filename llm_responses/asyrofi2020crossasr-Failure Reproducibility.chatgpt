@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "CrossASR generates test inputs by synthesizing speech audio from text via Text-To-Speech engines and uses those synthesized audio files as the inputs fed to ASRs (i.e., it produces serialized audio inputs directly). This approach avoids applying in-memory fine-grained floating-point mutations to normalized representations that could be lost or altered by serialization. Generating inputs directly in serialized format (synthesized speech) matches the metric's criterion for High reproducibility.",
+  "evidence": "Page 1, Abstract: \"we propose CrossASR, an approach that capitalizes the existing Text‑To‑Speech (TTS) systems to automatically generate test cases for ASR systems.\"; Page 2, Section II (overview): \"CrossASR employs Text-to-Speech (TTS) engines to synthesize test inputs from texts and treats the texts as the ground truth labels, removing the need of manually transcrib[ing] audio files for getting labelled data.\"; Page 3, Section II-A (Architecture): \"Each Text in the Text Batch is then fed into the Text‑To‑Speech Engine (TTS). The TTS synthesizes a speech audio, which is then fed to ASRs.\""
+}
+```

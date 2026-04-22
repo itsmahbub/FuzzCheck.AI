@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The PAPILLON framework generates its inputs (jailbreak prompts) directly in their final, serialized format, which is text. The mutation process leverages a helper Large Language Model (LLM) to create new textual templates based on high-level strategies like role-playing, contextualization, or expansion. This method does not involve applying fine-grained numerical perturbations to an intermediate representation (like token embeddings or logits) that could be altered or lost during serialization (e.g., through rounding or clipping). Since the mutated inputs are generated as complete text strings from the start, they are inherently stable and reproducible under realistic deployment conditions, directly aligning with the metric's definition for a 'High' rating.",
+  "evidence": "Page 9, Section 4.2, 'Template Mutation and Optimization', states: 'PAPILLON uses a LLM (e.g., GPT-3.5 turbo), as a mutator to automatically create jailbreaking templates for specific questions.' The descriptions of the three mutation operators on the same page (Role-play, Contextualization, Expand) confirm that the process involves generating new text sentences and scenarios, not altering a numerical representation. For example, the 'Role-play' description says: 'By defining the role, problem, and desired outcome, LLM generates the corresponding jailbreaking template.'"
+}
+```

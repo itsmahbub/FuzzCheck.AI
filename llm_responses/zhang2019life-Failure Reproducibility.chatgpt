@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper generates mutated inputs as synthesized speech (serialized audio) and verifies them on real VA devices. Mutations are not only applied in-memory to float representations but are converted into actual serialized audio via TTS (phoneme-to-speech and text-to-speech using platform-native services) before verification, so the fault-inducing perturbations are preserved across serialization and thus reproducible under realistic deployment conditions.",
+  "evidence": "Page 2, Our Approach: \"Then, we input mutated voice commands to VA devices by using machine speech synthesis to eliminate the human factor of producing ASR-related misinterpretation.\"; Page 8, C. Template Fuzzing, Verification: \"We verify if a LAPSUS is effective by testing the synthesis audio with Alexa. To do that, we first synthesize speech from generated LAPSUS voice commands. Then we monitor the response of the VA.\"; Page 9, V.A. Implementation, Speech Synthesis: \"For machine-generated voice commands, we use two types of speech synthesis methods ... We use each vApp platforms’ native speech synthesis tools: Amazon Polly [6] and Google Cloud TTS [9].\""
+}
+```

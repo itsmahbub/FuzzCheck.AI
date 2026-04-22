@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The fuzzer (CrossASR++) generates inputs from a natural text corpus via a TTS system and explicitly enforces per-input plausibility by cross-referencing synthesized audio against multiple ASRs, only accepting audio-text pairs as valid test cases if at least one ASR correctly transcribes them. It also restricts inputs to a real-text distribution (the Europarl corpus) and does not perform iterative perturbations that could accumulate distortion. These design choices amount to restricting the search to a plausible input distribution and enforcing plausibility throughout fuzzing, matching the metric's High criteria (e.g., restricting search to a plausible input distribution via a generative model and explicit validity checks).",
+  "evidence": "Page 1, Abstract / Introduction: \"they first use a TTS service to synthesize audios from texts and then reveals failed test cases by feeding them to multiple ASR systems for cross-referencing.\"; Page 2, Section II.A (CrossASR++): \"The generated audio file is then fed to all ASR systems inside CrossASR++ ... The tool cross-references the outputs of these ASR systems and tags the synthesized audio-text pair as a valid test case if at least one of the ASR systems can successfully transcribe the audio.\"; Page 3, Section III.A (Dataset): \"We use the Europarl dataset ... It contains 20,000 texts ...\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The coverage-guided generation in the paper aims to discover any successful jailbreak examples (i.e., any harmful output that bypasses the model’s safety filters), rather than steering the fuzzer toward a specific, attacker-chosen target output or functionality. This corresponds to exploration of a broader class of security-violating behavior (jailbreaks) without a predefined precise target output.",
+  "evidence": "Page 11, Section V.C (Jailbreak Case Generation): “By utilizing coverage to guide the creation of attack examples, Jailbreak Case Generation method identifies areas of the model that remain unexplored. Iterative refinement of prompts based on coverage gains ensures that the generated cases are effective in exposing vulnerabilities while promoting diversity among test cases.” and “As shown in Figure 6, the coverage-guided method outperforms the random strategy in generating successful jailbreak queries.”"
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's proposed method, KuK, explicitly enforces input plausibility throughout its genetic algorithm-based generation process. The design aims to produce 'high-quality images (i.e., recognizable by human)' and uses an L∞ norm to constrain the total perturbation of any generated image relative to the original seed. This directly controls the cumulative distortion across iterations, preventing the generation of semantically invalid or unrealistic inputs. The authors further reinforce this commitment to plausibility by explicitly abandoning affine transformations, which they note could generate invalid images.",
+  "evidence": "Page 8, Section 4, UNCOMMON DATA GENERATION: 'In order to generate high-quality images (i.e., recognizable by human), we abandon the affine transformation (e.g., translation and rotation [55]) as the crossover may generate invalid images. We use L∞ norm to constrain the allowable changes between the original seed and its generated counterpart.'"
+}
+```

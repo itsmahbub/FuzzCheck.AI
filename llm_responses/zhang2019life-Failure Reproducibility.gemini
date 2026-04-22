@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's method, LipFuzzer, generates test inputs by first mutating voice command templates at the linguistic (text) level. These mutated text commands are then converted into audio using standard speech synthesis tools (Amazon Polly, Google Cloud TTS, ESpeak). This process generates the test inputs directly in a serialized audio format. The metric definition explicitly states: 'Fuzzers that generate inputs directly in serialized formats (e.g., synthesized speech, rendered images, or generated text) are considered reproducible under this metric, since such inputs are inherently stable with respect to serialization.' As the tool generates synthesized speech, it fully meets the criteria for a 'High' rating, ensuring that the generated inputs and any potential failures they cause are reproducible.",
+  "evidence": "Page 9, Section V-A, Speech Synthesis: 'In order to work with real VA platforms, We generate voice command records to verify the effectiveness of fuzzing results. For machine-generated voice commands, we use two types of speech synthesis methods to generate LAPSUS. ... We use each vApp platforms' native speech synthesis tools: Amazon Polly [6] and Google Cloud TTS [9]. The second speech synthesis method is for vocabulary and grammar levels. We direct input fuzzing results generated with LipFuzzer to the above mentioned services and perform a Text-to-Speech conversion.'"
+}
+```

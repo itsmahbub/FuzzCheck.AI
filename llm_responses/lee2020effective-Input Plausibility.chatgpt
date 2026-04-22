@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper enforces input plausibility explicitly across iterations by checking a distance constraint between each mutated input and the original seed (Constraint(I, I')), and they report maintaining the L2-distance to the original seed (0.05 on average) during experiments. The algorithms perform repeated gradient-based mutations (which can accumulate distortion) but then filter/add mutated inputs only when the constraint relative to the original seed holds, i.e., perturbation magnitude is controlled with respect to the original input throughout fuzzing. This matches the 'High' definition: controlling perturbation magnitude relative to the original seed across iterations.",
+  "evidence": "Section 2.3 (White-Box Testing of Neural Networks), Algorithm 1 (page 4): \"for t = 1 to η1 do I' ← I' + λ · ∂(∑_{n∈N} Neuron(n, I'))/∂I'\" (shows repeated mutations). Section 2.3 text (page 4): \"At line 12, the algorithm checks whether the new input I' is able to cover new neurons, and whether it satisfies a given constraint (Constraint) on test cases. For example, Constraint(I, I') is true if L2 distance between I and I' is less than a certain threshold.\" Algorithm 2 (page 6): \"if Cov(O') ⊈ C ∧ Constraint(I, I') then ...\" (shows the same constraint applied in the adaptive algorithm). Section 4.1 Experimental Setup (page 7): \"All the techniques, including Adapt, performed testing while maintaining the L2-distance between the initial and mutated inputs within 0.05 on average.\""
+}
+```

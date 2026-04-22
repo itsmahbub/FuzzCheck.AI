@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The failures demonstrated by TACTIC are defined solely as prediction inconsistencies—steering-angle divergences beyond a threshold—without any link to actual harmful or unsafe outcomes or attacks on deployed safety/policy mechanisms. Under the metric, robustness-related mispredictions or inconsistencies (such as steering-angle deviations) fall into the 'Low' severity class. There is no empirical demonstration of bypassing explicit security, safety, or policy safeguards, nor any demonstration of actual hazardous behaviour (e.g., collisions or policy violations).",
+  "evidence": "Section 3.2.2 (Metamorphic Error Analysis) defines failures as steering‐angle divergences |θo − θt| ≥ ε—i.e. prediction inconsistencies (page 5). No explicit safeguards or safety monitors are targeted or shown to be bypassed in the design or evaluation (Sections 3 & 4)."
+}
+```

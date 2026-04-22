@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper does not include any design choices or experiments aimed at discovering or evaluating transferable failures across independently trained models. Sensei is described and evaluated as an in-training, model-specific data-augmentation method (it uses the current model M's loss as fitness and augments on-the-fly during that model's training). The experiments report robust accuracy for each model when Sensei (or baselines) are applied to that same model, but there is no experiment that reuses fault-inducing inputs found on one model to test other models, nor discussion of surrogate-model-based attack generation or cross-model transferability. The paper even contrasts its approach with prior work that uses multiple models (DeepXplore) and explicitly states that Sensei does not require multiple models, indicating transferability was not a focus.",
+  "evidence": "Page 12, Related Work: \"DeepXplore [24] generates test inputs that lead to exhibit different behaviors by different models for the same task. Our approach does not require multiple models.\"; Page 5, Section 3.2 (An Overview): \"Sensei starts training M with the original data point in the first epoch... Sensei is in-training data augmentation approach, i.e., data generation and augmentation happen on-the-fly during training.\"; Page 8, Section 5.3.2 (Results): \"Sensei achieves the highest robust accuracy for all models of all data-sets (highlighted).\""
+}
+```

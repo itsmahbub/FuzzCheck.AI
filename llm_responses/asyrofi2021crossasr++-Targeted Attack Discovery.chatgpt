@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "CrossASR++ performs untargeted differential testing that seeks generic ASR failures (mismatched transcriptions) and prioritizes texts likely to produce such failures via a failure estimator. The paper defines failures as cases where the system under test's transcription does not match the original text while another ASR does, and all evaluation metrics/counts measure numbers of 'failed test cases'. There is no design or evaluation in the paper that steers exploration toward attacker-chosen, specific target outputs (e.g., forcing a particular target transcription or generating attacker-specified malicious content). Thus the method reveals generic misrecognitions rather than targeted attacker-chosen outputs.",
+  "evidence": "Page 2, Abstract: \"...it performs black-box differential testing on ASR systems. If the transcribed text recognized by the ASR system under test does not match the text input to TTS while another ASR’s transcribed text does, this input audio is viewed as a failed test case.\"; Page 3, Section 2.1 Workflow: \"The failure estimator ... can estimate the probability of a piece of text leading to a failed test cases. We rank the texts ... and prioritize texts with a higher ranking to be processed...\"; Page 4, Section 3 (RQ1): \"To measure how CrossASR++ performs in finding failed test cases, we answer the following two research questions. RQ1. How many failed test cases can CrossASR++ find?\""
+}
+```

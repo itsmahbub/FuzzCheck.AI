@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method, TESTRNN, performs untargeted exploration to find generic failures, specifically misclassifications. The test oracle, which determines if a generated test case constitutes a failure, is explicitly defined as checking whether the model's output for a mutated input differs from the output for the original seed input. This is an untargeted approach, as it does not steer the search towards any specific, attacker-chosen target label (High) or a broader class of security-violating behaviors (Medium). The goal is to find any prediction inconsistency, which aligns with the definition of untargeted exploration.",
+  "evidence": "Page 8, Section VI-C1, \"Test Oracle\": \"A test case x' is said to not pass the oracle if x' is within the norm-ball of some known sample x, i.e., ||x − x'||2 ≤ r_oracle, and if x' has a different classification from x, i.e., φ(x) ≠ φ(x').\" This condition demonstrates that a defect is found when any misclassification occurs, not a specific one."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "TensorFuzz’s design and evaluation clearly demonstrate steering the fuzzer toward specific, user-defined objectives rather than merely discovering arbitrary failures. The framework supports arbitrary ‘objective functions’ that encode predefined properties (e.g. produce NaNs, force a quantized model to disagree with its full-precision counterpart, trigger a particular high‐loss/zero‐gradient state). The paper not only describes this capability (Section 5, ‘Objective Function’) but also shows concrete experiments where the fuzzer is directed to find those exact phenomena, satisfying the criteria for targeted attack discovery.",
+  "evidence": "Page 5, Section 'Objective Function': “we allow for arbitrary user-defined goals … the objective function asserts the property to be tested and the fuzzer attempts to find a violation of this property.”\nPage 7, Section 'TensorFuzz can efficiently find numerical errors in trained neural networks': “With CGF, we should be able to simply add operations to the metadata that check for non-finite elements … TensorFuzz found NaNs quickly…”\nPage 7, Section 'TensorFuzz surfaces disagreements between models and their quantized versions': “the fuzzer was able to generate disagreements for 70% of the examples we tried. Thus, CGF allowed us to find real errors that could have occurred at test time.”"
+}
+```

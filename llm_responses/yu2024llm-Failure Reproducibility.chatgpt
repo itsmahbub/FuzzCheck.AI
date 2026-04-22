@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The fuzzer generates mutated inputs as textual prompts (serialized text) rather than applying small in-memory floating-point perturbations. Mutation operators explicitly use LLMs to produce new textual templates which are then combined with questions to form prompts that are sent to target models. Because the mutations operate in the serialized text domain (concrete prompt strings), they are stable with respect to serialization and will survive storage/transmission, satisfying the reproducibility requirement.",
+  "evidence": "Page 2, Abstract / \"LLM-FUZZER uses human-crafted jailbreak prompts as starting points.\"; Page 5, Section 3.1 / \"subsequently, it combines this newly generated template with a target question to form a prompt.\"; Page 6, Section 3.3 Mutation / \"we introduce distinct mutation methods that leverage LLMs themselves to assist in the mutation process.\" and listing the five textual mutators: Generate, Crossover, Expand, Shorten, Rephrase; Appendix D.1 (page 19) Mutate Prompt / example instruction: \"I need you to generate one template... Now try to generate the template... remember to have '[INSERT PROMPT HERE]' in your answer.\"; Page 10, Section 4.2 Experiment II / \"Each newly created template was integrated with these 100 unethical questions, yielding 100 prompts. These prompts were then fed to gpt-3.5-turbo-0125 and Llama-2-7B-Chat...\""
+}
+```

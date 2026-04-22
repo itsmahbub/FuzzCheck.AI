@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's proposed method, ADAPT, is designed to test a single Deep Neural Network (DNN) at a time. The core algorithm (Algorithm 2) takes a single DNN as input. The experimental evaluation is conducted by running the fuzzer on each model independently and reporting the results for that specific model. The paper does not contain any experiments or discussion about whether the adversarial inputs found for one model can cause failures (i.e., are transferable) to other models trained on the same task. The authors even explicitly state they adapted a multi-model baseline (DeepXplore) to a single-model setting for their experiments, confirming the evaluation's focus is not on transferability.",
+  "evidence": "Page 7, Section 4.1, 'DeepXplore originally performs differential testing requiring multiple DNNs without labeled data but we used it with a single DNN and labeled data in our experiments.' Additionally, the experimental results in Table 3 (Page 9) present the number of adversarial inputs found for each model individually (e.g., LeNet-4, LeNet-5, VGG-19, ResNet-50), with no section reporting on cross-model testing."
+}
+```

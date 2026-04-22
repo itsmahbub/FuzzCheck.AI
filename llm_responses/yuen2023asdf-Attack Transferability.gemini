@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper proposes a differential testing framework named ASDF. In this framework, a test case is defined as a failure for a specific system only if that system fails while at least one other system succeeds. The goal is to find disagreements among models, not common vulnerabilities. The methodology does not involve taking a fault-inducing input discovered for one model and testing whether it also causes a failure in other models. In fact, test cases where all systems might fail are explicitly filtered out as 'indeterminable'. Therefore, the paper does not demonstrate whether discovered failures are transferable across models.",
+  "evidence": "Page 2, Section IV. USAGE: 'A failed text is defined as an audio file that is incorrectly transcribed by at least one ASR system. It is important to note that cross-referencing is used to filter the low-quality, unrealistic texts resulting from text transformation. A transformed text input must be transcribed correctly by at least one ASR service to be deemed valid (or determinable); otherwise, it is deemed indeterminable and discarded.' This shows that the framework's design is to find discrepancies, and it discards inputs that might cause failures across all tested models, which would be the basis for demonstrating transferability."
+}
+```

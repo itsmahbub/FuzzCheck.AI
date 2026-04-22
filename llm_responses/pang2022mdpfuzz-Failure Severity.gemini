@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper designs its testing oracles to explicitly detect harmful and unsafe behaviors, which are more severe than mere robustness failures. The oracles are defined as safety-critical events such as vehicle collisions in an autonomous driving simulator (CARLA), aircraft collisions in a collision avoidance system (ACAS Xu), and a bipedal robot falling. The evaluation empirically demonstrates that the proposed fuzzer, MDPFuzz, successfully finds numerous instances of these unsafe \"crashes\" across all tested models. This aligns with the \"Medium\" severity level, which involves discovering harmful or unsafe behavior. The work does not meet the criteria for \"High\" severity because it does not demonstrate the bypass of an explicit, separate safeguard; rather, it shows the failure of the primary decision-making model whose intended function is to ensure safety.",
+  "evidence": "Page 9, Section 6, \"Testing Oracles (Crash Definition)\": \"For RL and IL models in CARLA, we examine whether the model-controlled vehicle collides with other vehicles or buildings. For DNN-based ACAS Xu, we check collisions of the DNN-controlled airplane with other airplanes. For Coop Navi, we check collisions between MARL-controlled agents. For BipedalWalker, we check whether the RL-controlled walking agent falls (i.e., its head touches the ground).\""
+}
+```

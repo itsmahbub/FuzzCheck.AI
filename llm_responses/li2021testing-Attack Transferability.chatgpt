@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper trains and runs TACTIC separately for each subject DNN-based ADS and evaluates results per model. There is no design or mechanism described to craft fault-inducing inputs on a surrogate and reuse them on unseen targets, nor are any experiments reported that reuse discovered fault-inducing styles/inputs across different models to demonstrate cross-model transferability. All search/fitness guidance is applied with respect to the subject model under test, so the paper does not demonstrate transferability of discovered failures across models.",
+  "evidence": "Page 6, Section 3.3 (Search of Critical Environmental Conditions): \"TACTIC receives as inputs the subject DNN-based ADS N, the MUNIT model M trained for the given environmental type, and a set Io of the original driving scenes. The output of TACTIC is a set S of the critical environmental conditions of the given environmental type.\" \n\nPage 7, Section 4.1 (Datasets and DNN-based ADSs): \"we consider three popular pre-trained DNN-based ADSs ... i.e., Daveorig (0bserver07, 2016), Dave-dropout (Navoshta, 2016), and Chauffeur (Emef, 2016). For each DNN-based ADSs, we study five environmental types (night, sunshine, rain, snow in daytime and snow in night) ...\" \n\nPage 7, Section 4.2 (Comparison with Baselines on Effectiveness, Setup): \"we execute TACTIC with two coverage-guiding strategies: KMNC ... and NBC ... on each of the three subject DNN-based ADSs, under the five environmental types.\""
+}
+```

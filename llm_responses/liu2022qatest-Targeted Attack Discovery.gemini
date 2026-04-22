@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper proposes QATest, a fuzzing framework for Question Answering (QA) systems based on metamorphic testing. The core principle is that a semantically equivalent transformation of an input question should not change the system's output answer. A bug is discovered if the answer to the transformed question differs from the answer to the original question. This method aims to uncover generic prediction inconsistencies rather than steering the model toward a specific, predefined, attacker-chosen output (High) or even a broader class of security-violating behaviors (Medium). The guidance criteria used, N-Gram coverage and perplexity priority, focus on diversifying the input space and ensuring input validity, not on guiding the output towards a specific goal. The case study of detected errors further confirms this, categorizing failures as generic inconsistencies like providing irrelevant content or failing to answer answerable questions.",
+  "evidence": "Page 5, Section 3.2.1, Definition 3.1: \"Given a QA system M, a semantic transformation set T, and a seed question set Q, a mutant question corresponding to q ∈ Q with transformation t ∈ T can be represented as q' = t(q). A mutant q' ∈ T(q) is regarded as a bug case of M if M(q') ≠ M(q).\""
+}
+```

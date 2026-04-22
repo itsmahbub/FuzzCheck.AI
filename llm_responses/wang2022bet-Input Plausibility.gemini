@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper explicitly states that the L-infinity norm is used to restrict the total perturbation applied to the generated error-inducing inputs. This norm is a global constraint measured against the original input, which serves to control the cumulative distortion across repeated mutation iterations. By bounding the maximum change for any single pixel relative to its original value (L∞ = 13/255), the method ensures that the final fault-inducing inputs remain within a plausible, perceptually similar range of the original seed inputs, thus satisfying the metric's criteria for enforcing input plausibility.",
+  "evidence": "Page 8, Section 4.1 Experimental Setup, subsection Hyperparameters: \"We use the widely used L∞ metric [4] to restrict perturbations for error-inducing inputs on all compared methods. To set values of Lo∞, we first run all compared methods under different Lo∞ for multiple times, and then we choose values that make them perform relatively well, i.e., L∞ = 13/255 on all datasets (all compared methods use the same setting).\""
+}
+```

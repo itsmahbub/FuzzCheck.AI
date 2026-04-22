@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "PAIR enforces input plausibility by using a generative attacker LLM—i.e. a model trained on natural text—to produce each adversarial prompt. By sampling new prompts from this LLM rather than applying arbitrary mutations, PAIR implicitly constrains all candidate inputs to lie within the realistic text distribution it learned, satisfying the ‘High’ criterion of restricting the search to a plausible input distribution. Although no explicit norm‐bounding relative to the original seed is described, the use of a generative model alone meets the metric’s allowance for High “via a generative model trained to produce realistic inputs.”",
+  "evidence": "Page 2, Section II (Preliminaries): “We focus on prompt‐level jailbreaks, wherein the goal is to craft semantic, human-interpretable prompts…”  \nPage 3, Section III (Generating Prompt-Level Jailbreaks with PAIR): “Our approach is rooted in the idea that two LLMs … can collaboratively and creatively identify prompts that are likely to jailbreak the target model.”  \nFigure 2 (Page 2): Contrasts PAIR’s coherent, human-readable prompt (“Prompt-Level Jailbreak”) with the uninterpretable token-level example."
+}
+```

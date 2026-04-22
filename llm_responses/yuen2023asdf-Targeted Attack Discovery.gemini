@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper describes ASDF, a differential testing framework for Automated Speech Recognition (ASR) systems. The primary goal is to uncover generic failures, specifically mis-transcriptions. A test case is considered failed if the transcription produced by an ASR system does not match the original text used to generate the audio. This is determined by comparing the outputs of multiple ASR systems. The framework's objective is to find any transcription error or inconsistency, rather than steering the generation process toward a specific attacker-chosen output (High) or a broader class of security-violating behaviors (Medium). The entire methodology is based on untargeted exploration to find prediction inconsistencies.",
+  "evidence": "Page 2, Section IV: 'A failed test case is defined as a specific text output from an individual ASR service that does not match its corresponding input text.' This statement explicitly defines a failure as a generic mis-transcription, which is a form of untargeted fault discovery."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "While the paper constrains the magnitude of pixel perturbations in memory (using L∞ and L0 bounds), it does not explicitly enforce that mutated pixel values are clipped to the valid integer range [0,255] nor that floating-point values are rounded to integers before serialization. There is no discussion of applying clipping or rounding at save time or of generating inputs directly as serialized image files. Consequently, fault-inducing perturbations introduced in memory may be lost or altered when writing to standard image formats, making failures unreproducible under realistic deployment conditions.",
+  "evidence": "Section 3.2.2 (page 6): Equation (1) constrains the change magnitude per pixel (L∞(s,s′) ≤ 255 or < β·255) but does not ensure final pixel values lie within [0,255] or are integer. Algorithm 2 applies this constraint in memory, and no subsequent clipping/rounding or serialization steps are described anywhere in the paper."
+}
+```

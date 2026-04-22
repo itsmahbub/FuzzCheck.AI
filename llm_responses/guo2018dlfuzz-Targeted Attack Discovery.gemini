@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "DLFuzz performs untargeted exploration to discover generic prediction inconsistencies. The method's core objective is to find adversarial examples by identifying inputs that, after a small perturbation, are classified differently from the original input. This is a form of differential testing. The optimization function is designed to guide the input to cross the decision boundary into the space of any of the 'top k other classes', not towards a specific, predefined target label chosen by an attacker. Therefore, it reveals generic misclassifications rather than steering exploration toward a targeted attack goal.",
+  "evidence": "Page 3, Section 3.1, 'Architecture': 'If the mutated input t' and the original input t are both fed to the CNN but classified to be of different class labels, we treat this as an incorrect behavior and t' to be one of the adversarial inputs.' and Page 4, Section 4, regarding the optimization objective: 'Maximizing the first part guides the input to cross the decision boundary of the original class and lie in the decision space of top k other classes. Such modified inputs are more likely to be classified incorrectly [12].'"
+}
+```

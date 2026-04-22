@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's method, HDTest, explicitly aims to generate adversarial inputs with 'negligible' or 'invisible' perturbations, indicating an assumption of input plausibility. To achieve this, it enforces a constraint on the total perturbation magnitude throughout the fuzzing process. A distance metric threshold (specifically, L2 distance) is set, and any mutated input that exceeds this threshold relative to the original input is discarded. This mechanism directly controls the cumulative distortion across fuzzing iterations, ensuring that the final fault-inducing inputs remain within a plausible, user-defined range from the original seed. This aligns with the definition of a 'High' rating, which requires explicitly accounting for cumulative distortion by controlling perturbation magnitude relative to the original seed.",
+  "evidence": "Page 4, Section IV: 'To ensure the added perturbations are within an “invisible” range, we set a threshold for the distance metric during fuzzing (e.g., L2 < 1). When generated images are beyond this limit, it is regarded as unacceptable and then discarded. This constraint can be modified by the user to achieve customized and adaptive performance control when using HDTest.'"
+}
+```

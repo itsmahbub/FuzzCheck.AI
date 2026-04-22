@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "TESTRNN uses coverage‐guided exploration to systematically generate inputs that satisfy internal LSTM coverage metrics (BC, SC, TC), and then identifies any security‐related failures—namely adversarial misclassifications and backdoor trigger detections. However, it does not steer the search toward inducing a specific attacker‐chosen target label; instead, it seeks any misclassification or unsafe behavior as long as it satisfies the coverage criteria. This aligns with “Medium,” which covers broader classes of security‐violating behaviors without a predefined specific goal.",
+  "evidence": "Page 1197, Section VI-B (Targeted Mutation): “Intuitively, the fitness function (also called coverage loss) J(x) estimates the distance to the satisfaction of an unfulfilled test condition… By generating test cases with the objective of gradually minimizing the loss, the targeted mutation is essentially a greedy search algorithm.”\nPage 1201, Section VII-C1 (Answer to RQ3): “By exploiting the model’s internal behaviors, TESTRNN is able to capture the LSTM adversarial samples.”\nPage 1201, Section VII-C2 (Answer to RQ4): “The TESTRNN metrics can identify the difference between the backdoor input and the normal input (to malicious models).”"
+}
+```

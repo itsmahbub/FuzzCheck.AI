@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "All empirical evaluations in the paper demonstrate that NLC uncovers robustness-related failures (mispredictions, adversarial examples, and increased coverage for error-triggering inputs) on standard models (classifiers, GANs, LSTMs). The paper does not target or evaluate models that include explicit safety, policy, or security safeguards, nor does it present experiments showing bypassing of such safeguards or inducing harmful/toxic/policy-violating behavior. Therefore the most severe class of failure demonstrated is robustness-related misprediction (Low).",
+  "evidence": "Page 1200, Abstract: \"Its capacity to discover DNN prediction errors is promising.\"; Page 1208, Section VI-A (2) Fault-Revealing Capability of Test Suites: \"all algorithms attacking the three models reach over 98% success rates. That is, more than 0.98 × (#training data) AEs can trigger erroneous behaviors.\"; Page 1210, Section VI-B (Guiding Input Mutation)...Triggered Faults: \"Images mutated under the guidance of NLC (last row) have the highest error triggering rates compared with random mutation (3rd row) and other criteria...\". (Throughout Sections II and VI the evaluated targets are standard discriminative and generative models trained on CIFAR10/ImageNet/IMDB as listed in Table II/III; no experiments or mentions evaluate or bypass explicit safety, policy, or security safeguards.)"
+}
+```

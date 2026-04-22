@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper proposes a coverage-guided method for generating \"jailbreak attack examples.\" The objective is to iteratively refine prompts to create queries that successfully bypass the model's safety mechanisms, which constitutes a broad class of security-violating behavior. The method is guided by coverage gains to find unexplored areas of the model's logic, aiming to produce any successful jailbreak rather than steering the generation towards a specific, predefined harmful output (e.g., malware with a particular function or a specific phishing email). This aligns with the metric's definition for steering exploration toward broader classes of security-violating behavior.",
+  "evidence": "Page 9, Section V, Application, C. Jailbreak Case Generation: \"By utilizing coverage to guide the creation of attack examples, Jailbreak Case Generation method identifies areas of the model that remain unexplored. Iterative refinement of prompts based on coverage gains ensures that the generated cases are effective in exposing vulnerabilities while promoting diversity among test cases. Here, we conduct a preliminary exploration to showcase the potential of coverage-guided jailbreak case generation.\" and \"Evaluation results: As shown in Figure 6, the coverage-guided method outperforms the random strategy in generating successful jailbreak queries.\""
+}
+```

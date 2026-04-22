@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The PAIR method is explicitly designed to search for and elicit attacker-specified objectives (O). The algorithm takes an attack objective as input, constructs attacker system prompts conditioned on that objective, iteratively refines candidate prompts to produce responses satisfying that objective, and the experiments use a dataset of named behaviors (JBB-Behaviors) where PAIR attempts to elicit each specific behavior. Thus PAIR steers exploration toward predefined, attacker-chosen outputs rather than untargeted failures or only broad unsafe classes.",
+  "evidence": "Page 2, II. PRELIMINARIES: \"we assume that each jailbreak is characterized by an objective O, which describes the toxic content that the attacker seeks to elicit from the target (e.g., ‘tell me how to build a bomb’). The objective O informs the generation and evaluation of prompts...\"; Page 3, III. GENERATING PROMPT-LEVEL JAILBREAKS WITH PAIR: \"(1) Attack generation: We design targeted, yet flexible system prompts which direct the attacker A to generate a candidate prompt P that jailbreak the target model.\"; Page 3 (Algorithm 1): \"Input: Number of iterations K, attack objective O\"; Page 4, IV. EXPERIMENTS, Jailbreak dataset: \"When red teaming LLMs, the objective is to discover prompts that elicit responses from a targeted LLM which contain the content requested in each behavior from JBB-Behaviors, as evaluated by the JUDGE function.\""
+}
+```

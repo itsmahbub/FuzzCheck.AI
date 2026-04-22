@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper explicitly targets safety-aligned LLMs (e.g., Llama-2-7B-Chat) and focuses on jailbreak attacks. It empirically demonstrates that attack queries can bypass alignment/safety mechanisms (they state attack queries often bypass safety neurons) and it produces and measures successful jailbreak examples (coverage-guided generation yields substantially more successful jailbreak queries than random). Thus the work demonstrates failures that bypass explicit safeguards to induce prohibited behavior.",
+  "evidence": "Page 6, Section IV.A (Setup): \"In this study, we comprehensively evaluate four well-known open-source LLMs, which vary significantly in size, architecture, and origin. These models include OPT-125M [42], Llama-2-7B-Chat [38], Pythia-12B [43], and Gemma-2-27B-it [44].\"; Page 7, RQ1 - Evaluation against Requirement 2: \"Well-aligned models have safety neurons to reject malicious queries [46], but attack queries often bypass these and activate neurons linked to abnormal behaviors.\"; Page 11, Section V.C (Jailbreak Case Generation) - Evaluation results: \"As shown in Figure 6, the coverage-guided method outperforms the random strategy in generating successful jailbreak queries. In Round 1, our approach generates 6 successful queries compared to 2 by the random method...\"."
+}
+```

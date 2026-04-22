@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper introduces DeepCruiser, a testing framework designed to find defects in a single stateful Deep Learning (DL) system. The entire methodology, including the abstract state transition modeling, the definition of coverage criteria, and the coverage-guided test generation algorithm, is described in the context of a single model under test. The evaluation section explicitly states that all experiments were conducted on a single pre-trained model (Mozilla's DeepSpeech-0.3.0). The paper does not contain any experiments or discussion on whether the fault-inducing audio inputs discovered for this model would also cause failures in other, independently trained models. Therefore, it does not demonstrate cross-model transferability.",
+  "evidence": "Page 15, Section 7.1 Datasets and Experiment Setup: \"We selected Mozilla's implementation of DeepSpeech-0.3.0 [42] which produces one of the state-of-the-art open source ASR models. All our experiments were conducted on a pre-trained English model released along with DeepSpeech-0.3.0...\" This statement confirms that the entire evaluation was performed on a single model, with no other models being tested to check for transferability of the discovered defects."
+}
+```

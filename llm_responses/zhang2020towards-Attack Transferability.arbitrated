@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper generates adversarial and uncommon inputs on one model and then reuses those same inputs to test ‘defended’ versions of the model (e.g., retrained with distillation or label‐smoothing). This constitutes demonstration of cross‐model transferability of failures (the attacks crafted on the original model also succeed against the defended models), but the fuzzing/attack design itself does not include explicit mechanisms (such as surrogate models in the loop) aimed at maximizing transferability. Therefore it meets the criteria for “Medium.”",
+  "evidence": "Page 11, Section 5.2 RQ4: “For other defense techniques, ... a new model is retrained with these defense techniques, while the attacks are generated regarding to the original one, making it a more challenging transfer attack scenario. ... it still can be seen from the results that the uncommon data reveal stronger transferability.”"
+}
+```

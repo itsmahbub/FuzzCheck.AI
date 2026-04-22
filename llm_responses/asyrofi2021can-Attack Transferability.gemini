@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper uses a differential testing approach where multiple Automatic Speech Recognition (ASR) models are used to find failures in a single System Under Test (SUT). The other models serve as cross-referencing oracles to validate a test case (i.e., to ensure at least one model can correctly process the input audio). The goal is to find inputs where the SUT fails while at least one other model succeeds. The methodology is not designed to discover inputs that cause failures across multiple models (transferable failures). The experiments evaluate the number of failures found for each SUT independently or the improvement of a single SUT. The paper does not report on whether the fault-inducing inputs discovered for one SUT also trigger failures in other ASR models.",
+  "evidence": "Page 2, Section II-A, \"As shown in Fig. 1, CrossASR++ takes a text corpus as input and tries to generate a test case for the ASR system under test (SUT). [...] A valid test case can be either a failed test case or a successful test case. If the SUT transcription is different from the input text, it means that CrossASR++ uncovers a failed test case for the SUT.\" This quote explicitly states that the objective is to find a failed test case for a designated SUT, not for multiple systems. The other systems are used to validate the test case itself: \"tags the synthesized audio-text pair as a valid test case if at least one of the ASR systems can successfully transcribe the audio\"."
+}
+```

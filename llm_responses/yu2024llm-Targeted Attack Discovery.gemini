@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper's method, LLM-FUZZER, aims to generate jailbreak prompts that cause a Large Language Model (LLM) to produce harmful content. The goal is to induce any successful jailbreak, which falls under the category of a broad class of security-violating behavior. The fuzzer is guided by an oracle that classifies responses as either 'harmful' or 'non-harmful', providing a reward for any harmful output. This process does not steer the model towards generating a specific, predefined harmful response (e.g., a particular malware code). Instead, it seeks to discover any output that violates the model's safety policies for a given unethical question, which perfectly aligns with the 'Medium' value definition.",
+  "evidence": "Page 5, Section 3.1, Technical Overview and Challenges: 'The oracle is responsible for identifying whether a response contains harmful content. If the oracle identifies a response as harmful, LLM-FUZZER retains the template and adds it back to the seed pool.'\nPage 8, Section 3.4, Oracle: 'The oracle's role is to take prompts as input and evaluate the responses to determine if they are harmful. If harmful responses are detected, the oracle assigns a corresponding reward.'\nPage 9, Section 4.1, Oracle: 'As described in Section 3.4, our fuzzer relies on a meticulously fine-tuned RoBERTa model to function as an oracle, assessing the potential harm in responses and making determinations regarding the success or failure of jailbreak attempts.'"
+}
+```

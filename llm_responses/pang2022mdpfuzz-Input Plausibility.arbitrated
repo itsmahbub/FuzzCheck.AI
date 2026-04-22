@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "MDPFuzz enforces input plausibility throughout fuzzing by restricting all mutated initial states to those that pass the environment’s built-in validity and solvability checks. Although it does not bound perturbations relative to the original seed via an explicit budget, it nonetheless maintains a plausible input distribution across iterations: every new seed is validated by the MDP environment (e.g., CARLA’s state validator) and only valid, solvable states are retained. This hard filter prevents the accumulation of unrealistic distortions and ensures all fault-inducing inputs remain semantically valid within the task domain.",
+  "evidence": "Page 9, Section 6 (“MDP Initial State Sampling, Mutation, and Validation”): “All the mutated states are validated in an automated and deliberate way. That is, we confirm that all mutated states are valid and solvable.” \nPage 6, Section 4 (“Design Overview”): “For each MDP scenario, we validate mutated initial states in a deliberate way to ensure they are realistic and solvable for an optimal model π*.” \nPage 9, Section 6: “Note that CARLA validates and rejects abnormal initial states: all mutated initial states passed its validation.”"
+}
+```

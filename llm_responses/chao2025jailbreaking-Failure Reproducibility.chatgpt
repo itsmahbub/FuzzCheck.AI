@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "PAIR generates adversarial inputs directly as textual prompts (i.e., serialized text) and enforces structured output (JSON) from the attacker LLM before sending prompts to the target via standard APIs. Because prompts are produced as valid serialized text and the paper explicitly requires and enforces JSON-formatted prompt outputs, the fault-inducing perturbations are created in the same serialized format the target receives. This ensures mutations/perturbations are not lost or altered by standard serialization (rounding/clipping) and so failures are reproducible under realistic deployment conditions.",
+  "evidence": "Page 3, Section III-A (Attacker's chain-of-thought): \"we direct the language model to generate in a JSON format... For the first iteration... we seed the output with: {\"improvement\":\"\",\"prompt\":\".\" ...\" and \"we require that the attacker generate its responses in JSON format.\" \n\nPage 4, Section IV (Target LLMs / Evaluation): \"Since PAIR only requires black box access, we use public APIs for all of our experiments, which reduces costs and ensures reproduciblility.\" \n\nPage 2, Section III (Generating prompt-level jailbreaks with PAIR): Algorithm 1 shows P sampled from the attacker and then passed to the target (i.e., textual prompts): \"Sample P ~ qA(C)\" then \"Sample R ~ qT(P)\" — indicating prompts are generated as serialized text and submitted directly to the target."
+}
+```

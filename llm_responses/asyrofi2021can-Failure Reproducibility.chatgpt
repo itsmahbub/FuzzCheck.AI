@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's test-generation method synthesizes audio files from text using a TTS service and uses those synthesized audio files (audio-text pairs) as test inputs which are stored and used to fine-tune ASR models. Because inputs are produced directly as serialized audio files (standard TTS outputs) rather than as in-memory, fine-grained floating-point mutations, the fault-inducing inputs are inherently stable with respect to serialization. This matches the metric's High criterion (generating inputs directly in a serialized format).",
+  "evidence": "Page 1, Abstract: \"It employs a Text-To-Speech (TTS) system to synthesize audios from texts and then reveals failed test cases by feeding them to multiple ASR systems for cross-referencing.\"; Page 2, Section II.A (CrossASR++): \"Specifically, given a piece of text from the corpus, it first employs a TTS system to synthesize an audio file from the text. The generated audio file is then fed to all ASR systems inside CrossASR++ ...\"; Page 2, Section II.A: \"... tags the synthesized audio-text pair as a valid test case if at least one of the ASR systems can successfully transcribe the audio.\"; Page 3, Section II.B (Improving the ASR System Under Test): \"At the end of the i-th iteration, we fine-tune the current model SUT_{i-1} on S_i ∪ F_i to achieve a new model SUT_i.\""
+}
+```

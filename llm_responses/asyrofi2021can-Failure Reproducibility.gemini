@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The method generates test inputs (audio) directly in a serialized format using a Text-to-Speech (TTS) system. The metric definition explicitly states that generating inputs directly in a serialized format, such as synthesized speech, meets the 'High' criteria for failure reproducibility. This is because the generated audio files are inherently stable with respect to serialization; any fault-inducing characteristics are part of the audio file itself and are not subject to being altered or lost by subsequent saving or format conversion steps like clipping or rounding that might affect in-memory numerical perturbations.",
+  "evidence": "Page 2, Section II-A, CrossASR++: 'As shown in Fig. 1, CrossASR++ takes a text corpus as input and tries to generate a test case for the ASR system under test (SUT). Specifically, given a piece of text from the corpus, it first employs a TTS system to synthesize an audio file from the text.'\n\nPage 3, Section III-B, Experimental Settings: 'In our experiments, we choose the same TTS system and 5 ASR systems used to evaluate CrossASR++ in [2]. The TTS system is ResponsiveVoice 2.'"
+}
+```

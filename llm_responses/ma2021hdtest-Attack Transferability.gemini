@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper focuses exclusively on generating adversarial inputs for a single Hyperdimensional Computing (HDC) model instance. The fuzzing methodology, HDTest, is guided by the internal state (hypervector distance) of this one model under test. The experimental evaluation demonstrates the effectiveness of the attack generation and a defense mechanism (retraining) on this same model. However, the paper does not perform any experiments to assess whether the adversarial inputs generated for this model are effective against other, independently trained HDC models. Therefore, it does not demonstrate cross-model transferability of the discovered failures.",
+  "evidence": "Page 6, Section V-D, Case Study on Defense Against Adversarial Attacks: \"First, for a specific HDC model, we run HDTest to generate 1000 adversarial images. We then randomly split such 1000 images into two subsets. We feed the first subset of adversarial images to the HDC model with correct labels to retrain the HDC model, i.e., updating the reference HVs. Next, we use the second subset of adversarial images to attack the HDC model.\" This demonstrates that the entire evaluation, including the defense case study, revolves around a single model and its retrained successor, not a different, unseen model. The paper lacks any section or experiment dedicated to testing the generated attacks on other models."
+}
+```

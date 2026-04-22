@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper provides partial diagnostic insight by linking the discovered failures (adversarial samples) to the coverage of internal model structures. The evaluation of the coverage-guided testing (RQ4) shows that strategies guided by state and transition coverage are effective at generating adversarial samples. Specifically, the paper concludes that 'covering more new states could be potentially helpful in generating adversarial samples' and that the 'state coverage-guided strategy is often more effective in generating adversarial samples.' This analysis connects the failures to patterns in model internals (i.e., coverage of abstract states). However, it does not proceed to explain the underlying model vulnerabilities that cause these states to be failure-prone, such as dataset bias or reliance on non-robust features.",
+  "evidence": "Page 10, Section 6.5 RQ4. Coverage-guided Testing, Results: \"Furthermore, state coverage-guided strategy is often more effective in generating adversarial samples although it does not obtain the highest coverage. The overall results indicate that covering more new states could be potentially helpful in generating adversarial samples.\" and \"Answer to RQ4: The coverage-guided testing is generally useful in terms of achieving higher coverage and guiding adversarial sample exploration. Among the three strategies, transition coverage-guided method achieves higher coverage, while state coverage-guided method uncovers more unique adversarial samples.\""
+}
+```

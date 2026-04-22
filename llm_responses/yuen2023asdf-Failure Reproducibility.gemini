@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The method described in the paper generates test inputs (audio files) directly in a serialized format using a Text-to-Speech (TTS) service. The transformations are not applied as numerical perturbations to an existing audio waveform, but rather as semantic changes to the source text, which is then synthesized into a new, valid audio file. This approach avoids issues with serialization-induced loss of perturbations (e.g., clipping out-of-range amplitudes), because the generated audio is inherently in a standard, reproducible format. According to the metric definition, fuzzers that generate inputs directly in a serialized format, such as synthesized speech, are considered to have high failure reproducibility.",
+  "evidence": "Page 2, Section II, TOOL DESIGN: 'A Text-To-Speech (TTS) service is used to generate audio from the text, which is then fed into the ASR systems to obtain their transcriptions.'\nPage 1, Abstract: 'ASDF generates more high-quality test cases by applying various text transformation methods (e.g., changing tense) to the input text in a failed test case.'\nPage 2, Section III, CORE FUNCTIONALITIES: 'Each line of text in the file is converted into an audio file by gTTS [18].'"
+}
+```

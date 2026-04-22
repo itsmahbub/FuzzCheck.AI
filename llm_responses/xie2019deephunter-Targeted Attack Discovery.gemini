@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method, DeepHunter, performs untargeted exploration to find generic model failures. The test oracle is based on metamorphic testing, where an error is defined as any prediction inconsistency for a semantically preserved input. Specifically, given an original input 'x' and a mutated version 'x'', an error is flagged if the model's prediction F(x') is different from F(x). The framework does not attempt to steer the exploration towards a specific, attacker-chosen output (e.g., a target class label). The evaluation confirms this untargeted approach by measuring the quantity and diversity of detected errors, rather than the success rate of achieving a predefined attack goal.",
+  "evidence": "Page 5, Section 3.2.1 Test Oracle, Definition 2: \"Given a DNN F, a human oracle O, a metamorphic mutation strategy M and a test x satisfying F(x) = O(x), a mutant x' ∈ M(x) is an erroneous behavior of F if F(x') ≠ F(x).\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper does not demonstrate or evaluate transferability of fault-inducing inputs across independently trained models. While the authors apply their LipFuzzer and the same LAPSUS (linguistic) models to both Amazon Alexa and Google Assistant stores, they run fuzzing and verification per-platform and do not present any experiment where inputs (fault-inducing LAPSUS) discovered on one model or platform are reused against a different, unseen target model to measure cross-model transfer. The design also does not include explicit surrogate-model-guided mutation or other mechanisms intended to discover transferable failures across models.",
+  "evidence": "Page 1 (Abstract): \"We also use LipFuzzer to evaluate both Amazon Alexa and Google Assistant vApp platforms.\" (Abstract)\n\nPage 12 (Section VI-C, vApp Store Evaluation): \"Moreover, we apply the same LAPSUS Models used in LipFuzzer evaluation.\" \n\nPage 9 (Section IV-C, Verification): \"We verify if a LAPSUS is effective by testing the synthesis audio with Alexa.\" \n\nPage 12 (Section VI-C, Verified vulnerable vApps): \"we randomly pick 1,000 Amazon Alexa vApps and 200 Google Action vApps for real device verification.\" \n\nThese passages show the tool was applied to multiple platforms but the paper describes per-platform fuzzing and per-platform verification rather than reusing fault-inducing inputs discovered on one model to test a different, unseen model (i.e., no cross-model transfer experiments or surrogate-model-guided mutation are reported)."
+}
+```

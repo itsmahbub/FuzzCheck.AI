@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The method's design includes a tunable objective function that can be configured to steer the search towards a specific, user-chosen target label. This directly supports targeted attack discovery by aiming to induce an attacker-chosen output. The paper explicitly describes this capability, stating that the objective function can target a specific label to explore its decision boundary. It provides a concrete example of a user prioritizing a specific misclassification (e.g., misclassifying an employee as a 'manager' in a face recognition system), which perfectly aligns with the 'High' value definition of steering exploration toward an attacker-chosen goal with a predefined property (a specific target label). While the default evaluation focuses on finding any misclassification, the design explicitly allows for targeted attacks.",
+  "evidence": "Page 6, Section 3.3, Tunable Objective Function: \"If the objective function targets a specific label, the testing process will be led to enter the decision boundary of this specific label to explore corner cases, i.e., generate error-inducing inputs with the corresponding label... We also allow users to prioritize labels as they want to support ad-hoc testing cases. For example, given a face recognition model deployed in a company, it is more risky if an ordinary employee is misclassified as a manager rather than another ordinary employee. Thus, users may prioritize finding error-inducing inputs that would be misclassified as managers.\""
+}
+```

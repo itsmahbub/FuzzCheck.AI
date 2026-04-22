@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper presents TensorFuzz, a general-purpose framework for debugging neural networks by combining coverage-guided fuzzing with property-based testing. The experimental evaluation demonstrates its effectiveness in finding robustness-related and correctness-related failures. Specifically, the paper shows that TensorFuzz can find numerical errors (NaN values), disagreements in predictions between a full-precision model and its quantized version, and bugs in loss function implementations. These demonstrated failures, such as prediction inconsistencies and numerical instability, fall squarely under the metric's definition of \"robustness-related failures.\" The paper does not target models with explicit safety, policy, or security safeguards, nor does it empirically demonstrate the bypass of such safeguards or the generation of harmful, unsafe, or policy-violating behavior.",
+  "evidence": "Page 7, Section 'TensorFuzz surfaces disagreements between models and their quantized versions': 'As a baseline experiment, we trained an MNIST classifier... We then compared the predictions of the 32-bit and the 16-bit model on the MNIST test set and found 0 disagreements. We then ran the fuzzer... the fuzzer was able to generate disagreements for 70% of the examples we tried. Thus, CGF allowed us to find real errors that could have occured at test time.' This is a direct example of discovering prediction inconsistencies, a failure type categorized as 'Low' severity by the metric."
+}
+```

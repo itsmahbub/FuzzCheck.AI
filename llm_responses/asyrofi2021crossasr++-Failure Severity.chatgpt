@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The tool is designed to find misrecognitions by comparing ASR outputs (differential testing using TTS-generated audio) and the evaluation counts such 'failed test cases' (i.e., when the system-under-test mispredicts but another ASR succeeds). The paper neither targets models with explicit safety/policy/security safeguards nor demonstrates inducing harmful, unsafe, or policy-violating behavior or bypassing any mitigations — it reports robustness-related failures (mispredictions) only.",
+  "evidence": "Page 2, Introduction: \"If the transcribed text recognized by the ASR system under test does not match the text input to TTS while another ASR’s transcribed text does, this input audio is viewed as a failed test case.\"; Page 3, Section 2.1 Workflow: \"2) If the SUT fails to recognize the audio file successfully, but at least one of the other ASR systems succeeds, we take this audio file (and the corresponding input text) as a failed test case for the SUT.\"; Page 4, Section 2.2 Extensibility: \"The supported ASRs are DeepSpeech [12], DeepSpeech2 [2], Wit [14], and wav2letter++ [18].\"; Page 5, Section 5 Conclusion: \"This paper presents CrossASR++, an extensible tool that performs black-box differential testing on ASR systems... Our evaluation results show that CrossASR++ outperform CrossASR by revealing 26.2% more failed test cases.\""
+}
+```

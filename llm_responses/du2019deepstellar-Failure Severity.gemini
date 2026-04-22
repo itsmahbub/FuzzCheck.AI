@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's proposed testing method, Coverage-Guided Testing (CGT), is designed and empirically demonstrated to find adversarial samples, which are explicitly defined as inputs that are \"incorrectly recognized\" or \"predicted incorrectly\" by the Recurrent Neural Network (RNN). The evaluation is performed on standard models for image classification (MNIST) and automated speech recognition (DeepSpeech) that are not described as having any explicit safety, policy, or security safeguards. The discovered failures are mispredictions (e.g., misclassifying a digit), which are a form of robustness-related failure. The paper does not provide evidence of discovering harmful, unsafe, or toxic behavior, nor does it demonstrate the bypass of any explicit safeguards.",
+  "evidence": "Page 7, Section 5.2, \"Coverage-Guided Testing of RNNs\": \"In this section, we propose a Coverage-Guided Testing (CGT) technique which aims to generate adversarial samples incorrectly recognized by an RNN.\"\nPage 7, Algorithm 2 description: \"A mutant is an adversarial sample if it is predicted incorrectly by the network. Otherwise, if the mutant improves the coverage, it is then retained as an interesting seed and added back to the queue.\"\nPage 10, Table 6: The results of the coverage-guided testing are reported in terms of coverage metrics and the number of \"unique adversarial samples detected\", which are the mispredictions found by the fuzzer."
+}
+```

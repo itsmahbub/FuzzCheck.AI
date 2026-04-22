@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "DeepXplore explicitly enforces input‐format constraints so that all generated images remain valid serialized inputs and fault‐inducing perturbations survive writing to disk.  For images it (1) clips pixel values to [0,255], (2) restricts modifications to brightness shifts or occlusion patches—both of which naturally survive serialization—and (3) ensures that updates occur in fixed integer steps (e.g., ±s in each iteration) so pixel values stay integral.  For discrete features (Android manifest, PDF structural features) it rounds the gradient to integer changes, clips to valid feature ranges, and only adds allowed features.  These measures guarantee that perturbations are neither clipped nor rounded away upon saving, meeting the “High” criterion.",
+  "evidence": "§4.2 Domain‐specific constraints: “For discrete features, we round the gradient to an integer. … for images, we add spatial restrictions such that only part of the input images is modified.”\n\n§6.2 Image constraints: “The first constraint restricts image modifications so that DeepXplore can only make the image darker or brighter without changing its content … the modification can only increase or decrease all pixel values by the same amount (e.g., 1·stepsize).”\n\n§6.2 Other constraints (Drebin): “DeepXplore only allows adding features (changing from zero to one) but does not allow deleting features … after computing the gradient, DeepXplore only modifies the manifest features whose corresponding gradients are greater than zero.”"
+}
+```

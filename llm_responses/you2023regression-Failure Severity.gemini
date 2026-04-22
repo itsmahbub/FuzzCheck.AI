@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's proposed method, DRFuzz, is designed to discover 'regression faults' in Deep Learning systems. A regression fault is explicitly defined as a test input that was correctly predicted by a prior model version but is wrongly predicted by the new, updated model version. This type of failure is a form of prediction inconsistency between model versions, which falls directly under the metric's definition of a robustness-related failure. The evaluation is conducted on standard image classification models (e.g., LeNet-5, VGG16) without any mention of them being equipped with explicit safety, policy, or security safeguards. The reported results focus on maximizing the number of detected regression faults, which are fundamentally mispredictions, and do not demonstrate any harmful, unsafe, or policy-violating behavior.",
+  "evidence": "Page 2, Section II, Definition 2: \"Regression fault. Given a prior version model M1, its regression model M2, a test input x, and its ground truth label y, x is called to trigger a regression fault if x is correctly predicted by M1, yet wrongly predicted by M2, i.e., c_M1[x] = y ∧ c_M2[x] ≠ y. In addition, we denote x as the regression fault triggering input and the faulty behavior triggered by x as (c_M1[x] → c_M2[x]).\""
+}
+```

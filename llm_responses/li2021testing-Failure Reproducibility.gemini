@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's proposed method, TACTIC, generates test inputs by synthesizing entirely new images using a GAN-based image-to-image translation model called MUNIT. This approach does not rely on applying small numerical perturbations to an existing input's in-memory representation. Instead, it generates a complete new image based on a content vector from an original image and a style vector representing a specific environmental condition. According to the metric definition, methods that 'generate inputs directly in a serialized format (e.g., ... rendered images, or generated text)' are rated as High for failure reproducibility. TACTIC's image synthesis process falls directly into this category, as the generated images are inherently stable and do not suffer from perturbations being lost during serialization (saving to disk), ensuring that any identified failures are reproducible.",
+  "evidence": "Page 3, Section 3.1: 'To encode the environmental condition space of an environmental type, we leverage MUNIT, a multimodal unsupervised image-to-image translation framework based on Generative Adversarial Networks (GAN).' \nPage 4, Section 3.1: 'Then, to produce x2, M recombines the content c1 with a style vector s2 sampled from the style space S2 of X2 by the decoder G2 of X2, i.e., x2 = G2(c1, s2).' This quote describes the generative process of creating a new image (x2) using a decoder, which is a form of synthesis rather than perturbation."
+}
+```

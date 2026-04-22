@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper proposes and evaluates a method for 'Jailbreak Case Generation' which refines and rewrites text prompts to create new adversarial examples for Large Language Models (LLMs). The inputs to an LLM are text, which is an inherently discrete and serialized format. The perturbations are modifications to the text itself (e.g., changing words, sentence structure). These generated text prompts do not suffer from the precision loss or alteration issues associated with saving floating-point representations, which is the core concern of the 'Failure Reproducibility' metric. According to the metric definition, methods that generate inputs 'directly in a serialized format (e.g., ... generated text)' are assigned a 'High' value because they are 'inherently stable with respect to serialization'. The paper's method of generating new jailbreak queries through prompt rewriting falls directly into this category.",
+  "evidence": "Page 11, Section V-C, Jailbreak Case Generation: 'Setup: We use Llama-2-7b-chat as the target model, initializing with five jailbreak queries as seeds. Over five iterations, GPT-4 generates ten new jailbreak queries per round through prompt rewriting. The query with the highest coverage increase is selected as the next seed in the coverage-guided approach.'"
+}
+```

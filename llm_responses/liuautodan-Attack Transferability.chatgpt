@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper experimentally demonstrates cross-model transferability (reusing prompts found on one model to attack others) but does not incorporate explicit design mechanisms aimed specifically at discovering transferable failures (e.g., optimizing against surrogate ensembles or guiding mutations with cross-model feedback). AutoDAN optimizes fitness via a model-specific log-likelihood and is presented primarily as a white-box red-teaming method rather than being designed to maximize cross-model transfer.",
+  "evidence": "Page 1, Abstract: \"Extensive evaluations demonstrate that AutoDAN ... demonstrates superior attack strength in cross-model transferability...\"; Page 8, Section 4.2 (Transferability): \"We further investigate the transferability of our method... AutoDAN exhibits a much better transferability in attacking the black-box LLMs compared with the baseline.\" (Table 2 presents cross-model transfer results).; Page 5, Section 3.3 (Fitness Evaluation): \"...we adopt the log-likelihood that was introduced by Zou et al. (2023) as the loss function...\" (fitness is computed per model).; Page 20, Section G (Performance on OpenAI’s GPT-4): \"...the main goal of this paper is still performing the white-box red-teaming with meaningful prompts to assess the reliability of LLMs’ safety features, instead of improving the transferability of the generated jailbreak prompts.\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method, DeepEvolution, is designed and evaluated for testing a single Deep Neural Network (DNN) model at a time. The experimental evaluation focuses on finding erroneous behaviors (RQ2) and quantization defects (RQ3) within the specific model under test (LeNet for MNIST, CifarNet for CIFAR-10). The paper does not conduct experiments to demonstrate whether the fault-inducing inputs discovered for one model also cause failures in other, independently trained models designed for the same task. The comparison between a model and its quantized version in RQ3 is not considered transferability in the context of this metric, which focuses on independently trained models. Therefore, the paper does not demonstrate cross-model transferability.",
+  "evidence": "Page 3, Section V, Subsection A, \"Experiment Setup\": The evaluation is set up with one specific model per dataset: \"For each dataset (i.e., MNIST and CIFAR-10), we took, respectively, the official open-source implementation of Tensorflow models, LeNet [3] and CifarNet [4] to allow the reproducibility of our results and comparisons with our approach.\" The subsequent research questions (RQ1, RQ2, RQ3) present results exclusively on these models, without testing the generated inputs on any other surrogate or target models."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "Although CrossASR uses multiple ASRs simultaneously to detect failures via differential testing, it does not include any explicit mechanism to craft inputs on a surrogate model and then reuse those fault-inducing inputs on a separate, unseen target model. All experiments feed the same TTS-generated audio to all ASRs at once and report per-model failure counts, but there is no evaluation of transferability of failures discovered on one model to another held-out model.",
+  "evidence": "Page 2, Section II-A: “CrossASR performs a black-box differential testing to uncover erroneous behaviors on ASR systems by cross-referencing different ASRs to detect different transcriptions from ASRs.” \n\nPage 6, Section III-D/Table V: reports per-ASR failure counts (e.g., “Google 4,036 2,539 2,202 4,795 13,572”), with no description of experiments that reuse failures from one model to test another unseen model."
+}
+```

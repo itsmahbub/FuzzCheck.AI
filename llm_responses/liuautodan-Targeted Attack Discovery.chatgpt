@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper explicitly formulates the jailbreak objective as steering model outputs toward a predefined attacker-chosen target (an affirmative response beginning with a specific phrase) and optimizes prompts to maximize the likelihood of those target tokens. The fitness function is the log-likelihood of the attacker-chosen target token sequence and the GA/HGA optimizes that loss, which demonstrates support for targeted attack discovery.",
+  "evidence": "Page 4, Section 3.1 PRELIMINARIES — Formulation: \"a common solution ... is to designate the target response as affirmative, such as answers beginning with 'Sure, here is how to [Qi].' By anchoring the target response to text with consistent beginnings, it becomes feasible to express the attack loss function used for optimization in terms of conditional probability.\" \n\nPage 6, Section 3.3 FITNESS EVALUATION: \"Since the goal of jailbreak attacks can be formulated as Eq. 2, we can directly use a function that calculates this likelihood for evaluating the fitness of the individuals in genetic algorithms. ... given a specific jailbreak prompt Ji, the loss can be calculated by: L_Ji = -log(P(r_{m+1}, r_{m+2}, ..., r_{m+k} | t_1, t_2, ..., t_m))\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "DeepXplore explicitly guides its search toward a particular class of undesirable behaviors—model disagreements—by optimizing for inputs that cause at least one DNN to flip its prediction while others do not, combined with maximizing neuron coverage. This constitutes steering exploration toward a broader class of security-violating behavior (differential behaviors/jailbreak-like divergences), rather than untargeted random faults (Low) or a single, attacker-chosen concrete output or label (High).",
+  "evidence": "Page 6 (§3 Overview): “DeepXplore solves a joint optimization problem that maximizes both differential behaviors and neuron coverage.”\n\nPage 8 (§4.2 Maximizing differential behaviors): “Given an arbitrary x as seed that gets classified to the same class by all DNNs, our goal is to modify x such that the modified input x′ will be classified differently by at least one of the n DNNs.”\n\nPage 8 (Equation 2): “obj₁(x) = Σ_{k≠j} F_k(x)[c] – λ₁·F_j(x)[c]” shows the objective is to induce any disagreement, not to target a specific attacker-chosen label."
+}
+```

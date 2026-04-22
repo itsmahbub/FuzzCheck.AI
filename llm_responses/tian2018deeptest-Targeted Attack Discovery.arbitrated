@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "DeepTest systematically directs test generation toward a predefined class of unsafe behaviors—namely, steering‐angle deviations under realistic transformations (e.g., rain, fog, brightness, affine perturbations) identified via metamorphic relations—rather than performing untargeted exploration of arbitrary faults. It does not seek a specific attacker‐chosen output (such as a precise steering angle), but it does target a broader class of safety‐violating behaviors, matching the “Medium” level of the Targeted Attack Discovery metric.",
+  "evidence": "Section 3.4 (Creating a Test Oracle with Metamorphic Relations): “the autonomous car’s steering angle should not change significantly for the same image under any lighting/weather conditions… (ˆθi − θti)^2 ≤ λ MSEorig.”; Introduction and Contributions (pp. 2–3): “we use transformation‐specific metamorphic relations… to automatically detect erroneous corner case behaviors”; Section 5 (Result 4): “DeepTest successfully detects more than 1,000 erroneous behaviors… that can lead to potentially fatal collisions.”"
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "DRFuzz seeks to find any regression faults—inputs that were correctly classified by the prior model but misclassified by the updated model—without aiming for any attacker‐chosen target labels or predefined unsafe behaviors. It guides mutation to amplify general prediction differences between versions, which corresponds to untargeted exploration of misclassification inconsistencies rather than steering toward a broad security‐violating class or a specific attacker‐defined output.",
+  "evidence": "Metric definition: “Low: Performs untargeted exploration, revealing generic failures such as misclassifications or prediction inconsistencies.”\n\nPaper, Definition 2 (Section II, p. 83): “x is called to trigger a regression fault if x is correctly predicted by M1, yet wrongly predicted by M2, i.e., cM1[x] = y ∧ cM2[x] ≠ y.”\n\nPaper, Introduction (Section I, p. 2): “DRFuzz guides the process of generating new test inputs toward the direction of amplifying the prediction difference between versions.” No mention of targeting specific attacker‐chosen labels or goals."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper frames Sensei as a data-augmentation / fuzzing approach that searches for variants that maximize model loss (i.e., the \"worst\" or most-lossy perturbation) to improve robustness to natural/environmental variations. It explicitly focuses on benign/natural perturbations rather than adversarial, targeted attacks, and its fitness/objective is to maximize loss or coverage rather than to steer the model toward a specific attacker-chosen output or target label. Therefore the method performs untargeted exploration (revealing misclassifications/high-loss variants) rather than supporting targeted attack discovery.",
+  "evidence": "Section 2.3 (page 4): \"As discussed earlier, this work targets robustness issues arising from natural, environmental perturbations δ in the input data and not perturbations δ constructed adversarially, in a security context.\"; Section 3.1 / Definition 1 (page 5): \"Definition 1 (Augmentation target). ... find ρ yielding the optimal variant x' ... to optimize: max_{ρ ∈ S} L(θ, t(ρ, x), y) (4)\"; Section 3.3.3 (page 6): \"In Sensei, we define the fitness function based on the empirical loss of the DNN. ... f_loss(x') = L(θ, x', y) (5).\"; Introduction / overview (page 3): \"use genetic search to generate the most suitable variant of an input data to use for training the DNN\" and \"identify the worst variant for augmentation.\""
+}
+```

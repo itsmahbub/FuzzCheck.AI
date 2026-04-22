@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper evaluates DeepCruiser on a standard RNN-based ASR (Mozilla DeepSpeech) and defines failures as transcription errors measured by Word/Character Error Rate (W/CER). All reported failures are robustness-related (mis-transcriptions / increased WER). The paper does not describe targeting a model equipped with explicit safety, policy, or security safeguards, nor does it present any experiments demonstrating bypass of such safeguards or generation of harmful/unsafe/policy-violating outputs. Therefore the strongest supported failure class demonstrated is robustness-related (Low).",
+  "evidence": "Page 15, Section 'Datasets': \"We selected Mozilla’s implementation of DeepSpeech-0.3.0 ... pre-trained English model released along with DeepSpeech-0.3.0.\" Page 6, Section 3 (workflow): \"If the generated mutant triggers some defects, e.g., the transcription shows a large difference from the expectation, it is labeled as a failing test.\" Page 13, Section 6.2 (Coverage-Guided Testing): \"For audio in ASR, we decide a failed test by checking whether the Word/Character Error Rate (W/CER) exceeds a certain threshold.\" Page 19, Section 7.5 / Answer to RQ4: \"DeepCruiser can effectively generate tests to trigger erroneous behaviors of the RNN... it will capture more erroneous behaviors (i.e., higher WER) of the RNN.\" (No section or quote in the paper describes testing models with explicit safety/policy/security safeguards or demonstrating bypass of such safeguards.)"
+}
+```

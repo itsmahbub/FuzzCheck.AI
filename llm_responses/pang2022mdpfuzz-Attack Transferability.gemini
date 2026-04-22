@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper introduces MDPFuzz, a framework for testing individual models that solve Markov Decision Processes. The evaluation section demonstrates the tool's effectiveness by applying it to five different state-of-the-art models across varied scenarios, such as autonomous driving (RL and IL models), aircraft collision avoidance (DNN), and games (MARL and RL). However, the fuzzing process and the evaluation are conducted on each model independently. The paper does not perform any experiments to check if the crash-triggering inputs discovered for one model can cause failures in another model, even when two models are designed for the same environment (e.g., the RL and IL models for the CARLA simulator). Therefore, the transferability of the discovered failures is not demonstrated.",
+  "evidence": "Page 10, Section 7.1 RQ1: Performance on Finding Crashes, Setup: \"We use the evaluation setup described in Sec. 6. That is, we launch MDPFuzz to fuzz each MDP model (listed in Table 3) and detect crashes. We collect all error-triggering inputs for analysis.\" This statement indicates that the fuzzer is run separately on each model. The results presented in Table 3 on the same page and the subsequent analysis in Section 7 consistently report on the performance of fuzzing each model as a distinct, self-contained experiment, with no mention of cross-model testing of the discovered vulnerabilities."
+}
+```

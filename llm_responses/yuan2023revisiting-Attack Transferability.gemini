@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper presents a fuzzing approach where input mutations are guided by the proposed NLC metric. However, the evaluation of this approach focuses on discovering failures in a single model at a time. The fuzzing algorithm described operates on one specific DNN, and the results presented are for that model only. The paper does not include experiments to test whether the fault-inducing inputs discovered on one model (e.g., ResNet) also trigger failures in other models (e.g., VGG or MobileNetV2), which were used in other parts of the evaluation. Therefore, cross-model transferability of failures is not demonstrated.",
+  "evidence": "Page 10, Section VI-B. Guiding Input Mutation in DNN Testing: The fuzzing experiment is described as targeting a single model. The pseudocode in 'Algorithm 1: Fuzzing algorithm' takes a single 'Tested DNN: D' as an input parameter, indicating the fuzzing loop is guided by feedback from only one model. The results section for this experiment explicitly states that the findings are for a single model: 'Triggered Faults. The #triggered faults of ResNet trained on CIFAR10 and ImageNet are presented in Table XI.' The table and the surrounding text do not report on testing these discovered fault-inducing inputs against any other models to assess transferability."
+}
+```

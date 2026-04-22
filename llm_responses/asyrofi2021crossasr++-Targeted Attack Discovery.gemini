@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The method described in the paper, CrossASR++, uses differential testing to uncover inconsistencies between multiple Automatic Speech Recognition (ASR) systems. A test case is considered a failure if the System Under Test (SUT) produces a transcription that does not match the original text input, while another ASR system does produce a matching transcription. This process is designed to find any deviation from the expected output, which constitutes a generic failure or mis-transcription. The framework does not attempt to steer the transcription toward a specific, predefined attacker-chosen command or text (High), nor does it target a broad class of security-violating behaviors (Medium). Instead, it performs untargeted exploration to reveal prediction inconsistencies, which perfectly aligns with the 'Low' value definition.",
+  "evidence": "Page 3, Section 2.1, Workflow: '2) If the SUT fails to recognize the audio file successfully, but at least one of the other ASR systems succeeds, we take this audio file (and the corresponding input text) as a failed test case for the SUT.'"
+}
+```

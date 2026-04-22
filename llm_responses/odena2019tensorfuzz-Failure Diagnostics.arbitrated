@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While the paper goes beyond simply reporting failure-inducing inputs by inspecting internal states (e.g. extreme logits breaking the loss, discriminator outputs causing saturating gradients), it does not link these failures to deeper model vulnerabilities such as reliance on non-robust features, dataset biases, or suggest targeted mitigations. The analysis remains at the level of model internals without diagnosing root causes in the model’s learned behavior or data distribution.",
+  "evidence": "Page 7, Section “TensorFuzz can efficiently find numerical errors in trained neural networks”: “Inspecting the classifier when exposed to the image on the right, we see that the NaN surfaces because there was one logit with a very positive value and one logit with a very negative value, which broke the loss calculation.”\n\nPage 8, Section “TensorFuzz can find real bugs in popular model implementations”: “The input was one in which the output of the discriminator had too high a magnitude, which caused the incorrectly implemented loss function to have saturating gradients.”"
+}
+```

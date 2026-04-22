@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper empirically demonstrates harmful failures—namely, voice‐squatting attacks that hijack third‐party vApps for phishing, denial‐of‐service, and privacy leakage—but does not show bypass of any explicit safety or policy safeguard built into the platforms. Instead, it reveals flaws in the core Intent Classifier and fuzzy‐matching logic rather than overcoming a deployed security guardrail. Therefore, the failures are security‐relevant and harmful, but fall under the “Medium” class: harmful behavior without demonstrated bypass of an explicit safeguard.",
+  "evidence": "Section II-D (Threat Model) describes phishing and privacy leakage consequences; Section VI-D (Case Study) shows LipFuzzer‐generated LAPSUS used to register 4 malicious vApps on the Alexa store and that 3 of them were invoked by users intending the legitimate skill, demonstrating harmful exploitation of the NLU design."
+}
+```

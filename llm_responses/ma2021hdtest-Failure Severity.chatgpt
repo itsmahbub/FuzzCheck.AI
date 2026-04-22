@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "All technical and evaluation content in the paper shows HDTest finds mispredictions / adversarial examples that cause incorrect classification of HDC models (MNIST), and evaluates perturbation sizes and fuzzing efficiency. The paper frames failures as incorrect predictions and robustness issues and does not target or evaluate bypass of any explicit safety, policy, or security safeguards nor demonstrate harmful/unsafe or policy-violating behavior. Therefore the most severe demonstrated failure class is robustness-related misprediction.",
+  "evidence": "Page 1, Abstract: \"...automatically exposing unexpected or incorrect behaviors under rare inputs... HDTest can generate thousands of adversarial inputs with invisible perturbations that can successfully fool HDC models.\"; Page 4, Section IV (HDTest Framework), Alg.1 / description: \"By comparing the query labels with reference labels, HDTest is able to know if there are any discrepancies which indicate successful generation of an adversarial image.\"; Page 5, Section V A (Experimental Setup): \"We use the MNIST database of handwritten digits...\" and metrics: \"normalized L1 distance and normalized L2 distance... the average fuzzing iterations and the execution time...\", showing evaluation focuses on misclassification/perturbation/efficiency rather than any safety/policy safeguard bypass."
+}
+```

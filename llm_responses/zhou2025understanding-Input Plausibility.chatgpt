@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper’s generation/mutation procedures operate on natural-language prompts using GPT-4 paraphrasing and prompt-rewriting, which produce realistic, semantically-plausible inputs at each step (semantic-preserving mutations per iteration). However, the authors do not describe any explicit mechanism to measure or limit cumulative distortion across multiple mutation iterations (e.g., bounding perturbation magnitude relative to the original seed or enforcing distance-to-seed constraints). Thus the design preserves plausibility per mutation but does not explicitly control accumulated changes across iterations.",
+  "evidence": "Page 6, Section III-A (Synonymous Query Dataset): \"To construct synonymous queries, we use GPT-4 to generate corresponding synonymous paraphrases for the first 500 queries from the Alpaca-gpt4 dataset and manually verify that the synonymous queries produce outputs similar to the original queries.\" Page 11, Section V-C (Jailbreak Case Generation - Setup): \"Over five iterations, GPT-4 generates ten new jailbreak queries per round through prompt rewriting. The query with the highest coverage increase is selected as the next seed in the coverage-guided approach.\" (These excerpts show mutations are produced by a generative LLM that yields realistic prompts per step, and selection is based on coverage gain; the paper does not specify any mechanism to limit or measure cumulative semantic drift across iterations.)"
+}
+```

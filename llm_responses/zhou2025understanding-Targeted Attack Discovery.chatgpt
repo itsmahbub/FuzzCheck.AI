@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper presents and evaluates a coverage-guided jailbreak case generation method that explicitly steers exploration toward attacker-chosen outputs (jailbreak/harmful responses). The generator iteratively refines prompts and selects candidates based on coverage increase (i.e., a guidance signal) to maximize successful jailbreaks, and the experiments show the coverage-guided strategy produces substantially more successful jailbreak queries than a random baseline. This demonstrates the fuzzer steers exploration toward a predefined attack goal (inducing jailbreak/harmful outputs).",
+  "evidence": "Page 1, Abstract: \"we introduce a coverage-guided approach for generating jailbreak attack examples, enabling systematic refinement of prompts to uncover vulnerabilities.\"; Page 9, Section V (Application) introduction: \"Third, we investigate Jailbreak Case Generation, where coverage-guided methods refine prompts to generate adversarial examples.\"; Page 11, Section V.C (Jailbreak Case Generation) setup: \"The query with the highest coverage increase is selected as the next seed in the coverage-guided approach.\"; Page 11, Section V.C (Evaluation results): \"As shown in Figure 6, the coverage-guided method outperforms the random strategy in generating successful jailbreak queries... our method producing 6, 11, 19, 24, and 32 successful queries in Rounds 1 to 5... while the random strategy yields 2, 6, 9, and 12.\""
+}
+```

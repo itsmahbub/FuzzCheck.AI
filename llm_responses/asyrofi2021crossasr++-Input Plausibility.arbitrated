@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "CrossASR++ does not perform iterative, accumulating mutations on audio seeds; instead, each test input is generated anew via a Text-to-Speech (TTS) system, which is itself a generative model trained to produce realistic, semantically valid speech. By relying exclusively on TTS-synthesized audio, the framework inherently restricts inputs to a plausible distribution of natural speech, and it flags any implausible outputs as indeterminable rather than treating them as valid failures. This approach matches the “High” criteria of enforcing input plausibility through the use of a generative model to ensure all inputs remain realistic throughout fuzzing.",
+  "evidence": "Page 3, Section 2.1 Workflow: “Then, TTS is used to generate an audio file for each piece of selected text… If all the ASR systems cannot recognize the audio correctly, we call it an indeterminable test case because a TTS may generate an invalid audio.”; Page 4, Section 2.2 Extensibility: “The main reason is that more advanced TTSes generate fewer invalid audios… As a result, using better TTSes can improve CrossASR++.”"
+}
+```

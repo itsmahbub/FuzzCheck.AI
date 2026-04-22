@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The method performs untargeted exploration by design. Its core technique is differential testing, which aims to find inputs that cause disagreements (or \"differential behaviors\") between multiple similar Deep Neural Networks (DNNs). The optimization objective is to modify a seed input such that one model's prediction diverges from the others, without specifying a predefined target label or class of behavior. The system's goal is to uncover any inconsistency, which is a form of generic failure, rather than steering the search toward a specific, attacker-chosen outcome.",
+  "evidence": "Page 8, Section 4.2, Algorithm 1 and Equation 2. The objective function for maximizing differential behaviors is defined as `obj1(x) = ∑k≠j Fk(x)[c] - λ1 * Fj(x)[c]`. The goal is to maximize the confidence scores of all networks except one (`Fj`) for the original class `c`, while minimizing the confidence of `Fj` for that same class. The algorithm terminates when a difference is found: `if d.predict(x) ≠ (dnns-d).predict(x) then break` (Line 15). This demonstrates the goal is to induce any prediction inconsistency, not a specific target prediction."
+}
+```

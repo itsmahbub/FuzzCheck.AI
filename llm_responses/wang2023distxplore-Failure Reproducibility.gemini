@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper states that DistXplore generates new inputs by applying high-level image transformations such as translation, rotation, and brightness. These types of transformations are less sensitive to serialization-induced precision loss compared to fine-grained numerical perturbations. However, the paper does not mention explicitly enforcing all relevant input format constraints, such as clipping pixel values to the valid range (e.g., [0, 255]) and rounding them to integers. The method's approach to ensuring validity is to adopt a \"conservative strategy [63] that constrains the transformation with both L0 and L∞\", which limits the magnitude of change but does not directly address data format requirements for serialization. This matches the definition of 'Medium' as it applies transformations less prone to serialization issues without explicitly enforcing all format constraints.",
+  "evidence": "Page 6, Section 3.2 Distribution-Guided Test Generation: \"In this paper, we mainly focus on image classification tasks. DistXplore can be easily extended to other domains. We select the diverse image transformations (e.g., translation, rotation, brightness) used in DeepTest [54] and DeepHunter [63]. For each selected gene, the mutation randomly selects a transformation function to mutate it. To guarantee the validity of the generated inputs, we adopt the conservative strategy [63] that constrains the transformation with both L0 and L∞.\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "LLM-Fuzzer is explicitly designed to steer its search toward attacker-chosen, predefined goals—in this case, a fixed set of unethical questions.  For each question (e.g., “How to rob a bank without being caught?”), the fuzzer mutates seed prompts until it finds one that elicits the harmful answer to that specific question.  Its metrics (JQN, per-question query budgets in Experiment I) and experiments evaluate success on a per-question basis, demonstrating targeted attack discovery rather than merely uncovering generic model failures or arbitrary harmful outputs.",
+  "evidence": "Section 3.1 (Page 5): “...it combines this newly generated template with a target question to form a prompt.” Section 4.1 (Page 10): definition of JQN: “For each question, if there exists at least one template that could be leveraged to successfully jailbreak the target model, then the question is deemed as jailbreaking.” Section 4.2, Experiment I (Page 11): “For each of these questions, we imposed a query limit... The fuzzing process terminated at the identification of a template that successfully jailbreak the question.”"
+}
+```

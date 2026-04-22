@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper describes mutation strategies specifically for image inputs, which involve adding floating-point \"white noise\". It explicitly states that the resulting mutated image is clipped to lie within the valid range of the training data. This correctly enforces one of the primary input format constraints (the valid value range). However, the paper does not mention any subsequent rounding to enforce integer precision for pixel values, which is another critical constraint for most standard image formats. Since the method applies fine-grained perturbations (white noise) while only partially enforcing the relevant input format constraints (clipping but not rounding), there is a risk that fault-inducing perturbations could be lost or altered during serialization when floating-point pixel values are rounded to integers. This aligns with the definition of a \"Medium\" rating.",
+  "evidence": "Page 5, Section 5. Details of the TensorFuzz Library, subsection \"Mutator\": \"For image inputs, we implemented two different types of mutation. The first is to just add white noise of a user-configurable variance to the input. ... In both types of image mutation we clip the image after mutation so that it lies in the same range as the inputs used to train the neural network being fuzzed.\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The method (CrossASR) is designed to find generic ASR failures (mis-transcriptions) via differential testing and to prioritize texts likely to produce such failures using a failure-probability predictor. The approach and evaluation focus on discovering mismatches and incorrect transcriptions (i.e., generic errors), not on steering the system toward attacker-chosen, specific target outputs or harmful objectives. Therefore it performs untargeted exploration revealing generic failures rather than targeted attack discovery.",
+  "evidence": "Page 640, Abstract: \"CrossASR is a differential testing solution that compares outputs of multiple ASR systems to uncover erroneous behaviors among ASRs.\"; Page 642, Section II-A (Architecture): \"Test Selection Engine performs differential testing by cross-referencing ASRs Transcribed Texts to detect incorrect behaviors of ASRs.\"; Page 643, Section II-B (Test Selection Engine): \"The Text Selector utilizes the trained classifier as a failure probability predictor to select texts from the batch according to their likelihood of leading to failed test cases.\"; Page 649, Section V.A (Related Work): \"Different from these works, CrossASR performs differential testing by cross-referencing different ASRs as test oracle. Also, CrossASR is concerned in assessing correctness of ASRs instead of their robustness.\""
+}
+```

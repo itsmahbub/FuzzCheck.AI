@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper designs and evaluates a testing framework, DeepCruiser, for stateful deep learning systems, with a focus on Automated Speech Recognition (ASR). The oracle used to identify failures is based on transcription accuracy. A test case is considered a failure if the Word/Character Error Rate (W/CER) of the model's output exceeds a predefined threshold. The evaluation exclusively uses W/CER to quantify the 'erroneous degree' of the model's predictions. This type of failure—incorrect transcription—is a form of misprediction or accuracy degradation, which falls under the category of 'robustness-related failures'. The paper does not demonstrate testing against a model with explicit safety or security safeguards, nor does it show that the discovered mispredictions lead to harmful, unsafe, or biased behavior.",
+  "evidence": "Page 14, Section 6.2, \"Coverage-Guided Testing\": \"For audio in ASR, we decide a failed test by checking whether the Word/Character Error Rate (W/CER) exceeds a certain threshold.\"\n\nPage 18, Section 7.5, \"RQ4: Erroneous Behavior Detection\": \"To answer the question, we measure the WER of the generated audio in Fig. 8. WER represents the erroneous degree of the RNN prediction.\"\n\nPage 19, Answer to RQ 4: \"DeepCruiser can effectively generate tests to trigger erroneous behaviors of the RNN. For more fine-grained abstract model, it will capture more erroneous behaviors (i.e., higher WER) of the RNN.\""
+}
+```

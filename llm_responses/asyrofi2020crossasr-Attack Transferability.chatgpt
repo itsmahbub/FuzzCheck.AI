@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method (CrossASR) uses differential testing by cross-referencing multiple ASRs at once to detect disagreements and trains a failure-probability classifier using labels derived from those multi-ASR outcomes. However, it does not include an explicit design to discover transferable attacks (e.g., crafting inputs against a surrogate model) nor does it evaluate whether fault-inducing inputs discovered for one model are reused to induce failures in other, separately-held target models. All experiments feed the same TTS-generated audio to multiple ASRs simultaneously and report per-ASR failure counts, but do not perform or report transfer experiments where inputs found on one model are applied to a different unseen target.",
+  "evidence": "Page 2, Section II-A: \"CrossASR performs a black-box differential testing to uncover erroneous behaviors on ASR systems by cross-referencing different ASRs to detect different transcriptions from ASRs.\"; Page 2, Section II-A (Case 2): \"If the ASR-transcribed text does not match the text input to TTS and there is another ASR’s transcribed text that matches with the text input to TTS, CrossASR determines the speech audio as a failed test case.\"; Page 4, Section II-B: \"For this training, a text has m labels, each corresponds to an ASR.\"; Page 6, Section III-D / Table V: reporting per-ASR failed-test-case counts (e.g., \"Google 4,036 2,539 2,202 4,795 13,572\"), with no description of experiments that reuse faults found on one ASR to test other (unseen) ASRs."
+}
+```

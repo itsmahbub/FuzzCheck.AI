@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "AutoDAN explicitly formulates the attack as maximizing the likelihood of a predefined target token sequence – namely, responses beginning with 'Sure, here is how to [Qi]'. The fitness function is the log-likelihood of exactly this attacker-chosen prefix, and the genetic algorithm steers prompt generation toward that specific sequence, satisfying the definition of targeted attack discovery.",
+  "evidence": "Page 4, Section 3.1 PRELIMINARIES — Formulation: “a common solution … is to designate the target response as affirmative, such as answers beginning with ‘Sure, here is how to [Qi].’ … express the attack loss function … in terms of conditional probability.”\n\nPage 6, Section 3.3 FITNESS EVALUATION: “given a specific jailbreak prompt Ji, the loss can be calculated by: LJi = –log P(rm+1,…,rm+k | t1,…,tm)”"
+}
+```

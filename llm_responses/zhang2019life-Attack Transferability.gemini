@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper does not incorporate explicit mechanisms into the fuzzing design to discover transferable failures, such as using feedback from multiple models to guide mutation. The fuzzer, LipFuzzer, is guided by a general linguistic model. However, the authors explicitly demonstrate the cross-platform transferability of their attack discovery method by applying it to two different major Voice Assistant platforms: Amazon Alexa and Google Assistant. The evaluation section reports successful identification of vulnerabilities on both systems, thereby showing that the fault-inducing inputs discovered by their method are effective against more than one model.",
+  "evidence": "Page 12-13, Section VI-C, \"vApp Store Evaluation\": The paper evaluates the fuzzer on two distinct platforms. \"Experiment Setup: We evaluate LipFuzzer by using templates crawled from the Amazon Alexa Store and Google Assistant Store.\" The results confirm vulnerabilities on both: \"As a result, a total of 715 (71.5%) Amazon Alexa vApps and 59 (29.5%) Google Assistant are verified to be vulnerable.\" This is further detailed in Table IV, which presents results for both platforms."
+}
+```

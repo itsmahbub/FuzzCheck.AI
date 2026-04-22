@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "ASDF performs untargeted differential testing that seeks transcription mismatches and increases coverage via text transformations and phonetic analysis. The tool's design and evaluation focus on uncovering generic transcription errors (failed test cases) and identifying error-prone phonemes, rather than steering generation toward attacker-chosen, specific target outputs or harmful objectives. No part of the paper describes generating audio to induce a predefined attacker-selected transcription or malicious content.",
+  "evidence": "Page 1, Abstract: \"ASDF generates more high-quality test cases by applying various text transformation methods (e.g., changing tense) to the input text in a failed test case.\" \n\nPage 2, Section II (Pipeline description): \"If there exists at least one system that can correctly transcribe the audio while a specific ASR system fails to do so, we say that a failed test case is uncovered for this specific ASR system.\" \n\nPage 2, Section IV (Definitions / Usage): \"A failed text is defined as an audio file that is incorrectly transcribed by at least one ASR system.\" \n\nPage 1, Abstract / Intro: \"ASDF also conducts phonetic analysis to identify the phonemes that are more challenging for ASR systems to transcribe.\""
+}
+```

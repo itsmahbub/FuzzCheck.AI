@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "DeepEvolution enforces plausibility at each mutation step by manually tuning parameter ranges for each transformation and rejecting any mutated input whose SSIM with its parent falls below a threshold. However, the paper does not describe any mechanism that tracks or bounds the total distortion accumulated over multiple generations relative to the original seed. There is no explicit control of cumulative perturbation magnitude across iterations, only per-step checks, which matches the “Medium” definition.",
+  "evidence": "Section IV.A Metamorphic Transformation (pp. 2–3): manual tuning of parameter bounds and SSIM threshold to preserve semantics per mutation; Section IV.C Swarm-based Metaheuristics (p. 3): use of domain intervals to ensure each transformation is semantically preserving — no discussion of bounding cumulative distortion across iterations."
+}
+```

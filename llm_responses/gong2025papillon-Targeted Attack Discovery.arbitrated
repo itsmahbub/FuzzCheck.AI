@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "PAPILLON is explicitly designed to craft prompts that induce specific, attacker-chosen outputs—namely, valid answers to each predefined harmful question—rather than merely eliciting any generic unsafe behavior. The framework’s question-dependent mutators generate jailbreak templates tailored to each malicious query, and the two-level judge ensures the model’s response both addresses that exact question and contains the intended harmful content. This per-question targeting aligns with the “High” level, which requires steering exploration toward attacker-chosen goals with predefined properties.",
+  "evidence": "Page 8, Section 3 Threat Model: “The objective of the attack is to craft jailbreak prompts for a collection of harmful or unethical questions that compel the target LLM to provide actual responses. Specifically, our goals are: 1) To circumvent the safety mechanisms of the target LLM… 2) To ensure that the responses… contain the harmful content intended by the query.”; Page 9, Section 4.2 Template Mutation and Optimization: “we design three novel question-dependent mutation strategies capable of generating mutations with semantic meaning… by leveraging the power of an LLM helper.”; Page 11, Section 4.3 Two-level Judge Module: “the judge model should be based on its harmfulness and its relevance to the harmful question… ensure the response content aligned with the query.”"
+}
+```

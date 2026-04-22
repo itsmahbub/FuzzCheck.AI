@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper explicitly describes generating perturbations directly on input bytes/pixel values (integer domain) rather than in a lifted continuous space, and reports a 0.0% inactivation rate (i.e., perturbations survive serialization). The mutator operates on bytes with discrete ±ε changes and the authors contrast BET with white-box methods that produce decimal perturbations which are lost after rounding/clipping. These statements and the reported Inact-Rate demonstrate that BET enforces the input-format constraints relevant to images, so fault-inducing perturbations persist after standard serialization.",
+  "evidence": "Section 3.1 (Key Insight), p.3: \"Thus, we craft test cases by adding such continuous perturbations directly to them (e.g. modifying pixel values of images) without requiring any inner knowledge of target models.\"; Section 3.5 (Mutator), p.7: \"each byte has 256 kinds of perturbations. Thus, for input with N pixels, the search space of perturbations is 256^N ... we limit the perturbations to each byte to two choices {+ε, −ε}, where ε is a hyperparameter ... Given an original input Eo, a current best test case Eb ... if Eb[i] = Eo[i], we randomly add perturbation value of +ε or −ε to this byte ...\"; Section 4.3 (BET for Single Model Testing), p.10: \"The Inact-Rate of BET is 0.0%. The perturbations are directly added on pixel values as integers, BET does not suffer the inactivation issue.\""
+}
+```

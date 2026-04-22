@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper does not design for or evaluate cross-model attack transferability. Adapt and the experiments operate on a single DNN at a time (Algorithm Adapt(DNN, I, Cov)) and all reported evaluations measure coverage and adversarial inputs on the same model used for fuzzing. The paper neither proposes surrogate-model guidance nor reuses fault-inducing inputs discovered on one model to test other models; in fact the authors note they ran DeepXplore in a single-DNN mode for comparison (rather than differential multi-model testing). Hence the work does not demonstrate whether discovered failures transfer across models.",
+  "evidence": "Page 168, Section 3.2 (Algorithm 2): \"procedure Adapt(DNN, I, Cov)\" — the algorithm is defined to take a single DNN as input and learns strategies while testing that model.; Page 170, Section 4.1 Experimental Setup: \"For each dataset, we used two pre-trained models: LeNet-4 and LeNet-5 [17] for MNIST, and VGG-19 [29] and ResNet-50 [13] for ImageNet.\" (experiments are reported per-model).; Page 170, Section 4.1 Experimental Setup: \"DeepXplore originally performs differential testing requiring multiple DNNs without labeled data but we used it with a single DNN and labeled data in our experiments.\" — the authors explicitly state they did not perform multi-model (differential) testing in their experiments."
+}
+```

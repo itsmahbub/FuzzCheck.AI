@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper proposes a data augmentation technique, SENSEI, to improve the robustness of a single Deep Neural Network (DNN) model during training. The method uses a genetic algorithm to find input variants that maximize the loss for the specific model being trained. The entire methodology is focused on a single model instance. The evaluation measures the 'robust accuracy' of individual models after they have been trained using the proposed technique. The paper does not conduct any experiments to demonstrate whether the fault-inducing inputs (variants) generated for one model can trigger failures in other, independently trained models. The design lacks mechanisms for discovering transferable failures, and the evaluation does not assess transferability.",
+  "evidence": "Page 12, Section 6, 'Test generation technique': \"DeepXplore [24] generates test inputs that lead to exhibit different behaviors by different models for the same task. Our approach does not require multiple models.\" This quote explicitly states that the proposed approach, unlike others, is designed to work with a single model, which precludes the discovery or evaluation of transferable failures across different models."
+}
+```

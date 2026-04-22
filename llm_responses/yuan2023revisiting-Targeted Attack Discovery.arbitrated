@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "NLC’s fuzzing objective is to maximize a coverage metric that promotes discovering generic prediction errors and increasing the diversity of misclassifications across classes, rather than to achieve any attacker-chosen or predefined target outcome. The experiments measure total ‘#triggered faults’ (misclassifications) and class‐coverage diversity, without directing the model to a specific target label or harmful functionality. Therefore, NLC performs untargeted exploration revealing generic failures, matching the Low level under the Targeted Attack Discovery metric.",
+  "evidence": "Page 10, Section VI-B: “inputs are mutated to maximize the feedback yielded by the criteria. We evaluate the mutated inputs on 1) #triggered faults, 2) naturalness, and 3) diversity of the erroneous behaviors.”\n\nMetric Definition: Low: “Performs untargeted exploration, revealing generic failures such as misclassifications or prediction inconsistencies.”"
+}
+```

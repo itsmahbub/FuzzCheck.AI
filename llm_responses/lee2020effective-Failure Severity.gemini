@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper designs and evaluates a method, ADAPT, for finding adversarial inputs in deep neural networks. The evaluation is performed on standard image classification models (LeNet-4, LeNet-5, VGG-19, ResNet-50) which are not described as having any explicit safety, policy, or security safeguards. The failures discovered and reported are misclassifications, referred to as 'incorrectly classified labels' or 'adversarial inputs'. These types of failures fall squarely into the 'robustness-related failures (e.g., mispredictions)' category, as defined by the metric. The paper does not demonstrate the bypass of any safeguards or the discovery of failures that are inherently harmful, unsafe, or toxic beyond being incorrect predictions.",
+  "evidence": "Page 9, Section 4.3, \"Adversarial Inputs\": \"Table 3 reports the average number of mutations per image (Mutations), the average number of adversarial inputs found per image (Adv. Inputs), the total number of incorrectly classified labels (Labels), and the number of initial inputs (Seeds) from which adversarial inputs were found.\" This quote explicitly defines the discovered failures in terms of misclassifications ('incorrectly classified labels'). Figure 3 on page 10 further illustrates these failures with examples like an image of the digit '1' being misclassified as '6' or '8'."
+}
+```

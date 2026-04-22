@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper evaluates HDTest against a single HDC model instance (trained/evaluated on MNIST) and does not perform or report any experiments that reuse fault-inducing inputs discovered on one model to test other independently trained models. There is no mention of surrogate models, cross-model evaluation, or explicit design to encourage transferability; the only related experiment retrains the same HDC classifier with generated adversarial inputs and then tests that (retrained) same model.",
+  "evidence": "Page 6, Section D (Case Study on Defense Against Adversarial Attacks): \"First, for a specific HDC model, we run HDTest to generate 1000 adversarial images. We then randomly split such 1000 images into two subsets. We feed the first subset of adversarial images to the HDC model with correct labels to retrain the HDC model... Next, we use the second subset of adversarial images to attack the HDC model.\"; Page 6, Section E (Discussion): \"While we only consider one dataset in this paper due to the fact that HDC is still exploring its use in image classification domain, HDTest can be naturally extended to other HDC model structures because it considers a general greybox assumption with only HV distance information.\"; Page 5, Section V.A (Experimental Setup): \"We use the MNIST database of handwritten digits ... for training and testing the HDC model at an accuracy around 90%.\""
+}
+```

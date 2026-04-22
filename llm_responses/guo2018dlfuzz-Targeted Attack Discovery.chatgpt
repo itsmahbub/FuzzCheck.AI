@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "DLFuzz is designed to find inputs that cause a model's prediction to change relative to the original input (i.e., any misclassification) and to maximize neuron coverage, but it does not steer mutations toward a specific attacker-chosen target output or specific harmful functionality. Its loss/objective pushes inputs to cross the decision boundary into one of the top-k other classes (unspecified), and the algorithm treats any changed label (c' != c) as an adversarial example. These design choices correspond to untargeted exploration rather than targeted attack discovery.",
+  "evidence": "Abstract (page 2): \"DLFuzz... keeps minutely mutating the input to maximize the neuron coverage and the prediction difference between the original input and the mutated input...\"; 3.1 Architecture (page 3): \"If the mutated input t' and the original input t are both fed to the CNN but classified to be of different class labels, we treat this as an incorrect behavior and t' to be one of the adversarial inputs.\"; 3.2 Algorithm / Algorithm 1 (page 4): objective definition \"obj = Σ_k ci − c + λ · Σ_m ni\" and explanation: \"maximizing the first part guides the input to cross the decision boundary of the original class and lie in the decision space of top k other classes.\"; Algorithm 1 (page 4, pseudocode): line showing the acceptance condition \"if c' != c then adversarial_set.append(x')\" (i.e., any changed label is treated as a success)."
+}
+```

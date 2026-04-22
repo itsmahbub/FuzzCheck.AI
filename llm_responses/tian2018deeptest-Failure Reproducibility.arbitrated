@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper’s mutations consist solely of geometric and semantic image transformations (brightness/contrast adjustment, rotation, scaling, shear, blur, fog, rain) applied via standard libraries. Such transformations are inherently less sensitive to serialization-induced precision loss—small changes in brightness or an affine warp will survive typical image encoding—yet the paper does not describe any explicit handling of pixel‐value constraints (clipping to [0,255], rounding to integer precision) nor any validation that failures persist after writing/reading images. Under the metric, this corresponds to applying transformations less sensitive to serialization without enforcing format constraints, matching the “Medium” level.",
+  "evidence": "Section 3.2 (p. 306): “we investigate nine different realistic image transformations (changing brightness, changing contrast, translation, scaling, horizontal shearing, rotation, blurring, fog effect, and rain effect). … We use four different types of blurring filters: averaging, Gaussian, median, and bilateral.”\nSection 4 (p. 307): “we leverage seven different types of simple image transformations: translation, scaling, horizontal shearing, rotation, contrast adjustment, brightness adjustment, and blurring. We use OpenCV to implement these transformations.”\n(No mention of clipping/rounding pixel values or checks of failure reproducibility across serialization.)"
+}
+```

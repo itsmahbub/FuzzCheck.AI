@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's proposed method, PAPILLON, is designed to generate jailbreak prompts that cause LLMs to produce harmful and policy-violating content. The evaluation section explicitly tests the method's resilience against several state-of-the-art, explicit security safeguards. The paper empirically demonstrates that PAPILLON can successfully bypass these safeguards, including perplexity filters, SmoothLLM, Llama Guard, and even hybrid combinations of these defenses, while maintaining a high attack success rate. This directly aligns with the 'High' severity rating, which requires targeting a model with safeguards and empirically showing failures that bypass them to induce prohibited behavior.",
+  "evidence": "Page 14, Section 6.3 Llama Guard and Section 6.4 Hybrid Defense: \"Llama Guard [17] is a safeguard model based on the Llama-2-7B architecture, designed to classify prompts and outputs in AI-human interactions as “safe” or “unsafe”. Unsafe prompts are filtered to defend against jailbreak attempts. In our study, we targeted LLMs equipped with Llama Guard, with results presented in Table 6. The experimental findings reveal that we can achieve a high attack success rate even under Llama Guard’s defense... In addition to single defenses, we also consider two combinations of multiple defenses, referred to as hybrid defenses... Hybrid defenses generally provide stronger protection than single defenses. However, PAPILLON still achieves a high attack success rate in such cases.\""
+}
+```

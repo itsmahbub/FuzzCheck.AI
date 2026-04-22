@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "ASDF generates audio test inputs by applying text transformations to produce new texts and then synthesizing audio files via a TTS library (gTTS). Because inputs are produced directly in a serialized audio format (audio files), perturbations are not limited to in-memory floating-point edits that could be lost by serialization. This matches the rubric's criterion that fuzzers which generate inputs directly in a serialized format are reproducible under serialization.",
+  "evidence": "Page 2, Section III (CORE FUNCTIONALITIES): \"Each line of text in the file is converted into an audio file by gTTS [18].\"; Page 1-2, Section II (TOOL DESIGN): \"A Text-To-Speech (TTS) service is used to generate audio from the text, which is then fed into the ASR systems to obtain their transcriptions.\"; Page 2, Section V (CHALLENGES AND FUTURE WORK): \"ASDF generates an audio test suite using a TTS library.\""
+}
+```

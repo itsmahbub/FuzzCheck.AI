@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While the paper does explicitly enforce serialization‐safe mutations for discrete inputs—using the EDA toolkit to produce valid text and RDKit to enumerate valid SMILES strings—it only partially enforces format constraints for continuous inputs. For MNIST images and UCF101 video frames it adds Gaussian noise and \"rounds off the decimals around 0 and 1 to make the pixel value stay within the value range,\" but does not describe full clipping and integer‐precision rounding to the standard [0,255] pixel format upon serialization. Thus, it respects input‐format constraints for discrete data but only partially enforces them for images/videos, matching the metric’s “Medium” level.",
+  "evidence": "p.1196 Section VI-B Mutation Policies: “When the LSTM input has continuous values (e.g., image input), Gaussian noises with fixed mean and variance are added to the input.”\n\np.1200 Section VII-A 3) Input Mutation (MNIST/UCF101): “For MNIST model, we add Gaussian noise to input image and round off the decimals around 0 and 1 to make the pixel value stay within the value range.” “For UCF101 model, we add Gaussian noise to the original video frames …”\n\np.1200 Section VII-A 3) Input Mutation (IMDB/Lipophilicity): “we take a set M of mutants from the EDA toolkit … ensures the mutated text paragraphs are always valid.” “we take a set M of mutants that change the SMILES string without affecting the molecular structure … The enumerated SMILES strings are the test cases.”"
+}
+```
