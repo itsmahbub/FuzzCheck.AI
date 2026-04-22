@@ -65,13 +65,28 @@ def extract_llm_output(llm_response):
                 continue
     raise ValueError("No valid JSON found in the response.")
 
-def evaluate_with_model(model, paper_path, metric_name, metric_info):
-
-    lines = []
-    lines.append(f"{metric_name}: {metric_info['description']}")
+def build_metric_prompt(metric_name, metric_info):
+    lines = [
+        f"Metric: {metric_name}",
+        f"Description: {metric_info['description']}",
+        f"Coding Guidance: {metric_info['coding_guidance']}",
+        "Allowed Values:"
+    ]
     for val, desc in metric_info["values"].items():
         lines.append(f"- {val}: {desc}")
-    metric_description = "\n".join(lines)
+
+    return "\n".join(lines)
+
+def validate_result(result, metric_info):
+    allowed_values = set(metric_info["values"].keys())
+    value = result.get("value")
+    if value not in allowed_values:
+        raise ValueError(
+            f"Invalid value '{value}'. Expected one of: {sorted(allowed_values)}"
+        )
+
+def evaluate_with_model(model, paper_path, metric_name, metric_info):
+    metric_prompt = build_metric_prompt(metric_name, metric_info)
 
     if model == 'chatgpt':
         paper_file = file_for_chatgpt(paper_path)
@@ -85,7 +100,7 @@ def evaluate_with_model(model, paper_path, metric_name, metric_info):
                         "content": [
                             {
                                 "type": "input_text",
-                                "text":  f"Assessment Metric:\n{metric_description}"
+                                "text":  f"Assessment Metric:\n{metric_prompt}"
                             },
                             {
                                 "type": "input_file",
@@ -102,7 +117,7 @@ def evaluate_with_model(model, paper_path, metric_name, metric_info):
     else:
         paper_content = file_for_gemini(paper_path)
         prompt =  (
-            f"Assessment Metric:\n{metric_description}"
+            f"Assessment Metric:\n{metric_prompt}"
         )
         try:
             response = gemini_client.models.generate_content(
@@ -124,6 +139,7 @@ def evaluate_with_model(model, paper_path, metric_name, metric_info):
 
 def arbitration(chat_output, gemini_output, paper_path, metric_name, metric_info):
     paper_file = file_for_chatgpt(paper_path)
+    metric_prompt = build_metric_prompt(metric_name, metric_info)
     messages = [
         {"role": "system", "content": (
             "You are an expert evaluator resolving discrepancies between two LLM assessments.\n"
@@ -134,6 +150,8 @@ def arbitration(chat_output, gemini_output, paper_path, metric_name, metric_info
             "Instructions:\n"
             "- Carefully evaluate both assessments based on the metric and the paper.\n"
             "- Provide your own reasoning and conclusion.\n"
+            "- Treat the coding guidance as part of the scoring rubric.\n"
+            "- Choose exactly one allowed value from the metric definition.\n"
             "- Output should be a JSON object wrapped in a markdown code block.\n"
             "- Follow this format:\n"
             "```json\n"
@@ -149,7 +167,7 @@ def arbitration(chat_output, gemini_output, paper_path, metric_name, metric_info
             "content": [
                 {
                     "type": "input_text",
-                    "text":  f"Metric: {metric_name}\nDescription: {metric_info['description']}\nPossible Values: {metric_info['values']}\n Feel free to assign different value that the list in possible values when appropriate"
+                    "text":  f"Assessment Metric:\n{metric_prompt}"
                 },
                 {
                     "type": "input_file",
@@ -179,7 +197,7 @@ def process_paper(paper_path, assessments, papers, results_dir, output_json_path
 
     if paper_name not in papers:
         print("Paper not found in assessments.json, skipping:", paper_name)
-        os.remove(paper_path)
+        # os.remove(paper_path)
         return
     print(papers[paper_name]['name'])
     paper_key = papers[paper_name]["key"]
@@ -214,8 +232,10 @@ def process_paper(paper_path, assessments, papers, results_dir, output_json_path
         try:
             chat_result = extract_llm_output(chat_output)
             gemini_result = extract_llm_output(gemini_output)
-        except Exception:
-            print(f"Skipping {paper_name} - {metric_name}: JSON parsing error")
+            validate_result(chat_result, metric_info)
+            validate_result(gemini_result, metric_info)
+        except Exception as e:
+            print(f"Skipping {paper_name} - {metric_name}\n{str(e)}")
             continue
 
         if chat_result["value"] == gemini_result["value"]:
@@ -231,8 +251,9 @@ def process_paper(paper_path, assessments, papers, results_dir, output_json_path
 
             try:
                 final_result = extract_llm_output(arbitrated_response)
-            except:
-                print(f"Skipping {paper_name} - {metric_name}: Arbitration failed")
+                validate_result(final_result, metric_info)
+            except Exception as e:
+                print(f"Skipping {paper_name} - {metric_name}: Arbitration failed.\n{str(e)}")
                 continue
 
 

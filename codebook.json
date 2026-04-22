@@ -24,7 +24,8 @@
       "values": {
       "High": "Enforces input plausibility throughout fuzzing iterations by explicitly accounting for cumulative distortion across repeated mutations, for example by controlling perturbation magnitude relative to the original seed across iterations or by restricting search to a plausible input distribution (e.g., via a generative model trained to produce realistic inputs).",
       "Medium": "Applies mutations designed to preserve plausibility at each individual step (e.g., semantic-preserving transformations), but does not explicitly control cumulative distortion across fuzzing iterations (e.g., perturbation magnitude is measured relative to the previous mutated input rather than the original seed).",
-      "Low": "Does not enforce input plausibility, allowing unrealistic or semantically invalid inputs to induce failures."
+      "Low": "Does not enforce input plausibility, allowing unrealistic or semantically invalid inputs to induce failures.",
+      "N/A": "The metric does not apply because the fuzzer intentionally generates unrealistic or semantically invalid inputs to stress-test robustness or explore extreme behaviors."
     }
   },
   "Failure Reproducibility": {
