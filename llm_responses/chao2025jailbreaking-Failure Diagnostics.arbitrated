@@ -1,7 +1,0 @@
-```json
-{
-  "value": "Medium",
-  "why": "While the paper offers substantial statistical analysis of failure patterns (e.g. per-category jailbreak rates in Fig. 4), transferability explanations (attributing semantic prompts to similar training data), and ablations linking attack success to design choices (attacker model, prompt criteria, stream depth), it stops short of uncovering mechanistic root causes within the models. There is no examination of neuron activations, specific spurious token features, or detailed dataset biases beyond broad training-data similarity, nor concrete guidance on addressing those underlying vulnerabilities. Thus, it provides partial diagnostic insight but not a full explanatory account of why failures occur.",
-  "evidence": "Section IV-A (Direct jailbreaking attacks): “However, PAIR struggles with Llama-2 and the Claude models, demonstrating the success of the extensive safety fine-tuning.”\n\nSection IV-B (Jailbreak transfer experiments): “We believe that this is largely attributable to the fact that PAIR’s prompts are semantic, and they therefore target similar vulnerabilities across LLMs, which are generally trained on similar datasets.”\n\nFigure 4 (Categorizing PAIR’s jailbreak % by misuse category and model) and Section IV-E (Ablation experiments) link statistical failure patterns to design choices but do not probe internal model vulnerabilities."
-}
-```

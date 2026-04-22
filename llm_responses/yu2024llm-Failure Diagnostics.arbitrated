@@ -1,7 +1,7 @@
 ```json
 {
-  "value": "Low",
-  "why": "The paper focuses on measuring the fuzzer’s ability to discover jailbreak failures (using metrics like JQN, ASR, EASR, QBC, TBC) and on ablations of its own seed‐selection and mutation components. It does not analyze model internals, neuron activations, or systematic input‐failure patterns (e.g. error concentration by question type) to diagnose underlying LLM vulnerabilities or dataset biases. Instead, all diagnostic evaluations concern the fuzzer’s design, not root causes in the target models.",
-  "evidence": "Page 10, Section 4.2 (Experiment Design): the research questions exclusively target fuzzer performance (e.g. query/token budgets, component contributions) rather than diagnosing why prompts succeed on the LLM. Page 11–12, Section 4.3: results report ASR/EASR per model and ablate fuzzer settings, but no analysis of model weaknesses or failure‐inducing input features."
+  "value": "Medium",
+  "why": "While the paper does not trace failures to deep model vulnerabilities (e.g. spurious features or dataset biases), it does go beyond merely reporting that failures occur. It systematically analyzes patterns in where and how jailbreaks succeed—evaluating ASR/EASR across multiple models, studying transferability, performing seed-selection and mutator ablations, visualizing seed selection trees, and exploring hyperparameter effects. These statistical and ablation studies provide partial diagnostic insight into failure patterns and fuzzer design impacts, even though they stop short of linking failures to internal model weaknesses.",
+  "evidence": "Section 4.3 (Experiment III & IV): ASR/EASR comparisons across 11 open-source and commercial LLMs (Fig. 4) and seed-selection/mutator ablations (Table 2) that characterize which inputs and strategies trigger failures; Section 3.2 & Appendix F: visualization of MCTS-Explore seed-selection tree and hyperparameter ablations showing how exploration/exploitation balance affects attack success."
 }
 ```

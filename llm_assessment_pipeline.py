@@ -268,7 +268,7 @@ def process_paper(paper_path, assessments, papers, results_dir, output_json_path
         })
 
         with open(output_json_path, "w", encoding="utf-8") as f:
-            json.dump(papers, f, indent=4)
+            json.dump(papers, f, indent=4, ensure_ascii=False)
         print(f"Saved assessment for {paper_name} - {metric_name}")
 
 def main():

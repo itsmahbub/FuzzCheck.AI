@@ -1,7 +1,0 @@
-```json
-{
-  "value": "Medium",
-  "why": "While the paper goes beyond merely reporting failure-inducing inputs by examining hidden‐state clustering and neuron‐coverage differences between normal and jailbreak queries, its diagnostic analysis remains at the level of internal activations rather than uncovering deeper model vulnerabilities. The authors demonstrate that attack queries bypass ‘safety neurons’ and activate distinct attention‐layer and block‐level neurons (e.g., via the RCG metric), providing valuable insight into where failures manifest in the network. However, they do not link these activation patterns to fundamental weaknesses such as reliance on spurious features, dataset bias, or overfitting—analysis that would be required for a “High” rating.",
-  "evidence": "Page 3, Section III.A: clustering of hidden states distinguishes normal vs. attack behaviors but stops short of attributing these to specific non‐robust features. Page 7, Section IV.B: “Well‐aligned models have safety neurons to reject malicious queries [46], but attack queries often bypass these and activate neurons linked to abnormal behaviors. As a result, normal and abnormal behaviors activate different neurons, causing coverage differences.” This links failures to neuron activations, not to deeper model vulnerabilities."
-}
-```

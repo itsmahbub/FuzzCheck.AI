@@ -1,7 +1,7 @@
 ```json
 {
-  "value": "Medium",
-  "why": "While the paper does not delve into model‐internal diagnostics or root causes tied to spurious features or dataset bias, it does go beyond merely reporting failure instances by presenting detailed statistical failure patterns (e.g., per‐ASR and per‐TTS failure counts) and using those patterns to compare ASR reliabilities. This level of statistical analysis of failure distributions qualifies as partial diagnostic insight under the rubric, even though it remains a black‐box approach without linking failures to internal model vulnerabilities.",
-  "evidence": "Page 6, Section III.D (RQ1): “From this perspective, Wit can be considered as the worst ASR among the 4 since it has the highest number of failed test cases. Wav2Letter++ can be considered as the best ASR since it has the lowest number of failed test cases.” (statistical failure patterns across ASRs)\n\nPage 7, Table V: Shows total failed test cases per ASR/TTS combination, illustrating class‐level error concentration and supporting comparative reliability analysis."
+  "value": "Low",
+  "why": "While the paper reports large numbers of ASR failures and even analyzes false positives due to TTS quality or text‐normalization issues, it does not provide any diagnostic analysis of the true ASR failures themselves. It neither inspects model internals (neuron activations, coverage, etc.) nor links the observed failures to underlying model vulnerabilities such as spurious features, dataset biases, or overfitting. The only pattern analysis is simple counting of failures per ASR/TTS combination, which does not rise to the level of partial diagnostic insight as defined by the metric.",
+  "evidence": "Section III.D reports failure counts per ASR/TTS (e.g., Table III on page 6), but offers no hypothesis about model weaknesses; Section IV.B (page 9) analyzes only false positives—attributing them to TTS errors, text‐preprocessing limits, or audio ambiguity—rather than diagnosing why the ASR models themselves misrecognize inputs."
 }
 ```

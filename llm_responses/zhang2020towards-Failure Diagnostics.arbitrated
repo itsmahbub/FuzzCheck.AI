@@ -1,7 +1,0 @@
-```json
-{
-  "value": "Medium",
-  "why": "While the paper goes beyond merely reporting failure cases by uncovering and quantifying statistical patterns in model uncertainty (via PCS and VRO) for adversarial and benign examples, it stops short of tracing these patterns back to deeper underlying vulnerabilities such as reliance on non-robust features, dataset bias, or overfitting. The analysis remains at the level of statistical behavior of predictions under dropout rather than diagnosing root-cause weaknesses in the model’s learned representations or data distribution.",
-  "evidence": "Page 7, §3.3: “we adopt a two-dimensional metric, i.e., (PCS, VRO), to characterize the BEs and AEs… the data is classified into four patterns… provides a way to understand and analyze the behaviors of AEs and BEs.”\nPage 7–8, §3.4: “AEs generated from state-of-the-art adversarial attacks usually fall into the category with low PCS and high VRO… benign data mostly have high PCS and low VRO.”\n(These sections show statistical linkage of failures to uncertainty patterns but do not connect them to underlying model vulnerabilities.)"
-}
-```

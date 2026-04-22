@@ -1,7 +1,0 @@
-```json
-{
-  "value": "Medium",
-  "why": "While CureFuzz goes beyond just reporting crashes by using a curiosity (prediction-error) signal—i.e. a model-internal measure of epistemic uncertainty—to guide exploration and by showing that adding the discovered scenarios to training reduces failures, it does not analyze specific underlying vulnerabilities (such as dataset bias, reliance on spurious features, or overfitting) that cause those crashes. Instead, it provides a statistical and internal‐state view of where failures occur (novel or uncertain states) but stops short of diagnosing the root causes of the model’s weaknesses or prioritizing specific remediations beyond fine-tuning on the new cases. This corresponds to a “Medium” level of diagnostic insight.",
-  "evidence": "Page 5, Section 3.3 (Curiosity Mechanism): “The prediction error…serves as a proxy for the novelty of a given state.”\nPage 11, Section 6 (Discussion): “The prediction error…serves as a proxy for measuring uncertainty, specifically epistemic uncertainty.”\nPage 10, RQ3: “the crashes found by CureFuzz are reduced by 73% compared with the original DNN model.”\nPage 9, RQ1 (Coop Navi): “G-Model tends to find…crashes around the boundary…In contrast, CureFuzz covers more spread positions,” a statistical failure‐pattern analysis."
-}
-```
