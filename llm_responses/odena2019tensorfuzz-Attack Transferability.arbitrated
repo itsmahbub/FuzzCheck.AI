@@ -1,7 +1,7 @@
 ```json
 {
-  "value": "Medium",
-  "why": "The paper demonstrates cross-model transferability by reusing fault-inducing inputs discovered on the 32-bit model to trigger failures (prediction disagreements) in the 16-bit quantized version. However, the fuzzing design does not include explicit mechanisms (e.g., surrogate-model-guided mutation) to promote transferable attack discovery; it uses the activations of the single model under test as its coverage signal. Thus it empirically shows transferability without explicitly designing for it.",
-  "evidence": "Page 7, Section “TensorFuzz surfaces disagreements between models and their quantized versions”: “We then ran the fuzzer with mutations restricted to lie in a radius 0.4 infinity norm ball surrounding the seed images, using the activations of only the 32-bit model as coverage… With these settings, the fuzzer was able to generate disagreements for 70% of the examples we tried.”\n\nPage 5, Section “Coverage Analyzer”: describes using ANN over activations from the single model as the coverage metric, with no mention of surrogate-model feedback or multi-model guidance."
+  "value": "Low",
+  "why": "The paper does not perform a post-hoc transferability evaluation in which fault-inducing inputs discovered on one model are applied to a separate, independently trained model. Instead, it embeds a differential oracle between a full-precision model and its quantized variant directly into the fuzzing loop (i.e. it seeks inputs that make the two versions disagree), which the metric guidance explicitly excludes as cross-model transferability. There is no experiment where inputs found on model A are reused against an unseen target model B to demonstrate transferable failures.",
+  "evidence": "Page 7, Section 6 (“TensorFuzz surfaces disagreements between models and their quantized versions”): the fuzzing objective is defined as causing disagreement between the 32-bit and 16-bit versions of the same trained network, and no separate post-hoc transfer test on an independent model is reported."
 }
 ```

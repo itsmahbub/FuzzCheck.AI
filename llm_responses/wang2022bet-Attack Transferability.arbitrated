@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "Although BET uses multiple models in its differential-testing scenario to guide fuzzing (using disagreements with quantized models as part of its objective), it does not perform a post-hoc evaluation of fault-inducing inputs discovered on one model against other, independently trained models. Per the coding guidance, using multi-model disagreement as a differential oracle during fuzzing does not count as cross-model transferability. The paper never takes inputs found on a surrogate model and then applies them separately to an unseen target to demonstrate transfer.",
+  "evidence": "Page 167, Section 3.3: differential-testing objective uses Ĉ_i(x) in the fuzzing loop\nPage 170, Section 4.2: ‘‘Constructing differential models. To get a convincing DT result, we directly use Tensorflow-Lite… then we try to generate error-inducing inputs that cause disagreements between the original model with its quantized models…’’\nPage 172, Section 4.3: In the single-model testing evaluation, no experiments apply discovered inputs to other models to check for transferability"
+}
+```

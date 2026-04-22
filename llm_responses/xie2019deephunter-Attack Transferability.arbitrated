@@ -1,7 +1,7 @@
 ```json
 {
   "value": "Medium",
-  "why": "While DeepHunter is primarily designed for fuzzing a single DNN instance, the authors explicitly demonstrate transferability of fault-inducing inputs by reusing tests generated against the original model on its quantized versions to uncover new errors. There is no dedicated mechanism (e.g., surrogate-model feedback) to guide mutation for cross-model attack discovery, but the reuse of discovered faults on a second model clearly shows cross-model transferability.",
-  "evidence": "Definition 3 and Section 3.2.1 (Page 149) define checking ‘quantization erroneous behavior’ by applying mutants generated on model F to its quantized version F′. Section 5.4 RQ4 (Pages 153–154) reports experiments where inputs found on the original 32-bit models are reused on the 16-bit quantized models to detect errors, thereby demonstrating cross-model transferability."
+  "why": "Although DeepHunter is not explicitly designed with surrogate‐based guidance to discover transferable failures across independently trained models, the paper does demonstrate cross‐model transferability by applying fault‐inducing inputs generated on the original 32‐bit network to its quantized variants and measuring the resulting discrepancies (RQ4, Table 6). This meets the criterion for “Medium”: it shows empirical transferability of discovered failures without incorporating explicit design choices for transferable‐attack discovery.",
+  "evidence": "Experiments on Quantization Error Detection (Section 4.3, p. 7) and RQ4 results (Table 6, p. 10/154): tests generated on the original model are re-used on quantized versions to reveal decision logic inconsistencies; Definition 3 (Methodology, p. 5) defines a quantization erroneous behavior oracle comparing F and F′."
 }
 ```
