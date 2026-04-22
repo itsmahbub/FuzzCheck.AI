@@ -2980,7 +2980,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Peforms statistical analysis of failure patterns and correlated the failures with linguistic ambiguity",
+                    "why": "While it isolates the intent classifier as responsible, it does not explain what underlying vulnerability of the intent classifier model is the root cause. It peforms statistical analysis of failure patterns and correlates the failures with linguistic ambiguity",
                     "evidence": ""
                 },
                 "chatgpt": {
