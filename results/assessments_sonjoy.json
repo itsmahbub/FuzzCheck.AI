@@ -2306,7 +2306,7 @@
                 "Generative Synthesized"
             ],
             "exploration_strategy": [
-                "Data-driven"
+                "Prediction-guided"
             ]
         }
     },
@@ -2460,7 +2460,7 @@
                 "Generative Synthesized"
             ],
             "exploration_strategy": [
-                "Data-driven"
+                "Prediction-guided"
             ]
         }
     },

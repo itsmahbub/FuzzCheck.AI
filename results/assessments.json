@@ -44,8 +44,8 @@
                     "evidence": "Sec. 3.1 (Formulation): \u201ca common solution \u2026 is to designate the target response as affirmative, such as answers beginning with \u2018Sure, here is how to [Qi]\u2026\u2019 \u2026 express the attack loss function \u2026 in terms of conditional probability.\u201d; Sec. 3.3 (Fitness Evaluation): \u201cL_Ji = \u2013log P(r_{m+1},\u2026,r_{m+k} | t_1,\u2026,t_m)\u2026 define the fitness score of Ji as S_Ji = \u2013L_Ji.\u201d; Alg. 2 & Sec. 3.5 (Termination Criteria): loop \u201cwhile model responses have [refusal] word \u2026\u201d, showing search is steered against refusals toward the specific affirmative output."
                 },
                 "manual": {
-                    "value": "High",
-                    "why": "Guides towared output that start with a predified content",
+                    "value": "Medium",
+                    "why": "AutoDAN guides the search toward the jailbreak behavior class, namely eliciting non-refusal harmful assistance, rather than one exact attacker-chosen output fixed before search. The affirmative prefix is used only as a proxy for successful jailbreak behavior, not as a requirement that the model emit one exact output string or instance-level target.",
                     "evidence": ""
                 }
             },
@@ -2306,7 +2306,7 @@
                 "Generative Synthesized"
             ],
             "exploration_strategy": [
-                "Data-driven"
+                "Prediction-guided"
             ]
         }
     },
@@ -2460,7 +2460,7 @@
                 "Generative Synthesized"
             ],
             "exploration_strategy": [
-                "Data-driven"
+                "Prediction-guided"
             ]
         }
     },
