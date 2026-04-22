@@ -1725,7 +1725,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Objective function mechanism allows arbitrary user-defined checks to enable failure detection beyond robustness errors",
+                    "why": "Objective function mechanism allows arbitrary user-defined checks to enable broader classes of problematic behaviour (e.g., numerical errors/NaNs, model vs quantized-model disagreements), but not specific attacker-chosen output",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1813,7 +1813,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "It is not transferability. It is differential testing based oracle.",
+                    "why": "It is not cross-model transferability. They use the quantized model as part of the differential oracle that checks if the mutated input cause disagreement.",
                     "evidence": ""
                 },
                 "chatgpt": {

@@ -47,7 +47,7 @@
     }
   },
   "Attack Transferability": {
-    "coding_guidance": "Demonstrating cross-model transferability requires reusing fault-inducing inputs discovered on one model to test others.", 
+    "coding_guidance": "Examine whether fuzzer discovered fault-inducing inputs are applied to separate target models post-hoc to check whether failures carry over. Multi-model disagreement used as a differential oracle during fuzzing is not cross-model transferability.", 
     "description": "Models trained independently on the same task often exhibit common vulnerabilities, and fault-inducing inputs discovered by fuzzing one model may transfer to others. Such transferability underlies a realistic and widely studied attack setting in which an adversary crafts fault-inducing inputs against a surrogate model and reuses them against an unseen target. Transferable failures are therefore especially important for security evaluation, as they reveal vulnerabilities that extend beyond a single model instance. This metric captures whether and how a DNN fuzzing paper enables the discovery of transferable failures across models. It distinguishes between papers that incorporate explicit design choices to discover transferable failures and demonstrate cross-model transferability, papers that demonstrate transferability by reusing fault-inducing inputs on other models without explicitly designing for it, and papers that evaluate discovered failures only on the model used during fuzzing.",
     "values": {
       "High": "The fuzzing design incorporates explicit mechanisms to support the discovery of transferable failures across models (e.g., guiding mutation using feedback from surrogate models), and demonstrates cross-model transferability of the discovered failures.",
