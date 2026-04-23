@@ -7,7 +7,7 @@ TARGET_MODELS = ("chatgpt", "gemini", "arbitrator")
 RESET_METRICS = None
 # Example:
 RESET_METRICS = {
-    "Targeted Attack Discovery"
+    "Failure Diagnostics"
 }
 
 

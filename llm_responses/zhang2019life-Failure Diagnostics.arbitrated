@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While the paper goes beyond merely reporting that misinterpretations occur—isolating the NLU Intent Classifier as the primary failure point and building linguistic models to categorize different types of LAPSUS—it stops at correlating those failures with input‐level properties (e.g. long or complex invocation names) and offering corresponding mitigations. It does not delve into the internals of the classifier (training data biases, spurious feature reliance, overfitting, etc.) to explain why the model behaves this way. Thus, it provides partial diagnostic insight by characterizing failure patterns without linking them to deeper, underlying model vulnerabilities.",
+  "evidence": "Page 11 (VI-A Intent Classifier Evaluation): \"We empirically verified that the Intent Classifier contributes most in the problem of semantic misinterpretation.\"  \nPage 13 (VI-D Case Study): \"Security Implication: The aforementioned results show that simple and unique names are more difficult to be misspoken... using simple and unique voice commands is the most effective way of preventing vApp squatting attacks.\""
+}
+```

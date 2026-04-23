@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While the paper goes beyond merely reporting the existence of jailbreak failures by systematically characterizing how these failures manifest in neuron activation patterns (e.g., clustering hidden states, quantifying coverage differences across layers, blocks, and tokens), it stops short of tracing those failures back to deeper root causes such as dataset biases, spurious feature reliance, or overfitting. In other words, it provides a thorough characterization of failure properties and internal correlations (e.g., attack queries bypass safety neurons and activate distinct ‘knowledge-domain’ neurons), but does not link these observations to specific underlying vulnerabilities in the training data or model design. This aligns with a “Medium” diagnostic rating.",
+  "evidence": "Page 7, Section IV.B: “we observe significant coverage differences between normal (SN) and abnormal outputs (SNJ) … attack queries often bypass these and activate neurons linked to abnormal behaviors.”\nPage 8, Section IV.C: “Answer to RQ2: Attention layers are more effective than MLP layers … NC focuses on specific crucial blocks to capture features of different test suites …”\n(These analyses characterize failure patterns and their correlation with internal activations, but do not identify root-cause vulnerabilities such as corrupted data or spurious features.)"
+}
+```

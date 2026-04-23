@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "In Section 7.3 the authors go beyond characterizing failure patterns and explicitly trace a class of failures back to a root‐cause—corrupted training data. They train two LeNet‐5 models (one on clean MNIST data, one on the same data with 30% of ‘9’s mislabeled as ‘1’), generate inputs that induce differing predictions, and then use those inputs to identify the polluted training samples with 95.6% accuracy. This directly links the discovered failures to an underlying model vulnerability (training‐data pollution), satisfying the criterion for a High rating.",
+  "evidence": "Section 7.3 “Detecting training data pollution attack”: “As another application of DeepXplore, we demonstrate how it can be used to detect training data pollution attacks … We use DeepXplore to generate error-inducing inputs … We then search for samples in the training set … and identify them as polluted data. Using this process, we are able to correctly identify 95.6% of the polluted samples.”"
+}
+```

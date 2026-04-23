@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper goes beyond simply reporting failure counts by characterizing how erroneous behaviors vary across different synthesized environmental conditions and by correlating these failures with neuron‐coverage measures (KMNC/NBC) and steering‐angle divergences. This constitutes partial diagnostic insight into the properties of the discovered failures (e.g., which style vectors and environmental types yield concentrated errors and higher coverage). However, the work stops short of linking these failure patterns to underlying model vulnerabilities—such as dataset bias, reliance on spurious features, or overfitting—and does not perform causal or root‐cause analysis of the errors.",
+  "evidence": "Section 3.2.1 (page 5): “we employ DNN coverage criteria… to measure the ability of a style vector to detect diverse erroneous behaviours… k-multisection Neuron Coverage (KMNC) and Neuron Boundary Coverage (NBC).”\n\nSection 3.2.3 (page 6): “The ability to detect diverse erroneous behaviours… is measured by the increase in testing coverage (KMNC/NBC). The ability to detect more erroneous behaviours… is measured by the mean steering angle divergences…”\n\nSection 4.2 (page 7) and Tables 1–2 (page 8): Comparison of TACTIC against baselines in terms of achieved coverage and number of errors across environmental conditions, showing which styles induce more failures, but with no analysis linking these failures to model training or internal vulnerabilities."
+}
+```
