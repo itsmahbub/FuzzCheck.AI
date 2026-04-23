@@ -1,4 +1,4 @@
-Total disagreements (manual != arbitrator): 27
+Total disagreements (manual != arbitrator): 26
 ==========================================================================================
 
 [1] AutoDAN (2024) [liuautodan]
@@ -18,7 +18,7 @@ Total disagreements (manual != arbitrator): 27
     ChatGPT:        Medium
     Gemini:         Medium
     Manual why:     It provides rationality why the discovered failures are more stealthy than the baselines but not how the failures are related to model weaknesses or any failure patterns
-    Arbitrator why: The paper provides diagnostic analysis that characterizes properties of discovered failures and how they correlate with input structure and defenses, but it does not trace failures to deeper underlying model vulnerabilities (e.g., corrupted training 
+    Arbitrator why: The paper provides empirical, failure-focused characterizations (e.g., failures correlate with high perplexity / nonsensical prompts, paraphrasing removes token-level attacks, poor cross-model transfer for gradient/token-based attacks) and hypotheses
 ------------------------------------------------------------------------------------------
 
 [3] AutoDAN (2024) [liuautodan]
@@ -77,7 +77,7 @@ Total disagreements (manual != arbitrator): 27
     Arbitrator:     Low
     ChatGPT:        Medium
     Gemini:         Low
-    Manual why:     Use metamorphic transformations but not consider IO effects (clipping, rounding).
+    Manual why:     Use metamorphic transformations (less sensitive to serialization-induced precision loss) but not consider IO effects (clipping, rounding).
     Arbitrator why: While the paper constrains the magnitude of pixel perturbations in memory (using L∞ and L0 bounds), it does not explicitly enforce that mutated pixel values are clipped to the valid integer range [0,255] nor that floating-point values are rounded to 
 ------------------------------------------------------------------------------------------
 
@@ -128,7 +128,7 @@ Total disagreements (manual != arbitrator): 27
     ChatGPT:        Medium
     Gemini:         Medium
     Manual why:     Shows that it works across behavior categories, provides transferability rationale, and shows some strategies are more effective than other but not the characterstics of the failures or root cause
-    Arbitrator why: The paper goes beyond merely reporting jailbreak successes: it analyzes properties and correlations of discovered failures (per-model and per-behavior category jailbreak rates, transferability across models, impact of defenses, and ablations on attac
+    Arbitrator why: The paper provides partial diagnostic insight into discovered failures by characterizing where and when PAIR succeeds or fails (per-model and per-behavior category jailbreak rates, transferability, ablations on attacker prompts, and defended performa
 ------------------------------------------------------------------------------------------
 
 [14] DeepXplore (2017) [pei2017deepxplore]
@@ -152,13 +152,13 @@ Total disagreements (manual != arbitrator): 27
 ------------------------------------------------------------------------------------------
 
 [16] DRFuzz (2023) [you2023regression]
-    Metric:         Failure Reproducibility
-    Manual:         Medium
-    Arbitrator:     Low
-    ChatGPT:        Low
-    Gemini:         Low
-    Manual why:     Generates and evaluates mutated inputs entirely in memory using both pixel level and image level semantic mutations. They use GAN-based fidelity filtering to ensure naturalness but does not ensure if the mutation will survive I/O.
-    Arbitrator why: The paper describes applying fine-grained, in-memory pixel-level perturbations (e.g., Gaussian and multiplicative noise, 0.5% of pixels) and normalizes pixels to [0,1] for GAN training, but it does not describe enforcing serialized input-format const
+    Metric:         Failure Diagnostics
+    Manual:         High
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:     Explains bias and overfitting of specific classes in regression process. Provides behavior-level explanations (which classes or behaviors regress, per-class fault heatmaps, and faulty-behavior tuples). Interprets regression faults as evidence of bias
+    Arbitrator why: The paper goes beyond merely reporting failures: it characterizes failure patterns by class and by specific misclassification behaviors (e.g., which source classes are commonly mispredicted as which target classes) and uses Grad-CAM heatmaps to show 
 ------------------------------------------------------------------------------------------
 
 [17] LipFuzzer (2019) [zhang2019life]
@@ -171,17 +171,7 @@ Total disagreements (manual != arbitrator): 27
     Arbitrator why: The paper's fuzzer (LipFuzzer) is explicitly designed to steer exploration toward causing specific, attacker-relevant misinterpretations: it generates mutated voice commands (LAPSUS) that cause a user to reach an unintended vApp/functionality (e.g., 
 ------------------------------------------------------------------------------------------
 
-[18] LipFuzzer (2019) [zhang2019life]
-    Metric:         Failure Diagnostics
-    Manual:         Medium
-    Arbitrator:     High
-    ChatGPT:        High
-    Gemini:         High
-    Manual why:     While it isolates the intent classifier as responsible, it does not explain what underlying vulnerability of the intent classifier model is the root cause. It peforms statistical analysis of failure patterns and correlates the failures with linguisti
-    Arbitrator why: The paper goes beyond reporting failures: it experimentally isolates the root cause (showing Intent Classifier, not ASR, is the primary cause of many misinterpretations), categorizes failures into linguistic types (pronunciation, vocabulary, grammar)
-------------------------------------------------------------------------------------------
-
-[19] semSensFuzz (2022) [woodlief2022semantic]
+[18] semSensFuzz (2022) [woodlief2022semantic]
     Metric:         Input Plausibility
     Manual:         High
     Arbitrator:     Medium
@@ -191,7 +181,7 @@ Total disagreements (manual != arbitrator): 27
     Arbitrator why: The paper designs mutations and explicit conformity checks to preserve plausibility at each mutation step (e.g., scoped semantic actions, preconditions, perspective/lighting/road-location checks, and using real-world entity resources). However, the d
 ------------------------------------------------------------------------------------------
 
-[20] ADAPT (2020) [lee2020effective]
+[19] ADAPT (2020) [lee2020effective]
     Metric:         Input Plausibility
     Manual:         Medium
     Arbitrator:     High
@@ -201,17 +191,7 @@ Total disagreements (manual != arbitrator): 27
     Arbitrator why: The paper enforces input plausibility explicitly across iterations by checking a distance constraint between each mutated input and the original seed (Constraint(I, I')), and they report maintaining the L2-distance to the original seed (0.05 on avera
 ------------------------------------------------------------------------------------------
 
-[21] DeepEvolution (2019) [braiek2019deepevolution]
-    Metric:         Failure Diagnostics
-    Manual:         Low
-    Arbitrator:     Medium
-    ChatGPT:        Medium
-    Gemini:         Medium
-    Manual why:     Uses neuron coveage as heuristic guide, does not show correlation between coverage and neurons
-    Arbitrator why: The paper provides partial diagnostic insight into discovered failures by characterizing their properties and relating them to internal model signals (neuron coverage) and input-sample size, but it does not trace failures to underlying model vulnerab
-------------------------------------------------------------------------------------------
-
-[22] DeepEvolution (2019) [braiek2019deepevolution]
+[20] DeepEvolution (2019) [braiek2019deepevolution]
     Metric:         Input Plausibility
     Manual:         High
     Arbitrator:     Medium
@@ -221,7 +201,7 @@ Total disagreements (manual != arbitrator): 27
     Arbitrator why: DeepEvolution enforces plausibility at each mutation step by manually tuning parameter ranges for each transformation and rejecting any mutated input whose SSIM with its parent falls below a threshold. However, the paper does not describe any mechani
 ------------------------------------------------------------------------------------------
 
-[23] HDTest (2021) [ma2021hdtest]
+[21] HDTest (2021) [ma2021hdtest]
     Metric:         Input Plausibility
     Manual:         Medium
     Arbitrator:     High
@@ -231,7 +211,7 @@ Total disagreements (manual != arbitrator): 27
     Arbitrator why: The fuzzer explicitly enforces input plausibility throughout fuzzing by measuring distances between each mutated input and the original seed and discarding mutants that exceed a preset threshold (e.g., L2 < 1). The paper reports normalized L1/L2 dist
 ------------------------------------------------------------------------------------------
 
-[24] TESTRNN (2021) [huang2021coverage]
+[22] TESTRNN (2021) [huang2021coverage]
     Metric:         Failure Severity
     Manual:         Low
     Arbitrator:     Medium
@@ -241,7 +221,7 @@ Total disagreements (manual != arbitrator): 27
     Arbitrator why: The paper's TESTRNN method is designed to and empirically demonstrates discovery of harmful/security-relevant failures — specifically adversarial inputs and backdoor-triggered misclassifications — (i.e., failures with security significance). However,
 ------------------------------------------------------------------------------------------
 
-[25] TACTIC (2021) [li2021testing]
+[23] TACTIC (2021) [li2021testing]
     Metric:         Targeted Attack Discovery
     Manual:         Low
     Arbitrator:     Medium
@@ -251,17 +231,27 @@ Total disagreements (manual != arbitrator): 27
     Arbitrator why: TACTIC’s search objective explicitly seeks to induce safety-violating behaviours—namely, steering-angle inconsistencies beyond a threshold—across different environmental conditions. While it does guide exploration toward these erroneous behaviours, i
 ------------------------------------------------------------------------------------------
 
-[26] TACTIC (2021) [li2021testing]
+[24] TACTIC (2021) [li2021testing]
     Metric:         Failure Reproducibility
     Manual:         Medium
     Arbitrator:     High
     ChatGPT:        High
     Gemini:         High
-    Manual why:     Apply metamorphic transformation using GAN model but does not consider whether GAN transformed images are still IO reproducible (no mention of clipping/rounding)
+    Manual why:     synthesizes driving scene images using image-to-image translation model (MUNIT) but does not mention if the model output is in serialized format or floating-point numbers that may be altered due to serialization.
     Arbitrator why: The paper’s method synthesises whole images via an image-to-image translation model (MUNIT) and uses those generated images as test inputs. This is functionally equivalent to generating rendered/serialized images (not tiny in-memory float perturbatio
 ------------------------------------------------------------------------------------------
 
-[27] KuK (2020) [zhang2020towards]
+[25] DistXplore (2023) [wang2023distxplore]
+    Metric:         Failure Diagnostics
+    Manual:         Medium
+    Arbitrator:     High
+    ChatGPT:        High
+    Gemini:         Medium
+    Manual why:     links the occurrence and detectability of errors to the statistical closeness (measured via MMD) between the distribution of generated test inputs and the distribution of another class at the logits layer.
+    Arbitrator why: The paper goes beyond simply reporting failures: it systematically analyzes the discovered misclassifications in terms of distributional properties and directly links them to a concrete model vulnerability—sensitivity to distribution shift between cl
+------------------------------------------------------------------------------------------
+
+[26] KuK (2020) [zhang2020towards]
     Metric:         Input Plausibility
     Manual:         Medium
     Arbitrator:     High
@@ -275,15 +265,15 @@ Total disagreements (manual != arbitrator): 27
 SUMMARY BY METRIC:
   Attack Transferability:             1 disagreement(s)
   Failure Diagnostics:                4 disagreement(s)
-  Failure Reproducibility:            3 disagreement(s)
+  Failure Reproducibility:            2 disagreement(s)
   Failure Severity:                   2 disagreement(s)
   Input Plausibility:                 12 disagreement(s)
   Targeted Attack Discovery:          5 disagreement(s)
 
 DIRECTION (manual -> arbitrator):
   Medium -> High            8
-  Low -> Medium             8
-  High -> Medium            7
-  Medium -> Low             2
+  High -> Medium            8
+  Low -> Medium             7
   High -> N/A               1
+  Medium -> Low             1
   Low -> High               1

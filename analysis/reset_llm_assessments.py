@@ -7,7 +7,7 @@ TARGET_MODELS = ("chatgpt", "gemini", "arbitrator")
 RESET_METRICS = None
 # Example:
 RESET_METRICS = {
-    "Failure Diagnostics"
+    "Input Plausibility"
 }
 
 
