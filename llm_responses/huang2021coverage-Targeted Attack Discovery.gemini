@@ -1,7 +1,7 @@
 ```json
 {
   "value": "Low",
-  "why": "The paper's method, TESTRNN, performs untargeted exploration to find generic failures, specifically misclassifications. The test oracle, which determines if a generated test case constitutes a failure, is explicitly defined as checking whether the model's output for a mutated input differs from the output for the original seed input. This is an untargeted approach, as it does not steer the search towards any specific, attacker-chosen target label (High) or a broader class of security-violating behaviors (Medium). The goal is to find any prediction inconsistency, which aligns with the definition of untargeted exploration.",
-  "evidence": "Page 8, Section VI-C1, \"Test Oracle\": \"A test case x' is said to not pass the oracle if x' is within the norm-ball of some known sample x, i.e., ||x − x'||2 ≤ r_oracle, and if x' has a different classification from x, i.e., φ(x) ≠ φ(x').\" This condition demonstrates that a defect is found when any misclassification occurs, not a specific one."
+  "why": "The paper's method, TESTRNN, defines a defect or an adversarial sample as any input that causes the model to produce a different output compared to the original seed input, as long as the input is within a certain distance (norm-ball) from the seed. The test oracle's objective is to find any prediction deviation (`φ(x) ≠ φ(x')`), which is an untargeted exploration strategy. The search is not guided toward a specific, predefined target label (e.g., class '7') or a broader class of safety violations (e.g., toxicity). It simply seeks any misclassification.",
+  "evidence": "Page 8, Section VI-C, 1) Test Oracle: \"A test case x' is said to not pass the oracle if x' is within the norm-ball of some known sample x, i.e., ||x − x'||2 ≤ roracle, and if x' has a different classification from x, i.e., φ(x) ≠ φ(x').\" This condition is also formally stated in Algorithm 1 on page 7, line 9."
 }
 ```

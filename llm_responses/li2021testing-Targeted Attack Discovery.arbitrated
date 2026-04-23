@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "TACTIC’s search objective explicitly seeks to induce safety-violating behaviours—namely, steering-angle inconsistencies beyond a threshold—across different environmental conditions. While it does guide exploration toward these erroneous behaviours, it does not aim for a narrowly defined, attacker-chosen target output (e.g., a specific steering angle), but rather a broad class of unsafe outcomes (any steering divergence beyond the error bound). This aligns with “Medium” in the metric: steering toward broader safety-violating behavior without a single predefined goal.",
+  "evidence": "Page 3, Section 3 overview: “Then TACTIC sets a search objective which is to maximise the number and diversity of erroneous behaviours…”\n\nPage 5, Section 3.2.2 (Metamorphic Error Analysis): “the MR used in TACTIC is defined as that the steering angles should be consistent … the MR is further relaxed to a steering angle divergence within an error bound.”\n\nPage 6, Section 3.2.3 (Fitness function): “F(s) = wc * Fc(s) + wd * norm(Fd(s)), … where Fd(s) = 1/|Io| Σ |f(x) – f(g(x, s))|.” These passages show TACTIC’s goal is to find any unsafe steering deviations rather than a specific attacker-chosen output."
+}
+```

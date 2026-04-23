@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "Although MDPFuzz defines and seeks to induce crashes as failure states, these crashes constitute a broad class of safety‐violating behaviors (e.g. any collision or fall), rather than a single, attacker‐chosen specific target output. The fuzzer’s oracle simply checks for any crash (collision with vehicles or buildings, agent falling, etc.) and guides exploration toward this general failure category, not toward a narrowly defined, specific crash scenario. Therefore, it aligns with steering exploration toward broad classes of unsafe behavior without targeting one precise predefined goal.",
+  "evidence": "Section 6 (Testing Oracles, page 9): “For RL and IL models in CARLA, we examine whether the model‐controlled vehicle collides with other vehicles or buildings. For DNN‐based ACAS Xu, we check collisions of the DNN‐controlled airplane with other airplanes. For Coop Navi, we check collisions between MARL‐controlled agents. For BipedalWalker, we check whether the RL‐controlled walking agent falls (i.e., its head touches the ground).”"
+}
+```

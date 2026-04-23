@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "DeepStellar’s test-generation and adversarial detection mechanisms are driven by untargeted misclassification (prediction deviation or inconsistency) rather than by steering inputs toward any attacker-chosen, specific target output. In coverage-guided testing, mutants are retained simply if they increase coverage or cause any incorrect prediction. In adversarial detection, the classifier learns to distinguish adversarial from benign inputs based on trace similarity, without specifying or aiming for particular target transcripts or labels.",
+  "evidence": "Page 7, Section 5.2 (Coverage-Guided Testing): “A mutant is an adversarial sample if it is predicted incorrectly by the network.”\nPage 7, Section 5.2: “we mainly focus on image classification and apply the metamorphic mutation strategy … that would keep the prediction meaning from the human’s perspective during testing.”\nPage 6, Section 4: definition of coverage criteria is based on exercising any incorrect behavior, not on achieving predefined target labels or outputs."
+}
+```

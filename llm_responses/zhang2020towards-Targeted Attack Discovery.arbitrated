@@ -1,7 +1,7 @@
 ```json
 {
-  "value": "Medium",
-  "why": "KuK explicitly guides its test‐generation toward inputs exhibiting attacker‐specified uncertainty patterns (e.g., PCS > p ∧ VRO < v) and—for some objectives—toward adversarial examples (x is an AE) or benign examples (x is a BE). This steering is more directed than untargeted misclassification discovery (Low) but does not aim to force the model to produce a single, attacker‐chosen label or payload (High). Instead, it targets broader classes of security‐relevant behaviors defined by uncertainty metrics, matching the Medium level.",
-  "evidence": "Section 4 (page 746): “To generate AEs which belong to the HL type, the objective is set as: PCS(x, M) > p ∧ VRO(x, M) < v ∧ x is an AE …”\n\nSection 3.3 (page 743): “we adopt a two‐dimensional metric, i.e., (PCS, VRO), to characterize … the data is classified into four patterns …”\n\nMetric definition (Targeted Attack Discovery): Medium covers steering toward broader classes of security‐violating behavior without aiming for a specific predefined output."
+  "value": "Low",
+  "why": "The KuK fuzzer’s objectives are defined in terms of general misclassification (x is an AE) combined with uncertainty‐pattern constraints (PCS and VRO thresholds), rather than any attacker‐chosen specific output (e.g. a particular target label or functionality). In other words, KuK seeks any input that causes the model’s prediction to change (an untargeted fault), steering towards prediction deviation under certain uncertainty metrics but not towards a predefined target label or narrowly defined failure class.",
+  "evidence": "Section 4 (Uncommon Data Generation), fitness for HL adversarial examples: “To generate AEs which belong to the HL type, the objective is set as: PCS(x, M) > p ∧ VRO(x, M) < v ∧ x is an AE…,” where “x is an AE” is defined simply as LM(x) ≠ LM(x′) (Definition 3, untargeted misclassification). Nowhere does the approach require or guide towards a specific attacker‐chosen target label or functionality."
 }
 ```
