@@ -1,0 +1,289 @@
+Total disagreements (manual != arbitrator): 27
+==========================================================================================
+
+[1] AutoDAN (2024) [liuautodan]
+    Metric:         Targeted Attack Discovery
+    Manual:         Medium
+    Arbitrator:     High
+    ChatGPT:        High
+    Gemini:         Medium
+    Manual why:     AutoDAN guides the search toward the jailbreak behavior class, namely eliciting non-refusal harmful assistance, rather than one exact attacker-chosen output fixed before search. The affirmative prefix is used only as a proxy for successful jailbreak 
+    Arbitrator why: AutoDAN explicitly defines and optimizes for a specific attacker-chosen target output—a fixed prefix (“Sure, here is how to [Qi]”) that anchors the malicious answer—and uses the conditional likelihood of that exact token sequence as the genetic algor
+------------------------------------------------------------------------------------------
+
+[2] AutoDAN (2024) [liuautodan]
+    Metric:         Failure Diagnostics
+    Manual:         Low
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:     It provides rationality why the discovered failures are more stealthy than the baselines but not how the failures are related to model weaknesses or any failure patterns
+    Arbitrator why: The paper provides diagnostic analysis that characterizes properties of discovered failures and how they correlate with input structure and defenses, but it does not trace failures to deeper underlying model vulnerabilities (e.g., corrupted training 
+------------------------------------------------------------------------------------------
+
+[3] AutoDAN (2024) [liuautodan]
+    Metric:         Input Plausibility
+    Manual:         High
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:     Use LLM to rewrite mutated prompt to ensure plausibility in each mutation step
+    Arbitrator why: The paper explicitly designs AutoDAN to produce semantically meaningful, fluent (i.e., plausible) jailbreak prompts and uses LLM-based diversification and synonym/momentum-based word replacement to preserve meaning at each mutation step (e.g., using 
+------------------------------------------------------------------------------------------
+
+[4] CureFuzz (2024) [he2024curiosity]
+    Metric:         Input Plausibility
+    Manual:         High
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:     Use CARLA simulator to check validity of the mutated inputs
+    Arbitrator why: The paper enforces plausibility at each mutation step: mutations are described as "small random perturbation[s]" constrained to the known legitimate state space and illegal/initially-colliding mutated states are checked and discarded (per-environment
+------------------------------------------------------------------------------------------
+
+[5] Zhou et al. (2025) [zhou2025understanding]
+    Metric:         Input Plausibility
+    Manual:         High
+    Arbitrator:     N/A
+    ChatGPT:        Medium
+    Gemini:         N/A
+    Manual why:     GPT-4 generates  new jailbreak queries through prompt rewriting. The attack suffix is related to jailbreak detection, not creation
+    Arbitrator why: The paper’s fuzzing approach (Jailbreak Case Generation) intentionally crafts adversarial prompts that deviate from the original seed semantics—appending malicious suffixes and refining prompts to induce model failures—rather than preserving realisti
+------------------------------------------------------------------------------------------
+
+[6] PAPILLON (2025) [gong2025papillon]
+    Metric:         Input Plausibility
+    Manual:         High
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         High
+    Manual why:     Use GPT-driven mutation operators to produce keep mutated prompts readable 
+    Arbitrator why: PAPILLON’s mutation framework uses high-level, LLM-driven operators to preserve semantic coherence and constrain prompt length at each mutation step, but the paper does not describe any mechanism that measures or limits the cumulative distortion of i
+------------------------------------------------------------------------------------------
+
+[7] DeepCruiser (2018) [du2018deepcruiser]
+    Metric:         Input Plausibility
+    Manual:         Medium
+    Arbitrator:     High
+    ChatGPT:        High
+    Gemini:         High
+    Manual why:     Although constrain mutation at most once per transformation category (volume/speed/clearness), cumulative effect in natualness by combination of different category is not accounted for
+    Arbitrator why: The fuzzer (DeepCruiser) is explicitly designed to preserve realistic, semantically-valid audio inputs across iterations. The paper describes (1) conservative per-mutation parameter choices to keep each single transformation human-recognizable, and (
+------------------------------------------------------------------------------------------
+
+[8] DeepHunter (2019) [xie2019deephunter]
+    Metric:         Failure Reproducibility
+    Manual:         Medium
+    Arbitrator:     Low
+    ChatGPT:        Medium
+    Gemini:         Low
+    Manual why:     Use metamorphic transformations but not consider IO effects (clipping, rounding).
+    Arbitrator why: While the paper constrains the magnitude of pixel perturbations in memory (using L∞ and L0 bounds), it does not explicitly enforce that mutated pixel values are clipped to the valid integer range [0,255] nor that floating-point values are rounded to 
+------------------------------------------------------------------------------------------
+
+[9] DeepHunter (2019) [xie2019deephunter]
+    Metric:         Attack Transferability
+    Manual:         Low
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Low
+    Manual why:     The oracle definitions is that if same input produce different output to a model and its quanitized version, then it is fault-triggering input. But it is not transferability.
+    Arbitrator why: Although DeepHunter is not explicitly designed with surrogate‐based guidance to discover transferable failures across independently trained models, the paper does demonstrate cross‐model transferability by applying fault‐inducing inputs generated on 
+------------------------------------------------------------------------------------------
+
+[10] LLM-Fuzzer (2024) [yu2024llm]
+    Metric:         Input Plausibility
+    Manual:         High
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:      Uses LLMs to perform rephrase, crossover, expand, shorten, and generate operations to ensure prompt remains semantically coherent and human-like.
+    Arbitrator why: The fuzzer explicitly uses mutation operators and LLM-assisted mutation to preserve semantic correctness at each mutation step (e.g., Rephrase, Shorten, Generate) and states these are designed to maintain semantic integrity. However, the paper does n
+------------------------------------------------------------------------------------------
+
+[11] ASDF (2023) [yuen2023asdf]
+    Metric:         Input Plausibility
+    Manual:         High
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:     ASDF mutates failed text cases using rule-based linguistic transformations, then converts the transformed text into audio with TTS for ASR testing. Retains only synthesized audio that passes cross-referencing validity checks, filtering out low-qualit
+    Arbitrator why: ASDF applies text-level mutations (e.g., tense changes, homophone substitution) that are designed to preserve plausibility at each transformation step and it explicitly filters out transformed inputs that are unrealistic by requiring at least one ASR
+------------------------------------------------------------------------------------------
+
+[12] TensorFuzz (2019) [odena2019tensorfuzz]
+    Metric:         Targeted Attack Discovery
+    Manual:         Medium
+    Arbitrator:     High
+    ChatGPT:        High
+    Gemini:         Low
+    Manual why:     Objective function mechanism allows arbitrary user-defined checks to enable broader classes of problematic behaviour (e.g., numerical errors/NaNs, model vs quantized-model disagreements), but not specific attacker-chosen output
+    Arbitrator why: TensorFuzz exposes a user-specified objective function that precisely defines the failure condition of interest (e.g. inputs causing NaNs, quantization disagreements, or a specific high-loss/low-gradient state). The fuzzer then explicitly steers its 
+------------------------------------------------------------------------------------------
+
+[13] PAIR (2025) [chao2025jailbreaking]
+    Metric:         Failure Diagnostics
+    Manual:         Low
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:     Shows that it works across behavior categories, provides transferability rationale, and shows some strategies are more effective than other but not the characterstics of the failures or root cause
+    Arbitrator why: The paper goes beyond merely reporting jailbreak successes: it analyzes properties and correlations of discovered failures (per-model and per-behavior category jailbreak rates, transferability across models, impact of defenses, and ablations on attac
+------------------------------------------------------------------------------------------
+
+[14] DeepXplore (2017) [pei2017deepxplore]
+    Metric:         Failure Severity
+    Manual:         Low
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:     It is designed to find prediction inconsistency between models and the malware bypasses are some instances of the discovered failures.
+    Arbitrator why: The paper empirically demonstrates discovery of harmful, safety-violating behaviors (e.g., self-driving car crashes and malware classifiers mislabeling malicious files as benign). However, the testing targets are pre-trained DNN components and the or
+------------------------------------------------------------------------------------------
+
+[15] DRFuzz (2023) [you2023regression]
+    Metric:         Targeted Attack Discovery
+    Manual:         Low
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Low
+    Manual why:     Intargeted exploration for generic regression misclassifications - any inputs that cause the new model to misclassify examples previously classified correctly
+    Arbitrator why: DRFuzz explicitly guides its fuzzing toward a predefined class of failures—regression faults—by maximizing the prediction difference between the prior and updated models. While it does not aim for a single attacker-chosen target label (which would be
+------------------------------------------------------------------------------------------
+
+[16] DRFuzz (2023) [you2023regression]
+    Metric:         Failure Reproducibility
+    Manual:         Medium
+    Arbitrator:     Low
+    ChatGPT:        Low
+    Gemini:         Low
+    Manual why:     Generates and evaluates mutated inputs entirely in memory using both pixel level and image level semantic mutations. They use GAN-based fidelity filtering to ensure naturalness but does not ensure if the mutation will survive I/O.
+    Arbitrator why: The paper describes applying fine-grained, in-memory pixel-level perturbations (e.g., Gaussian and multiplicative noise, 0.5% of pixels) and normalizes pixels to [0,1] for GAN training, but it does not describe enforcing serialized input-format const
+------------------------------------------------------------------------------------------
+
+[17] LipFuzzer (2019) [zhang2019life]
+    Metric:         Targeted Attack Discovery
+    Manual:         Low
+    Arbitrator:     High
+    ChatGPT:        High
+    Gemini:         High
+    Manual why:     Performs untargeted exploration where the oracle flags any incorrect intent classification, without encoding a predefined attacker goal or failure class. LLMs are crediting the security motivation rather than what the oracle actually checks.
+    Arbitrator why: The paper's fuzzer (LipFuzzer) is explicitly designed to steer exploration toward causing specific, attacker-relevant misinterpretations: it generates mutated voice commands (LAPSUS) that cause a user to reach an unintended vApp/functionality (e.g., 
+------------------------------------------------------------------------------------------
+
+[18] LipFuzzer (2019) [zhang2019life]
+    Metric:         Failure Diagnostics
+    Manual:         Medium
+    Arbitrator:     High
+    ChatGPT:        High
+    Gemini:         High
+    Manual why:     While it isolates the intent classifier as responsible, it does not explain what underlying vulnerability of the intent classifier model is the root cause. It peforms statistical analysis of failure patterns and correlates the failures with linguisti
+    Arbitrator why: The paper goes beyond reporting failures: it experimentally isolates the root cause (showing Intent Classifier, not ASR, is the primary cause of many misinterpretations), categorizes failures into linguistic types (pronunciation, vocabulary, grammar)
+------------------------------------------------------------------------------------------
+
+[19] semSensFuzz (2022) [woodlief2022semantic]
+    Metric:         Input Plausibility
+    Manual:         High
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:     Peforms rigorous conformity check on the mutated inputs
+    Arbitrator why: The paper designs mutations and explicit conformity checks to preserve plausibility at each mutation step (e.g., scoped semantic actions, preconditions, perspective/lighting/road-location checks, and using real-world entity resources). However, the d
+------------------------------------------------------------------------------------------
+
+[20] ADAPT (2020) [lee2020effective]
+    Metric:         Input Plausibility
+    Manual:         Medium
+    Arbitrator:     High
+    ChatGPT:        High
+    Gemini:         High
+    Manual why:     Constraints perturbation magnitude between the selected seed and the mutated seed but the selected seed might already been mutated multiple times. No mechansim to check whether cumulative accumulation of perturbation exceeds the threshold
+    Arbitrator why: The paper enforces input plausibility explicitly across iterations by checking a distance constraint between each mutated input and the original seed (Constraint(I, I')), and they report maintaining the L2-distance to the original seed (0.05 on avera
+------------------------------------------------------------------------------------------
+
+[21] DeepEvolution (2019) [braiek2019deepevolution]
+    Metric:         Failure Diagnostics
+    Manual:         Low
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:     Uses neuron coveage as heuristic guide, does not show correlation between coverage and neurons
+    Arbitrator why: The paper provides partial diagnostic insight into discovered failures by characterizing their properties and relating them to internal model signals (neuron coverage) and input-sample size, but it does not trace failures to underlying model vulnerab
+------------------------------------------------------------------------------------------
+
+[22] DeepEvolution (2019) [braiek2019deepevolution]
+    Metric:         Input Plausibility
+    Manual:         High
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         High
+    Manual why:     Enforces naturalness across iterations by computing SSIM after each mutation and rejecting any visually distorted image.
+    Arbitrator why: DeepEvolution enforces plausibility at each mutation step by manually tuning parameter ranges for each transformation and rejecting any mutated input whose SSIM with its parent falls below a threshold. However, the paper does not describe any mechani
+------------------------------------------------------------------------------------------
+
+[23] HDTest (2021) [ma2021hdtest]
+    Metric:         Input Plausibility
+    Manual:         Medium
+    Arbitrator:     High
+    ChatGPT:        High
+    Gemini:         High
+    Manual why:     Norm bounded mutation but ignores cumulative effect
+    Arbitrator why: The fuzzer explicitly enforces input plausibility throughout fuzzing by measuring distances between each mutated input and the original seed and discarding mutants that exceed a preset threshold (e.g., L2 < 1). The paper reports normalized L1/L2 dist
+------------------------------------------------------------------------------------------
+
+[24] TESTRNN (2021) [huang2021coverage]
+    Metric:         Failure Severity
+    Manual:         Low
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Medium
+    Manual why:     Even though it can detect backdoor triggers, this is purely diagnostic. The fuzzer exposes low-level functional and robustness failures (misclassifications, metamorphic inconsistencies, and backdoor-induced activation anomalies) without breaching beh
+    Arbitrator why: The paper's TESTRNN method is designed to and empirically demonstrates discovery of harmful/security-relevant failures — specifically adversarial inputs and backdoor-triggered misclassifications — (i.e., failures with security significance). However,
+------------------------------------------------------------------------------------------
+
+[25] TACTIC (2021) [li2021testing]
+    Metric:         Targeted Attack Discovery
+    Manual:         Low
+    Arbitrator:     Medium
+    ChatGPT:        Medium
+    Gemini:         Low
+    Manual why:     Finds inconsistent steering under environmental variations
+    Arbitrator why: TACTIC’s search objective explicitly seeks to induce safety-violating behaviours—namely, steering-angle inconsistencies beyond a threshold—across different environmental conditions. While it does guide exploration toward these erroneous behaviours, i
+------------------------------------------------------------------------------------------
+
+[26] TACTIC (2021) [li2021testing]
+    Metric:         Failure Reproducibility
+    Manual:         Medium
+    Arbitrator:     High
+    ChatGPT:        High
+    Gemini:         High
+    Manual why:     Apply metamorphic transformation using GAN model but does not consider whether GAN transformed images are still IO reproducible (no mention of clipping/rounding)
+    Arbitrator why: The paper’s method synthesises whole images via an image-to-image translation model (MUNIT) and uses those generated images as test inputs. This is functionally equivalent to generating rendered/serialized images (not tiny in-memory float perturbatio
+------------------------------------------------------------------------------------------
+
+[27] KuK (2020) [zhang2020towards]
+    Metric:         Input Plausibility
+    Manual:         Medium
+    Arbitrator:     High
+    ChatGPT:        High
+    Gemini:         High
+    Manual why:     The data generation loop (figure 2b) does not account cumulative accumulation of perturbation across iterations
+    Arbitrator why: The paper explicitly constrains perturbations relative to the original seed and limits mutation magnitude (L∞) during generation. The authors state they use an L∞ norm to bound allowable changes between each generated image and the original seed (i.e
+------------------------------------------------------------------------------------------
+
+
+SUMMARY BY METRIC:
+  Attack Transferability:             1 disagreement(s)
+  Failure Diagnostics:                4 disagreement(s)
+  Failure Reproducibility:            3 disagreement(s)
+  Failure Severity:                   2 disagreement(s)
+  Input Plausibility:                 12 disagreement(s)
+  Targeted Attack Discovery:          5 disagreement(s)
+
+DIRECTION (manual -> arbitrator):
+  Medium -> High            8
+  Low -> Medium             8
+  High -> Medium            7
+  Medium -> Low             2
+  High -> N/A               1
+  Low -> High               1

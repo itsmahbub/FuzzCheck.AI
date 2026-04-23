@@ -1020,7 +1020,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Use metamorphic transformations but not consider IO effects (clipping, rounding).",
+                    "why": "Use metamorphic transformations (less sensitive to serialization-induced precision loss) but not consider IO effects (clipping, rounding).",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2473,7 +2473,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Low",
-                    "why": "It just discovers mispredictions caused by the mutations, and the authors later show that some of those happen to be unsafe (malware classified as benign).",
+                    "why": "It is designed to find prediction inconsistency between models and the malware bypasses are some instances of the discovered failures.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2869,8 +2869,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "Generates and evaluates mutated inputs entirely in memory using both pixel level and image level semantic mutations. They use GAN-based fidelity filtering to ensure naturalness but does not ensure if the mutation will survive I/O.",
+                    "value": "Low",
+                    "why": "applies raw pixel-level noise (Gaussian, salt-and-pepper) directly to images and normalizes pixels into [0,1] but no mention of clipping/rounding on unnormalized mutated input.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3089,8 +3089,8 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "",
+                    "value": "Low",
+                    "why": "Discovers robustness failures (accuracy degradation with samentic preserving mutation)",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4103,7 +4103,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Apply metamorphic transformation using GAN model but does not consider whether GAN transformed images are still IO reproducible (no mention of clipping/rounding)",
+                    "why": "synthesizes driving scene images using image-to-image translation model (MUNIT) but does not mention if the model output is in serialized format or floating-point numbers that may be altered due to serialization.",
                     "evidence": ""
                 },
                 "chatgpt": {
