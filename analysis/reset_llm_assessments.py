@@ -10,11 +10,14 @@ RESET_METRICS = {
     "Input Plausibility"
 }
 
+BLACKLISTED_PAPERS = ["huang2021coverage", "yu2024llm", "liuautodan", "zhou2025understanding", "he2024curiosity"]
 
 def reset_llm_assessments(data, selected_metrics=None):
     reset_count = 0
 
     for paper in data.values():
+        if paper["key"] in BLACKLISTED_PAPERS:
+            continue
         assessments = paper.get("assessments", {})
         for metric_name, metric in assessments.items():
             if selected_metrics is not None and metric_name not in selected_metrics:
