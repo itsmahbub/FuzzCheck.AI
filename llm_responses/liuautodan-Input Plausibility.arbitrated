@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "Although AutoDAN explicitly aims to produce semantically meaningful and low-perplexity jailbreak prompts (e.g. via prototype initialization, LLM-based diversification and synonym-based mutations), all of these controls operate relative to the most recent prompt rather than the original seed. There is no mechanism in the genetic algorithm to measure or bound cumulative semantic drift against the initial handcrafted prototype; mutations and crossovers only ensure plausibility between successive generations. This matches the “Medium” level: semantic consistency and naturalness enforced step-by-step without accounting for distortion accumulation across iterations.",
+  "evidence": "– Section 3.2 (Population Initialization) and Alg. 5: LLM-based diversification revises each prompt \"with no change to its length\" but as part of initialization or per-mutation step.  \n– Section 3.4.2 (AutoDAN-HGA, paragraphs ‘Paragraph-level: selection, crossover and mutation’): crossover and mutation are applied to parent prompts each generation, with no reference back to the original prototype.  \n– No component in Sections 3.2–3.5 measures semantic distance or perturbation magnitude relative to the original handcrafted prompt across iterations."
+}
+```
