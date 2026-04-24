@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "TensorFuzz does not rely on a metamorphic oracle and therefore semantic consistency is not applicable. It does enforce input naturalness by restricting all mutations to valid neural‐network inputs and by bounding each perturbation step with a user‐configurable L∞ constraint relative to the element’s immediate parent. However, it does not prevent cumulative drift over multiple mutation steps (successive L∞‐ball constraints accumulate), so it enforces naturalness only between successive mutations, matching the “Medium” definition.",
+  "evidence": "Page 5, Mutator section: “The second is to add white noise, but to constrain the difference between the mutated element and the original element from which it is descended to have a user‐configurable L∞ norm.”\nPage 2, Algorithm 1: new mutants become parents for further mutation, implying per‐step constraints can compound.\nSection 6 (quantization experiment): “We restrict to inputs near seed images… within a radius 0.4 infinity norm ball,” showing that naturalness is managed per‐step or via external filtering rather than by globally fixing the original seed reference."
+}
+```

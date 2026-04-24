@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "CrossASR never mutates its seed inputs—instead it fixes the original text as the ground‐truth and synthesizes realistic speech via off‐the‐shelf TTS engines. As a result there is no per‐step or cumulative semantic drift: the semantic content is preserved by construction. Similarly, all generated inputs remain within a realistic speech distribution (they come directly from TTS), and any outputs that appear unintelligible (i.e. where no ASR matches the text) are labeled “indeterminable” rather than counted as failures. Thus CrossASR enforces both semantic consistency (the text is never altered) and naturalness (TTS‐generated speech remains plausible) across its entire testing process.",
+  "evidence": "Page 2, Sec. II: “CrossASR employs Text-to-Speech (TTS) engines to synthesize test inputs from texts and treats the texts as the ground truth labels…”;  Page 3, Sec. II-A: “If all ASRs’ transcribed texts differ from the input text… CrossASR considers all m 5-tuples… as Indeterminable Test Cases.”;  Page 4, Sec. II-B: “Text Preprocessor… normalizes non-standard words… to ensure that the text are pronounced properly by TTS.”"
+}
+```
