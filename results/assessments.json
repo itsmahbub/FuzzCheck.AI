@@ -689,8 +689,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "Although constrain mutation at most once per transformation category (volume/speed/clearness), cumulative effect in natualness by combination of different category is not accounted for",
+                    "value": "High",
+                    "why": "Constrains mutation at most once per transformation category (volume/speed/clearness) to ensure semantic consistency and naturalness.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3309,8 +3309,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "Constraints perturbation magnitude between the selected seed and the mutated seed but the selected seed might already been mutated multiple times. No mechansim to check whether cumulative accumulation of perturbation exceeds the threshold",
+                    "value": "High",
+                    "why": "Validates perturbation magnitude between the selected seed and its corresponding original seed so that perturbation does not exceed a given threshold",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3925,8 +3925,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "Cumulative effect on naturalness is ignored",
+                    "value": "High",
+                    "why": "Validates perturbation magnitdue with respect to the original seed (keeps mapping of original seed for each mutated input)",
                     "evidence": ""
                 },
                 "chatgpt": {
