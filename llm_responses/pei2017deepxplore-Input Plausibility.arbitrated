@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "DeepXplore enforces semantic consistency and naturalness via per‐step, domain‐specific constraints (e.g., only adjusting brightness within [0–255], adding occlusion patches, only adding manifest features). However, it does not enforce a global bound on cumulative distortion relative to the original seed (no explicit similarity constraint to the original input across iterations). Thus it preserves realism between successive mutation steps but does not prevent gradual drift over many iterations, matching the “Medium” criterion.",
+  "evidence": "Section 4.2 (Domain‐specific constraints) and Algorithm 1 (lines 12–14) describe how each gradient update is clamped to satisfy per‐step constraints (e.g., pixel ranges, occlusion patches), but there is no mechanism to enforce overall similarity to the original seed across iterations. Additionally, Section 6.2 shows these per‐step image and manifest constraints without any cumulative distortion limit."
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "ASDF does not enforce semantic consistency with original seeds nor maintain realistic inputs across iterations. Its text transformations include homophone-based sentence generation, which produces semantically unrelated new sentences rather than preserving the original meaning. Although it filters out inputs that no ASR can transcribe, this ‘determinability’ check does not guarantee naturalness (e.g., human-like speech) or semantic equivalence to the seed. Furthermore, mutations accumulate unchecked—there is no mechanism to bound cumulative semantic drift or enforce similarity to the original text—so ASDF allows semantically invalid or unrealistic inputs to induce failures.",
+  "evidence": "Page 2, Section III: “The Homophone Transformation method … obtain[s] a new example sentence that contains that homophone … used as the new test case.”\nPage 2, Section IV: “A transformed text input must be transcribed correctly by at least one ASR service to be deemed valid … otherwise, it is deemed indeterminable and discarded.”\nPage 3, Section V: “This assumes that the generated audio is interchangeable with the real-world speech of humans … there are differences … pronunciation, accent, and tone.”"
+}
+```

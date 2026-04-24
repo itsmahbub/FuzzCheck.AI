@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The fuzzer enforces semantic consistency and naturalness by applying an L2‐distance constraint between each mutated input and the original seed—never between successive mutants—so cumulative drift is prevented. All mutants must satisfy Constraint(I, I′) relative to the original seed I, and in experiments the authors report keeping that distance ≤0.05 on average, yielding adversarial images that are visually indistinguishable from the originals. This satisfies both (1) controlling semantic similarity with respect to the original seed and (2) restricting mutations to small, realistic perturbations.",
+  "evidence": "Page 4, Section 2.3 / Algorithm 1 (lines 12–14): “if Cov(O′) ⊄ C ∧ Constraint(I, I′) then …” where I is the original seed; Page 7, Section 4.1: “All the techniques, including Adapt, performed testing while maintaining the L2‐distance between the initial and mutated inputs within 0.05 on average.”; Page 9, Section 4.3: “the adversarial images found for VGG‐19 and ResNet‐50 were visually indistinguishable from the original ones.”"
+}
+```
