@@ -2249,8 +2249,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "FOL distribution analysis correlates failures with loss gradient, but does not trace to root causes like dataset bias or spurious features.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2351,8 +2351,8 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "High",
+                    "why": "It is designed to bypass safeguards and produce prohibited NSFW images.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2373,8 +2373,8 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "High",
+                    "why": "Performs goal-directed exploration toward output image that is semantically similar to the original attacker-specified prompt. It is not just byapssing refusal, it steers to output images with precise NSFW semantics.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2395,8 +2395,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "provides partial diagnostic insight (Table 9) by showing that discovered failures has low filter probability and high semantic similarity to the original prompt, empirically corroborating the design hypothesis (fig 3) that there are some equivalent tokens in embedding space which safety filters can not distinguish. However, they do not trace the discovered failures to model weakness.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2417,8 +2417,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "N/A",
+                    "why": "oracle does not assume semantic equivalence between the adversarial prompt text and the original sensitive prompt, instead it aims to discover adversarial prompt that produces images which is semantically equivalent to the original prompt. The threat model does not assume naturalness constraint on the mutated prompts, allowing nonsensical token substitutions. So input plausibility is not applicable for this.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2439,8 +2439,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "High",
+                    "why": "Operates in text domain - replaces sensitive tokens, no  floating-point precision, clipping, or rounding issues. The paper's re-use attack demonstrates that adversarial prompts found in one session can be reproduced later.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2461,8 +2461,8 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Low",
+                    "why": "They do not demonstrate whether adversarial prompts discovered in one model transfer the attack to another model. Their re-use attack experiment shows reprorducibiby of the attacks on the same model. No cross-model transferability.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2483,10 +2483,10 @@
             }
         },
         "taxonomy": {
-            "access_level": [],
-            "mutation_strategy": [],
-            "exploration_strategy": [],
-            "oracle": []
+            "access_level": ["Blackbox"],
+            "mutation_strategy": ["Rule-based"],
+            "exploration_strategy": ["Prediction-guided"],
+            "oracle": ["Property-based"]
         }
     },
     "Dai et al. - TWINFUZZ Dual-Model Fuzzing for Robustness Generalization in Deep Learning": {
