@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The fuzzer's oracle relies on agreement mining between two models, which is a form of differential testing. As this does not assume semantic equivalence between a mutated input and its seed, the 'semantic consistency' aspect of the metric is not applicable. However, the fuzzer explicitly aims to generate plausible, 'semantically meaningful' inputs, making the 'naturalness' aspect relevant. The paper proposes a 'Task-Driven Seed Selection' module specifically to enforce naturalness. This module filters candidate inputs by comparing them to their 'original counterpart' using a perceptual quality metric (SSIM for vision tasks). By validating each new seed against the original, unmutated input, the method directly controls for cumulative distortion across fuzzing iterations, ensuring that generated inputs remain realistic and perceptually similar to the original data.",
+  "evidence": "Page 4, Section: Task-Driven Seed Selection\n\"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X' and its original counterpart X. ... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\""
+}
+```

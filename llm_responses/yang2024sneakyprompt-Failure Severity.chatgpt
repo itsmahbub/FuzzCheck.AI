@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper explicitly targets models equipped with explicit safety filters (both open-source filters on Stable Diffusion and the closed-box safety filter of DALL·E 2) and empirically demonstrates that their attack (SneakyPrompt) bypasses those safeguards to produce prohibited NSFW images. The evaluation reports concrete bypass rates (including a 57.15% one-time bypass of DALL·E 2 and high bypass rates for multiple safety-filter types), showing practical successful bypass of deployed protections.",
+  "evidence": "Page 1 (Abstract): \"SneakyPrompt ... to jailbreak text-to-image generative models such that they generate NSFW images even if safety filters are adopted.\"; Page 2 (Contributions): \"We show that SneakyPrompt successfully finds adversarial prompts that allow a text-to-image model with a closed-box safety filter—namely DALL·E 2 [2]—to generate NSFW images.\"; Page 3 (Section 3.1, 'Safety Filter'): \"For example, DALL·E 2 [2] filters out contents from 11 categories such as hate, harassment, sexual, and self-harm.\"; Page 9 (Table 2): entry for DALL·E 2 original shows a one-time bypass rate of \"57.15%\" and related metrics; Page 10 (Section 6.1 'RQ1: Effectiveness at Bypassing Safety Filters' / Overall Results): \"SneakyPrompt achieves 57.15% one-time bypass rate with an average of 24.49 queries... This is the first work that bypasses the closed-box safety filter of DALL·E 2 with real-world sensitive images.\""
+}
+```

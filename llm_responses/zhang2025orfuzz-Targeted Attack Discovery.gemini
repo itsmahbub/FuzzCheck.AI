@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "The paper proposes ORFUZZ, a fuzzing framework designed to systematically detect a specific class of undesirable behavior known as \"over-refusal.\" Over-refusal is defined as an LLM erroneously rejecting a benign query due to overly conservative safety mechanisms. The fuzzer's goal is to generate test cases that trigger this behavior. This aligns with the \"Medium\" value because the exploration is steered toward a broad class of behavior (over-refusal) rather than a specific, attacker-predefined output (High) or an untargeted model fault (Low). The test oracle, OR-JUDGE, is designed to identify any instance belonging to this class, not a specific target response.",
+  "evidence": "Page 3, Section III-A, Study Design and Setup: \"Furthermore, we presented participants with the following definition of an over-refusal incident: • The user input must be benign. • The model must refuse to answer the input. • The reason for the refusal must be related to safety concerns.\" This quote defines the target of the fuzzer as a general class of failure, not a specific attacker-chosen output."
+}
+```

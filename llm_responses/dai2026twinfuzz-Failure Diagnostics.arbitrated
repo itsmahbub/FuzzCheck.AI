@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "While TWINFUZZ does more than simply report aggregate failure rates—it characterizes properties of the discovered failures (e.g. that high-risk inputs lie near the model’s decision boundary as detected by agreement mining, and that optimizing the LIB metric yields more transferable failures)—it stops short of tracing these failures back to deeper underlying vulnerabilities such as dataset bias or spurious feature reliance. Thus, it provides partial diagnostic insight (characterization and correlation with internal signals) but does not fully explain root causes exploitable for targeted mitigation.",
+  "evidence": "Page 3–4, “Agreement Mining”: “Inputs where the two models agree … suggests that the input likely resides near the decision boundary — where the model’s output is unstable and confidence is low.”\nPage 4–5, Ablation Study / Table 4: Removing agreement mining or the LIB metric causes a substantial drop in robust accuracy, demonstrating that these failure-characterization components are key to identifying informative edge cases."
+}
+```

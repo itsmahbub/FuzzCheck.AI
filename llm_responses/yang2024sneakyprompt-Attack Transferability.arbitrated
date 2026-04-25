@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper does not include any evaluation of applying fault‐inducing prompts found on one model or safety filter to a different, unseen target model. All “re‐use” experiments reuse prompts on the same model (or the same model under different random seeds), and although multiple safety filters and two target systems (Stable Diffusion and DALL·E 2) are attacked independently, there is no cross‐model transfer experiment or explicit mechanism in the fuzzer to guide prompt generation via a surrogate model whose failures are then tested on a separate target. Thus the work neither demonstrates nor explicitly designs for transferable failures across independently trained models.",
+  "evidence": "Page 3, Sec 3.2 Threat Model: re‐use refers only to prompts reused on the same model across seeds.\nPage 9, Table 2: reports one‐time and re‐use bypass rates separately for Stable Diffusion and DALL·E 2, but does not apply prompts found on one to the other.\nPage 12, Sec 6.3 Shadow Text Encoder: discusses using the same versus a substitute text encoder for guidance, not for cross‐model transfer experiments."
+}
+```

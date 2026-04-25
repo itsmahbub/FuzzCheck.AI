@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's method, SneakyPrompt, incorporates an explicit mechanism designed to discover transferable attacks. Specifically, when targeting a closed-box model like DALL-E 2 where the internal text encoder is inaccessible, the framework uses a local, different 'shadow text encoder' as a surrogate to guide the search for adversarial prompts. The design relies on the explicit assumption that the properties of prompts found using this surrogate model will transfer to the target model. The paper then demonstrates the success of this transferability by showing that the prompts generated with guidance from the shadow encoder are effective at jailbreaking the black-box DALL-E 2 model.",
+  "evidence": "Page 4, Section 3.2, Threat Model: \"Offline, unlimited query to Ê: An adversary can query the local, shadow Ê with unlimited open-box access. There are two cases where the shadow text encoder may be either exactly the same as or a substitute for the target text encoder, as we discuss below. 1) Ê(p) ≠ E(p): That is, Ê has different architecture and parameters from E, because the adversary only has closed-box access to M. For example, DALL-E2 [2] utilizes a closed-sourced CLIP text encoder (ViT-H/16). In this case, an adversary can use a similar text encoder, e.g., the open-source CLIP-ViT-L/14, with the assumption of transferability between different CLIP text encoders.\""
+}
+```

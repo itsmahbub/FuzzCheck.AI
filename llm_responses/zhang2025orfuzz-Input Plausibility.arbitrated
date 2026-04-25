@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "ORFUZZ does not assume or enforce semantic consistency with the original seed (its oracle treats each mutated input independently), so the semantic‐consistency dimension is N/A. However, it does enforce naturalness between successive mutations by using LLM‐based rephrasing/regeneration mutators and an analyze–generate–feedback loop to refine prompts (thus preserving realistic, human‐aligned queries at each step). It does not, however, constrain similarity to the original seed across multiple rounds or prevent cumulative drift, matching the “Medium” level: naturalness is enforced at each mutation step but cumulative distortion across iterations is not controlled.",
+  "evidence": "Page 1874, Section IV-B (“Mutator Design”): mutators such as “Rephrase…while maintaining its overall meaning” and “Regenerate…with similar style but different content”. Page 1875, Section IV-B (“Adaptive Mutator Selection and Refinement”): an iterative analyze–generate–feedback loop refines mutator prompts via a reasoning LLM. Page 1873, Algorithm 1 (IV-A Update): mutated queries are added back into the seed graph for later selection, with no constraint to the original seed. Page 1877, Section V-B (Evaluation Metrics): MSS (Mean Semantic Similarity) is reported only as an evaluation metric, not used to enforce constraints across iterations."
+}
+```

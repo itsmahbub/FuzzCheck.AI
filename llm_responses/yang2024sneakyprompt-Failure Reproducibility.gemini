@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The method proposed in the paper, SneakyPrompt, generates adversarial inputs directly in their final, serialized format. The inputs to the target text-to-image models are text prompts, which are discrete sequences of tokens. SneakyPrompt operates by replacing sensitive tokens within a prompt with other tokens from a vocabulary. The resulting adversarial prompt is a new text string. This generated text is inherently stable and not susceptible to alteration or loss of perturbation through serialization (e.g., saving to a file), as there are no continuous, in-memory representations like floating-point values that need rounding or clipping. As stated in the metric definition, methods that generate inputs directly in a serialized format, such as generated text, are considered to have high failure reproducibility.",
+  "evidence": "Page 5, Section 4.1, Overall Pipeline: 'The key idea of SneakyPrompt is to replace each sensitive token in pt as m non-sensitive tokens (called replacing tokens) to construct an adversarial prompt pa. In total, we have nm replacing tokens. Suppose D is the token vocabulary, e.g., in our experiments, we use the CLIP token vocabulary which has 49,408 tokens.' This quote explicitly states that the mutation process is a direct replacement of discrete tokens from a defined vocabulary to form the final adversarial prompt."
+}
+```
