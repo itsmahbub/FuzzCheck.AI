@@ -4697,8 +4697,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "The data generation loop (figure 2b) does not account cumulative accumulation of perturbation across iterations",
+                    "value": "High",
+                    "why": "Validates and filters out mutated inputs that are beyound a threshould and they compute the perturbation magnitude with respect to original seed",
                     "evidence": ""
                 },
                 "chatgpt": {
