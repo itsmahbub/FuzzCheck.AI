@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "BET constrains every perturbation to be at most ±ε relative to the original seed input, never accumulating beyond that bound, and applies only small per-pixel changes. This ensures semantic consistency (the mutated image remains visually equivalent to the original) and naturalness (the image stays within the domain of realistic inputs). By avoiding drift—always flipping each byte between E₀[i]±ε—and bounding the L∞ norm, BET meets the “High” criteria: it fixes semantically critical content (the entire image) relative to the original seed and applies only naturalness-preserving operations across all iterations.",
+  "evidence": "Section 3.5 (Mutator): “we limit the perturbations to each byte to two choices {+ε, −ε} … if Eb[i] = Eo[i], we randomly add perturbation value of +ε or −ε … if Eb[i] = Eo[i] − ε, we change this byte to Eo[i] + ε … Otherwise … change this byte to Eo[i] − ε.”\nSection 4.3 (Inact-Rate): “The Inact-Rate of BET is 0.0%. The perturbations are directly added on pixel values as integers, BET does not suffer the inactivation issue.”\nSection 4.1 (Hyperparameters): “we choose values … L∞ = 13/255 on all datasets (all compared methods use the same setting).”"
+}
+```

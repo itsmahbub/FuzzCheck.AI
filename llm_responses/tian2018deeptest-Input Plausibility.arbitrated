@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "DeepTest applies realistic, semantics-preserving transformations (e.g., small rotations, rain, fog) and uses a metamorphic oracle to enforce semantic consistency on each mutation step by filtering out large deviations (Equation 3). However, it does not constrain cumulative drift relative to the original seed: transformed images that increase neuron coverage are pushed back for further mutation without global similarity checks. Thus, it enforces semantic consistency and naturalness only between successive mutation steps, matching the “Medium” level."
+  "evidence": "Page 6, Section 3.3 (Algorithm 1): newImage is pushed back onto the stack for further mutation with no check against the original seed.\nPage 6–7, Section 3.4: defines per-step metamorphic filter (Equation 3) to allow only small deviations (semantic consistency) for simple transforms.\nPage 9, RQ4: “To reduce such false positives, we only report bugs for the transformations (e.g., small rotations, rain, fog, etc.) ... Thus, we further use a filtration criterion as defined in Equation 3 to identify such transformations by checking whether the MSE of the synthetic images is close to that of the original images.”"
+}
+```

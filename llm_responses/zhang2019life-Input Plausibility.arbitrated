@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "LipFuzzer enforces naturalness by grounding mutations in linguistically plausible human error models, applying a probability‐based cutoff to avoid unlikely distortions, and deliberately limiting itself to a single mutation per seed (preventing iterative drift). However, it does not include explicit semantic‐consistency checks (e.g. fixing key intent slots or measuring semantic similarity to the original seed) to guarantee that every mutant retains the seed’s meaning. Thus, while it preserves naturalness between each seed and its one‐step mutant, it lacks formal semantic‐preservation mechanisms, fitting the “Medium” category.",
+  "evidence": "Page 11, Section VI-B: “Note that, during the fuzzing, we only get one mutation for each voice command.”  \nPage 4, Section II-B: “we motivate LAPSUS from daily speech errors… combined words, regional vocabulary, and other malformed speech.”  \nPage 6, Section IV-A: “LipFuzzer generates modified voice commands based on seed inputs. A modification is done through a linguistic knowledge guided mutation.”  \nPage 7, Section IV-B: “we further train the weight… through a user study with audio recording.”"
+}
+```

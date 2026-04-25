@@ -25,7 +25,7 @@ def reset_llm_assessments(data, selected_metrics=None):
             for model_name in TARGET_MODELS:
                 if model_name in metric:
                     del metric[model_name]
-                    reset_count += 1
+            reset_count += 1
 
     return reset_count
 

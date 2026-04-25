@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "HDTest employs a metamorphic‐style oracle that expects mutated inputs to preserve the original label, enforcing semantic consistency at every step by comparing each mutant’s prediction to the original prediction (Lines 4–11, Alg. 1).  It also enforces naturalness across all iterations by measuring the L2 (and L1) distance of each mutant to the original seed and discarding any mutant exceeding a small “invisible” threshold (e.g. L2 < 1).  Furthermore, seed selection is guided by a similarity‐based fitness metric computed against the original class reference HV, ensuring that successive mutations remain both semantically consistent and realistic relative to the original input, thus preventing cumulative drift.",
+  "evidence": "Page 4, IV. HDTest Framework: “To ensure the added perturbations are within an ‘invisible’ range, we set a threshold for the distance metric during fuzzing (e.g., L2 < 1). When generated images are beyond this limit, it is regarded as unacceptable and then discarded.”  \nPage 3–4, Alg. 1 (Lines 4–11): “y = HDC(t) … y_seeds = HDC(seeds) … if y’ != y then …” (metamorphic oracle comparing each mutant to the original).  \nPage 4, IV. HDTest Framework: “The fitness of seeds are defined as: fitness = 1 – Cosim(AM[y], HDC(seed)), … indicating higher possibility to generate an adversarial image.”"
+}
+```
