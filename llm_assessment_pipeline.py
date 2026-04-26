@@ -197,7 +197,7 @@ def process_paper(paper_path, assessments, papers, results_dir, output_json_path
 
     if paper_name not in papers:
         print("Paper not found in assessments.json, skipping:", paper_name)
-        os.remove(paper_path)
+        # os.remove(paper_path)
         return
     print(papers[paper_name]['name'])
     paper_key = papers[paper_name]["key"]

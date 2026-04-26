@@ -4939,8 +4939,8 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Low",
+                    "why": "Aims to find over-refusal cases where models erroneously refuse benign queries.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4961,8 +4961,8 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "Steers exploration towards over-refusal of benign prompts",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4983,8 +4983,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "Provides partial diagnosis by showing category level concentration of the discovered failures. Finds that different LLMs are sensitive to different safety categories.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5005,8 +5005,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "High",
+                    "why": "they measure toxicity of the mutated input to ensure semantic validity and performs LLM-based rewriting to ensure naturalness and fluency.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5027,8 +5027,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "High",
+                    "why": "Performs mutations directly on textual prompts and produce concrete text edits like shorten, expand, translate.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5049,8 +5049,8 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "While they demonstrate cross-model transferability of discovered failures, the design does not incorporate mechansim to achieve transferability.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5071,10 +5071,18 @@
             }
         },
         "taxonomy": {
-            "access_level": [],
-            "mutation_strategy": [],
-            "exploration_strategy": [],
-            "oracle": []
+            "access_level": [
+                "Blackbox"
+            ],
+            "mutation_strategy": [
+                "Generative Synthesized"
+            ],
+            "exploration_strategy": [
+                "Prediction-guided"
+            ],
+            "oracle": [
+                "Property-based"
+            ]
         }
     },
     "Wang et al. - 2021 - RobOT Robustness-Oriented Testing for Deep Learning Systems": {
@@ -5393,8 +5401,8 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "High",
+                    "why": "The fuzzing target is adversarially trained robust models and they discovers failures in those safeguarded models.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5415,8 +5423,8 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "Steers exploration towards inputs where the adversarially trained model fails in the same direction as the undefended baseline, not just any misclassification. agreement mining oracle explicitly encodes this condition. But not to a specific target misclassification.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5437,8 +5445,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Low",
+                    "why": "Reports discovered failures and whether fine-tuining using them improves robustness but not diangosis why these failures occur or the patterns of the failures.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5459,29 +5467,29 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "They filters mutated input using SSIM and put the mutated input (if within threshold) into seed pool for subsequent mutation. No mention how the keep track of the corresponding intial seed. SSIM computation with respect to the selected seed from seed pool can not ensure the naturalness with respect to the initial seed. Over fuzzing iterations its realism can gradually degrade.",
                     "evidence": ""
                 },
                 "chatgpt": {
                     "value": "High",
-                    "why": "The paper enforces both semantic consistency and naturalness across fuzzing iterations. It explicitly applies a task-driven seed selection that uses SSIM to ensure perceptual similarity to the original input (i.e., semantic validity and imperceptibility). Mutations are further constrained per-seed via a finite mutation budget (“energy”), and the defect monitor filters out overly perturbed samples during the fuzzing loop. Together these mechanisms (SSIM-based filtering relative to the original input, and per-seed energy limits) prevent cumulative drift and preserve input plausibility throughout iterations.",
-                    "evidence": "Page 3, Overview of TWINFUZZ Framework: \"the defect monitor filters uninformative or overly perturbed inputs through two stages: agreement mining, which retains inputs where both models agree—flagging them as edge cases likely near the decision boundary; and task-driven seed selection, which discards low-quality samples using domain-aware criteria (e.g., SSIM for vision) to ensure imperceptibility and semantic validity.\" \n\nPage 4, Task-Driven Seed Selection: \"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X′ and its original counterpart X... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\" \n\nPage 4, Seed Mutation and Model Refinement: \"Each seed is assigned a mutation budget, namely energy, indicating how many mutations it can undergo.\" \n\nPage 4, Seed Mutation and Model Refinement: \"These seeds are not only adversarially informative - lying close to the decision boundary where model predictions are most unstable - but also perceptually similar to the original examples, ensuring semantic validity.\""
+                    "why": "The paper enforces semantic consistency and input naturalness across fuzzing iterations: it explicitly filters mutated/adversarial samples using a task-driven quality metric (SSIM) measured against the original input (ensuring perceptual similarity / semantic validity) and it limits mutation accumulation via a per-seed mutation budget (energy). These mechanisms are applied in the defect monitor (agreement mining + task-driven seed selection) that filters candidates during the fuzzing loop, i.e., after mutations, which indicates control relative to the reference/original seed rather than unconstrained drift.",
+                    "evidence": "Page 3, Method / Defect Monitor: \"defect monitor filters uninformative or overly perturbed inputs through two stages: agreement mining, which retains inputs where both models agree—flagging them as edge cases likely near the decision boundary; and task-driven seed selection, which discards low-quality samples using domain-aware criteria (e.g., SSIM for vision) to ensure imperceptibility and semantic validity.\"; Page 4, Task-Driven Seed Selection: \"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X' and its original counterpart X... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\"; Page 4, Seed Mutation and Model Refinement: \"These seeds are not only adversarially informative ... but also perceptually similar to the original examples, ensuring semantic validity.\"; Page 4, Seed Mutation: \"Each seed is assigned a mutation budget, namely energy, indicating how many mutations it can undergo.\""
                 },
                 "gemini": {
                     "value": "High",
-                    "why": "The fuzzer's oracle relies on agreement mining between two models, which is a form of differential testing. As this does not assume semantic equivalence between a mutated input and its seed, the 'semantic consistency' aspect of the metric is not applicable. However, the fuzzer explicitly aims to generate plausible, 'semantically meaningful' inputs, making the 'naturalness' aspect relevant. The paper proposes a 'Task-Driven Seed Selection' module specifically to enforce naturalness. This module filters candidate inputs by comparing them to their 'original counterpart' using a perceptual quality metric (SSIM for vision tasks). By validating each new seed against the original, unmutated input, the method directly controls for cumulative distortion across fuzzing iterations, ensuring that generated inputs remain realistic and perceptually similar to the original data.",
-                    "evidence": "Page 4, Section: Task-Driven Seed Selection\n\"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X' and its original counterpart X. ... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\""
+                    "why": "The paper's method, TWINFUZZ, explicitly enforces input naturalness throughout its fuzzing iterations. Semantic consistency is not applicable as the method employs a differential oracle ('agreement mining') that relies on prediction consistency between two models rather than assuming a preserved ground-truth label. The fuzzer's dedication to naturalness is realized through its 'Task-Driven Seed Selection' module, which filters out perceptually distorted inputs using metrics like the Structural Similarity Index Measure (SSIM). Critically, this module assesses the similarity between a mutated input and its 'original counterpart,' thereby controlling for the cumulative distortion that can occur across multiple mutations by referencing the original seed. This approach directly aligns with the 'High' rating's requirement to ensure naturalness by controlling perturbation relative to a reference seed across iterations.",
+                    "evidence": "Page 4, Task-Driven Seed Selection: \"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X' and its original counterpart X. ... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\""
                 },
                 "arbitrator": {
                     "value": "High",
-                    "why": "The paper enforces both semantic consistency and naturalness across fuzzing iterations. It explicitly applies a task-driven seed selection that uses SSIM to ensure perceptual similarity to the original input (i.e., semantic validity and imperceptibility). Mutations are further constrained per-seed via a finite mutation budget (“energy”), and the defect monitor filters out overly perturbed samples during the fuzzing loop. Together these mechanisms (SSIM-based filtering relative to the original input, and per-seed energy limits) prevent cumulative drift and preserve input plausibility throughout iterations.",
-                    "evidence": "Page 3, Overview of TWINFUZZ Framework: \"the defect monitor filters uninformative or overly perturbed inputs through two stages: agreement mining, which retains inputs where both models agree—flagging them as edge cases likely near the decision boundary; and task-driven seed selection, which discards low-quality samples using domain-aware criteria (e.g., SSIM for vision) to ensure imperceptibility and semantic validity.\" \n\nPage 4, Task-Driven Seed Selection: \"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X′ and its original counterpart X... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\" \n\nPage 4, Seed Mutation and Model Refinement: \"Each seed is assigned a mutation budget, namely energy, indicating how many mutations it can undergo.\" \n\nPage 4, Seed Mutation and Model Refinement: \"These seeds are not only adversarially informative - lying close to the decision boundary where model predictions are most unstable - but also perceptually similar to the original examples, ensuring semantic validity.\""
+                    "why": "The paper enforces semantic consistency and input naturalness across fuzzing iterations: it explicitly filters mutated/adversarial samples using a task-driven quality metric (SSIM) measured against the original input (ensuring perceptual similarity / semantic validity) and it limits mutation accumulation via a per-seed mutation budget (energy). These mechanisms are applied in the defect monitor (agreement mining + task-driven seed selection) that filters candidates during the fuzzing loop, i.e., after mutations, which indicates control relative to the reference/original seed rather than unconstrained drift.",
+                    "evidence": "Page 3, Method / Defect Monitor: \"defect monitor filters uninformative or overly perturbed inputs through two stages: agreement mining, which retains inputs where both models agree—flagging them as edge cases likely near the decision boundary; and task-driven seed selection, which discards low-quality samples using domain-aware criteria (e.g., SSIM for vision) to ensure imperceptibility and semantic validity.\"; Page 4, Task-Driven Seed Selection: \"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X' and its original counterpart X... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\"; Page 4, Seed Mutation and Model Refinement: \"These seeds are not only adversarially informative ... but also perceptually similar to the original examples, ensuring semantic validity.\"; Page 4, Seed Mutation: \"Each seed is assigned a mutation budget, namely energy, indicating how many mutations it can undergo.\""
                 }
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -5503,8 +5511,8 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Low",
+                    "why": "The dual-model design is used to identify the failures (oracle) but does not demonstrate whether fault-inducing inputs discovered on one model transfer to another.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5525,10 +5533,18 @@
             }
         },
         "taxonomy": {
-            "access_level": [],
-            "mutation_strategy": [],
-            "exploration_strategy": [],
-            "oracle": []
+            "access_level": [
+                "Whitebox"
+            ],
+            "mutation_strategy": [
+                "Feedback-informed"
+            ],
+            "exploration_strategy": [
+                "Data-driven"
+            ],
+            "oracle": [
+                "Property-based"
+            ]
         }
     }
 }
