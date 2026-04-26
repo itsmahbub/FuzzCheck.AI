@@ -171,39 +171,6 @@
         <z:linkMode>2</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
-    <bib:Article rdf:about="#item_23">
-        <z:itemType>journalArticle</z:itemType>
-        <dcterms:isPartOf>
-           <bib:Journal></bib:Journal>
-        </dcterms:isPartOf>
-        <bib:authors>
-            <rdf:Seq>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Chen</foaf:surname>
-                        <foaf:givenName>Yuxuan</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-            </rdf:Seq>
-        </bib:authors>
-        <link:link rdf:resource="#item_22"/>
-        <dc:title>Devil’s Whisper: A General Approach for Physical Adversarial Attacks against Commercial Black-box Speech Recognition Devices</dc:title>
-        <dcterms:abstract>Recently studies show that adversarial examples (AEs) can pose a serious threat to a “white-box” automatic speech recognition (ASR) system, when its machine-learning model is exposed to the adversary. Less clear is how realistic such a threat would be towards commercial devices, such as Google Home, Cortana, Echo, etc., whose models are not publicly available. Exploiting the learning model behind ASR system in black-box is challenging, due to the presence of complicated preprocessing and feature extraction even before the AEs could reach the model. Our research, however, shows that such a black-box attack is realistic. In the paper, we present Devil’s Whisper, a general adversarial attack on commercial ASR systems. Our idea is to enhance a simple local model roughly approximating the target black-box platform with a white-box model that is more advanced yet unrelated to the target. We ﬁnd that these two models can effectively complement each other in predicting the target’s behavior, which enables highly transferable and generic attacks on the target. Using a novel optimization technique, we show that a local model built upon just over 1500 queries can be elevated by the open-source Kaldi Aspire Chain Model to effectively exploit commercial devices (Google Assistant, Google Home, Amazon Echo and Microsoft Cortana). For 98% of the target commands of these devices, our approach can generate at least one AE for attacking the target devices1.</dcterms:abstract>
-        <z:language>en</z:language>
-        <z:libraryCatalog>Zotero</z:libraryCatalog>
-    </bib:Article>
-    <z:Attachment rdf:about="#item_22">
-        <z:itemType>attachment</z:itemType>
-        <dc:title>PDF</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://www.usenix.org/system/files/sec20-chen-yuxuan.pdf</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-28 05:13:17</dcterms:dateSubmitted>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
     <rdf:Description rdf:about="urn:isbn:978-1-4503-9379-9">
         <z:itemType>conferencePaper</z:itemType>
         <dcterms:isPartOf>
@@ -269,12 +236,7 @@
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
-        <link:link rdf:resource="#item_203"/>
-        <link:link rdf:resource="#item_354"/>
-        <link:link rdf:resource="#item_1058"/>
-        <link:link rdf:resource="#item_1060"/>
-        <link:link rdf:resource="#item_104"/>
-        <link:link rdf:resource="#item_139"/>
+        <link:link rdf:resource="#item_1267"/>
         <dc:title>BET: black-box efficient testing for convolutional neural networks</dc:title>
         <dc:date>2022-07-18</dc:date>
         <dc:identifier>
@@ -293,7 +255,7 @@
             </bib:Conference>
         </bib:presentedAt>
     </rdf:Description>
-    <z:Attachment rdf:about="#item_203">
+    <z:Attachment rdf:about="#item_1267">
         <z:itemType>attachment</z:itemType>
         <dc:title>Full Text PDF</dc:title>
         <dc:identifier>
@@ -301,71 +263,8 @@
                 <rdf:value>https://dl.acm.org/doi/pdf/10.1145/3533767.3534386?download=true</rdf:value>
             </dcterms:URI>
         </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:46:38</dcterms:dateSubmitted>
+        <dcterms:dateSubmitted>2026-04-22 19:07:57</dcterms:dateSubmitted>
         <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_354">
-        <z:itemType>attachment</z:itemType>
-        <dc:title>Full Text PDF</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://dl.acm.org/doi/pdf/10.1145/3533767.3534386?download=true</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:53:33</dcterms:dateSubmitted>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_1058">
-        <z:itemType>attachment</z:itemType>
-        <dc:title>Full Text PDF</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://dl.acm.org/doi/pdf/10.1145/3533767.3534386</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-03-19 02:26:00</dcterms:dateSubmitted>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_1060">
-        <z:itemType>attachment</z:itemType>
-        <dc:title>Full Text PDF</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://dl.acm.org/doi/pdf/10.1145/3533767.3534386?download=true</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-03-21 15:23:13</dcterms:dateSubmitted>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_104">
-        <z:itemType>attachment</z:itemType>
-        <z:path rdf:resource="/Users/mahbub/code/FuzzCheck.AI/papers/Wang et al. - 2022 - BET black-box efficient testing for convolutional neural networks.pdf"/>
-        <dc:subject>zotmoov</dc:subject>
-        <dc:title>Wang et al. - 2022 - BET black-box efficient testing for convolutional neural networks.pdf</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://dl.acm.org/doi/pdf/10.1145/3533767.3534386</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-28 05:53:54</dcterms:dateSubmitted>
-        <z:linkMode>2</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_139">
-        <z:itemType>attachment</z:itemType>
-        <dc:subject>zotmoov</dc:subject>
-        <dc:title>Wang et al. - 2022 - BET black-box efficient testing for convolutional neural networks.pdf</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://dl.acm.org/doi/pdf/10.1145/3533767.3534386</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-28 05:53:54</dcterms:dateSubmitted>
-        <z:linkMode>3</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
     <rdf:Description rdf:about="https://ieeexplore.ieee.org/document/10172683/">
@@ -1143,10 +1042,7 @@
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
-        <link:link rdf:resource="#item_215"/>
-        <link:link rdf:resource="#item_365"/>
-        <link:link rdf:resource="#item_126"/>
-        <link:link rdf:resource="#item_153"/>
+        <link:link rdf:resource="#item_1273"/>
         <dc:subject>
             <z:AutomaticTag>
                <rdf:value>Software engineering</rdf:value>
@@ -1195,7 +1091,7 @@
             </bib:Conference>
         </bib:presentedAt>
     </rdf:Description>
-    <z:Attachment rdf:about="#item_215">
+    <z:Attachment rdf:about="#item_1273">
         <z:itemType>attachment</z:itemType>
         <dc:title>Full Text PDF</dc:title>
         <dc:identifier>
@@ -1203,47 +1099,8 @@
                 <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=10172506&amp;ref=</rdf:value>
             </dcterms:URI>
         </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:47:21</dcterms:dateSubmitted>
+        <dcterms:dateSubmitted>2026-04-23 02:43:11</dcterms:dateSubmitted>
         <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_365">
-        <z:itemType>attachment</z:itemType>
-        <dc:title>Full Text PDF</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=10172506&amp;ref=</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:54:04</dcterms:dateSubmitted>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_126">
-        <z:itemType>attachment</z:itemType>
-        <z:path rdf:resource="/Users/mahbub/code/FuzzCheck.AI/papers/You et al. - 2023 - Regression Fuzzing for Deep Learning Systems.pdf"/>
-        <dc:subject>zotmoov</dc:subject>
-        <dc:title>You et al. - 2023 - Regression Fuzzing for Deep Learning Systems.pdf</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=10172506&amp;ref=</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 16:54:42</dcterms:dateSubmitted>
-        <z:linkMode>2</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_153">
-        <z:itemType>attachment</z:itemType>
-        <dc:subject>zotmoov</dc:subject>
-        <dc:title>You et al. - 2023 - Regression Fuzzing for Deep Learning Systems.pdf</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=10172506&amp;ref=</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 16:54:42</dcterms:dateSubmitted>
-        <z:linkMode>3</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
     <rdf:Description rdf:about="https://ieeexplore.ieee.org/document/10132278/">
@@ -1296,6 +1153,14 @@
         <link:link rdf:resource="#item_155"/>
         <dc:subject>
             <z:AutomaticTag>
+               <rdf:value>Software testing</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Measurement</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
                <rdf:value>automated speech recognition</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
@@ -1310,15 +1175,7 @@
             </z:AutomaticTag>
         </dc:subject>
         <dc:subject>
-           <z:AutomaticTag><rdf:value>Measurement</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
            <z:AutomaticTag><rdf:value>Phonetics</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-            <z:AutomaticTag>
-               <rdf:value>Software testing</rdf:value>
-            </z:AutomaticTag>
         </dc:subject>
         <dc:subject>
             <z:AutomaticTag>
@@ -2341,6 +2198,16 @@
         </dc:subject>
         <dc:subject>
             <z:AutomaticTag>
+               <rdf:value>Software maintenance</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Test Case Generation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
                <rdf:value>Failure Probability Predictor</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
@@ -2355,17 +2222,7 @@
         </dc:subject>
         <dc:subject>
             <z:AutomaticTag>
-               <rdf:value>Software maintenance</rdf:value>
-            </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-            <z:AutomaticTag>
                <rdf:value>Software reliability</rdf:value>
-            </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-            <z:AutomaticTag>
-               <rdf:value>Test Case Generation</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
         <dc:subject>
@@ -2505,6 +2362,28 @@
         <link:link rdf:resource="#item_132"/>
         <link:link rdf:resource="#item_169"/>
         <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Software engineering</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Security</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Neurons</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Large language models</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Safety</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Testing</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
            <z:AutomaticTag><rdf:value>Buildings</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:subject>
@@ -2527,33 +2406,11 @@
         </dc:subject>
         <dc:subject>
             <z:AutomaticTag>
-               <rdf:value>Large language models</rdf:value>
-            </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Neurons</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-            <z:AutomaticTag>
                <rdf:value>Real-time systems</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
         <dc:subject>
-           <z:AutomaticTag><rdf:value>Safety</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Security</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-            <z:AutomaticTag>
-               <rdf:value>Software engineering</rdf:value>
-            </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
            <z:AutomaticTag><rdf:value>Systematics</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Testing</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:title>Understanding the Effectiveness of Coverage Criteria for Large Language Models: A Special Angle from Jailbreak Attacks</dc:title>
         <dcterms:abstract>Large language models (LLMs) have revolutionized artificial intelligence, but their increasing deployment across critical domains has raised concerns about their abnormal behaviors when faced with malicious attacks. Such vulnerability alerts the widespread inadequacy of pre-release testing. In this paper, we conduct a comprehensive empirical study to evaluate the effectiveness of traditional coverage criteria in identifying such inadequacies, exemplified by the significant security concern of jailbreak attacks. Our study begins with a clustering analysis of the hidden states of LLMs, revealing that the embedded characteristics effectively distinguish between different query types. We then systematically evaluate the performance of these criteria across three key dimensions: criterion level, layer level, and token level. Our research uncovers significant differences in neuron coverage when LLMs process normal versus jailbreak queries, aligning with our clustering experiments. Leveraging these findings, we propose three practical applications of coverage criteria in the context of LLM security testing. Specifically, we develop a realtime jailbreak detection mechanism that achieves high accuracy (93.61 % on average) in classifying queries as normal or jailbreak. Furthermore, we explore the use of coverage levels to prioritize test cases, improving testing efficiency by focusing on high-risk interactions and removing redundant tests. Lastly, we introduce a coverage-guided approach for generating jailbreak attack examples, enabling systematic refinement of prompts to uncover vulnerabilities. This study improves our understanding of LLM security testing, enhances their safety, and provides a foundation for developing more robust AI applications.</dcterms:abstract>
@@ -2818,11 +2675,19 @@
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
-        <link:link rdf:resource="#item_200"/>
-        <link:link rdf:resource="#item_273"/>
-        <link:link rdf:resource="#item_356"/>
-        <link:link rdf:resource="#item_106"/>
-        <link:link rdf:resource="#item_172"/>
+        <link:link rdf:resource="#item_1339"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Measurement</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Semantics</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Software</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Testing</rdf:value></z:AutomaticTag>
+        </dc:subject>
         <dc:subject>
             <z:AutomaticTag>
                <rdf:value>coverage metrics</rdf:value>
@@ -2837,9 +2702,6 @@
            <z:AutomaticTag><rdf:value>Logic gates</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:subject>
-           <z:AutomaticTag><rdf:value>Measurement</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
             <z:AutomaticTag>
                <rdf:value>Recurrent neural networks</rdf:value>
             </z:AutomaticTag>
@@ -2850,18 +2712,9 @@
             </z:AutomaticTag>
         </dc:subject>
         <dc:subject>
-           <z:AutomaticTag><rdf:value>Semantics</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Software</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
             <z:AutomaticTag>
                <rdf:value>test case generation</rdf:value>
             </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Testing</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:subject>
            <z:AutomaticTag><rdf:value>Tools</rdf:value></z:AutomaticTag>
@@ -2885,67 +2738,16 @@
         <dc:identifier>ISSN 1558-1721</dc:identifier>
         <prism:number>3</prism:number>
     </bib:Journal>
-    <z:Attachment rdf:about="#item_200">
+    <z:Attachment rdf:about="#item_1339">
         <z:itemType>attachment</z:itemType>
-        <dc:title>Accepted Version</dc:title>
+        <dc:title>Submitted Version</dc:title>
         <dc:identifier>
             <dcterms:URI>
-                <rdf:value>https://pureadmin.qub.ac.uk/ws/files/237560955/Coverage_Guided_Testing_for_Recurrent_Neural_Networks.pdf</rdf:value>
+               <rdf:value>https://arxiv.org/pdf/1911.01952</rdf:value>
             </dcterms:URI>
         </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:45:38</dcterms:dateSubmitted>
+        <dcterms:dateSubmitted>2026-04-24 03:34:17</dcterms:dateSubmitted>
         <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_273">
-        <z:itemType>attachment</z:itemType>
-        <dc:title>Full Text PDF</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=9451178&amp;ref=</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:49:09</dcterms:dateSubmitted>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_356">
-        <z:itemType>attachment</z:itemType>
-        <dc:title>Full Text PDF</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=9451178&amp;ref=</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:53:41</dcterms:dateSubmitted>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_106">
-        <z:itemType>attachment</z:itemType>
-        <z:path rdf:resource="/Users/mahbub/code/FuzzCheck.AI/papers/Huang et al. - 2022 - Coverage-Guided Testing for Recurrent Neural Networks.pdf"/>
-        <dc:subject>zotmoov</dc:subject>
-        <dc:title>Huang et al. - 2022 - Coverage-Guided Testing for Recurrent Neural Networks.pdf</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=9451178&amp;ref=</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:03:37</dcterms:dateSubmitted>
-        <z:linkMode>2</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_172">
-        <z:itemType>attachment</z:itemType>
-        <dc:subject>zotmoov</dc:subject>
-        <dc:title>Huang et al. - 2022 - Coverage-Guided Testing for Recurrent Neural Networks.pdf</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=9451178&amp;ref=</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:03:37</dcterms:dateSubmitted>
-        <z:linkMode>3</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
     <rdf:Description rdf:about="https://proceedings.mlr.press/v139/li21r.html">
@@ -3111,12 +2913,7 @@
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
-        <link:link rdf:resource="#item_198"/>
-        <link:link rdf:resource="#item_371"/>
-        <link:link rdf:resource="#item_1032"/>
-        <link:link rdf:resource="#item_1189"/>
-        <link:link rdf:resource="#item_129"/>
-        <link:link rdf:resource="#item_176"/>
+        <link:link rdf:resource="#item_1262"/>
         <dc:title>TensorFuzz: Debugging Neural Networks with Coverage-Guided Fuzzing</dc:title>
         <dcterms:abstract>Neural networks are difficult to interpret and debug. We introduce testing techniques for neural networks that can discover errors occurring only for rare inputs. Specifically, we develop coverage-guided fuzzing (CGF) methods for neural networks. In CGF, random mutations of inputs are guided by a coverage metric toward the goal of satisfying user-specified constraints. We describe how approximate nearest neighbor (ANN) algorithms can provide this coverage metric for neural networks. We then combine these methods with techniques for property-based testing (PBT). In PBT, one asserts properties that a function should satisfy and the system automatically generates tests exercising those properties. We then apply this system to practical goals including (but not limited to) surfacing broken loss functions in popular GitHub repositories and making performance improvements to TensorFlow. Finally, we release an open source library called TensorFuzz that implements the described techniques.</dcterms:abstract>
         <dc:date>2019-05-24</dc:date>
@@ -3136,7 +2933,7 @@
             </bib:Conference>
         </bib:presentedAt>
     </rdf:Description>
-    <z:Attachment rdf:about="#item_198">
+    <z:Attachment rdf:about="#item_1262">
         <z:itemType>attachment</z:itemType>
         <dc:title>Full Text PDF</dc:title>
         <dc:identifier>
@@ -3144,71 +2941,8 @@
                 <rdf:value>http://proceedings.mlr.press/v97/odena19a/odena19a.pdf</rdf:value>
             </dcterms:URI>
         </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:45:32</dcterms:dateSubmitted>
+        <dcterms:dateSubmitted>2026-04-22 15:30:44</dcterms:dateSubmitted>
         <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_371">
-        <z:itemType>attachment</z:itemType>
-        <dc:title>Full Text PDF</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>http://proceedings.mlr.press/v97/odena19a/odena19a.pdf</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:54:17</dcterms:dateSubmitted>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_1032">
-        <z:itemType>attachment</z:itemType>
-        <dc:title>Full Text PDF</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://proceedings.mlr.press/v97/odena19a/odena19a.pdf</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-03-15 17:26:31</dcterms:dateSubmitted>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_1189">
-        <z:itemType>attachment</z:itemType>
-        <dc:title>Full Text PDF</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://proceedings.mlr.press/v97/odena19a/odena19a.pdf</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-04-12 18:31:07</dcterms:dateSubmitted>
-        <z:linkMode>1</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_129">
-        <z:itemType>attachment</z:itemType>
-        <z:path rdf:resource="/Users/mahbub/code/FuzzCheck.AI/papers/Odena et al. - 2019 - TensorFuzz Debugging Neural Networks with Coverage-Guided Fuzzing.pdf"/>
-        <dc:subject>zotmoov</dc:subject>
-        <dc:title>Odena et al. - 2019 - TensorFuzz Debugging Neural Networks with Coverage-Guided Fuzzing.pdf</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://proceedings.mlr.press/v97/odena19a/odena19a.pdf</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:05:54</dcterms:dateSubmitted>
-        <z:linkMode>2</z:linkMode>
-        <link:type>application/pdf</link:type>
-    </z:Attachment>
-    <z:Attachment rdf:about="#item_176">
-        <z:itemType>attachment</z:itemType>
-        <dc:subject>zotmoov</dc:subject>
-        <dc:title>Odena et al. - 2019 - TensorFuzz Debugging Neural Networks with Coverage-Guided Fuzzing.pdf</dc:title>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://proceedings.mlr.press/v97/odena19a/odena19a.pdf</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2026-01-30 17:05:54</dcterms:dateSubmitted>
-        <z:linkMode>3</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
     <rdf:Description rdf:about="urn:isbn:978-1-4503-5572-8">
@@ -3356,6 +3090,20 @@
         <link:link rdf:resource="#item_197"/>
         <dc:subject>
             <z:AutomaticTag>
+               <rdf:value>Software testing</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Neurons</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Deep Learning</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Software</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
                <rdf:value>Computational modeling</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
@@ -3363,15 +3111,9 @@
            <z:AutomaticTag><rdf:value>Computer Vision</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:subject>
-           <z:AutomaticTag><rdf:value>Deep Learning</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
             <z:AutomaticTag>
                <rdf:value>Metamorphic Testing</rdf:value>
             </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Neurons</rdf:value></z:AutomaticTag>
         </dc:subject>
         <dc:subject>
             <z:AutomaticTag>
@@ -3381,14 +3123,6 @@
         <dc:subject>
             <z:AutomaticTag>
                <rdf:value>Search Based Testing</rdf:value>
-            </z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Software</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-            <z:AutomaticTag>
-               <rdf:value>Software testing</rdf:value>
             </z:AutomaticTag>
         </dc:subject>
         <dc:subject>
@@ -4358,91 +4092,614 @@
         <z:linkMode>1</z:linkMode>
         <link:type>text/html</link:type>
     </z:Attachment>
-    <bib:Article rdf:about="https://dl.acm.org/doi/10.1145/3490489">
-        <z:itemType>journalArticle</z:itemType>
-        <dcterms:isPartOf rdf:resource="urn:issn:1049-331X"/>
+    <rdf:Description rdf:about="https://ieeexplore.ieee.org/document/9402039/">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>DOI 10.1109/ICSE43902.2021.00038</dc:identifier>
+                <dc:identifier>ISSN 1558-1225</dc:identifier>
+                <dc:title>2021 IEEE/ACM 43rd International Conference on Software Engineering (ICSE)</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
         <bib:authors>
             <rdf:Seq>
                 <rdf:li>
                     <foaf:Person>
-                        <foaf:surname>Xie</foaf:surname>
-                        <foaf:givenName>Xiaofei</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Li</foaf:surname>
-                        <foaf:givenName>Tianlin</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                    <foaf:Person>
                         <foaf:surname>Wang</foaf:surname>
-                        <foaf:givenName>Jian</foaf:givenName>
+                        <foaf:givenName>Jingyi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chen</foaf:surname>
+                        <foaf:givenName>Jialuo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sun</foaf:surname>
+                        <foaf:givenName>Youcheng</foaf:givenName>
                     </foaf:Person>
                 </rdf:li>
                 <rdf:li>
                     <foaf:Person>
                         <foaf:surname>Ma</foaf:surname>
-                        <foaf:givenName>Lei</foaf:givenName>
+                        <foaf:givenName>Xingjun</foaf:givenName>
                     </foaf:Person>
                 </rdf:li>
                 <rdf:li>
                     <foaf:Person>
-                        <foaf:surname>Guo</foaf:surname>
-                        <foaf:givenName>Qing</foaf:givenName>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>Dongxia</foaf:givenName>
                     </foaf:Person>
                 </rdf:li>
                 <rdf:li>
                     <foaf:Person>
-                        <foaf:surname>Juefei-Xu</foaf:surname>
-                        <foaf:givenName>Felix</foaf:givenName>
+                        <foaf:surname>Sun</foaf:surname>
+                        <foaf:givenName>Jun</foaf:givenName>
                     </foaf:Person>
                 </rdf:li>
                 <rdf:li>
                     <foaf:Person>
-                        <foaf:surname>Liu</foaf:surname>
+                        <foaf:surname>Cheng</foaf:surname>
+                        <foaf:givenName>Peng</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1356"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Benchmark testing</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Convergence</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Deep learning</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Measurement</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Robots</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Robustness</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Software engineering</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>RobOT: Robustness-Oriented Testing for Deep Learning Systems</dc:title>
+        <dcterms:abstract>Recently, there has been a significant growth of interest in applying software engineering techniques for the quality assurance of deep learning (DL) systems. One popular direction is deep learning testing, where adversarial examples (a.k.a. bugs) of DL systems are found either by fuzzing or guided search with the help of certain testing metrics. However, recent studies have revealed that the commonly used neuron coverage metrics by existing DL testing approaches are not correlated to model robustness. It is also not an effective measurement on the confidence of the model robustness after testing. In this work, we address this gap by proposing a novel testing framework called Robustness-Oriented Testing (RobOT). A key part of RobOT is a quantitative measurement on 1) the value of each test case in improving model robustness (often via retraining), and 2) the convergence quality of the model robustness improvement. RobOT utilizes the proposed metric to automatically generate test cases valuable for improving model robustness. The proposed metric is also a strong indicator on how well robustness improvement has converged through testing. Experiments on multiple benchmark datasets confirm the effectiveness and efficiency of RobOT in improving DL model robustness, with 67.02% increase on the adversarial robustness that is 50.65% higher than the state-of-the-art work DeepGini.</dcterms:abstract>
+        <dc:date>2021-05</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ieeexplore.ieee.org/document/9402039/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-04-25 04:05:12</dcterms:dateSubmitted>
+        <z:shortTitle>RobOT</z:shortTitle>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <dc:description>ISSN: 1558-1225</dc:description>
+        <bib:pages>300-311</bib:pages>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2021 IEEE/ACM 43rd International Conference on Software Engineering (ICSE)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_1356">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=9402039&amp;ref=</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-04-25 04:05:15</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_1358">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dai</foaf:surname>
+                        <foaf:givenName>Enze</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Mo</foaf:surname>
+                        <foaf:givenName>Wentao</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hu</foaf:surname>
+                        <foaf:givenName>Kun</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhu</foaf:surname>
+                        <foaf:givenName>Xiaogang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xiao</foaf:surname>
+                        <foaf:givenName>Xi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wen</foaf:surname>
+                        <foaf:givenName>Sheng</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>Shaohua</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xiang</foaf:surname>
                         <foaf:givenName>Yang</foaf:givenName>
                     </foaf:Person>
                 </rdf:li>
             </rdf:Seq>
         </bib:authors>
-        <link:link rdf:resource="#item_1256"/>
-        <dc:title>NPC: Neuron Path Coverage via Characterizing Decision Logic of Deep Neural Networks</dc:title>
-        <dcterms:abstract>Deep learning has recently been widely applied to many applications across different domains, e.g., image classification and audio recognition. However, the quality of Deep Neural Networks (DNNs) still raises concerns in the practical operational environment, which calls for systematic testing, especially in safety-critical scenarios. Inspired by software testing, a number of structural coverage criteria are designed and proposed to measure the test adequacy of DNNs. However, due to the blackbox nature of DNN, the existing structural coverage criteria are difficult to interpret, making it hard to understand the underlying principles of these criteria. The relationship between the structural coverage and the decision logic of DNNs is unknown. Moreover, recent studies have further revealed the non-existence of correlation between the structural coverage and DNN defect detection, which further posts concerns on what a suitable DNN testing criterion should be.In this article, we propose the interpretable coverage criteria through constructing the decision structure of a DNN. Mirroring the control flow graph of the traditional program, we first extract a decision graph from a DNN based on its interpretation, where a path of the decision graph represents a decision logic of the DNN. Based on the control flow and data flow of the decision graph, we propose two variants of path coverage to measure the adequacy of the test cases in exercising the decision logic. The higher the path coverage, the more diverse decision logic the DNN is expected to be explored. Our large-scale evaluation results demonstrate that: The path in the decision graph is effective in characterizing the decision of the DNN, and the proposed coverage criteria are also sensitive with errors, including natural errors and adversarial examples, and strongly correlate with the output impartiality.</dcterms:abstract>
-        <dc:date>April 9, 2022</dc:date>
+        <link:link rdf:resource="#item_1357"/>
+        <dc:title>TWINFUZZ: Dual-Model Fuzzing for Robustness Generalization in Deep Learning</dc:title>
+        <dcterms:abstract>Deep learning (DL) models are increasingly deployed in safety-critical applications such as face recognition, autonomous driving, and medical diagnosis. Despite their impressive accuracy, they remain vulnerable to adversarial examples - subtle perturbations that can cause incorrect predictions, i.e., the robustness issues. While adversarial training improves robustness against known attacks, it often fails to generalize to unseen or stronger threats, revealing a critical gap in robustness generalization. In this work, we propose a dual-model fuzzing framework to enhance generalized robustness in DL models. Central to our method is a lightweight metric, the Lagrangian Information Bottleneck (LIB), which guides entropy-based mutation toward semantically meaningful and high-risk regions of the input space. The executor uses a resistant model and a more error-prone vulnerable model; their prediction consistency forms the basis of agreement mining, a label-free oracle for isolating decision-boundary samples. To ensure fuzzing effectiveness, we further introduce a task-driven seed selection strategy (e.g., SSIM for vision) that filters out low-quality inputs. We implement a prototype, TWINFUZZ, and evaluate it on six benchmark datasets and nine DL models. Compared with state-of-the-art testing approaches, TWINFUZZ achieves superior improvements in both training-specific and generalized robustness.</dcterms:abstract>
+        <z:language>en</z:language>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_1357">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>PDF</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://ieeexplore.ieee.org/document/11334477/">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2643-1572"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhang</foaf:surname>
+                        <foaf:givenName>Haonan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>Dongxia</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Liu</foaf:surname>
+                        <foaf:givenName>Yi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chen</foaf:surname>
+                        <foaf:givenName>Kexin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>Jiashui</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ying</foaf:surname>
+                        <foaf:givenName>Xinlei</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Liu</foaf:surname>
+                        <foaf:givenName>Long</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>Wenhai</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1360"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Adaptation models</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Benchmark testing</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>fuzz test</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>llm</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Optimization</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>over-refusal</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Safety</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Software reliability</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Software systems</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Systematics</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Test pattern generators</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Toxicology</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Usability</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>ORFuzz: Fuzzing the &quot;Other Side&quot; of LLM Safety - Testing Over-Refusal</dc:title>
+        <dcterms:abstract>Large Language Models (LLMs) have been found to show over-refusal problems—erroneously rejecting benign queries due to overly conservative safety measures—a critical functional flaw that undermines their reliability and usability. Current methods for testing this behavior are demonstrably inadequate, suffering from flawed benchmarks and limited test generation capabilities, as highlighted by our empirical user study. To the best of our knowledge, this paper introduces the first evolutionary testing framework, ORFuzz, for the systematic detection and analysis of LLM over-refusals. ORFuzz uniquely integrates three core components: (1) safety category-aware seed selection for comprehensive test coverage, (2) adaptive mutator optimization using reasoning LLMs to generate effective test cases, and (3) OR-Judge, a human-aligned judge model validated to accurately reflect user perception of toxicity and refusal. Our extensive evaluations demonstrate that ORFuzz generates diverse, validated over-refusal instances at a rate (6.98% average) more than double that of leading baselines, effectively uncovering vulnerabilities. Furthermore, ORFuzz’s outputs form the basis of ORFuzzSet, a new benchmark of 1,786 highly transferable test cases that achieves a superior 57.37% average over-refusal rate across 14 diverse LLMs, significantly outperforming existing datasets. ORFuzz and ORFuzzSet provide a robust automated testing framework and a valuable community resource, paving the way for developing more reliable and trustworthy LLM-based software systems. The code of this paper is available at: https://github.com/HotBento/ORFuzz.</dcterms:abstract>
+        <dc:date>2025-11</dc:date>
         <dc:identifier>
             <dcterms:URI>
-               <rdf:value>https://dl.acm.org/doi/10.1145/3490489</rdf:value>
+                <rdf:value>https://ieeexplore.ieee.org/document/11334477/</rdf:value>
             </dcterms:URI>
         </dc:identifier>
-        <dcterms:dateSubmitted>2026-04-19 15:19:39</dcterms:dateSubmitted>
-        <z:shortTitle>NPC</z:shortTitle>
-        <z:libraryCatalog>ACM Digital Library</z:libraryCatalog>
-        <bib:pages>47:1–47:27</bib:pages>
-    </bib:Article>
-    <bib:Journal rdf:about="urn:issn:1049-331X">
-        <dc:identifier>DOI 10.1145/3490489</dc:identifier>
-        <prism:volume>31</prism:volume>
-        <dc:title>ACM Trans. Softw. Eng. Methodol.</dc:title>
-        <dc:identifier>ISSN 1049-331X</dc:identifier>
-        <prism:number>3</prism:number>
+        <dcterms:dateSubmitted>2026-04-25 04:53:50</dcterms:dateSubmitted>
+        <z:shortTitle>ORFuzz</z:shortTitle>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <dc:description>ISSN: 2643-1572</dc:description>
+        <bib:pages>1869-1880</bib:pages>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2025 40th IEEE/ACM International Conference on Automated Software Engineering (ASE)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <bib:Journal rdf:about="urn:issn:2643-1572">
+        <dc:identifier>DOI 10.1109/ASE63991.2025.00156</dc:identifier>
+        <dc:identifier>ISSN 2643-1572</dc:identifier>
+        <dc:title>2025 40th IEEE/ACM International Conference on Automated Software Engineering (ASE)</dc:title>
     </bib:Journal>
-    <z:Attachment rdf:about="#item_1256">
+    <z:Attachment rdf:about="#item_1360">
         <z:itemType>attachment</z:itemType>
         <dc:title>Full Text PDF</dc:title>
         <dc:identifier>
             <dcterms:URI>
-                <rdf:value>https://dl.acm.org/doi/pdf/10.1145/3490489?download=true</rdf:value>
+                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=11334477&amp;ref=</rdf:value>
             </dcterms:URI>
         </dc:identifier>
-        <dcterms:dateSubmitted>2026-04-19 15:19:41</dcterms:dateSubmitted>
+        <dcterms:dateSubmitted>2026-04-25 04:53:52</dcterms:dateSubmitted>
         <z:linkMode>1</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
-    <z:Collection rdf:about="#collection_38">
-        <dc:title>Related</dc:title>
-        <dcterms:hasPart rdf:resource="https://dl.acm.org/doi/10.1145/3490489"/>
-        <dcterms:hasPart rdf:resource="#item_23"/>
-    </z:Collection>
+    <rdf:Description rdf:about="https://ieeexplore.ieee.org/document/10646735/">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2375-1207"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yang</foaf:surname>
+                        <foaf:givenName>Yuchen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hui</foaf:surname>
+                        <foaf:givenName>Bo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yuan</foaf:surname>
+                        <foaf:givenName>Haolin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gong</foaf:surname>
+                        <foaf:givenName>Neil</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Cao</foaf:surname>
+                        <foaf:givenName>Yinzhi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1362"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Closed box</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Ethics</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Filters</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Jailbreaking</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Not-Safe-For-Work (NSFW)</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Perturbation methods</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Privacy</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Reinforcement learning</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Text to image</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Text-to-image models</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>SneakyPrompt: Jailbreaking Text-to-image Generative Models</dc:title>
+        <dcterms:abstract>Text-to-image generative models such as Stable Diffusion and DALL•E raise many ethical concerns due to the generation of harmful images such as Not-Safe-for-Work (NSFW) ones. To address these ethical concerns, safety filters are often adopted to prevent the generation of NSFW images. In this work, we propose SneakyPrompt, the first automated attack framework, to jailbreak text-to-image generative models such that they generate NSFW images even if safety filters are adopted. Given a prompt that is blocked by a safety filter, SneakyPrompt repeatedly queries the text-to-image generative model and strategically perturbs tokens in the prompt based on the query results to bypass the safety filter. Specifically, SneakyPrompt utilizes reinforcement learning to guide the perturbation of tokens. Our evaluation shows that SneakyPrompt successfully jailbreaks DALL•E 2 with closed-box safety filters to generate NSFW images. Moreover, we also deploy several state-of-the-art, open-source safety filters on a Stable Diffusion model. Our evaluation shows that SneakyPrompt not only successfully generates NSFW images, but also outperforms existing text adversarial attacks when extended to jailbreak text-to-image generative models, in terms of both the number of queries and qualities of the generated NSFW images. SneakyPrompt is open-source and available at this repository: https://github.com/Yuchen413/text2image_safety.</dcterms:abstract>
+        <dc:date>2024-05</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ieeexplore.ieee.org/document/10646735/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-04-25 04:54:30</dcterms:dateSubmitted>
+        <z:shortTitle>SneakyPrompt</z:shortTitle>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <dc:description>ISSN: 2375-1207</dc:description>
+        <bib:pages>897-912</bib:pages>
+        <bib:presentedAt>
+            <bib:Conference>
+                <dc:title>2024 IEEE Symposium on Security and Privacy (SP)</dc:title>
+            </bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <bib:Journal rdf:about="urn:issn:2375-1207">
+        <dc:identifier>DOI 10.1109/SP54263.2024.00123</dc:identifier>
+        <dc:identifier>ISSN 2375-1207</dc:identifier>
+        <dc:title>2024 IEEE Symposium on Security and Privacy (SP)</dc:title>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1362">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=10646735&amp;ref=</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-04-25 04:54:40</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://ieeexplore.ieee.org/document/9599374/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1939-3520"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhang</foaf:surname>
+                        <foaf:givenName>Pengcheng</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ren</foaf:surname>
+                        <foaf:givenName>Bin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dong</foaf:surname>
+                        <foaf:givenName>Hai</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dai</foaf:surname>
+                        <foaf:givenName>Qiyin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1488"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>adversarial example</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>coverage criteria</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Deep neural network</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Feature extraction</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>fuzz testing</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Fuzzing</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Generators</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Neurons</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Perturbation methods</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Semantics</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Testing</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>CAGFuzz: Coverage-Guided Adversarial Generative Fuzzing Testing for Image-Based Deep Learning Systems</dc:title>
+        <dcterms:abstract>Deep Neural Network (DNN) driven technologies have been extensively employed in various aspects of our life. Nevertheless, the applied DNN always fails to detect erroneous behaviors, which may lead to serious problems. Several approaches have been proposed to enhance adversarial examples for automatically testing deep learning (DL) systems, such as image-based DL systems. However, the approaches contain the following two limitations. First, existing approaches only take into account small perturbations on adversarial examples, they design and generate adversarial examples for a certain particular DNN model. This might hamper the transferability of the examples for other DNN models. Second, they only use shallow features (e.g., pixel-level features) to judge the differences between the generated adversarial examples and the original examples. The deep features, which contain high-level semantic information, such as image object categories and scene semantics, are completely neglected. To address these two problems, we propose CAGFuzz, a Coverage-guided Adversarial Generative Fuzzing testing approach for image-based DL systems. CAGFuzz is able to generate adversarial examples for mainstream DNN models to discover their potential errors. First, we train an Adversarial Example Generator (AEG) based on general datasets. AEG only considers the data characteristics to alleviate the transferability problem. Second, we extract the deep features of the original and adversarial examples, and constrain the adversarial examples by cosine similarity to ensure that the deep features of the adversarial examples remain unchanged. Finally, we use the adversarial examples to retrain the models. Based on several standard datasets, we design a set of dedicated experiments to evaluate CAGFuzz. The experimental results show that CAGFuzz can detect more hidden errors, enhance the accuracy of the target DNN models, and generate adversarial examples with higher transferability.</dcterms:abstract>
+        <dc:date>2022-11</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ieeexplore.ieee.org/document/9599374/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-04-26 19:01:30</dcterms:dateSubmitted>
+        <z:shortTitle>CAGFuzz</z:shortTitle>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <bib:pages>4630-4646</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1939-3520">
+        <dc:identifier>DOI 10.1109/TSE.2021.3124006</dc:identifier>
+        <prism:volume>48</prism:volume>
+        <dc:title>IEEE Transactions on Software Engineering</dc:title>
+        <dc:identifier>ISSN 1939-3520</dc:identifier>
+        <prism:number>11</prism:number>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_1488">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=9599374&amp;ref=</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-04-26 19:01:32</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:979-8-4007-0612-7">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dcterms:isPartOf>
+                   <bib:Series><dc:title>ISSTA 2024</dc:title></bib:Series>
+                </dcterms:isPartOf>
+                <dc:identifier>DOI 10.1145/3650212.3680385</dc:identifier>
+                <dc:identifier>ISBN 979-8-4007-0612-7</dc:identifier>
+                <dc:title>Proceedings of the 33rd ACM SIGSOFT International Symposium on Software Testing and Analysis</dc:title>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <foaf:name>Association for Computing Machinery</foaf:name>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>New York, NY, USA</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yuan</foaf:surname>
+                        <foaf:givenName>Yuanyuan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>Shuai</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Su</foaf:surname>
+                        <foaf:givenName>Zhendong</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_1519"/>
+        <dc:title>See the Forest, not Trees: Unveiling and Escaping the Pitfalls of Error-Triggering Inputs in Neural Network Testing</dc:title>
+        <dcterms:abstract>Recent efforts in deep neural network (DNN) testing commonly use error-triggering inputs (ETIs) to quantify DNN errors and to fine-tune the tested DNN for repairing. This study reveals the pitfalls of ETIs in DNN testing. Specifically, merely seeking for more ETIs “traps” the testing campaign into local plateaus, where similar ETIs are continuously generated using a few fixed input transformations. Similarly, fine-tuning the DNN with ETIs, while capable of fixing the exposed DNN mis-predictions, undermines the DNN’s resilience towards certain input transformations. However, these ETI-induced pitfalls have been overlooked in previous research, due to the insufficient input transformations (usually &amp;lt; 10), and we show that the severity of such deceptive phenomena is enlarged when testing DNNs with more and diverse real-life input transformations. This paper presents a comprehensive study on the pitfalls of ETIs in DNN testing. We first augment conventional DNN testing pipelines with a large set of input transformations; the correctness and validity of these new transformations are verified with large-scale human studies. Based on this, we show that launching an endless pursuit for ETIs cannot alleviate the “trapped testing” issue, and the undermined resilience pervasively occurs in many input transformations. Accordingly, we propose a novel and holistic viewpoint over DNN errors: instead of counting which input triggers a DNN mis-prediction, we record which input transformation can generate ETIs. The targeted input property of this transformation, termed erroneous property (EP), counts one DNN error and guides DNN testing (i.e., our new paradigm aims to find more EPs rather than ETIs). Evaluation shows that this EP-oriented testing paradigm significantly expands the explored DNN error space. Moreover, fine-tuning DNNs with EPs effectively improves their resilience towards different input transformations.</dcterms:abstract>
+        <dc:date>September 11, 2024</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://dl.acm.org/doi/10.1145/3650212.3680385</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-04-26</dcterms:dateSubmitted>
+        <z:shortTitle>See the Forest, not Trees</z:shortTitle>
+        <z:libraryCatalog>ACM Digital Library</z:libraryCatalog>
+        <bib:pages>1605–1617</bib:pages>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_1519">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://dl.acm.org/doi/pdf/10.1145/3650212.3680385?download=true</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-04-26 20:42:34</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
 </rdf:RDF>
