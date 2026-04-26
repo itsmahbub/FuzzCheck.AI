@@ -1,0 +1,212 @@
+{
+  "MET": {
+    "name": "International Workshop on Metamorphic Testing",
+    "type": "conference",
+    "rank": "Core-N/A"
+  },
+  "ICSE": {
+    "name": "International Conference on Software Engineering",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "ISSTA": {
+    "name": "SIGSOFT International Symposium on Software Testing and Analysis",
+    "type": "conference",
+    "rank": "A"
+  },
+  "ESEC/FSE": {
+    "name": "ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "USENIX Security": {
+    "name": "USENIX Security",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "ISI": {
+    "name": "IEEE International Conference on Intelligence and Security Informatics",
+    "type": "conference",
+    "rank": "C"
+  },
+  "ICSME": {
+    "name": "International Conference on Software Maintenance and Evolution",
+    "type": "conference",
+    "rank": "A"
+  },
+  "ICST": {
+    "name": "International Conference on Software Testing, Verification, and Validation",
+    "type": "conference",
+    "rank": "A"
+  },
+  "ICML": {
+    "name": "International Conference on Machine Learning",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "SaTML": {
+    "name": "Secure and Trustworthy Machine Learning",
+    "type": "conference",
+    "rank": "Core-N/A"
+  },
+  "SOSP": {
+    "name": "Symposium on Operating Systems Principles",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "ICAI": {
+    "name": "International Conference on Applied Intelligence",
+    "type": "journal",
+    "rank": "Q2"
+  },
+  "Plos one": {
+    "name": "Plos one",
+    "type": "journal",
+    "rank": "Q1"
+  },
+  "IJCNN": {
+    "name": "International Joint Conference on Neural Networks",
+    "type": "conference",
+    "rank": "B"
+  },
+  "Information and Software Technology": {
+    "name": "Information and Software Technology",
+    "type": "journal",
+    "rank": "Q1"
+  },
+  "TSE": {
+    "name": "IEEE Transactions on Software Engineering",
+    "type": "journal",
+    "rank": "Q1"
+  },
+  "DSA": {
+    "name": "International Conference on Dependable Systems and Their Applications",
+    "type": "conference",
+    "rank": "Core-N/A"
+  },
+  "J. Syst. Softw.": {
+    "name": "Journal of Systems and Software",
+    "type": "journal",
+    "rank": "Q1"
+  },
+  "IEEE Design & Test": {
+    "name": "IEEE Design & Test",
+    "type": "journal",
+    "rank": "Q3"
+  },
+  "Computers & Security": {
+    "name": "Computers & Security",
+    "type": "journal",
+    "rank": "Q1"
+  },
+  "CSCWD": {
+    "name": "International Conference on Computer Supported Cooperative Work in Design",
+    "type": "conference",
+    "rank": "C"
+  },
+  "IEEE Trans. Reliab.": {
+    "name": "IEEE Transactions on Reliability",
+    "type": "journal",
+    "rank": "Q1"
+  },
+  "Neurocomputing": {
+    "name": "Neurocomputing",
+    "type": "journal",
+    "rank": "Q1"
+  },
+  "IEEE Transactions on Network Science and Engineering": {
+    "name": "IEEE Transactions on Network Science and Engineering",
+    "type": "journal",
+    "rank": "Q1"
+  },
+  "ASE": {
+    "name": "IEEE International Conference on Automated Software Engineering",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "TOSEM": {
+    "name": "ACM Transactions on Software Engineering and Methodology",
+    "type": "journal",
+    "rank": "Q1"
+  },
+  "NDSS": {
+    "name": "NDSS",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "SPW": {
+    "name": "IEEE Symposium on Security and Privacy Workshops",
+    "type": "conference",
+    "rank": "N/A"
+  },
+  "ACSAC": {
+    "name": "Annual Computer Security Applications Conference",
+    "type": "conference",
+    "rank": "A"
+  },
+  "ACM TECS": {
+    "name": "ACM Transactions on Embedded Computing Systems",
+    "type": "journal",
+    "rank": "Q2"
+  },
+  "SP": {
+    "name": "IEEE Symposium on Security and Privacy",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "CVPR": {
+    "name": "Conference on Computer Vision and Pattern Recognition",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "CHI": {
+    "name": "CHI Conference on Human Factors in Computing Systems",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "DAC": {
+    "name": "ACM/IEEE Design Automation Conference",
+    "type": "conference",
+    "rank": "A"
+  },
+  "Empirical Software Engineering": {
+    "name": "Empirical Software Engineering",
+    "type": "journal",
+    "rank": "Q1"
+  },
+  "PACMSE": {
+    "name": "Proceedings of the ACM on Software Engineering",
+    "type": "journal",
+    "rank": "N/A"
+  },
+  "ACMMM": {
+    "name": "ACM International Conference on Multimedia",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "ICSE Companion": {
+    "name": "International Conference on Software Engineering - Companion",
+    "type": "conference",
+    "rank": "N/A"
+  },
+  "ICSTW": {
+    "name": "IEEE International Conference on Software Testing, Verification and Validation Workshops",
+    "type": "conference",
+    "rank": "N/A"
+  },
+  "FASE": {
+    "name": "Fundamental Approaches to Software Engineering",
+    "type": "conference",
+    "rank": "B"
+  },
+  "AAAI": {
+    "name": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "type": "conference",
+    "rank": "A*"
+  },
+  "ICLR": {
+    "name": "International Conference on Learning Representations",
+    "type": "conference",
+    "rank": "A*"
+  }
+}
