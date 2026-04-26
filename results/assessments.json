@@ -5871,8 +5871,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "Gives partial diagnosis by characterizing failure clustering by EP and correlating failures with decision boundary geometry.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5915,10 +5915,10 @@
             }
         },
         "taxonomy": {
-            "access_level": [],
-            "mutation_strategy": [],
-            "exploration_strategy": [],
-            "oracle": []
+            "access_level": ["Greybox"],
+            "mutation_strategy": ["Rule-based"],
+            "exploration_strategy": ["Coverage-guided"],
+            "oracle": ["Metamorphic"]
         }
     }
 }
