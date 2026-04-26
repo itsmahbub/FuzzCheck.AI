@@ -3,7 +3,7 @@
     "key": "liuautodan",
     "name": "AutoDAN",
     "year": "2024",
-    "citation_count": "834",
+    "citation_count": "1233",
     "conf/journal": "ICLR",
     "type": "conference",
     "assessments": {
@@ -159,7 +159,7 @@
     "key": "he2024curiosity",
     "name": "CureFuzz",
     "year": "2024",
-    "citation_count": "12",
+    "citation_count": "19",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -315,7 +315,7 @@
     "key": "zhou2025understanding",
     "name": "Zhou et al.",
     "year": "2025",
-    "citation_count": "7",
+    "citation_count": "10",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -471,7 +471,7 @@
     "key": "gong2025papillon",
     "name": "PAPILLON",
     "year": "2025",
-    "citation_count": "0",
+    "citation_count": "12",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -781,7 +781,7 @@
     "key": "yuan2023revisiting",
     "name": "NLC",
     "year": "2023",
-    "citation_count": "36",
+    "citation_count": "47",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -937,7 +937,7 @@
     "key": "xie2019deephunter",
     "name": "DeepHunter",
     "year": "2019",
-    "citation_count": "518",
+    "citation_count": "582",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -1093,7 +1093,7 @@
     "key": "guo2018dlfuzz",
     "name": "DLFuzz",
     "year": "2018",
-    "citation_count": "360",
+    "citation_count": "396",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -1250,7 +1250,7 @@
     "key": "yu2024llm",
     "name": "LLM-Fuzzer",
     "year": "2024",
-    "citation_count": "40",
+    "citation_count": "101",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -1406,7 +1406,7 @@
     "key": "tian2018deeptest",
     "name": "DeepTest",
     "year": "2018",
-    "citation_count": "1791",
+    "citation_count": "1955",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -1562,7 +1562,7 @@
     "key": "yuen2023asdf",
     "name": "ASDF",
     "year": "2023",
-    "citation_count": "8",
+    "citation_count": "10",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -1718,7 +1718,7 @@
     "key": "odena2019tensorfuzz",
     "name": "TensorFuzz",
     "year": "2019",
-    "citation_count": "426",
+    "citation_count": "468",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -1874,7 +1874,7 @@
     "key": "chao2025jailbreaking",
     "name": "PAIR",
     "year": "2025",
-    "citation_count": "806",
+    "citation_count": "1461",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -2030,7 +2030,7 @@
     "key": "asyrofi2020crossasr",
     "name": "CrossASR",
     "year": "2020",
-    "citation_count": "25",
+    "citation_count": "29",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -2186,7 +2186,7 @@
     "key": "asyrofi2021crossasr++",
     "name": "CrossASR++",
     "year": "2021",
-    "citation_count": "25",
+    "citation_count": "27",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -2342,7 +2342,7 @@
     "key": "asyrofi2021can",
     "name": "Asyrofi et al.",
     "year": "2021",
-    "citation_count": "16",
+    "citation_count": "19",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -2498,7 +2498,7 @@
     "key": "pei2017deepxplore",
     "name": "DeepXplore",
     "year": "2017",
-    "citation_count": "1814",
+    "citation_count": "1991",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -2655,7 +2655,7 @@
     "key": "gao2020fuzz",
     "name": "Sensei",
     "year": "2020",
-    "citation_count": "169",
+    "citation_count": "191",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -2811,7 +2811,7 @@
     "key": "you2023regression",
     "name": "DRFuzz",
     "year": "2023",
-    "citation_count": "27",
+    "citation_count": "38",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -2967,7 +2967,7 @@
     "key": "zhang2019life",
     "name": "LipFuzzer",
     "year": "2019",
-    "citation_count": "79",
+    "citation_count": "86",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -3123,7 +3123,7 @@
     "key": "woodlief2022semantic",
     "name": "semSensFuzz",
     "year": "2022",
-    "citation_count": "18",
+    "citation_count": "23",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -3279,7 +3279,7 @@
     "key": "lee2020effective",
     "name": "ADAPT",
     "year": "2020",
-    "citation_count": "81",
+    "citation_count": "91",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -3435,7 +3435,7 @@
     "key": "braiek2019deepevolution",
     "name": "DeepEvolution",
     "year": "2019",
-    "citation_count": "53",
+    "citation_count": "63",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -3591,7 +3591,7 @@
     "key": "ma2021hdtest",
     "name": "HDTest",
     "year": "2021",
-    "citation_count": "39",
+    "citation_count": "43",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -3747,7 +3747,7 @@
     "key": "du2019deepstellar",
     "name": "DeepStellar",
     "year": "2019",
-    "citation_count": "188",
+    "citation_count": "210",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -4060,7 +4060,7 @@
     "key": "li2021testing",
     "name": "TACTIC",
     "year": "2021",
-    "citation_count": "51",
+    "citation_count": "64",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -4217,7 +4217,7 @@
     "key": "wang2023distxplore",
     "name": "DistXplore",
     "year": "2023",
-    "citation_count": "13",
+    "citation_count": "21",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -4373,7 +4373,7 @@
     "key": "liu2022qatest",
     "name": "QATest",
     "year": "2022",
-    "citation_count": "21",
+    "citation_count": "28",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -4529,7 +4529,7 @@
     "key": "wang2022bet",
     "name": "BET",
     "year": "2022",
-    "citation_count": "26",
+    "citation_count": "38",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -4685,7 +4685,7 @@
     "key": "zhang2020towards",
     "name": "KuK",
     "year": "2020",
-    "citation_count": "101",
+    "citation_count": "112",
     "assessments": {
       "Failure Severity": {
         "manual": {
@@ -4841,7 +4841,7 @@
     "key": "pang2022mdpfuzz",
     "name": "MDPFuzz",
     "year": "2022",
-    "citation_count": "39",
+    "citation_count": "54",
     "assessments": {
       "Failure Severity": {
         "manual": {
