@@ -4,6 +4,8 @@
         "name": "AutoDAN",
         "year": "2024",
         "citation_count": "834",
+        "conf/journal": "ICLR",
+        "type": "conference",
         "assessments": {
             "Failure Severity": {
                 "manual": {
@@ -305,7 +307,9 @@
             "oracle": [
                 "Property-based"
             ]
-        }
+        },
+        "conf/journal": "ICSE",
+        "type": "conference"
     },
     "Zhou et al. - 2025 - Understanding the Effectiveness of Coverage Criteria for Large Language Models A Special Angle from": {
         "key": "zhou2025understanding",
@@ -459,7 +463,9 @@
             "oracle": [
                 "Property-based"
             ]
-        }
+        },
+        "conf/journal": "ICSE",
+        "type": "conference"
     },
     "Gong et al. - PaPillon Efficient and Stealthy Fuzz Testing-Powered Jailbreaks for LLMs": {
         "key": "gong2025papillon",
@@ -619,7 +625,7 @@
         "key": "du2018deepcruiser",
         "name": "DeepCruiser",
         "year": "2018",
-        "citation_count": "45",
+        "citation_count": "50",
         "assessments": {
             "Failure Severity": {
                 "manual": {
@@ -767,7 +773,9 @@
             "oracle": [
                 "Metamorphic"
             ]
-        }
+        },
+        "conf/journal": "arXiv",
+        "type": ""
     },
     "Yuan et al. - 2023 - Revisiting Neuron Coverage for DNN Testing A Layer-Wise and Distribution-Aware Criterion": {
         "key": "yuan2023revisiting",
@@ -921,7 +929,9 @@
             "oracle": [
                 "Metamorphic"
             ]
-        }
+        },
+        "conf/journal": "ICSE",
+        "type": "conference"
     },
     "Xie et al. - 2019 - DeepHunter a coverage-guided fuzz testing framework for deep neural networks": {
         "key": "xie2019deephunter",
@@ -1075,7 +1085,9 @@
             "oracle": [
                 "Metamorphic"
             ]
-        }
+        },
+        "conf/journal": "ISSTA",
+        "type": "conference"
     },
     "Guo et al. - 2018 - DLFuzz differential fuzzing testing of deep learning systems": {
         "key": "guo2018dlfuzz",
@@ -1230,7 +1242,9 @@
             "oracle": [
                 "Metamorphic"
             ]
-        }
+        },
+        "conf/journal": "ESEC/FSE",
+        "type": "conference"
     },
     "Yu et al. - LLM-Fuzzer Scaling Assessment of Large Language Model Jailbreaks": {
         "key": "yu2024llm",
@@ -1384,7 +1398,9 @@
             "oracle": [
                 "Property-based"
             ]
-        }
+        },
+        "conf/journal": "USENIX Security",
+        "type": "conference"
     },
     "Tian et al. - 2018 - DeepTest automated testing of deep-neural-network-driven autonomous cars": {
         "key": "tian2018deeptest",
@@ -1538,7 +1554,9 @@
             "oracle": [
                 "Metamorphic"
             ]
-        }
+        },
+        "conf/journal": "ICSE",
+        "type": "conference"
     },
     "Xian Yuen et al. - 2023 - ASDF A Differential Testing Framework for Automatic Speech Recognition Systems": {
         "key": "yuen2023asdf",
@@ -1692,7 +1710,9 @@
             "exploration_strategy": [
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "ICST",
+        "type": "conference"
     },
     "Odena et al. - 2019 - TensorFuzz Debugging Neural Networks with Coverage-Guided Fuzzing": {
         "key": "odena2019tensorfuzz",
@@ -1846,7 +1866,9 @@
             "exploration_strategy": [
                 "Coverage-guided"
             ]
-        }
+        },
+        "conf/journal": "ICML",
+        "type": "conference"
     },
     "Chao et al. - 2025 - Jailbreaking Black Box Large Language Models in Twenty Queries": {
         "key": "chao2025jailbreaking",
@@ -2000,7 +2022,9 @@
             "exploration_strategy": [
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "SaTML",
+        "type": "conference"
     },
     "Asyrofi et al. - 2020 - CrossASR Efficient Differential Testing of Automatic Speech Recognition via Text-To-Speech": {
         "key": "asyrofi2020crossasr",
@@ -2154,7 +2178,9 @@
             "exploration_strategy": [
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "ICSME",
+        "type": "conference"
     },
     "Asyrofi et al. - 2021 - CrossASR++ a modular differential testing framework for automatic speech recognition": {
         "key": "asyrofi2021crossasr++",
@@ -2308,7 +2334,9 @@
             "exploration_strategy": [
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "ESEC/FSE",
+        "type": "conference"
     },
     "Asyrofi et al. - 2021 - Can Differential Testing Improve Automatic Speech Recognition Systems": {
         "key": "asyrofi2021can",
@@ -2462,7 +2490,9 @@
             "exploration_strategy": [
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "ICSME",
+        "type": "conference"
     },
     "Pei et al. - 2017 - DeepXplore Automated Whitebox Testing of Deep Learning Systems": {
         "key": "pei2017deepxplore",
@@ -2617,7 +2647,9 @@
                 "Coverage-guided",
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "SOSP",
+        "type": "conference"
     },
     "Gao et al. - 2020 - Fuzz testing based data augmentation to improve robustness of deep neural networks": {
         "key": "gao2020fuzz",
@@ -2771,7 +2803,9 @@
             "oracle": [
                 "Property-based"
             ]
-        }
+        },
+        "conf/journal": "ICSE",
+        "type": "conference"
     },
     "You et al. - 2023 - Regression Fuzzing for Deep Learning Systems": {
         "key": "you2023regression",
@@ -2925,7 +2959,9 @@
             "exploration_strategy": [
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "ICSE",
+        "type": "conference"
     },
     "Zhang et al. - 2019 - Life after Speech Recognition Fuzzing Semantic Misinterpretation for Voice Assistant Applications": {
         "key": "zhang2019life",
@@ -3079,7 +3115,9 @@
             "oracle": [
                 "Metamorphic"
             ]
-        }
+        },
+        "conf/journal": "NDSS",
+        "type": "conference"
     },
     "Woodlief et al. - 2022 - Semantic image fuzzing of AI perception systems": {
         "key": "woodlief2022semantic",
@@ -3233,7 +3271,9 @@
             "oracle": [
                 "Metamorphic"
             ]
-        }
+        },
+        "conf/journal": "ICSE",
+        "type": "conference"
     },
     "Lee et al. - 2020 - Effective white-box testing of deep neural networks with adaptive neuron-selection strategy": {
         "key": "lee2020effective",
@@ -3387,7 +3427,9 @@
             "oracle": [
                 "Metamorphic"
             ]
-        }
+        },
+        "conf/journal": "ISSTA",
+        "type": "conference"
     },
     "Ben Braiek and Khomh - 2019 - DeepEvolution A Search-Based Testing Approach for Deep Neural Networks": {
         "key": "braiek2019deepevolution",
@@ -3541,7 +3583,9 @@
             "oracle": [
                 "Metamorphic"
             ]
-        }
+        },
+        "conf/journal": "ICSME",
+        "type": "conference"
     },
     "Ma et al. - 2021 - HDTest Differential Fuzz Testing of Brain-Inspired Hyperdimensional Computing": {
         "key": "ma2021hdtest",
@@ -3695,7 +3739,9 @@
             "exploration_strategy": [
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "DAC",
+        "type": "conference"
     },
     "Du et al. - 2019 - DeepStellar model-based quantitative analysis of stateful deep learning systems": {
         "key": "du2019deepstellar",
@@ -3849,13 +3895,15 @@
             "exploration_strategy": [
                 "Coverage-guided"
             ]
-        }
+        },
+        "conf/journal": "ESEC/FSE",
+        "type": "conference"
     },
     "Huang et al. - 2022 - Coverage-Guided Testing for Recurrent Neural Networks": {
         "key": "huang2021coverage",
         "name": "TESTRNN",
         "year": "2021",
-        "citation_count": "66",
+        "citation_count": "71",
         "assessments": {
             "Failure Severity": {
                 "manual": {
@@ -4004,7 +4052,9 @@
                 "Coverage-guided",
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "IEEE Trans. Reliab.",
+        "type": "journal"
     },
     "Li et al. - 2021 - Testing DNN-based Autonomous Driving Systems under Critical Environmental Conditions": {
         "key": "li2021testing",
@@ -4159,7 +4209,9 @@
                 "Coverage-guided",
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "ICML",
+        "type": "conference"
     },
     "Wang et al. - 2023 - DistXplore Distribution-Guided Testing for Evaluating and Enhancing Deep Learning Systems": {
         "key": "wang2023distxplore",
@@ -4313,7 +4365,9 @@
             "exploration_strategy": [
                 "Coverage-guided"
             ]
-        }
+        },
+        "conf/journal": "ESEC/FSE",
+        "type": "conference"
     },
     "Liu et al. - 2022 - QATest A Uniform Fuzzing Framework for Question Answering Systems": {
         "key": "liu2022qatest",
@@ -4467,7 +4521,9 @@
             "exploration_strategy": [
                 "Data-driven"
             ]
-        }
+        },
+        "conf/journal": "ASE",
+        "type": "conference"
     },
     "Wang et al. - 2022 - BET black-box efficient testing for convolutional neural networks": {
         "key": "wang2022bet",
@@ -4621,7 +4677,9 @@
             "exploration_strategy": [
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "ISSTA",
+        "type": "conference"
     },
     "Zhang et al. - 2020 - Towards characterizing adversarial defects of deep learning software from the lens of uncertainty": {
         "key": "zhang2020towards",
@@ -4775,7 +4833,9 @@
             "exploration_strategy": [
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "ICSE",
+        "type": "conference"
     },
     "Pang et al. - 2022 - MDPFuzz testing models solving Markov decision processes": {
         "key": "pang2022mdpfuzz",
@@ -4929,12 +4989,16 @@
             "exploration_strategy": [
                 "Prediction-guided"
             ]
-        }
+        },
+        "conf/journal": "ISSTA",
+        "type": "conference"
     },
     "Zhang et al. - 2025 - ORFuzz Fuzzing the Other Side of LLM Safety - Testing Over-Refusal": {
         "key": "zhang2025orfuzz",
         "name": "ORFuzz",
         "year": "2025",
+        "conf/journal": "ASE",
+        "type": "conference",
         "citation_count": "1",
         "assessments": {
             "Failure Severity": {
@@ -5071,10 +5135,18 @@
             }
         },
         "taxonomy": {
-            "access_level": [],
-            "mutation_strategy": [],
-            "exploration_strategy": [],
-            "oracle": []
+            "access_level": [
+                "Blackbox"
+            ],
+            "mutation_strategy": [
+                "Generative Synthesized"
+            ],
+            "exploration_strategy": [
+                "Prediction-guided"
+            ],
+            "oracle": [
+                "Property-based"
+            ]
         }
     },
     "Wang et al. - 2021 - RobOT Robustness-Oriented Testing for Deep Learning Systems": {
@@ -5082,6 +5154,8 @@
         "name": "RobOT",
         "year": "2021",
         "citation_count": "103",
+        "conf/journal": "ICSE",
+        "type": "conference",
         "assessments": {
             "Failure Severity": {
                 "manual": {
@@ -5236,6 +5310,8 @@
         "name": "SneakyPrompt",
         "year": "2024",
         "citation_count": "247",
+        "conf/journal": "SP",
+        "type": "conference",
         "assessments": {
             "Failure Severity": {
                 "manual": {
@@ -5389,6 +5465,8 @@
         "key": "dai2026twinfuzz",
         "name": "TWINFUZZ",
         "year": "2026",
+        "conf/journal": "AAAI",
+        "type": "conference",
         "citation_count": "0",
         "assessments": {
             "Failure Severity": {
@@ -5398,19 +5476,19 @@
                     "evidence": ""
                 },
                 "chatgpt": {
-                    "value": "Low",
-                    "why": "The paper addresses adversarial robustness and generates adversarial/edge inputs that cause misclassification (robustness-related failures). Its design and evaluation focus on finding decision-boundary samples and improving robust accuracy (mispredictions) via retraining. It does not target or demonstrate bypass of explicit safety, policy, or security safeguards to induce harmful, unsafe, or policy-violating behavior — the failures are robustness/misprediction errors rather than security-relevant safeguard bypasses.",
-                    "evidence": "Page 1, Abstract: \"subtle perturbations that can cause incorrect predictions, i.e., the robustness issues.\"; Page 3, Methodology / Overview of TWINFUZZ: \"agreement mining, a label-free oracle mechanism that leverages prediction consistency between a resistant and a vulnerable model to isolate edge samples.\"; Page 5, Experiments / Evaluation Metric: \"robust accuracy is defined as the proportion of adversarial test samples in a perturbed validation set that are not misclassified by the model...\"; Page 7, Conclusion: \"it mutates inputs toward uncertain decision boundaries... These samples are then reused to fine-tune the model. Extensive experiments demonstrate that TWINFUZZ achieves state-of-the-art performance.\""
+                    "value": "High",
+                    "why": "The paper explicitly targets models that have been adversarially trained (an explicit security/safety safeguard) and empirically demonstrates adversarial failures against these resistant models which are then used to fine-tune them. The method's design (dual-model executor with a resistant/adversarially-trained model) and the experiments (pre-adversarially trained baselines with reported robust accuracies that TWINFUZZ improves) show that the fuzzer finds inputs that bypass the adversarial-training safeguard on the resistant models.",
+                    "evidence": "Page 5 (Pre-adversarial Training): \"We conduct pre-adversarial training for all models involved in our experiments... These adversarial examples are then combined with the clean samples to train the resistant models.\" \n\nPage 3 (Methodology / Overview of TWINFUZZ): \"Executor. It is realized as a dual-model scheme composed of a resistant model (with adversarial training) and a vulnerable baseline model.\" \n\nPage 6 (Overall Performance / Same-Attack Validation): \"TWINFUZZ achieves average robust accuracies of 65.8%, 66.3%, and 67.0% across DeepFool, BIM, and MIM, respectively. This marks improvements of 37.2%, 18.2%, and 21.5% over the pre-adversarially trained models...\" (demonstrating that the pre-adversarially trained models were subject to failures that TWINFUZZ discovered and mitigated)."
                 },
                 "gemini": {
-                    "value": "Low",
-                    "why": "The paper focuses exclusively on improving and evaluating model robustness against adversarial examples. The failures targeted and discovered are defined as mispredictions or incorrect classifications. The fuzzer's oracle, termed \"agreement mining,\" is designed to identify \"high-risk edge samples\" by comparing the prediction consistency of a robust model and a vulnerable model. This process aims to find inputs near the decision boundary that lead to classification errors. The empirical evaluation confirms this focus by using \"robust accuracy\"—the rate of correct predictions on adversarial inputs—as the sole performance metric. The paper does not describe or demonstrate the discovery of harmful, unsafe, or policy-violating content, nor does it involve bypassing explicit safety or security safeguards beyond finding inputs that defeat a robustness defense (adversarial training) by causing a misclassification.",
-                    "evidence": "Page 5, Section: Evaluation Metric, \"Following the common practice in prior work (Gao et al. 2020; Wang et al. 2021a), we adopt robust accuracy as the primary evaluation metric. Robust accuracy is defined as the proportion of adversarial test samples in a perturbed validation set that are not misclassified by the model, i.e., samples for which the model retains correct predictions despite adversarial perturbations.\""
+                    "value": "High",
+                    "why": "The paper's method, TWINFUZZ, is explicitly designed to target models equipped with an explicit security safeguard, namely adversarial training. The core of the fuzzer's design involves a dual-model executor with one \"resistant model (with adversarial training)\" and one vulnerable model. The goal is to find \"edge samples\" where both models agree, indicating a high-risk input that has bypassed the defense of the resistant model. The empirical evaluation confirms this design by first applying adversarial training (using PGD and FGSM) to create these resistant models. The experiments then measure the rate of failures (mispredictions, reported as low robust accuracy) of these defended models against various attacks, thereby demonstrating that the fuzzer operates on and finds failures that bypass the intended safeguard.",
+                    "evidence": "Page 3, Section 'Methodology', Subsection 'Overview of TWINFUZZ Framework': '2) Executor. It is realized as a dual-model scheme composed of a resistant model (with adversarial training) and a vulnerable baseline model. During each execution, the resistant model provides forward predictions and gradients for optimization, while the vulnerable model acts as a reference to detect risky prediction agreements.'\n\nPage 5, Section 'Experiments', Subsection 'Pre-adversarial Training': 'We conduct pre-adversarial training for all models involved in our experiments. For the MNIST, Fashion-MNIST, CIFAR-10, SVHN, and ImageNet datasets, we apply adversarial perturbations using both PGD and the Fast Gradient Sign Method (FGSM) to 20% of the training data. These adversarial examples are then combined with the clean samples to train the resistant models.'"
                 },
                 "arbitrator": {
-                    "value": "Low",
-                    "why": "The paper addresses adversarial robustness and generates adversarial/edge inputs that cause misclassification (robustness-related failures). Its design and evaluation focus on finding decision-boundary samples and improving robust accuracy (mispredictions) via retraining. It does not target or demonstrate bypass of explicit safety, policy, or security safeguards to induce harmful, unsafe, or policy-violating behavior — the failures are robustness/misprediction errors rather than security-relevant safeguard bypasses.",
-                    "evidence": "Page 1, Abstract: \"subtle perturbations that can cause incorrect predictions, i.e., the robustness issues.\"; Page 3, Methodology / Overview of TWINFUZZ: \"agreement mining, a label-free oracle mechanism that leverages prediction consistency between a resistant and a vulnerable model to isolate edge samples.\"; Page 5, Experiments / Evaluation Metric: \"robust accuracy is defined as the proportion of adversarial test samples in a perturbed validation set that are not misclassified by the model...\"; Page 7, Conclusion: \"it mutates inputs toward uncertain decision boundaries... These samples are then reused to fine-tune the model. Extensive experiments demonstrate that TWINFUZZ achieves state-of-the-art performance.\""
+                    "value": "High",
+                    "why": "The paper explicitly targets models that have been adversarially trained (an explicit security/safety safeguard) and empirically demonstrates adversarial failures against these resistant models which are then used to fine-tune them. The method's design (dual-model executor with a resistant/adversarially-trained model) and the experiments (pre-adversarially trained baselines with reported robust accuracies that TWINFUZZ improves) show that the fuzzer finds inputs that bypass the adversarial-training safeguard on the resistant models.",
+                    "evidence": "Page 5 (Pre-adversarial Training): \"We conduct pre-adversarial training for all models involved in our experiments... These adversarial examples are then combined with the clean samples to train the resistant models.\" \n\nPage 3 (Methodology / Overview of TWINFUZZ): \"Executor. It is realized as a dual-model scheme composed of a resistant model (with adversarial training) and a vulnerable baseline model.\" \n\nPage 6 (Overall Performance / Same-Attack Validation): \"TWINFUZZ achieves average robust accuracies of 65.8%, 66.3%, and 67.0% across DeepFool, BIM, and MIM, respectively. This marks improvements of 37.2%, 18.2%, and 21.5% over the pre-adversarially trained models...\" (demonstrating that the pre-adversarially trained models were subject to failures that TWINFUZZ discovered and mitigated)."
                 }
             },
             "Targeted Attack Discovery": {
@@ -5442,19 +5520,19 @@
                     "evidence": ""
                 },
                 "chatgpt": {
-                    "value": "High",
-                    "why": "The paper goes beyond merely reporting failures: through experiments and ablations it analyzes properties of discovered failure cases (e.g., that informative failures are concentrated near decision boundaries via agreement mining) and explicitly links observed failure patterns to underlying model vulnerabilities (notably overfitting to attack distributions and data-manifold difficulty). These diagnostic conclusions are drawn from the discovered failures and supported by quantitative ablation results showing that components targeting those properties (agreement mining and the LIB metric) materially affect robust accuracy.",
-                    "evidence": "Page 4, \"Agreement Mining\" section: \"When the robust model makes the same prediction, this suggests that the input likely resides near the decision boundary - where the model’s output is unstable and confidence is low.\" (explains diagnostic property of discovered failures). Page 6, \"Overall Performance for Robustness Improvement\": \"The larger input dimensionality and more entangled decision boundaries give each attack many more viable perturbation directions. As a result, the training process fits the specific perturbations seen during training but fails to cover the much broader adversarial surface that exists in these complex domains. In other words, the overfitting here is not merely attack-specific but also data-manifold specific: the harder the manifold, the more brittle the defence.\" (links observed failures to overfitting and data-manifold vulnerability). Page 6-7, \"Ablation Study\" / Table 4: \"Removing agreement mining (TWINFUZZ NoAM) leads to a significant drop in robust accuracy ... This decline highlights the importance of agreement mining in isolating informative edge samples. These samples drive the model away from local optima and expose generalizable weaknesses.\" and \"removing LIB from TWINFUZZ results in a substantial drop in robust accuracy: 16.6%, 14.9%, and 15.3% ... These results affirm that LIB is not only effective but also indispensable for guiding robustness generalization.\" (quantitative evidence that analyzed failure properties correspond to real underlying vulnerabilities)."
+                    "value": "Medium",
+                    "why": "The paper provides partial diagnostic insight into discovered failures by characterizing their properties (e.g., identifying ‘edge samples’ where a resistant and a vulnerable model agree and arguing these lie near decision boundaries) and by showing correlations between those properties and the proposed metrics (LIB and FOL) via ablation. However, it does not trace failures to deeper underlying model vulnerabilities (such as corrupted or biased training data, reliance on spurious features, or specific overfitting modes) nor does it present analysis of failure patterns like class-level concentration or internal neuron/activation diagnostics that would explain root causes.",
+                    "evidence": "Page 4, Agreement Mining: \"Inputs where the two models agree (highlighted in green in Fig. 1) are retained as high-risk edge samples and seed candidates... When the robust model makes the same prediction, this suggests that the input likely resides near the decision boundary - where the model’s output is unstable and confidence is low. In this way, the vulnerable model’s output serves as a negative oracle, and prediction agreement becomes a proxy for locating hard-to-classify, high-risk inputs.\" \n\nPage 3, L-Information Bottleneck (LIB): \"Central to our framework is an entropy-based metric, the Lagrangian Information Bottleneck (LIB), which supports lightweight computation and guides the exploration of decision-boundary regions to enhance generalization.\" \n\nPage 6, Ablation Study (contribution of Agreement Mining): \"As shown in Table 4, removing agreement mining (TWINFUZZ NoAM) leads to a significant drop in robust accuracy compared to the full version of TWINFUZZ... This decline highlights the importance of agreement mining in isolating informative edge samples.\" \n\nPage 7, Conclusion: \"Guided by a lightweight Information-Bottleneck metric LIB, it mutates inputs toward uncertain decision boundaries. It uses prediction agreement between a resistant and a vulnerable model to identify risky edge samples...\""
                 },
                 "gemini": {
                     "value": "Low",
-                    "why": "The paper's evaluation is centered on reporting quantitative robustness improvements, measured by robust accuracy across various attack scenarios, datasets, and models. While the authors discuss high-level reasons for robustness failures in complex datasets (e.g., \"data-manifold specific\" overfitting), this is presented as a general hypothesis to explain the quantitative results rather than a diagnostic analysis derived from the specific failure-inducing inputs discovered by their tool. The paper does not analyze the properties of the discovered failures (e.g., error concentration by class, common input features in failing samples) or link them to internal model signals or underlying vulnerabilities like spurious features or dataset bias. The entire experimental section focuses on demonstrating the effectiveness of the proposed method by reporting aggregate failure rates (i.e., robust accuracy) without delving into the characteristics of individual or groups of failures.",
-                    "evidence": "Page 6, Section: Same-Attack Validation. The text discusses aggregate performance metrics: 'As shown in Table 2, our framework TWINFUZZ consistently outperforms the baselines. Specifically, TWINFUZZ achieves average robust accuracies of 65.8%, 66.3%, and 67.0% across DeepFool, BIM, and MIM, respectively.' It then offers a general explanation for poor performance on complex datasets: 'In other words, the overfitting here is not merely attack-specific but also data-manifold specific: the harder the manifold, the more brittle the defence.' This is a high-level discussion of the aggregate results, not a diagnostic analysis of the specific failure cases found by TWINFUZZ, as required by the metric."
+                    "why": "The paper extensively evaluates the proposed method, TWINFUZZ, by reporting its impact on the model's robust accuracy. The evaluation is quantitative, focusing on the number of failures (misclassifications under attack) that the fine-tuned model resists compared to baselines. The paper presents these results in several tables (e.g., Table 2 and Table 3) across various datasets, models, and attack types. However, it does not provide any diagnostic analysis of the failures themselves. There is no characterization of the properties of the discovered failure-inducing inputs (e.g., by output class, input features, etc.), nor is there an attempt to link these specific failures to underlying model vulnerabilities like data bias, spurious features, or overfitting. The paper's analysis focuses on the overall performance improvement, not on diagnosing the root causes of the vulnerabilities that its generated samples expose. The discussion on overfitting on complex data manifolds is a general observation about the limitations of adversarial training that motivates the need for the proposed method, rather than a diagnostic analysis of the specific failures discovered by TWINFUZZ, which is explicitly excluded by the metric's coding guidance.",
+                    "evidence": "Page 6, Section: Same-Attack Validation. The paper states: 'Robust accuracy, defined as the proportion of adversarial inputs correctly classified, is used to assess model resilience. As shown in Table 2, our framework TWINFUZZ consistently outperforms the baselines.' This, along with Tables 2, 3, 4, and 5, demonstrates that the core of the evaluation is reporting failure counts (via robust accuracy) rather than analyzing the nature of those failures. The paper reports *that* its method reduces failures but does not diagnose *why* the original failures occurred."
                 },
                 "arbitrator": {
-                    "value": "Medium",
-                    "why": "While TWINFUZZ does more than simply report aggregate failure rates—it characterizes properties of the discovered failures (e.g. that high-risk inputs lie near the model’s decision boundary as detected by agreement mining, and that optimizing the LIB metric yields more transferable failures)—it stops short of tracing these failures back to deeper underlying vulnerabilities such as dataset bias or spurious feature reliance. Thus, it provides partial diagnostic insight (characterization and correlation with internal signals) but does not fully explain root causes exploitable for targeted mitigation.",
-                    "evidence": "Page 3–4, “Agreement Mining”: “Inputs where the two models agree … suggests that the input likely resides near the decision boundary — where the model’s output is unstable and confidence is low.”\nPage 4–5, Ablation Study / Table 4: Removing agreement mining or the LIB metric causes a substantial drop in robust accuracy, demonstrating that these failure-characterization components are key to identifying informative edge cases."
+                    "value": "Low",
+                    "why": "While the paper proposes an innovative fuzzing methodology and reports robust accuracy improvements, it does not perform any diagnostic analysis of the discovered failures themselves. There is no characterization of the failure-inducing inputs (e.g., by class, feature correlation, or internal activations), nor any linkage of these failures to underlying model vulnerabilities such as dataset bias or spurious feature reliance. The evaluations focus solely on aggregate robust accuracy under various attacks and ablations of the method’s components, without dissecting the nature or root causes of individual failures.",
+                    "evidence": "Pages 5–6: Tables 2 and 3 report robust accuracy improvements under different attacks; Section “Same-Attack Validation” (Page 6) and “Cross-Attack Validation” (Page 6) focus on quantitative performance metrics without analyzing failure patterns or model internals."
                 }
             },
             "Input Plausibility": {
@@ -5465,18 +5543,18 @@
                 },
                 "chatgpt": {
                     "value": "High",
-                    "why": "The paper enforces both semantic consistency and naturalness across fuzzing iterations. It explicitly applies a task-driven seed selection that uses SSIM to ensure perceptual similarity to the original input (i.e., semantic validity and imperceptibility). Mutations are further constrained per-seed via a finite mutation budget (“energy”), and the defect monitor filters out overly perturbed samples during the fuzzing loop. Together these mechanisms (SSIM-based filtering relative to the original input, and per-seed energy limits) prevent cumulative drift and preserve input plausibility throughout iterations.",
-                    "evidence": "Page 3, Overview of TWINFUZZ Framework: \"the defect monitor filters uninformative or overly perturbed inputs through two stages: agreement mining, which retains inputs where both models agree—flagging them as edge cases likely near the decision boundary; and task-driven seed selection, which discards low-quality samples using domain-aware criteria (e.g., SSIM for vision) to ensure imperceptibility and semantic validity.\" \n\nPage 4, Task-Driven Seed Selection: \"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X′ and its original counterpart X... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\" \n\nPage 4, Seed Mutation and Model Refinement: \"Each seed is assigned a mutation budget, namely energy, indicating how many mutations it can undergo.\" \n\nPage 4, Seed Mutation and Model Refinement: \"These seeds are not only adversarially informative - lying close to the decision boundary where model predictions are most unstable - but also perceptually similar to the original examples, ensuring semantic validity.\""
+                    "why": "The paper enforces semantic consistency and input naturalness across fuzzing iterations: it explicitly filters mutated/adversarial samples using a task-driven quality metric (SSIM) measured against the original input (ensuring perceptual similarity / semantic validity) and it limits mutation accumulation via a per-seed mutation budget (energy). These mechanisms are applied in the defect monitor (agreement mining + task-driven seed selection) that filters candidates during the fuzzing loop, i.e., after mutations, which indicates control relative to the reference/original seed rather than unconstrained drift.",
+                    "evidence": "Page 3, Method / Defect Monitor: \"defect monitor filters uninformative or overly perturbed inputs through two stages: agreement mining, which retains inputs where both models agree—flagging them as edge cases likely near the decision boundary; and task-driven seed selection, which discards low-quality samples using domain-aware criteria (e.g., SSIM for vision) to ensure imperceptibility and semantic validity.\"; Page 4, Task-Driven Seed Selection: \"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X' and its original counterpart X... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\"; Page 4, Seed Mutation and Model Refinement: \"These seeds are not only adversarially informative ... but also perceptually similar to the original examples, ensuring semantic validity.\"; Page 4, Seed Mutation: \"Each seed is assigned a mutation budget, namely energy, indicating how many mutations it can undergo.\""
                 },
                 "gemini": {
                     "value": "High",
-                    "why": "The fuzzer's oracle relies on agreement mining between two models, which is a form of differential testing. As this does not assume semantic equivalence between a mutated input and its seed, the 'semantic consistency' aspect of the metric is not applicable. However, the fuzzer explicitly aims to generate plausible, 'semantically meaningful' inputs, making the 'naturalness' aspect relevant. The paper proposes a 'Task-Driven Seed Selection' module specifically to enforce naturalness. This module filters candidate inputs by comparing them to their 'original counterpart' using a perceptual quality metric (SSIM for vision tasks). By validating each new seed against the original, unmutated input, the method directly controls for cumulative distortion across fuzzing iterations, ensuring that generated inputs remain realistic and perceptually similar to the original data.",
-                    "evidence": "Page 4, Section: Task-Driven Seed Selection\n\"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X' and its original counterpart X. ... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\""
+                    "why": "The paper's method, TWINFUZZ, explicitly enforces input naturalness throughout its fuzzing iterations. Semantic consistency is not applicable as the method employs a differential oracle ('agreement mining') that relies on prediction consistency between two models rather than assuming a preserved ground-truth label. The fuzzer's dedication to naturalness is realized through its 'Task-Driven Seed Selection' module, which filters out perceptually distorted inputs using metrics like the Structural Similarity Index Measure (SSIM). Critically, this module assesses the similarity between a mutated input and its 'original counterpart,' thereby controlling for the cumulative distortion that can occur across multiple mutations by referencing the original seed. This approach directly aligns with the 'High' rating's requirement to ensure naturalness by controlling perturbation relative to a reference seed across iterations.",
+                    "evidence": "Page 4, Task-Driven Seed Selection: \"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X' and its original counterpart X. ... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\""
                 },
                 "arbitrator": {
                     "value": "High",
-                    "why": "The paper enforces both semantic consistency and naturalness across fuzzing iterations. It explicitly applies a task-driven seed selection that uses SSIM to ensure perceptual similarity to the original input (i.e., semantic validity and imperceptibility). Mutations are further constrained per-seed via a finite mutation budget (“energy”), and the defect monitor filters out overly perturbed samples during the fuzzing loop. Together these mechanisms (SSIM-based filtering relative to the original input, and per-seed energy limits) prevent cumulative drift and preserve input plausibility throughout iterations.",
-                    "evidence": "Page 3, Overview of TWINFUZZ Framework: \"the defect monitor filters uninformative or overly perturbed inputs through two stages: agreement mining, which retains inputs where both models agree—flagging them as edge cases likely near the decision boundary; and task-driven seed selection, which discards low-quality samples using domain-aware criteria (e.g., SSIM for vision) to ensure imperceptibility and semantic validity.\" \n\nPage 4, Task-Driven Seed Selection: \"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X′ and its original counterpart X... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\" \n\nPage 4, Seed Mutation and Model Refinement: \"Each seed is assigned a mutation budget, namely energy, indicating how many mutations it can undergo.\" \n\nPage 4, Seed Mutation and Model Refinement: \"These seeds are not only adversarially informative - lying close to the decision boundary where model predictions are most unstable - but also perceptually similar to the original examples, ensuring semantic validity.\""
+                    "why": "The paper enforces semantic consistency and input naturalness across fuzzing iterations: it explicitly filters mutated/adversarial samples using a task-driven quality metric (SSIM) measured against the original input (ensuring perceptual similarity / semantic validity) and it limits mutation accumulation via a per-seed mutation budget (energy). These mechanisms are applied in the defect monitor (agreement mining + task-driven seed selection) that filters candidates during the fuzzing loop, i.e., after mutations, which indicates control relative to the reference/original seed rather than unconstrained drift.",
+                    "evidence": "Page 3, Method / Defect Monitor: \"defect monitor filters uninformative or overly perturbed inputs through two stages: agreement mining, which retains inputs where both models agree—flagging them as edge cases likely near the decision boundary; and task-driven seed selection, which discards low-quality samples using domain-aware criteria (e.g., SSIM for vision) to ensure imperceptibility and semantic validity.\"; Page 4, Task-Driven Seed Selection: \"To ensure the quality of generated inputs, we apply a filtering step that discards overly perturbed samples. In the context of computer vision tasks, we use the Structural Similarity Index Measure (SSIM) as a criterion to assess the perceptual similarity between an adversarial image X' and its original counterpart X... By enforcing a threshold on SSIM, we retain only adversarial examples that are visually similar to the originals, thus balancing effectiveness and imperceptibility.\"; Page 4, Seed Mutation and Model Refinement: \"These seeds are not only adversarially informative ... but also perceptually similar to the original examples, ensuring semantic validity.\"; Page 4, Seed Mutation: \"Each seed is assigned a mutation budget, namely energy, indicating how many mutations it can undergo.\""
                 }
             },
             "Failure Reproducibility": {
@@ -5525,10 +5603,18 @@
             }
         },
         "taxonomy": {
-            "access_level": [],
-            "mutation_strategy": [],
-            "exploration_strategy": [],
-            "oracle": []
+            "access_level": [
+                "Whitebox"
+            ],
+            "mutation_strategy": [
+                "Feedback-informed"
+            ],
+            "exploration_strategy": [
+                "Data-driven"
+            ],
+            "oracle": [
+                "Property-based"
+            ]
         }
     }
 }
