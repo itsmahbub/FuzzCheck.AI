@@ -5,7 +5,7 @@
     "values": {
       "High": "Targets a model equipped with explicit safety, policy, or security safeguards (e.g., adversarially trained or safety-aligned models), and empirically demonstrates failures that bypass those defenses.",
       "Medium": "Discovers harmful, unsafe, biased,  or toxic, but does not empirically demonstrate bypass of an explicit safeguard.",
-      "Low": "Discovers only robustness-related failures (e.g., mispredictions, accuracy degradation, or prediction inconsistency) in undefended models, without harmful behavior or safeguard bypass. "
+      "Low": "Discovers only robustness-related failures (e.g., mispredictions, accuracy degradation, or prediction inconsistency), without harmful behavior or safeguard bypass. "
     }
   },
   "Targeted Attack Discovery": {
