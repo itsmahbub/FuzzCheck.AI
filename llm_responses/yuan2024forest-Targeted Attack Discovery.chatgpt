@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's testing objective is to detect any change in model prediction caused by input transformations (i.e., mis-predictions / inconsistencies) and to record which transformations (EPs) cause such errors. It does not aim to induce attacker-chosen specific outputs (e.g., a particular target label or a specific malicious/guided output). Therefore the exploration is untargeted—focused on prediction deviation/inconsistency rather than steering toward predefined attacker goals or specific classes of harmful outputs.",
+  "evidence": "Page 1605, Introduction: \"given an input x and a transformation t (e.g., rotation), a DNN error1 is detected if the DNN’s prediction for a slightly mutated input x' = t(x) changes.\"; Page 1607, Sec. 2.1 (Definition 2 - Erroneous Property (EP)): \"If applying a transformation t to a DNN’s input x can trigger mis-predictions (i.e., the DNN has different predictions for x and t(x)), the DNN is erroneous to the input property targeted by t.\"; Page 1611, Alg. 1 (Testing pipeline): \"if mis_prediction(x, x') then // record x' as one ETI.\"; Page 1606, 'The Forest vs. Trees.': \"instead of counting which input triggers a DNN mis-prediction (i.e., ETIs), we record which input transformation generates ETIs.\""
+}
+```

@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper's method focuses on untargeted exploration to discover general prediction inconsistencies, which are termed \"error-triggering inputs\" (ETIs). An error is defined as any instance where a transformed input `t(x)` results in a different prediction from the original input `x`. The search objective is to find these inconsistencies. The paper's core contribution is to shift the testing goal from finding more ETIs to finding more \"erroneous properties\" (EPs), which are the transformations that can cause *any* such mis-prediction. The methodology does not steer the search towards a specific, attacker-chosen target label or a predefined class of safety- or security-violating behaviors. The oracle is based solely on prediction deviation.",
+  "evidence": "Page 1, Section 1, Introduction: \"...a DNN error is detected if the DNN's prediction for a slightly mutated input x' = t(x) changes.\" and Page 3, Section 2.1, Definition 2 (Erroneous Property (EP)): \"If applying a transformation t to a DNN’s input x can trigger mis-predictions (i.e., the DNN has different predictions for x and t(x)), the DNN is erroneous to the input property targeted by t.\" These definitions confirm that the goal is to find any prediction inconsistency, which aligns with untargeted exploration."
+}
+```

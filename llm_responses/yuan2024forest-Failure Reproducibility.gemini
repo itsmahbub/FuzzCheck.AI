@@ -1,0 +1,7 @@
+```json
+{
+  "value": "High",
+  "why": "The paper's primary proposed method for generating input transformations relies on generative models (GANs) to edit perceptual properties of images. This process involves manipulating a latent vector and using the generator to synthesize a new, complete image. According to the metric definition, this qualifies as generating inputs 'directly in a serialized format (e.g., ... rendered images)'. The resulting mutations are semantic and macroscopic (e.g., changing a face's orientation, opening a mouth) rather than fine-grained numerical perturbations that are susceptible to being lost during serialization (e.g., through rounding or clipping). Such generated images are inherently stable and reproducible, as the properties that trigger the failure are part of the rendered content itself, not a fragile, out-of-format numerical artifact.",
+  "evidence": "Page 4, Section 4.1, Editing Perceptual Properties: 'Perception-based transformations are implemented based on generative models (e.g., GANs [20]). Given a generative model G and a latent vector z (which can be random or converted using a real image), editing the generated image G(z) can be characterized using the Taylor expansion: ... each v_i ∈ V corresponds to a unique perception-based transformation t_i, i.e., t_i(x) = G(z + v_i)...' This quote explicitly states that a mutated input t_i(x) is the output of a generative model G, which constitutes a rendered image."
+}
+```
