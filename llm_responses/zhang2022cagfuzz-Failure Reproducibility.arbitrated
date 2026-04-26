@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "CAGFuzz mutates inputs via an in-memory generative model (CycleGAN-based AEG) and never describes enforcing discrete pixel constraints (e.g., clipping to [0,255] or rounding to integer values) or handling standard image serialization. All perturbations are applied in floating-point tensor space and directly fed into the DNN under test. The paper does not discuss how these perturbations survive saving to common image formats, so fault-inducing perturbations could be rounded or clipped away when images are serialized, making failures non-reproducible in real deployment.",
+  "evidence": "Section 3.2.2 (page 6–7): Describes AEG generating adversarial examples as reconstructed images via CycleGAN, but contains no mention of clipping or rounding to integer pixel values.\nSection 3.3.3 (page 8): Cosine similarity gating operates on floating-point deep feature vectors, with no handling of serialization-induced precision loss.\nNo section in the paper addresses input format constraints or demonstrates that generated examples survive standard save/load operations."
+}
+```
