@@ -3,9 +3,9 @@
     "description": "Discovering failures in undefended models is often insufficient for security evaluation, because modern DNNs are typically deployed with safety, policy, or security safeguards intended to prevent, detect, or mitigate adversarial and safety-violating behavior. A fuzzer may uncover many failures on an undefended model, but such failures do not necessarily reflect weaknesses that an attacker could exploit in practice. Moreover, discovered failures differ in their practical security significance. Failures involving harmful, unsafe, or policy-violating behavior, especially when they bypass explicit safeguards, are more security-relevant than robustness-related errors such as accuracy degradation, mispredictions, or prediction inconsistencies. This metric therefore evaluates the practical severity of the failures that a fuzzer is designed and empirically shown to discover. To assess papers on this metric, we examine the most severe class of failure that is both supported by the fuzzing design and demonstrated in the evaluation, based on the target models, oracle definition, and reported evaluation setting.",
     "coding_guidance": "Use the strongest failure class supported by the fuzzing design and demonstrated in the evaluation. Do not rely only on the paper's motivation, threat discussion, or claimed security relevance.", 
     "values": {
-      "High": "Targets a model equipped with explicit safety, policy, or security safeguards, and empirically demonstrates failures that bypass those safeguards to induce prohibited behavior.",
+      "High": "Targets a model equipped with explicit safety, policy, or security safeguards (e.g., adversarially trained or safety-aligned models), and empirically demonstrates failures that bypass those defenses.",
       "Medium": "Discovers harmful, unsafe, biased,  or toxic, but does not empirically demonstrate bypass of an explicit safeguard.",
-      "Low": "Discovers only robustness-related failures (e.g., mispredictions, accuracy degradation, or prediction inconsistency), without harmful behavior or safeguard bypass. "
+      "Low": "Discovers only robustness-related failures (e.g., mispredictions, accuracy degradation, or prediction inconsistency) in undefended models, without harmful behavior or safeguard bypass. "
     }
   },
   "Targeted Attack Discovery": {
