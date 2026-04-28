@@ -62,11 +62,14 @@ def build_row(paper):
     row.extend([mutation, exploration, oracle])
 
     # Add assessment metrics
+    low_count = 0
     for field in assessment_fields:
         try:
             metric = paper["assessments"][field]["manual"]["value"]
-            if not metric:
-                metric = paper["assessments"][field]["arbitrator"]["value"]
+            if metric == "Low":
+                low_count+=1
+            # if not metric:
+                # metric = paper["assessments"][field]["arbitrator"]["value"]
             row.append(format_value(metric))
         except Exception as e:
             print("Error processing:", paper_info, field)
@@ -74,7 +77,7 @@ def build_row(paper):
 
     
     row.append(paper["taxonomy"]["access_level"][0])  # Keep access level for sorting only
-
+    row.append(low_count)
     return row
 
 records = []
@@ -87,21 +90,24 @@ for _, paper in data.items():
     records.append(row)
 
 # Sort by access level, then year descending, then citation count descending
-records.sort(key=lambda r: (r[-3], r[-2], r[-1]))
+records.sort(key=lambda r: (r[-4], r[-2], r[-1]))
 
 def emit_table_rows(records):
-    grouped = groupby(records, key=lambda r: r[-3])  # group by access level
+    grouped = groupby(records, key=lambda r: r[-4])  # group by access level
     for level, group in grouped:
         group = list(group)
         n = len(group)
         print(f"% ===== {level.upper()} FUZZERS =====")
         print("\\hline")
-        print(f"\\multicolumn{{11}}{{|c|}}{{\\cellcolor{{gray!10}} \\textbf{{{level}}}}} \\\\")
+        print(f"\\multicolumn{{11}}{{|c|}}{{\\cellcolor{{gray!30}} \\textbf{{{level}}}}} \\\\")
         print("\\arrayrulecolor{black!50}")
         print("\\hline")
         print("\\hline")
         for row in group:
-            row_out = row[:-3]  # drop sort keys and access level
+            row_out = row[:-4]  # drop sort keys and access level
+            low_count = row[-3]
+            if low_count>=3:
+                print(r"\rowcolor{gray!10}", end=" ")
             print(" & ".join(row_out) + r" \\")
             print(r"\hline")  # adjust depending on column count
 
