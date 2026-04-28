@@ -5381,8 +5381,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "N/A",
-                    "why": "oracle does not assume semantic equivalence between the adversarial prompt text and the original sensitive prompt, instead it aims to discover adversarial prompt that produces images which is semantically equivalent to the original prompt. The threat model does not assume naturalness constraint on the mutated prompts, allowing nonsensical token substitutions. So input plausibility is not applicable for this.",
+                    "value": "High",
+                    "why": "oracle does not assume semantic equivalence between the adversarial prompt text and the original sensitive prompt, instead it aims to discover adversarial prompt that produces images which is semantically equivalent to the original prompt. Replace senstive words with non-sensitive while keeping the other words as is to retain the context which is plausible.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5623,7 +5623,7 @@
         "year": "2022",
         "conf/journal": "IEEE TSE",
         "type": "journal",
-        "citation_count": "",
+        "citation_count": "47",
         "assessments": {
             "Failure Severity": {
                 "manual": {
