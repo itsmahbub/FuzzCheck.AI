@@ -941,7 +941,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -963,7 +963,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -985,7 +985,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1007,7 +1007,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1029,7 +1029,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1051,7 +1051,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1097,7 +1097,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1119,7 +1119,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1141,7 +1141,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1163,7 +1163,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1185,7 +1185,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1410,7 +1410,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1432,7 +1432,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1454,7 +1454,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1476,7 +1476,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1498,7 +1498,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1520,7 +1520,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1722,7 +1722,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1744,7 +1744,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1766,7 +1766,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1788,7 +1788,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1810,7 +1810,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1832,7 +1832,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2502,7 +2502,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -2524,7 +2524,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2546,7 +2546,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -2568,7 +2568,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -2590,8 +2590,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "High",
+                    "why": "the modification can only increase or decrease all pixel values by the same amount",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2612,7 +2612,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3439,7 +3439,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3461,7 +3461,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3483,7 +3483,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3505,7 +3505,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -3527,7 +3527,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -3549,7 +3549,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3751,7 +3751,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3773,7 +3773,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3795,7 +3795,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -3817,7 +3817,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -3839,7 +3839,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -3861,7 +3861,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
