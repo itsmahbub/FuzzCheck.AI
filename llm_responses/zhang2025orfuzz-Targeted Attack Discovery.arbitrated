@@ -1,7 +1,7 @@
 ```json
 {
-  "value": "High",
-  "why": "ORFUZZ explicitly defines a precise attacker‐chosen failure condition—benign inputs that elicit safety‐related refusals—and steers its search toward maximizing that specific property via its OR‐JUDGE oracle and reward function (p̂over). This goes beyond broad safety‐violation detection (Medium) and focuses on a narrowly defined, predefined target behavior, matching the ‘High’ criteria for targeted attack discovery.",
-  "evidence": "Page 2, Introduction: “it systematically probes LLMs to identify instances where they erroneously reject benign prompts.” \nPage 7, Section IV-C: definition of p̂over = p̂sr·(1−p̂answer) and use of configurable thresholds Ttoxic and Tover to treat benign + safety-related refusals as the concrete target for generation. \nPage 3, Section III-A: three‐condition definition of an over-refusal incident (benign input, model refusal, safety‐related reason), which the oracle uses to steer exploration."
+  "value": "Medium",
+  "why": "ORFUZZ explicitly directs its search toward inducing the class of over-refusal failures—cases where a benign input is refused for safety reasons—but does not aim for a specific, attacker-chosen refusal output. Instead, it targets the broader failure class of ‘any’ safety-related refusal on benign prompts, using OR-JUDGE’s thresholds to validate membership in that class. This aligns with exploring a predefined category of safety-violating behavior rather than targeting a single precise output, matching the “Medium” level.",
+  "evidence": "Page 3, Section III (Motivating User Study): definition of over-refusal as a class of failure (benign input + safety-related refusal). \nPage 7, Section IV-C (Mutation and Evaluation): use of thresholds Ttoxic and Tover to classify any test case as over-refusal, not a specific refusal text. \nPage 9, Section V-B: evaluation metric Over-Refusal Rate (ORR) measuring what fraction of cases fall into the refusal class, demonstrating steering toward that failure category rather than a precise target output."
 }
 ```

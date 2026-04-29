@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "While the authors demonstrate in a case study how LipFuzzer–generated inputs can be used to invoke a malicious skill, the core fuzzing approach itself does not steer its search toward a single, attacker-chosen target intent or output. Instead, LipFuzzer mutates seed templates and flags any semantic misinterpretation (i.e. any unintended vApp invocation or failure to install the intended vApp). This is equivalent to untargeted exploration whose oracle checks only for prediction deviation or inconsistency, rather than verifying that a specific malicious objective has been met. Under the Targeted Attack Discovery metric, such broad hunting for any misclassification scores as Low.",
+  "evidence": "Page 9 (Section IV.C, Verification): “We define that a LAPSUS is verified to be effective when it is incorrectly interpreted by the VA system. For example, if the vApp is not installed after an installation-related LAPSUS is played to VA devices, then this LAPSUS is effective.”\n\nPage 2 (Our Approach): “Our tool generates potential voice commands that are likely to incur a semantic inconsistency such that a user reaches an unintended vApp/functionality …”"
+}
+```

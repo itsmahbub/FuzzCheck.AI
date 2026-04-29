@@ -40,15 +40,16 @@ def to_latex_row(paper_key, paper):
             row.append(human)
     return " & ".join(row) + r" \\"
 
-# Print LaTeX rows (sorted by year, then citation count)
+# Print LaTeX rows (sorted by, access level year, then citation count)
 records = []
 for paper_title, paper in data.items():
+    access_level = paper.get("taxonomy", {}).get("access_level")[0]
     year = int(paper.get("year", 0))
     citation_count = int(paper.get("citation_count", 0))
     row = to_latex_row(paper_title, paper)
-    records.append((-year, -citation_count, row))
+    records.append((access_level, -year, -citation_count, row))
 
 records.sort()
-for _, _, row in records:
+for _, _, _, row in records:
     print(row)
     print("\\hline")
