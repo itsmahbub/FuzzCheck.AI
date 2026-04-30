@@ -4265,8 +4265,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "links the occurrence and detectability of errors to the statistical closeness (measured via MMD) between the distribution of generated test inputs and the distribution of another class at the logits layer.",
+                    "value": "High",
+                    "why": "links the occurrence and detectability of errors to the statistical closeness (measured via MMD) between the distribution of generated test inputs and the distribution of another class at the logits layer. They attribute it to distribution shift vulnerability and provide mitigation.",
                     "evidence": ""
                 },
                 "chatgpt": {
