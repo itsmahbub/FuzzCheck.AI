@@ -2034,7 +2034,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2056,7 +2056,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2078,7 +2078,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2100,7 +2100,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -2122,7 +2122,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -2144,8 +2144,8 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "This test oracle is inherently a multi-model design for failure discovery.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2190,7 +2190,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2212,7 +2212,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2234,7 +2234,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2256,8 +2256,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "It use differential testing oracle using external Text-to-Speech (TTS) engines and also flag indeterminable inputs but don't apply internal semantic-preserving method.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2278,7 +2278,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -2300,7 +2300,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2659,7 +2659,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2681,7 +2681,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2703,7 +2703,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2725,7 +2725,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -2747,7 +2747,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2769,7 +2769,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -2971,7 +2971,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -2993,7 +2993,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -3015,7 +3015,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -3037,7 +3037,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -3059,7 +3059,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -3081,7 +3081,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3283,7 +3283,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3305,7 +3305,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3327,7 +3327,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -3349,7 +3349,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -3371,8 +3371,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "Even if there is no mention about clipping and rounding operations for in-memory mutation, the paper provides experiments to demonstrate that it can produce effective adversarial examples for verious models.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3393,7 +3393,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
