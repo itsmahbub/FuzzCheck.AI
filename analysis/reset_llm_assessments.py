@@ -7,10 +7,12 @@ TARGET_MODELS = ("chatgpt", "gemini", "arbitrator")
 RESET_METRICS = None
 # Example:
 RESET_METRICS = {
-    "Input Plausibility"
+    "Failure Reproducibility"
 }
 
-BLACKLISTED_PAPERS = ["huang2021coverage", "yu2024llm", "liuautodan", "zhou2025understanding", "he2024curiosity"]
+# BLACKLISTED_PAPERS = ["huang2021coverage", "yu2024llm", "liuautodan", "zhou2025understanding", "he2024curiosity"]
+
+BLACKLISTED_PAPERS = []
 
 def reset_llm_assessments(data, selected_metrics=None):
     reset_count = 0

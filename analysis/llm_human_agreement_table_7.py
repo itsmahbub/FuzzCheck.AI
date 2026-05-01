@@ -26,8 +26,12 @@ for paper in data.values():
     assessments = paper.get("assessments", {})
     for metric in metrics:
         if metric in assessments:
-            manual = assessments[metric]["manual"]["value"]
-            llm = assessments[metric]["arbitrator"]["value"]
+            try:
+                manual = assessments[metric]["manual"]["value"]
+                llm = assessments[metric]["arbitrator"]["value"]
+            except Exception as e:
+                print(paper["key"])
+                raise e
             total_counts[metric] += 1
             if manual == llm:
                 agreement_counts[metric] += 1
