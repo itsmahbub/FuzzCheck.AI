@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Medium",
+  "why": "Although MDPFuzz does not mutate serialized inputs like image or audio files, it does enforce domain‐specific constraints on the mutated initial states: it bounds vehicle speeds within allowable ranges, restricts discrete ground‐type values, and uses each simulator’s built‐in validation to ensure all mutated states remain realistic and solvable. However, it does not address pixel‐level rounding/clipping or explicit serialization formats, so it only partially enforces input format constraints relevant to its state‐vector inputs.",
+  "evidence": "Sec. 6, “MDP Initial State Sampling, Mutation, and Validation”:\n– “All the mutated states are validated in an automated and deliberate way… we confirm that all mutated states are valid and solvable.”\n– “We add random noise to the initial states… e.g., adding small Gaussian float numbers from N(0, 1) to vehicles’ initial positions, and adding small uniform integers from U(0, 4) to the ground type in BipedalWalker.”\n– “In DNN-based ACAS Xu… we bound the maximal speed of all airplanes below 1,100 ft/sec… within the range of normal speed… and we guarantee that there exist optimal actions to avoid the crash.”\nThese passages show that MDPFuzz enforces domain constraints on its mutated inputs but does not perform serialization‐style clipping or rounding for pixel/audio/text formats."
+}
+```

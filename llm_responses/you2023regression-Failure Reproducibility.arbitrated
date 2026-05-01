@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "DRFuzz applies mutations directly in memory on normalized or floating‐point pixel representations (e.g., adding Gaussian or salt-and-pepper noise to 0–1 normalized pixels, image‐level transforms on continuous values) and never describes clipping or rounding mutated values back to discrete integer ranges (e.g., 0–255) nor generating or saving inputs in a serialized image format. Consequently, fault‐inducing perturbations may not survive standard serialization, placing DRFuzz squarely in the “Low” category: it mutates in continuous intermediate representations without enforcing any relevant format constraints.",
+  "evidence": "Section III-B (page 3): “DRFuzz first pre-processes the training set to normalize each pixel value into the range of [0, 1]…”; Section III-C (page 4): “Pixel-Level Mutation aims to change a small set of pixels in an image…DRFuzz randomly selects a small set of pixels (i.e., 0.5% total pixels) for mutation,” and Table I lists noise and geometric transforms. Nowhere does the paper mention clipping mutated values to valid integer pixel ranges or serializing mutated inputs (e.g., as PNG/JPEG) to verify that the perturbations persist after disk storage."
+}
+```

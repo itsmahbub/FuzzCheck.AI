@@ -1,7 +1,7 @@
 ```json
 {
-  "value": "Low",
-  "why": "While the paper constrains the magnitude of pixel perturbations in memory (using L∞ and L0 bounds), it does not explicitly enforce that mutated pixel values are clipped to the valid integer range [0,255] nor that floating-point values are rounded to integers before serialization. There is no discussion of applying clipping or rounding at save time or of generating inputs directly as serialized image files. Consequently, fault-inducing perturbations introduced in memory may be lost or altered when writing to standard image formats, making failures unreproducible under realistic deployment conditions.",
-  "evidence": "Section 3.2.2 (page 6): Equation (1) constrains the change magnitude per pixel (L∞(s,s′) ≤ 255 or < β·255) but does not ensure final pixel values lie within [0,255] or are integer. Algorithm 2 applies this constraint in memory, and no subsequent clipping/rounding or serialization steps are described anywhere in the paper."
+  "value": "Medium",
+  "why": "DeepHunter applies mutations directly to raw pixel values (e.g., brightness, contrast, affine transforms) and enforces semantic constraints by bounding the number and magnitude of changed pixels (via L₀ and L∞ thresholds). However, the paper does not describe any explicit clipping or rounding step to guarantee that mutated pixel values lie within the serialized image format’s integer range [0,255]. Because it operates in the same numerical space as serialized images but only partially enforces format constraints (it limits change size rather than enforcing final value bounds and integer precision), it aligns with the “Medium” level of Failure Reproducibility.",
+  "evidence": "Page 6, Section 3.2.2: “Suppose an image s′ is mutated from s by a pixel value transformation, then s′ is valid if f(s, s′) is satisfied. f(s, s′) = { L∞(s, s′) ≤ 255, if L₀(s, s′) < α×size(s); L∞(s, s′) < β×255, otherwise }”  \nNo step is described that clips the final pixel values to [0,255] or rounds floats to integer precision before serialization."
 }
 ```

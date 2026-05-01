@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "The paper makes no mention of enforcing or verifying that pixel‐level mutations survive standard serialization. Its description of mutations focuses on in‐memory color‐space edits and overlaying pixel regions via NumPy, OpenCV, and Pillow, but it does not describe any clipping to [0,255], rounding to integer precision, or post‐mutation checks on saved image files. There is no discussion of saving mutated inputs in a serialized format (PNG/JPEG) or of measuring failure reproducibility after serialization. Therefore, the fuzzer does not address the risk that fault‐inducing perturbations could be lost during serialization.",
+  "evidence": "Page 1961, Section 4: “We implemented each mutation using Numpy [13] along with OpenCV for Python [4] and Pillow [6], two common image processing libraries for Python.”\n\nPage 1962, Section 4.2.1 (Changing Object Color): “To affect the color change, we manipulate the color in the HSL color space… Specifically, if the average lightness of the vehicle is over 100, then all pixels with a lightness value over 100 have their lightness decreased…\" (no mention of clipping or rounding)\n\nPage 1963, Section 4.3.1 (Adding an Entity): “...the mutation takes the isolated portion of the image and overlays it at the same pixel coordinates on the base image.” (no mention of enforcing valid pixel ranges or testing serialized output)"
+}
+```

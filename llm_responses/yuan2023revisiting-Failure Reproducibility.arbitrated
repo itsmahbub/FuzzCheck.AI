@@ -1,0 +1,7 @@
+```json
+{
+  "value": "Low",
+  "why": "Although the paper’s fuzzing framework includes an is_valid() check that limits the fraction of pixels changed and the maximum perturbation magnitude (relative to the 0–255 scale), it makes no mention of actually clipping mutated pixel values to the [0,255] range, rounding them to integer precision, or serializing the images (e.g., saving as PNG/JPEG) to ensure the fault-inducing perturbations survive real-world deployment. Without explicit enforcement of these format constraints or demonstration of failure reproducibility after serialization, the approach does not address the core issue of perturbations being lost or altered when writing inputs to disk.",
+  "evidence": "Page 10, Section VI-B (Guiding Input Mutation in DNN Testing), Algorithm 1: the paper describes is_valid() as checking “1) the number of changed pixels is less than α×#pixels or 2) the maximum of changed pixel value is less than β×255.” There is no further discussion of clipping mutated values to integer [0,255] or saving inputs in a serialized format to verify that perturbations persist after serialization."
+}
+```
