@@ -1207,7 +1207,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1254,7 +1254,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1276,7 +1276,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1298,7 +1298,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1320,7 +1320,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1342,7 +1342,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1364,7 +1364,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1566,7 +1566,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1588,7 +1588,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1610,7 +1610,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1632,8 +1632,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "Uses a filtering mechanism to ensure naturalness. Not doing in-memory changes or random purturbation but does not actively enforce the naturalness of its generated inputs.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1654,7 +1654,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1676,7 +1676,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1878,7 +1878,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1900,7 +1900,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1922,7 +1922,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1944,7 +1944,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1966,7 +1966,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -1988,7 +1988,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -2815,7 +2815,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2837,7 +2837,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -2859,7 +2859,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -2881,7 +2881,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -2903,8 +2903,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "The use of fidelity.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2925,7 +2925,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -5003,7 +5003,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -5025,7 +5025,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -5047,7 +5047,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -5069,7 +5069,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -5091,7 +5091,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -5113,7 +5113,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -5315,7 +5315,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -5337,7 +5337,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -5359,7 +5359,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -5381,7 +5381,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -5403,7 +5403,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -5425,8 +5425,8 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "They use a shadow text encoder, which can be treated as a surrogate model. And they have tested on other state-of-the-art open-source models as well.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5471,7 +5471,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -5493,7 +5493,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -5515,7 +5515,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -5537,7 +5537,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -5559,7 +5559,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -5581,7 +5581,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -5783,7 +5783,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -5805,7 +5805,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -5827,7 +5827,7 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -5849,7 +5849,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -5871,7 +5871,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -5893,7 +5893,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
