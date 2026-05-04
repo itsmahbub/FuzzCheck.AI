@@ -22,14 +22,16 @@ for paper in data1:
         continue
     for metric, assessment in data1[paper]["assessments"].items():
         v1 = assessment["manual"]["value"]
-        v2 = data2[paper]["assessments"][criterion]["manual"]["value"]
+        v2 = data2[paper]["assessments"][metric]["manual"]["value"]
         total += 1
         if v1 != v2:
             diffs.append({
                 "paper": data1[paper].get("key", paper),
                 "metric": metric,
                 file1: v1,
+                file1 + "_why": assessment["manual"]["why"],
                 file2: v2,
+                file2 + "_why": data2[paper]["assessments"][metric]["manual"]["why"],
             })
 
 
@@ -39,9 +41,11 @@ else:
     print(f"Found {len(diffs)} difference(s):\n")
     for d in diffs:
         print(f"Paper    : {d['paper']}")
-        print(f"Metric: {d['metric']}")
+        print(f"Metric   : {d['metric']}")
         print(f"  {file1}: {d[file1]}")
+        print(f"    Why: {d[file1 + '_why']}")
         print(f"  {file2}: {d[file2]}")
+        print(f"    Why: {d[file2 + '_why']}")
         print()
 
 agreed = total - len(diffs)

@@ -1,0 +1,249 @@
+Found 35 difference(s):
+
+Paper    : liuautodan
+Metric   : Failure Diagnostics
+  results/assessments.json: Low
+    Why: It provides rationality why the discovered failures are more stealthy than the baselines but not how the failures are related to model weaknesses or any failure patterns
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : he2024curiosity
+Metric   : Input Plausibility
+  results/assessments.json: High
+    Why: Use CARLA simulator to check validity of the mutated inputs
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : zhou2025understanding
+Metric   : Failure Diagnostics
+  results/assessments.json: Medium
+    Why: Provides correlation with internal coverage
+  results/assessments_sonjoy.json: High
+    Why: 
+
+Paper    : gong2025papillon
+Metric   : Targeted Attack Discovery
+  results/assessments.json: High
+    Why: Use two stage judge to evaluate  both harmfulness and relevance to the given question. RoBERTa (harmfulness) + ChatGPT (harmfulness and relevance to the specific query)
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : gong2025papillon
+Metric   : Failure Diagnostics
+  results/assessments.json: Medium
+    Why: Provides rationale that semantic coherence of the input causes the failure to bypass perplexity based defense but not how the failures are related to model weakness.
+  results/assessments_sonjoy.json: High
+    Why: The chatgpt focusing too much on reliance on spurious features, biased training data, or overfitting.
+
+Paper    : du2018deepcruiser
+Metric   : Failure Diagnostics
+  results/assessments.json: Medium
+    Why: Provides heuristic explanations by showing correlation with state variation
+  results/assessments_sonjoy.json: High
+    Why: I am convinced by the evaluations evidence.
+
+Paper    : xie2019deephunter
+Metric   : Failure Reproducibility
+  results/assessments.json: Medium
+    Why: Applies metamorphic transformations directly to raw image inputs but no clipping/rounding
+  results/assessments_sonjoy.json: Low
+    Why: 
+
+Paper    : xie2019deephunter
+Metric   : Attack Transferability
+  results/assessments.json: Low
+    Why: The oracle definitions is that if same input produce different output to a model and its quanitized version, then it is fault-triggering input. But it is not transferability.
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : yu2024llm
+Metric   : Targeted Attack Discovery
+  results/assessments.json: Medium
+    Why: Fine-tuned RoBERTa classifies the response as harmful/not harmful — no relevance verification
+  results/assessments_sonjoy.json: High
+    Why: 
+
+Paper    : yuen2023asdf
+Metric   : Input Plausibility
+  results/assessments.json: High
+    Why: Uses a differential testing oracle that does not assume semantic equivalence. Audio is synthesized using TTS, producing fluent and intelligible speech. Retains only synthesized audio that passes cross-referencing validity checks, filtering out low-quality or unrealistic final inputs.
+  results/assessments_sonjoy.json: Medium
+    Why: Uses a filtering mechanism to ensure naturalness. Not doing in-memory changes or random purturbation but does not actively enforce the naturalness of its generated inputs.
+
+Paper    : chao2025jailbreaking
+Metric   : Targeted Attack Discovery
+  results/assessments.json: Medium
+    Why: Uses Llama Guard to classify the prompt-response pair as harmful/not harmful — no relevance verification.
+  results/assessments_sonjoy.json: High
+    Why: 
+
+Paper    : chao2025jailbreaking
+Metric   : Failure Diagnostics
+  results/assessments.json: Low
+    Why: Shows that it works across behavior categories, provides transferability rationale, and shows some strategies are more effective than other but not the characterstics of the failures or root cause
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : asyrofi2020crossasr
+Metric   : Attack Transferability
+  results/assessments.json: Low
+    Why: Utilize multiple ASRs to find faults using differential oracle but does not analyze if same error is reproducible to other model
+  results/assessments_sonjoy.json: Medium
+    Why: This test oracle is inherently a multi-model design for failure discovery.
+
+Paper    : asyrofi2021crossasr++
+Metric   : Input Plausibility
+  results/assessments.json: High
+    Why: Synthesizes test inputs by generating audio from natural text using TTS.
+  results/assessments_sonjoy.json: Medium
+    Why: It use differential testing oracle using external Text-to-Speech (TTS) engines and also flag indeterminable inputs but don't apply internal semantic-preserving method.
+
+Paper    : pei2017deepxplore
+Metric   : Failure Severity
+  results/assessments.json: Low
+    Why: It is designed to find prediction inconsistency between models and the malware bypasses are some instances of the discovered failures.
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : you2023regression
+Metric   : Targeted Attack Discovery
+  results/assessments.json: Low
+    Why: Intargeted exploration for generic regression misclassifications - any inputs that cause the new model to misclassify examples previously classified correctly
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : you2023regression
+Metric   : Failure Diagnostics
+  results/assessments.json: High
+    Why: Explains bias and overfitting of specific classes in regression process. Provides behavior-level explanations (which classes or behaviors regress, per-class fault heatmaps, and faulty-behavior tuples). Interprets regression faults as evidence of bias or overfitting (specific classes suffering more after retraining).
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : you2023regression
+Metric   : Input Plausibility
+  results/assessments.json: High
+    Why: Every batch of mutated inputs is passed through the GAN discriminator and only natural mutated inputs are kept for execution and further mutation.
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : you2023regression
+Metric   : Failure Reproducibility
+  results/assessments.json: Low
+    Why: applies raw pixel-level noise (Gaussian, salt-and-pepper) directly to images and normalizes pixels into [0,1] but no mention of clipping/rounding on unnormalized mutated input.
+  results/assessments_sonjoy.json: Medium
+    Why: The use of fidelity.
+
+Paper    : zhang2019life
+Metric   : Targeted Attack Discovery
+  results/assessments.json: Low
+    Why: Performs untargeted exploration where the oracle flags any incorrect intent classification, without encoding a predefined attacker goal or failure class. LLMs are crediting the security motivation rather than what the oracle actually checks.
+  results/assessments_sonjoy.json: High
+    Why: 
+
+Paper    : zhang2019life
+Metric   : Input Plausibility
+  results/assessments.json: High
+    Why: Uses a probability-based cutoff to ensure that generated voice commands represent errors that are likely to be spoken by actual users.
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : woodlief2022semantic
+Metric   : Attack Transferability
+  results/assessments.json: Low
+    Why: Mutated inputs are evaluated independently across multiple inputs but no measure whether same failures discovered by the fauzzer transfer to other models
+  results/assessments_sonjoy.json: Medium
+    Why: They tested on five state-of-the-art models.
+
+Paper    : lee2020effective
+Metric   : Failure Reproducibility
+  results/assessments.json: Low
+    Why: 
+  results/assessments_sonjoy.json: Medium
+    Why: Even if there is no mention about clipping and rounding operations for in-memory mutation, the paper provides experiments to demonstrate that it can produce effective adversarial examples for verious models.
+
+Paper    : huang2021coverage
+Metric   : Failure Severity
+  results/assessments.json: Low
+    Why: Even though it can detect backdoor triggers, this is purely diagnostic. The fuzzer exposes low-level functional and robustness failures (misclassifications, metamorphic inconsistencies, and backdoor-induced activation anomalies) without breaching behavioral or safety boundaries.
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : huang2021coverage
+Metric   : Input Plausibility
+  results/assessments.json: High
+    Why: Validates perturbation magnitdue with respect to the original seed (keeps mapping of original seed for each mutated input)
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : huang2021coverage
+Metric   : Failure Reproducibility
+  results/assessments.json: Medium
+    Why: Clips pixel values to keep within 0-1 which indicates that it is in normalized form. No considration whether the mutations will survive denormalization when inputs will be saved. Partial address by clipping. LLM mistook because of the language rounding off decimals around 0 and 1.
+  results/assessments_sonjoy.json: High
+    Why: 
+
+Paper    : li2021testing
+Metric   : Failure Severity
+  results/assessments.json: Low
+    Why: 
+  results/assessments_sonjoy.json: Medium
+    Why: harmful/unsafe failures are discovered, but there is no empirical demonstration of bypassing explicit safeguards
+
+Paper    : li2021testing
+Metric   : Targeted Attack Discovery
+  results/assessments.json: Low
+    Why: Finds inconsistent steering under environmental variations
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : wang2022bet
+Metric   : Input Plausibility
+  results/assessments.json: High
+    Why: Enforce norm-bounded perturbation with respect to original seed
+  results/assessments_sonjoy.json: Medium
+    Why: They maintain semantic consistency but they don't care about the naturalness.
+
+Paper    : wang2022bet
+Metric   : Attack Transferability
+  results/assessments.json: Low
+    Why: Uses differential testing based oracle to detect failure, not to check transferability from one to another.
+  results/assessments_sonjoy.json: Medium
+    Why: Test on quantized models and constructing differential models but not surrogate models.
+
+Paper    : zhang2020towards
+Metric   : Failure Reproducibility
+  results/assessments.json: Medium
+    Why: Applies genetic algorithm (pixel crossover + white noise addition) on raw pixel values. crossover inherently preserves valid pixel range, but noise addition is not explicitly clipped or rounded to integer format.
+  results/assessments_sonjoy.json: Low
+    Why: 
+
+Paper    : zhang2025orfuzz
+Metric   : Input Plausibility
+  results/assessments.json: High
+    Why: they measure toxicity of the mutated input to ensure semantic validity and performs LLM-based rewriting to ensure naturalness and fluency.
+  results/assessments_sonjoy.json: Medium
+    Why: 
+
+Paper    : yang2024sneakyprompt
+Metric   : Attack Transferability
+  results/assessments.json: Low
+    Why: They do not demonstrate whether adversarial prompts discovered in one model transfer the attack to another model. Their re-use attack experiment shows reprorducibiby of the attacks on the same model. No cross-model transferability.
+  results/assessments_sonjoy.json: Medium
+    Why: They use a shadow text encoder, which can be treated as a surrogate model. And they have tested on other state-of-the-art open-source models as well.
+
+Paper    : zhang2021cagfuzz
+Metric   : Attack Transferability
+  results/assessments.json: Low
+    Why: Does not demonstrates that fault-inducing inputs discovered on one model also trigger failures on another model. The transferability claim in RQ1 (Tables 3 and 4) is about whether fine tuning using the generated adversarial examples improves accuracy.
+  results/assessments_sonjoy.json: High
+    Why: 
+
+Paper    : yuan2024forest
+Metric   : Failure Diagnostics
+  results/assessments.json: Medium
+    Why: Gives partial diagnosis by characterizing failure clustering by EP and correlating failures with decision boundary geometry.
+  results/assessments_sonjoy.json: High
+    Why: 
+
+Agreement rate: 193/228 (84.6%)
+
