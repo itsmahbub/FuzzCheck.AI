@@ -53,8 +53,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "",
+                    "value": "Low",
+                    "why": "No explanation for model's weekness.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -429,7 +429,7 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "High",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -497,7 +497,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "Medium",
+                    "value": "High",
                     "why": "",
                     "evidence": ""
                 },
@@ -673,8 +673,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "High",
-                    "why": "I am convinced by the evaluations evidence.",
+                    "value": "Medium",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1029,7 +1029,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "Low",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1051,7 +1051,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "Medium",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -1276,8 +1276,8 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "High",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "Target any harmful content",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1632,8 +1632,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "Uses a filtering mechanism to ensure naturalness. Not doing in-memory changes or random purturbation but does not actively enforce the naturalness of its generated inputs.",
+                    "value": "High",
+                    "why": "Uses a filtering mechanism to ensure naturalness. Not doing in-memory changes or random purturbation.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1900,7 +1900,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "High",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -1922,8 +1922,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "",
+                    "value": "Low",
+                    "why": "No root cause explanation.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2144,8 +2144,8 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "This test oracle is inherently a multi-model design for failure discovery.",
+                    "value": "Low",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2256,8 +2256,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "It use differential testing oracle using external Text-to-Speech (TTS) engines and also flag indeterminable inputs but don't apply internal semantic-preserving method.",
+                    "value": "High",
+                    "why": "It use differential testing oracle using external Text-to-Speech (TTS) engines and also flag indeterminable inputs.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2502,8 +2502,8 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "",
+                    "value": "Low",
+                    "why": "Finds incorrect corner case behaviors.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2837,7 +2837,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "Medium",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -2859,8 +2859,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "",
+                    "value": "High",
+                    "why": "facilitate explaining the bias in each class.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2881,8 +2881,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "",
+                    "value": "High",
+                    "why": "Manually evaluate input fidelity",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2903,8 +2903,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "The use of fidelity.",
+                    "value": "Low",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2993,7 +2993,7 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "High",
+                    "value": "Low",
                     "why": "",
                     "evidence": ""
                 },
@@ -3037,8 +3037,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "",
+                    "value": "High",
+                    "why": "Using cutoff",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3907,8 +3907,8 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "",
+                    "value": "Low",
+                    "why": "Consider robustness failures",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3995,8 +3995,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "High",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "Considered Normalized value not about actual pixel values.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4064,7 +4064,7 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "Medium",
+                    "value": "Low",
                     "why": "harmful/unsafe failures are discovered, but there is no empirical demonstration of bypassing explicit safeguards",
                     "evidence": ""
                 },
@@ -4086,8 +4086,8 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "",
+                    "value": "Low",
+                    "why": "Discover erroneous behaviors only.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4643,7 +4643,7 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "Medium",
+                    "value": "Low",
                     "why": "Test on quantized models and constructing differential models but not surrogate models.",
                     "evidence": ""
                 },
@@ -4777,7 +4777,7 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "Low",
+                    "value": "Medium",
                     "why": "",
                     "evidence": ""
                 },
@@ -5069,8 +5069,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "",
+                    "value": "High",
+                    "why": "The mutator ensure input plasibility.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5425,8 +5425,8 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "They use a shadow text encoder, which can be treated as a surrogate model. And they have tested on other state-of-the-art open-source models as well.",
+                    "value": "Low",
+                    "why": "They only use a shadow text encoder, not cross model transferability.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5871,8 +5871,8 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "High",
-                    "why": "",
+                    "value": "Medium",
+                    "why": "It provide Erroneous Property based diagnostics.",
                     "evidence": ""
                 },
                 "chatgpt": {
