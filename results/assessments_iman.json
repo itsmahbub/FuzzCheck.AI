@@ -9,9 +9,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "AutoDAN targets safety-aligned LLMs (Vicuna, Llama-2, GPT-3.5/4) and demonstrates that its prompts continue to elicit prohibited content under deployed defenses including perplexity-based filtering and paraphrasing. This satisfies the High criterion by showing failures that bypass explicit safeguards on hardened target models.",
+                    "evidence": "Section 4.2 (p. 7-8) and Table 3 report attack success rates against perplexity-defended models, showing AutoDAN retains effectiveness while GCG collapses; Appendix I (Table 11, p. 20) extends this to paraphrasing and adversarial-training defenses; Appendix G (Table 9, p. 19) reports successful transfer to commercial APIs (e.g., 70.77% ASR on GPT-3.5-turbo with AutoDAN-HGA)."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -31,9 +31,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "The optimization objective steers exploration toward attacker-specified target outputs: a predefined affirmative-prefix response tied to a specific malicious goal Q_i, with an LLM judge verifying that the response actually answers the malicious query. This satisfies the High criterion by inducing a specific attacker-chosen output rather than broad refusal bypass.",
+                    "evidence": "Section 3.3 (p. 4) defines the fitness function as the conditional probability of generating the specified target sequence; Algorithm 2 and Section 3.5 use this to select offspring that move outputs toward the chosen response. Section 3.1 (p. 3) formalizes the pair (J_i, Q_i) where Q_i is the fixed attacker objective."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -53,9 +53,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper reports per-model attack-success patterns and analyzes why semantically meaningful prompts transfer better than token-level perturbations. These observations characterize properties of the prompts and outcomes but do not diagnose a specific underlying model vulnerability such as training-data artifacts or alignment-objective gaps.",
+                    "evidence": "Section 4.2 (p. 8) speculates on transferability based on prompt semantics; Table 2 breaks down ASR by model family. The analysis stops at outcome characterization and does not examine model internals or causal mechanisms behind the discovered jailbreaks."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -75,9 +75,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Plausibility is enforced by construction: the malicious question Q_i is held fixed across iterations, mutation operates on the surrounding template via LLM-based rewriting that preserves logical flow, and the evaluation uses sentence perplexity as a stealthiness criterion. These mechanisms guard against cumulative semantic drift, satisfying the High criterion.",
+                    "evidence": "Section 3.1 (p. 3-4) shows Q_i is fixed while only the jailbreak wrapper J_i is optimized; Section 3.4.2 and Appendix B Algorithm 5 (p. 14-15) define the mutation operator as LLM-based diversification; Section 4.1 introduces PPL as a stealthiness metric, and Section 4.2 (Table 1) reports lower PPL than GCG and parity with handcrafted prompts."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -97,9 +97,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "AutoDAN generates inputs as natural-language strings, the same serialized form consumed by deployed LLMs. There are no floating-point intermediate representations or normalization steps that could lose perturbations on serialization, so the High criterion is satisfied by the input representation itself.",
+                    "evidence": "Section 3 describes the entire pipeline as text-domain mutation and selection; Algorithm 5 (Appendix B, p. 15) returns rewritten sentences directly. No image, audio, or embedding-space mutations appear at any stage."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -119,9 +119,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper empirically demonstrates that prompts crafted on one source model transfer to other open-source and commercial LLMs, but the optimization objective targets a single source model and does not aggregate signal across models to actively search for transferable failures. The Medium criterion applies: transfer is shown post-hoc rather than guided by design.",
+                    "evidence": "Section 4.2 (p. 8) reports transfer results across models including GPT-3.5/4 (Table 2 and Appendix G Table 9). The optimization in Section 3.3 uses only one target LLM's likelihood at a time; no multi-model aggregation appears in the algorithm."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -163,9 +163,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "CureFuzz triggers safety-relevant failures in sequential decision-making systems (vehicle collisions, aircraft crashes, robot falls) but evaluates these on undefended baseline policies rather than safeguarded variants. This places it at Medium: harmful behavior is induced, but no explicit defense is bypassed.",
+                    "evidence": "Section 3.1 frames the goal as discovering crash-triggering scenarios; Section 4.2 instantiates them as concrete unsafe outcomes (collisions, falls). The target environments are standard RL benchmarks without defense-aware controllers, so safeguard bypass is not part of the empirical scope."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -185,9 +185,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Exploration is guided toward a broad class of safety violations (any crash or task failure), not toward a specific attacker-chosen end state such as a particular collision target or trajectory. This matches the Medium criterion of steering toward a failure class without encoding a predefined attacker objective.",
+                    "evidence": "Section 3.1 defines the oracle as any reward collapse or termination event tied to unsafe behavior; the curiosity reward (Section 3.3) rewards novelty rather than convergence toward a specified target."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -207,9 +207,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper analyzes which environment configurations cluster failures and reports ablations on curiosity components, providing partial diagnostic insight. It does not, however, link discovered failures to underlying weaknesses in the policy network itself, so it falls short of the High criterion.",
+                    "evidence": "Section 4.4 examines failure distribution across scenarios; Section 4.5 ablates curiosity to characterize where novelty-seeking helps. No causal analysis of the policy's vulnerabilities (e.g., reliance on specific state features) appears."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -229,9 +229,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Mutations operate within domain-defined bounds (valid initial states and physical parameters), preserving naturalness per mutation step, but the iterative search does not enforce cumulative-distance constraints relative to the original seed. This matches the Medium criterion.",
+                    "evidence": "Section 3.2 constrains mutations to legal parameter ranges enforced by the simulator; Algorithm 1 chains mutations across iterations without tracking drift from the initial scenario."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -251,9 +251,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Each mutated state is validated through actual simulator execution, and the simulator only accepts physically valid configurations. This means discovered failures persist when scenarios are saved and reloaded, since the input format constraints are enforced at generation time. (Note: this overrides the LLM pipeline's penalty for absent I/O clipping; in this domain, simulator validity already plays the role of serialization safety.)",
+                    "evidence": "Section 3.2 shows each candidate scenario is instantiated and rolled out in the target environment before being scored; invalid configurations are rejected by the simulator's API. Section 4 reports reproducible failure counts across runs."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -273,9 +273,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Discovered failure-inducing scenarios are evaluated only against the policy used during fuzzing, with no cross-policy or cross-architecture transfer experiments reported. This satisfies the Low criterion.",
+                    "evidence": "Section 4 evaluates each fuzzer-policy pair in isolation; Tables in Section 4.3 report results for the originally-fuzzed policy only."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -319,9 +319,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "The fuzzer targets safety-aligned LLMs (Llama-2-7B-Chat among others) and demonstrates that coverage-guided jailbreak prompts elicit prohibited content despite the model's alignment training. This satisfies the High criterion of inducing failures that bypass deployed safeguards.",
+                    "evidence": "Section III evaluates against Llama-2-7B-Chat and other safety-aligned models; Section IV reports successful jailbreak rates that bypass refusal training. The selected target models are explicitly safety-aligned, not vanilla LLMs."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -341,9 +341,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Exploration is guided toward eliciting harmful or non-refusal responses to a set of malicious queries, but the oracle relies on coarse harmfulness/refusal signals rather than verifying that the response substantively satisfies the specific attacker query. This matches the Medium criterion.",
+                    "evidence": "Section III-B describes the oracle as a refusal/harmfulness classifier on the model output; the search does not check whether the generated content fulfills the precise malicious intent of each query (e.g., whether it actually delivers the requested instructions)."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -363,9 +363,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "The fuzzer synthesizes queries through an auxiliary LLM whose outputs are coherent natural-language prompts at every iteration. The LLM-based generator preserves naturalness across the full search by construction, satisfying the High criterion. The LLM pipeline's lower rating drew evidence from a jailbreak-detection section rather than from the fuzzing-design section.",
+                    "evidence": "Section III-A describes prompt generation through LLM-based synthesis; the fuzzing-design section explicitly produces semantically coherent prompts, while the jailbreak-detection material the LLM pipeline cited (containing adversarial suffixes) is not part of the fuzzer's input-generation pipeline."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -385,9 +385,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "All test inputs are discrete text strings produced and consumed in the same serialized form. There are no continuous representations or floating-point perturbations that could be lost on serialization, so reproducibility is guaranteed by the input modality.",
+                    "evidence": "Section II-A and Section III-A describe the entire pipeline as operating in the text domain. No embedding-space or token-level numeric mutations occur."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -407,9 +407,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Discovered jailbreak prompts are evaluated only on the model used during fuzzing, with no cross-model transfer study. This satisfies the Low criterion.",
+                    "evidence": "Section IV experiments are conducted per-model without porting discovered prompts to alternative LLMs."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -429,9 +429,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper analyzes how different coverage criteria correlate with jailbreak discovery rates, providing partial diagnostic insight into which signals are informative. It does not, however, trace discovered jailbreaks back to specific weaknesses in the target model's alignment.",
+                    "evidence": "Section IV's coverage-criterion comparisons offer correlational insight into which exploration signals work best; the analysis stays at the level of the fuzzer's behavior rather than diagnosing the LLM's underlying vulnerabilities."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -475,9 +475,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "PAPILLON targets safety-aligned commercial and open-source LLMs and demonstrates jailbreaks that elicit prohibited harmful content at high success rates. The targets are models with deployed alignment safeguards, satisfying the High criterion.",
+                    "evidence": "Section 4 evaluates against GPT-3.5/4, Claude, and Llama-2 chat variants — all safety-aligned production-grade models; success rates in Table 2 demonstrate prohibited-content generation despite those alignments."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -497,9 +497,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "The fuzzing objective steers prompt mutation toward outputs that satisfy a specific attacker-chosen malicious goal, with success verified per-query rather than only by general refusal bypass. This satisfies the High criterion.",
+                    "evidence": "Section 3 defines the goal-conditioned objective tied to each query in the harmful-behavior benchmark; Section 4 reports per-query success against the predefined targets."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -519,9 +519,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "PAPILLON reports stealthiness analyses (perplexity, semantic similarity) and ablations on its mutation operators, providing partial insight into what makes the discovered prompts effective. The analysis does not link successes to specific alignment-mechanism failures within the target models.",
+                    "evidence": "Section 4.3 reports stealthiness metrics and ablation studies; Section 4.4 discusses observed properties of successful prompts. No model-internal diagnostic (e.g., attention or activation analysis) appears."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -541,9 +541,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "The fuzzer enforces semantic preservation through LLM-based prompt rewriting and validates fluency via perplexity at every iteration, preventing the cumulative drift that pure token-level methods exhibit. This satisfies the High criterion.",
+                    "evidence": "Section 3 describes LLM-based mutation that paraphrases while preserving intent; Section 4.3 reports low perplexity for generated prompts and demonstrates resistance to perplexity-based defenses."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -563,9 +563,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Generated prompts are natural-language strings, identical in form to inputs that deployed LLMs receive in production. No floating-point or normalization layer could degrade the perturbations on serialization.",
+                    "evidence": "The end-to-end pipeline (Section 3) operates entirely in the text domain; outputs are directly usable as API queries."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -585,9 +585,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper demonstrates that prompts crafted for one target LLM transfer to others without the fuzzer being explicitly designed around a transfer objective. This matches the Medium criterion.",
+                    "evidence": "Section 4.2 reports cross-model transfer experiments, but the fuzzing objective in Section 3 optimizes against a single target at a time."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -629,9 +629,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DeepCruiser discovers prediction inconsistencies in stateful RNN-based audio models under metamorphic transformations. These are robustness errors rather than safety- or security-relevant violations, and no defense-bypass evaluation is performed. This satisfies the Low criterion.",
+                    "evidence": "Section 5 reports increased misclassification rates under input mutations; the oracle is metamorphic consistency, not a safety- or policy-violation condition. Target models are undefended speech/text RNNs."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -651,9 +651,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration is untargeted — the fuzzer looks for any state-coverage-expanding mutation that triggers prediction divergence, without steering toward a specific attacker goal. This matches the Low criterion.",
+                    "evidence": "Section 4 describes coverage-guided exploration based on RNN state transitions; the oracle (Section 4.2) flags any inconsistent prediction without reference to attacker-chosen targets."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -673,9 +673,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper characterizes failures by mapping them to specific state-transition patterns within the RNN, providing correlational insight into where in the model's trajectory failures concentrate. This stops short of full causal diagnosis, satisfying the Medium criterion.",
+                    "evidence": "Section 5 analyzes failure-triggering trace patterns through the RNN's abstracted state machine, linking failures to particular state regions without explaining the underlying training-data or architectural cause."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -695,9 +695,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Mutations are restricted to a fixed set of semantics-preserving audio transformations applied to seed inputs, with the seed used as the reference for each mutation rather than a chained predecessor. This avoids cumulative semantic drift.",
+                    "evidence": "Section 4.1 enumerates the metamorphic transformations (pitch, speed, noise additions) and applies them per-seed; the original audio remains the anchor for plausibility."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -717,9 +717,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Mutations operate on raw audio waveform values, in the same numerical space as the serialized format, but the paper does not explicitly enforce amplitude clipping or rounding to ensure perturbations survive denormalization. This matches the Medium criterion.",
+                    "evidence": "Section 4 describes mutation in the raw waveform domain without explicit serialization-aware constraints; no inactivation-rate analysis appears."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -739,9 +739,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated only on the RNN model used during fuzzing, with no cross-model or cross-architecture transfer experiments. This satisfies the Low criterion.",
+                    "evidence": "Section 5 reports per-model failure counts; no second target architecture is introduced."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -785,9 +785,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "NLC discovers prediction inconsistencies under metamorphic image transformations on undefended classification models. The failures are robustness errors, not security-relevant safeguard bypasses, satisfying the Low criterion.",
+                    "evidence": "Section VI evaluates on standard classifiers (CIFAR/ImageNet) without defense mechanisms; the oracle is prediction consistency under semantics-preserving transformations."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -807,9 +807,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The fuzzer steers exploration toward layer-wise activation diversity rather than attacker-specified output targets. This satisfies the Low criterion.",
+                    "evidence": "Section IV defines the NLC coverage criterion based on activation distribution divergence; Section V's exploration policy maximizes coverage, not a target output."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -829,9 +829,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper correlates failures with NLC-coverage scores and analyzes which layers contribute to failure-triggering coverage gains, providing correlational diagnostic insight. It does not trace failures to specific causal model weaknesses.",
+                    "evidence": "Section VII-C analyzes correlations between layer-wise coverage and failure discovery rates; the analysis stays at the level of model-internal signals rather than root-cause vulnerabilities."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -851,9 +851,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Each mutation is validated against per-step bounds on pixel changes and image-quality scores, but the chain of mutations is not constrained relative to the original seed. Cumulative drift across iterations is therefore possible, matching the Medium criterion.",
+                    "evidence": "Section VI-B applies is_valid() checks per mutation step using pixel-magnitude bounds and IS/FID scores; the validation is local to each step rather than cumulative against the original seed."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -873,9 +873,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Mutations apply standard image transformations (contrast, brightness, rotation, blur) directly on pixel values, sharing the numerical space of the serialized format. The paper does not explicitly clip or round to enforce serialization constraints, matching the Medium criterion.",
+                    "evidence": "Section VI-B lists the transformation operators; no explicit discussion of clipping, rounding, or post-serialization survival of failures appears."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -895,9 +895,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated only on the model used during fuzzing; no cross-model transfer evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section VI experiments are confined to the model under test; no second target architecture is introduced."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -941,9 +941,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DeepHunter targets undefended classifiers and uses neuron-coverage feedback to expose prediction inconsistencies under metamorphic mutations. These are accuracy-degradation errors, not safeguard bypasses, satisfying the Low criterion.",
+                    "evidence": "Section 5 evaluates on standard image classifiers without defenses; the oracle (Section 3.2) is metamorphic prediction consistency."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -963,9 +963,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The exploration is guided by neuron-coverage gain, with no mechanism to steer toward attacker-specified outputs. This satisfies the Low criterion.",
+                    "evidence": "Section 4 details the coverage-guided seed selection and mutation strategy; no target-output objective appears in the algorithm."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -985,9 +985,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper reports correlations between coverage gain and fault discovery, plus quantization-related error patterns, providing partial insight without isolating root causes. This matches the Medium criterion.",
+                    "evidence": "Section 5.4 surfaces quantization-induced failures and discusses how coverage and discovery correlate; the analysis does not diagnose underlying training or architectural weaknesses."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1007,9 +1007,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "DeepHunter's metamorphic transformations preserve image semantics by design (rotation, contrast, brightness within bounded ranges), and the validation step uses a per-mutation L0/L∞ threshold against the source seed. These constraints together keep mutated inputs within the realistic image distribution.",
+                    "evidence": "Section 4.2 specifies the metamorphic transformation set with bounded parameters; the seed validation step checks similarity to the predecessor seed, anchoring plausibility throughout the search."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1029,9 +1029,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Image transformations operate on raw pixel values in the same numerical space as the serialized format, but no explicit clipping or rounding step ensures perturbations persist after standard image-file serialization. This matches the Medium criterion.",
+                    "evidence": "Section 4 enumerates affine and pixel-level transformations; no explicit serialization-aware enforcement is described, and Section 5 does not report inactivation rates after I/O."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1051,9 +1051,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DeepHunter evaluates discovered failures on the model used during fuzzing, with no held-out target architecture introduced for transferability assessment. The reported cross-architecture observations involve separately fuzzed models rather than transfer of fault-inducing inputs from one fuzzed model to an unseen target, satisfying the Low criterion.",
+                    "evidence": "Section 5 reports per-model failure counts; portability of discovered fault-inducing inputs to held-out architectures is not part of the evaluation methodology."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1097,9 +1097,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DLFuzz uses gradient-guided perturbations to induce prediction differences across DNNs trained for the same task. Discovered failures are misclassifications on undefended classifiers, satisfying the Low criterion.",
+                    "evidence": "Section 4 evaluates on standard MNIST/ImageNet classifiers without defense layers; the oracle is differential prediction (Section 3.1)."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -1119,9 +1119,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The objective combines neuron coverage with arbitrary cross-model disagreement; there is no mechanism to steer outputs toward a specific attacker-chosen label or content. This satisfies the Low criterion.",
+                    "evidence": "Section 3.2 defines the joint objective as coverage gain plus differential disagreement; no targeted output term appears."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -1141,9 +1141,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DLFuzz reports adversarial example counts and coverage statistics, but does not analyze which model-internal weaknesses or failure properties the discovered adversarial inputs expose. This satisfies the Low criterion of reporting failures without diagnostic insight.",
+                    "evidence": "Section 4 presents quantitative comparisons of generated adversarial examples and coverage gain, but no analysis links discovered failures to underlying model vulnerabilities or characteristic failure patterns."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1163,9 +1163,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "DLFuzz's gradient updates are bounded by a small L2 perturbation budget enforced relative to the original seed, with the search not chaining unbounded modifications. This satisfies the High criterion of preserving naturalness throughout fuzzing iterations.",
+                    "evidence": "Section 3.2 keeps the L2 distance of perturbations small relative to the original input; Section 4 reports that adversarial inputs preserve visual fidelity to their source images."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1185,9 +1185,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Gradient perturbations operate in continuous floating-point image representations and are never clipped or rounded to integer pixel ranges, so adversarial perturbations may not survive serialization back to standard image formats. This satisfies the Low criterion.",
+                    "evidence": "Section 3.2 applies gradient updates directly to in-memory floating-point inputs; Section 4 does not discuss clipping, rounding, or inactivation-rate evaluation after saving inputs."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -1207,9 +1207,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Although the differential oracle uses multiple models during fuzzing, this is for disagreement detection rather than for guiding discovery toward inputs that fail across unseen target models. No post-hoc transfer evaluation to held-out models is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 3 uses cross-referencing models as oracles, not transfer targets; Section 4 evaluates on the same model set used during fuzzing."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -1254,9 +1254,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "LLM-Fuzzer targets safety-aligned commercial and open-source LLMs and demonstrates that discovered jailbreak templates elicit prohibited content despite alignment training. This satisfies the High criterion.",
+                    "evidence": "Section 4 evaluates against GPT-3.5/4, Llama-2-Chat, Claude, and other safety-aligned LLMs; reported jailbreak success rates show consistent safeguard bypass."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1276,9 +1276,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "LLM-Fuzzer searches for jailbreak templates that bypass refusal, but its success oracle uses coarse harmfulness/non-refusal classification rather than verifying that the response substantively satisfies each specific malicious query. Per the codebook, this matches the Medium criterion of steering toward broader unsafe-behavior classes without inducing predefined attacker-chosen outputs.",
+                    "evidence": "Section 3.4 defines the success oracle as a refusal/harmfulness classifier; the search rewards templates that produce non-refusal harmful responses without checking whether each response actually fulfills the precise content of the malicious query."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1298,9 +1298,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The paper reports jailbreak success counts and template-effectiveness rankings, but does not analyze model-internal weaknesses that explain why successful templates work. The analysis remains at the surface level of attack outcomes, satisfying the Low criterion.",
+                    "evidence": "Section 4 reports aggregate jailbreak rates across templates and target LLMs without examining alignment-mechanism failures or model-internal causes of vulnerability."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1320,9 +1320,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Mutation uses LLM-based template rewriting that preserves semantic intent and natural language structure throughout iterations, with the malicious target question kept fixed. These design choices satisfy the High criterion.",
+                    "evidence": "Section 3.3 describes template-mutation operators (paraphrase, expand, generate similar) that operate via auxiliary LLMs while keeping the target question fixed; Section 4 shows resulting prompts remain fluent."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1342,9 +1342,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Test inputs are natural-language strings consumed by LLMs in the same form they are produced. No floating-point intermediate representation could lose perturbations on serialization.",
+                    "evidence": "Section 3 confines the entire pipeline to the text domain; no embedding-space or numeric mutation occurs."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1364,9 +1364,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "The fuzzer explicitly assigns lower or zero reward to templates that succeed only against one or two LLMs, biasing search toward broadly transferable templates, and it then validates transferability on unseen models. This is a deliberate design choice for transferability, satisfying the High criterion.",
+                    "evidence": "Section 3.4 (reward formulation) penalizes single-model successes; Section 4.3 reports transfer to held-out LLMs (open-source and commercial) with substantial cross-model success rates."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1410,9 +1410,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "DeepTest exposes safety-critical steering errors (lane departures, off-route maneuvers) in autonomous-driving DNNs under realistic weather conditions. The failures are unsafe behaviors but the target models lack explicit defenses, placing the rating at Medium.",
+                    "evidence": "Section 4 evaluates the Udacity self-driving models and reports steering deviations large enough to cause collisions under fog/rain transformations; no defense-bypass evaluation appears."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1432,9 +1432,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Despite operating in a safety-critical domain, exploration is untargeted: the fuzzer maximizes neuron coverage and flags any steering-prediction inconsistency under metamorphic transformations, without steering toward a specific attacker-chosen output (e.g., a particular collision direction). This overrides the LLM pipeline's Medium rating, which conflated domain criticality with targeted-attack support.",
+                    "evidence": "Section 3 describes the metamorphic oracle as detecting any prediction divergence under semantics-preserving image transformations; the exploration objective in Section 3.4 is neuron-coverage gain, not a targeted output."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1454,9 +1454,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper reports correlations between neuron-coverage gains and fault detection, plus per-condition failure counts, providing partial diagnostic insight without isolating model-internal vulnerabilities. This matches the Medium criterion.",
+                    "evidence": "Section 4.4 analyzes how different transformations and coverage criteria contribute to failure discovery; no causal analysis of training-data or architectural weaknesses is provided."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1476,9 +1476,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Image transformations use realistic weather effects within plausible bounds, but mutations are not constrained cumulatively against the original seed across iterations. This matches the Medium criterion.",
+                    "evidence": "Section 3.2 defines transformations like fog/rain/blur with parameter ranges; chained mutations across rounds are not bounded relative to the original seed."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1498,9 +1498,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Transformations operate directly on pixel values in the serialized image format, but the paper does not explicitly clip or round outputs to ensure all perturbations survive standard image-file I/O. This matches the Medium criterion.",
+                    "evidence": "Section 3.2 lists pixel-level transformations; Section 4 does not analyze inactivation rates after saving and reloading the mutated images."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1520,9 +1520,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated only on the specific Udacity model variants used during fuzzing; no portability evaluation across unseen architectures is performed. This satisfies the Low criterion.",
+                    "evidence": "Section 4 reports per-model failure counts; transfer to held-out models is not part of the evaluation."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -1566,9 +1566,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "ASDF discovers transcription disagreements across ASR systems via differential testing. These are robustness errors in undefended speech models, not defense bypasses, satisfying the Low criterion.",
+                    "evidence": "Section 3 frames the oracle as inter-ASR disagreement; targets are off-the-shelf ASR systems with no policy-violation focus."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -1588,9 +1588,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration is untargeted: the fuzzer seeks any input that produces transcription disagreement, without steering toward a specific attacker-chosen transcription. This matches the Low criterion.",
+                    "evidence": "Section 3 describes the differential oracle without a target-transcription objective; mutation strategies aim for divergence rather than a specified output."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -1610,9 +1610,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper provides phoneme-level analysis associating specific sounds with transcription errors, offering partial diagnostic insight at the input-property level. It does not diagnose model-internal vulnerabilities.",
+                    "evidence": "Section 4 includes phoneme-level error analyses linking specific phonetic contexts to ASR failure patterns."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1632,9 +1632,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Test inputs are synthesized by TTS engines from natural text corpora, producing intrinsically natural and semantically valid speech. The TTS step preserves the original transcript as the semantic anchor.",
+                    "evidence": "Section 3.1 describes TTS-based audio synthesis from curated text inputs; the source text serves as the semantic ground truth."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1654,9 +1654,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Audio is generated directly in the standard serialized format used by deployed ASR systems (WAV via TTS), so failures persist by construction across save-reload cycles.",
+                    "evidence": "Section 3 uses TTS engines to produce audio files in standard formats; no continuous in-memory perturbations occur."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1676,9 +1676,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "ASDF uses a differential oracle to detect transcription disagreements during fuzzing but does not reuse discovered fault-inducing inputs against unseen target ASR systems for transferability assessment. This satisfies the Low criterion.",
+                    "evidence": "Section 3 employs cross-ASR disagreement as the search oracle, not as a transferability test; the evaluation does not introduce held-out target ASRs distinct from those used during fuzzing."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -1722,9 +1722,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "TensorFuzz targets undefended models and detects numerical anomalies (NaNs/Infs) and quantization-related errors. While these are property-based oracle violations, they are reliability bugs rather than security-relevant safeguard bypasses, satisfying the Low criterion.",
+                    "evidence": "Section 4 evaluates standard models without defense mechanisms; the oracle (Section 3.2) flags numerical errors or disagreements between model versions."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -1744,9 +1744,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "TensorFuzz's property-based oracle detects numerical anomalies (NaNs/Infs) and arbitrary disagreements between model versions. These are oracle-flagged errors rather than attacker-chosen target outputs, and the coverage-guided exploration does not steer toward any predefined output class. This satisfies the Low criterion.",
+                    "evidence": "Section 3.2 defines the oracle as detecting numerical errors or version disagreement; the exploration in Section 3.3 maximizes coverage gain without specifying or rewarding any particular output target."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1766,9 +1766,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper analyzes coverage growth and uses CovTracker to characterize internal model behaviors leading to failures, providing correlational diagnostic insight. It does not diagnose causal model weaknesses.",
+                    "evidence": "Section 4 analyzes how coverage growth correlates with discovery; CovTracker traces neuron activations associated with failure-triggering inputs."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1788,9 +1788,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Mutations are bounded per-step using L∞ constraints, and the search does not chain unbounded perturbations. This satisfies the High criterion.",
+                    "evidence": "Section 3.3 specifies bounded random mutations on input features; the bounds are explicitly enforced for each generated candidate."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1810,9 +1810,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Mutations are clipped to valid input ranges in normalized form, but the paper does not ensure perturbations persist after denormalization to standard serialized formats. This matches the Medium criterion.",
+                    "evidence": "Section 3.3 applies clipping in the normalized input space; serialization-aware constraints are not explicitly enforced."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1832,9 +1832,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Discovered failures are evaluated only on the model under test; no cross-model transfer evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 4 confines results to the originally fuzzed models without portability tests."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1878,9 +1878,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "PAIR targets safety-aligned LLMs (GPT-3.5/4, Claude, Gemini, Vicuna) and demonstrates jailbreaks that elicit prohibited content despite alignment, while also bypassing perplexity and SmoothLLM defenses. This satisfies the High criterion.",
+                    "evidence": "Section IV evaluates against safety-aligned commercial and open-source LLMs (Table III); Section IV-C evaluates against SmoothLLM and perplexity-filter defenses, showing continued effectiveness."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1900,9 +1900,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "PAIR's attacker LLM iteratively refines prompts to elicit responses that satisfy a specific behavior objective from JailbreakBench, with the GCG-judge LLM verifying that the response actually fulfills the chosen malicious goal. This satisfies the High criterion.",
+                    "evidence": "Section II defines each jailbreak by an objective O describing the harmful behavior to elicit; Section IV uses a judge LLM to verify the response matches the specified objective rather than only flagging non-refusal."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1922,9 +1922,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "PAIR reports jailbreak success rates broken down by model, defense, behavior category, and attacker variant, but does not analyze model internals or characterize underlying causes of why discovered prompts succeed. The reported breakdowns are aggregate counts rather than diagnostic insight, satisfying the Low criterion.",
+                    "evidence": "Sections IV-A through IV-E present jailbreak-rate tables across configurations; no analysis of model-internal signals, prompt-property correlations, or alignment-mechanism failures appears in the evaluation."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -1944,9 +1944,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "PAIR uses an attacker LLM that iteratively refines prompts in natural language with the explicit goal of preserving fluency. The malicious objective is held fixed across iterations, and prompts are produced in a form that requires no plausibility reconstruction.",
+                    "evidence": "Section III describes the attacker LLM iteratively refining query phrasing while preserving the fixed objective; resulting prompts are coherent natural language, as illustrated in Appendix examples."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1966,9 +1966,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "All inputs are natural-language strings consumed by LLMs in their final form. There is no continuous representation that could lose perturbations on serialization.",
+                    "evidence": "Section III's pipeline operates entirely in the text domain; no numeric or embedding-space mutation occurs."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -1988,9 +1988,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Section IV-B reuses successful jailbreak prompts found on GPT-4 and Vicuna against other downstream LLMs and reports transfer rates, but the optimization itself targets a single source model rather than aggregating multi-model signals. This matches the Medium criterion.",
+                    "evidence": "Section IV-B and Table VI report cross-model transfer of discovered prompts; the search procedure in Section III optimizes per-target without cross-model aggregation."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -2034,9 +2034,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "CrossASR discovers transcription disagreements among ASR systems on TTS-synthesized audio. These are robustness-relevant errors in undefended ASRs, not defense bypasses, satisfying the Low criterion.",
+                    "evidence": "Section II frames the oracle as inter-ASR disagreement; targets are commercial/open-source ASRs without security-focused defenses."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2056,9 +2056,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration is untargeted, seeking any TTS-generated audio that produces transcription divergence across ASRs. There is no attacker-chosen target transcription. This satisfies the Low criterion.",
+                    "evidence": "Section II's oracle treats any cross-ASR disagreement as a finding; the failure-likelihood prioritization in Section III ranks texts but does not specify a target transcription."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2078,9 +2078,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "CrossASR reports failure-discovery rates and exploration-strategy comparisons but does not analyze the linguistic, phonetic, or model-internal properties that explain why specific texts produce ASR disagreements. This satisfies the Low criterion of reporting failures without diagnostic insight.",
+                    "evidence": "Section IV reports overall failure-discovery rates across exploration strategies; no input-property or model-internal analysis isolates causes of the disagreements."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -2100,14 +2100,14 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Test audio is synthesized via TTS from natural text corpora, producing inherently natural speech and preserving the source text as the semantic anchor. This satisfies the High criterion.",
+                    "evidence": "Section II generates audio from TTS engines using text from public corpora; the source text remains the ground-truth transcript."
                 },
                 "chatgpt": {
                     "value": "High",
                     "why": "CrossASR preserves the original text semantics (it does not perform semantic-changing mutations) by synthesizing speech from fixed input texts and treating those texts as ground-truth labels. The approach explicitly preprocesses and normalizes texts to improve TTS pronunciation and marks cases where the audio may be unreliable (all ASRs disagree) as indeterminable, i.e., it recognizes and filters TTS-induced unrealistic/ambiguous inputs. CrossASR also uses real TTS engines (including high-quality commercial TTS) and performs manual verification showing that generated audio is human-understandable, demonstrating that naturalness is maintained. Because semantic consistency is enforced by design (texts are kept fixed and used as labels) and naturalness is ensured via TTS selection, preprocessing, indeterminable-case handling, and manual validation, the paper meets the criterion for High input plausibility.",
-                    "evidence": "Page 2, Section II (overview): \"CrossASR employs Text-to-Speech (TTS) engines to synthesize test inputs from texts and treats the texts as the ground truth labels, removing the need of manually transcrib￾ing audio files for getting labelled data.\" (Page 2, para 2) ; Page 3–4, Section II-A/II-B (preprocessing/workflow): \"The Text Preprocessor lowercases the text, removes punctuation from it, and normalizes non-standard words (e.g., abbreviations, numbers, date, and currency expressions). The text normalization ... is intended to ensure that the text are pronounced properly by TTS.\" (Section II, Test Selection Engine’s First Iteration, Steps 1-3, Page 4) ; Page 3, Section II-A (oracle / indeterminable cases): \"We consider cases where all ASRs’ transcribed texts differ from the input text as indeterminable cases – as possibly the error resides in the TTS.\" (Section II-A, Case descriptions, Page 3) ; Page 8, Table VII (counts): shows large number of Indeterminable Test Cases (ITC) and that the system records and distinguishes them (Table VII, Page 8) ; Page 1 (Abstract) and Page 10 (Conclusion): manual verification results: \"Based on a manual verification carried out on statistically representative sample size, we found that most samples are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR)...\" (Abstract, Page 1) and \"Almost all of the failed test case samples inspected are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR).\" (Conclusion, Page 10)."
+                    "evidence": "Page 2, Section II (overview): \"CrossASR employs Text-to-Speech (TTS) engines to synthesize test inputs from texts and treats the texts as the ground truth labels, removing the need of manually transcrib ing audio files for getting labelled data.\" (Page 2, para 2) ; Page 3–4, Section II-A/II-B (preprocessing/workflow): \"The Text Preprocessor lowercases the text, removes punctuation from it, and normalizes non-standard words (e.g., abbreviations, numbers, date, and currency expressions). The text normalization ... is intended to ensure that the text are pronounced properly by TTS.\" (Section II, Test Selection Engine’s First Iteration, Steps 1-3, Page 4) ; Page 3, Section II-A (oracle / indeterminable cases): \"We consider cases where all ASRs’ transcribed texts differ from the input text as indeterminable cases – as possibly the error resides in the TTS.\" (Section II-A, Case descriptions, Page 3) ; Page 8, Table VII (counts): shows large number of Indeterminable Test Cases (ITC) and that the system records and distinguishes them (Table VII, Page 8) ; Page 1 (Abstract) and Page 10 (Conclusion): manual verification results: \"Based on a manual verification carried out on statistically representative sample size, we found that most samples are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR)...\" (Abstract, Page 1) and \"Almost all of the failed test case samples inspected are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR).\" (Conclusion, Page 10)."
                 },
                 "gemini": {
                     "value": "High",
@@ -2117,14 +2117,14 @@
                 "arbitrator": {
                     "value": "High",
                     "why": "CrossASR preserves the original text semantics (it does not perform semantic-changing mutations) by synthesizing speech from fixed input texts and treating those texts as ground-truth labels. The approach explicitly preprocesses and normalizes texts to improve TTS pronunciation and marks cases where the audio may be unreliable (all ASRs disagree) as indeterminable, i.e., it recognizes and filters TTS-induced unrealistic/ambiguous inputs. CrossASR also uses real TTS engines (including high-quality commercial TTS) and performs manual verification showing that generated audio is human-understandable, demonstrating that naturalness is maintained. Because semantic consistency is enforced by design (texts are kept fixed and used as labels) and naturalness is ensured via TTS selection, preprocessing, indeterminable-case handling, and manual validation, the paper meets the criterion for High input plausibility.",
-                    "evidence": "Page 2, Section II (overview): \"CrossASR employs Text-to-Speech (TTS) engines to synthesize test inputs from texts and treats the texts as the ground truth labels, removing the need of manually transcrib￾ing audio files for getting labelled data.\" (Page 2, para 2) ; Page 3–4, Section II-A/II-B (preprocessing/workflow): \"The Text Preprocessor lowercases the text, removes punctuation from it, and normalizes non-standard words (e.g., abbreviations, numbers, date, and currency expressions). The text normalization ... is intended to ensure that the text are pronounced properly by TTS.\" (Section II, Test Selection Engine’s First Iteration, Steps 1-3, Page 4) ; Page 3, Section II-A (oracle / indeterminable cases): \"We consider cases where all ASRs’ transcribed texts differ from the input text as indeterminable cases – as possibly the error resides in the TTS.\" (Section II-A, Case descriptions, Page 3) ; Page 8, Table VII (counts): shows large number of Indeterminable Test Cases (ITC) and that the system records and distinguishes them (Table VII, Page 8) ; Page 1 (Abstract) and Page 10 (Conclusion): manual verification results: \"Based on a manual verification carried out on statistically representative sample size, we found that most samples are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR)...\" (Abstract, Page 1) and \"Almost all of the failed test case samples inspected are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR).\" (Conclusion, Page 10)."
+                    "evidence": "Page 2, Section II (overview): \"CrossASR employs Text-to-Speech (TTS) engines to synthesize test inputs from texts and treats the texts as the ground truth labels, removing the need of manually transcrib ing audio files for getting labelled data.\" (Page 2, para 2) ; Page 3–4, Section II-A/II-B (preprocessing/workflow): \"The Text Preprocessor lowercases the text, removes punctuation from it, and normalizes non-standard words (e.g., abbreviations, numbers, date, and currency expressions). The text normalization ... is intended to ensure that the text are pronounced properly by TTS.\" (Section II, Test Selection Engine’s First Iteration, Steps 1-3, Page 4) ; Page 3, Section II-A (oracle / indeterminable cases): \"We consider cases where all ASRs’ transcribed texts differ from the input text as indeterminable cases – as possibly the error resides in the TTS.\" (Section II-A, Case descriptions, Page 3) ; Page 8, Table VII (counts): shows large number of Indeterminable Test Cases (ITC) and that the system records and distinguishes them (Table VII, Page 8) ; Page 1 (Abstract) and Page 10 (Conclusion): manual verification results: \"Based on a manual verification carried out on statistically representative sample size, we found that most samples are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR)...\" (Abstract, Page 1) and \"Almost all of the failed test case samples inspected are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR).\" (Conclusion, Page 10)."
                 }
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Audio is produced directly in standard serialized form (WAV files from TTS), so failures persist across save-reload cycles by construction.",
+                    "evidence": "Section II's synthesis step outputs standard audio files consumed directly by the target ASRs."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -2144,9 +2144,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Although the differential oracle uses multiple ASR systems during fuzzing, this is for disagreement detection rather than for evaluating cross-system transferability of discovered failures against unseen targets. This satisfies the Low criterion.",
+                    "evidence": "Section II uses cross-ASR comparison as the oracle; Section IV does not separately reuse discovered fault-inducing audios against held-out ASR systems."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2190,9 +2190,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "CrossASR++ extends CrossASR with a modular architecture but retains the same robustness-error focus on undefended ASR systems. No defense bypass is evaluated, satisfying the Low criterion.",
+                    "evidence": "Section 2 describes the modular pipeline targeting standard ASR systems; the oracle remains transcription disagreement without a security-violation condition."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2212,9 +2212,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration remains untargeted — the fuzzer seeks any input causing inter-ASR disagreement, with no attacker-specified target transcription. This satisfies the Low criterion.",
+                    "evidence": "Section 2.1 describes the generation-then-disagreement pipeline; no targeted-output objective is introduced over CrossASR."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2234,9 +2234,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "CrossASR++ extends CrossASR's modular pipeline but reports the same kinds of aggregate failure counts without input-property or model-internal analysis of the underlying causes of ASR disagreements. This satisfies the Low criterion.",
+                    "evidence": "Section 3's evaluation reports failure-discovery counts and modular-architecture benefits without diagnostic analysis of failure causes."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2256,9 +2256,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Audio is synthesized by TTS engines from natural text, producing inherently natural inputs with the source text as the semantic anchor. This satisfies the High criterion.",
+                    "evidence": "Section 2.1's generateAudio() step uses TTS on text inputs from natural corpora."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -2278,9 +2278,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Generated audio is stored in standard serialized format, and Section 2.4 notes that all synthesized audios are released for reuse. Failures persist across I/O by construction.",
+                    "evidence": "Section 2.1 outputs standard audio files; Section 2.4.2 confirms all generated audios are reusable from the released artifact."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -2300,9 +2300,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The differential oracle compares ASR systems during fuzzing rather than evaluating whether discovered fault-inducing audios transfer to unseen target ASRs. This satisfies the Low criterion.",
+                    "evidence": "Section 2.1 uses cross-ASR comparison within the search loop; no held-out cross-ASR transfer evaluation is part of the design."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2346,9 +2346,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The paper investigates whether differential testing can improve ASR systems. Discovered failures are transcription errors on undefended models — robustness issues without security-relevant safeguard bypass. This satisfies the Low criterion.",
+                    "evidence": "The empirical study compares ASR systems on shared inputs; no defense layer is evaluated, and the oracle is transcription disagreement."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2368,9 +2368,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration is untargeted — the study evaluates failure-discovery rates from differential disagreement without steering toward attacker-chosen transcriptions. This satisfies the Low criterion.",
+                    "evidence": "The study setup compares ASR outputs across systems; no targeted-output objective is part of the methodology."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2390,9 +2390,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The empirical study reports per-ASR failure counts and effectiveness comparisons but does not provide diagnostic analysis of the linguistic or model-internal causes of the discovered disagreements. This satisfies the Low criterion.",
+                    "evidence": "The methodology section reports comparative failure-discovery results across ASR systems; no input-property or model-internal diagnostic analysis appears."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2412,9 +2412,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Inputs are synthesized via TTS from natural text, producing intrinsically natural speech with the original text as the semantic anchor.",
+                    "evidence": "The methodology section uses TTS engines on natural-language source text to produce evaluation audio."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -2434,9 +2434,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Audio is generated directly in standard serialized format, so failures persist across save-reload by construction.",
+                    "evidence": "Synthesized audio is stored as standard WAV files for use across ASR systems."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -2456,9 +2456,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The study uses differential testing across ASR systems as the discovery mechanism but does not separately evaluate whether discovered failures transfer to unseen ASRs as a transferability assessment. This satisfies the Low criterion.",
+                    "evidence": "The differential approach observes inter-ASR disagreement during fuzzing; no held-out transfer-target evaluation is performed."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2502,9 +2502,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DeepXplore primarily targets undefended image classifiers; the Udacity steering-DNN evaluation reports prediction divergences detected by the differential oracle rather than concrete unsafe driving outcomes or safeguard bypasses. The discovered failures are misclassifications and disagreement-based prediction errors, satisfying the Low criterion of robustness-relevant errors without demonstrated harm or defense bypass.",
+                    "evidence": "Section 4 evaluates MNIST/ImageNet/Udacity classifiers without defense layers; Sections 4.2-4.3 report failures as prediction disagreements across cross-referencing models rather than as demonstrated unsafe driving behaviors or policy violations."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -2524,9 +2524,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The joint objective maximizes neuron coverage plus arbitrary cross-model disagreement; there is no mechanism that targets a specific attacker-chosen output. This satisfies the Low criterion.",
+                    "evidence": "Section 3 defines the joint objective combining coverage and differential terms; no targeted-label term is included."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2546,9 +2546,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "The paper traces discovered failures back to mislabeled training examples in a data-poisoning analysis, correctly identifying 95.6% of mislabeled samples. This causal linkage between failures and underlying training-data corruption satisfies the High criterion.",
+                    "evidence": "Section 7.3 reports the data-poisoning experiment in which discovered failures are linked to corrupted training samples with 95.6% identification accuracy; Section 7.1 also analyzes activation patterns associated with failure-triggering inputs."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -2568,9 +2568,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Domain-specific transformations (e.g., brightness, contrast, occlusion) bound per-mutation magnitude, but cumulative drift across iterations is not constrained relative to the original seed. This matches the Medium criterion.",
+                    "evidence": "Section 4.2 enumerates the realistic transformations applied; bounds are per-step rather than cumulative."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -2590,9 +2590,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "DeepXplore explicitly clips pixel values to the valid integer range and rounds gradient updates to integer precision, ensuring fault-inducing perturbations survive serialization. This deliberate design satisfies the High criterion.",
+                    "evidence": "Section 4.2 documents pixel-range clipping and integer rounding of gradient updates as part of the mutation procedure."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -2612,9 +2612,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Multiple models are used during fuzzing as cross-referencing oracles, but the paper does not reuse discovered inputs against held-out target models to evaluate transfer. The differential setup is for disagreement detection, not transferability discovery. This satisfies the Low criterion.",
+                    "evidence": "Section 3 and Section 8 describe the multi-model setup as part of the oracle; no held-out transfer-target evaluation is performed."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2659,9 +2659,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Sensei augments training data through rule-based input mutations to improve robustness. Discovered failures are misclassifications on undefended models, used as augmentation candidates rather than security-relevant safeguard bypasses. This satisfies the Low criterion.",
+                    "evidence": "Section 4 evaluates on standard image classifiers without defenses; the oracle is misclassification under semantics-preserving transformations."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2681,9 +2681,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration aims at any failure-triggering perturbation that can serve as an augmentation candidate, with no attacker-chosen target output. This satisfies the Low criterion.",
+                    "evidence": "Section 3 describes the search as untargeted toward any failing perturbation within the augmentation budget."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2703,9 +2703,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Sensei reports robustness improvements from augmentation and per-transformation effectiveness statistics, but does not analyze model-internal weaknesses or characterize underlying causes of why specific discovered failures occur. This satisfies the Low criterion.",
+                    "evidence": "Section 4 reports aggregate accuracy improvements and per-operator augmentation impact without diagnostic analysis of failure root causes."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -2725,9 +2725,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Sensei applies image transformations to integer-pixel inputs but does not explicitly enforce serialization-aware constraints across all augmentation operators. While most operators preserve standard image-format integrity, the paper does not explicitly analyze fault-inducing-input persistence after I/O. This matches the Medium criterion.",
+                    "evidence": "Section 3 describes the augmentation operators applied in pixel space; Section 4 does not include explicit inactivation-rate analysis after image serialization."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -2747,9 +2747,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated only on the model being augmented; no portability across architectures is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 4 confines results to the model under augmentation, with no held-out transfer target."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2769,9 +2769,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Mutations apply realistic, semantics-preserving transformations bounded relative to the original seed, with the genetic search keeping the original input as the reference. This satisfies the High criterion.",
+                    "evidence": "Section 3.2 enumerates the natural perturbations and bounds them relative to the original training image."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -2815,9 +2815,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DRFuzz performs regression fuzzing of deep-learning systems, surfacing inconsistencies between successive model versions. These are robustness-related errors rather than defense bypasses, satisfying the Low criterion.",
+                    "evidence": "Section III defines the oracle as inconsistency between original and updated models; the targets are undefended classifiers."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2837,9 +2837,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DRFuzz seeks any input that exposes regression inconsistency between paired model versions, with no mechanism that steers toward attacker-chosen specific outputs. The oracle accepts any class-level disagreement between versions, satisfying the Low criterion.",
+                    "evidence": "Section III defines the search objective as discovering inputs whose predictions diverge between original and updated model versions; no target-output objective is encoded."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -2859,9 +2859,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "DRFuzz analyzes per-class regression-fault distributions and links them to overfitting and class-specific bias from the retraining process, supported by class-level fault analysis and Grad-CAM saliency inspection that connects discovered faults to specific input features. This causal linkage between failures and underlying training-process weaknesses satisfies the High criterion.",
+                    "evidence": "Section IV-B1 attributes regression faults to overfitting and class-level bias from the retraining process; Section V-B uses Grad-CAM to associate faulty behaviors with specific salient features, providing causal diagnostic insight into discovered failures."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -2881,9 +2881,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "DRFuzz applies bounded image transformations validated per-candidate against the original seed, and its differential-oracle design does not rely on strict semantic equivalence. The cumulative-drift constraint is enforced through the regression-fuzzing setup that requires inputs to remain semantically meaningful across both pre- and post-update model versions, satisfying the High criterion.",
+                    "evidence": "Section III-B specifies per-input validity bounds anchored to the original; Section IV's regression evaluation requires inputs to remain comparable across model versions, providing an additional plausibility anchor that prevents drift across iterations."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -2903,9 +2903,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "DRFuzz's regression-fuzzing pipeline applies bounded transformations to standard image inputs and persists fault-inducing inputs across both pre- and post-update model evaluations, providing implicit serialization-survival validation. The transformations are applied in pixel space without explicit clipping/rounding, matching the Medium criterion of partial format-constraint enforcement.",
+                    "evidence": "Section III's pipeline applies bounded pixel-space transformations; Section IV's regression evaluation requires saved fault-inducing inputs to remain effective across model versions, providing implicit reproducibility validation without explicit serialization-aware design."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2925,9 +2925,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated only between paired model versions, not as transferable failures across independent architectures. The cross-version differential is structurally unlike cross-architecture transfer, satisfying the Low criterion.",
+                    "evidence": "Section IV's evaluation compares paired old/new model versions; no held-out independent-architecture transfer evaluation appears."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -2971,9 +2971,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "LipFuzzer triggers semantic misinterpretations in voice assistants that cause benign commands to launch unintended apps or share data with untrusted recipients. These are concrete unsafe outcomes, but the targeted voice-assistant pipelines are not safety-aligned in the explicit-defense sense, placing the rating at Medium.",
+                    "evidence": "Section IV reports voice-assistant misinterpretations leading to unintended app activations and data exposures; the targets are commercial voice assistants without dedicated semantic-safety defenses."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -2993,9 +2993,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "LipFuzzer's evaluation searches for misinterpretations that cause voice assistants to launch unintended apps or share data with attacker-controlled recipients. The fuzzer steers exploration toward this class of unsafe outcomes through its linguistic-mutation strategy, satisfying the Medium criterion of guiding toward a class of safety- or security-violating behavior without targeting a single predefined output.",
+                    "evidence": "Section IV reports misinterpretations leading to unintended-app launches and unauthorized recipient outputs; Section III's linguistic-mutation strategy is directed at producing semantically misinterpreted commands aligned with these unsafe-outcome classes."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -3015,9 +3015,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper links discovered misinterpretations to specific linguistic ambiguities (phonetic, syntactic, semantic), providing partial diagnostic insight at the linguistic-input level. This stops short of model-internal causal diagnosis.",
+                    "evidence": "Section V analyzes failure-triggering inputs by category of linguistic ambiguity that produces the misinterpretation."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -3037,9 +3037,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "The Bayesian-network linguistic generator produces phonetically and grammatically plausible commands, with linguistic-naturalness constraints enforced throughout the iterative search rather than only per-step. The discrete-text input space inherently limits cumulative drift effects, satisfying the High criterion.",
+                    "evidence": "Section III's linguistic generator applies pronunciation, vocabulary, and grammar-level naturalness criteria to each candidate against an anchor reference; the discrete command-text representation prevents the kind of cumulative numerical drift seen in continuous-domain fuzzers."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3059,9 +3059,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Test inputs are generated as text-then-spoken commands. The discrete-text input space and TTS realization preserve perturbations across serialization. This satisfies the High criterion.",
+                    "evidence": "Section III's pipeline produces discrete textual command variants that are spoken to voice assistants; the input form is the same as that consumed in deployment."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -3081,9 +3081,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "LipFuzzer's evaluation reports findings on individual voice-assistant platforms separately rather than evaluating discovered misinterpretations across additional held-out voice-assistant systems as a transferability assessment. This satisfies the Low criterion.",
+                    "evidence": "Section IV reports per-platform results; no explicit transferability evaluation of discovered misinterpretations to held-out voice-assistant systems is performed."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3127,9 +3127,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "semSensFuzz tests AI perception systems by introducing semantically meaningful image alterations (object insertion/removal). Discovered failures are misperceptions on undefended models, satisfying the Low criterion.",
+                    "evidence": "Section IV evaluates on standard perception models without defenses; the oracle is metamorphic prediction inconsistency."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3149,9 +3149,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration randomly samples mutation candidates that satisfy semantic constraints, without steering toward a specific attacker-chosen target output. This satisfies the Low criterion.",
+                    "evidence": "Section III samples candidate mutations from a constrained space without a target-output objective."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3171,9 +3171,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper analyzes which semantic alterations most often produce failures, providing correlational input-level diagnostic insight. Model internals are not analyzed.",
+                    "evidence": "Section IV reports per-mutation-category failure rates; analysis stays at the level of input modifications."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3193,9 +3193,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Mutations enforce domain-specific semantic and conformity constraints (e.g., object placement consistency), preserving plausibility relative to the scene context. This satisfies the High criterion.",
+                    "evidence": "Section III constrains mutations using semantic/conformity rules tied to the scene; mutations that violate these constraints are rejected."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3215,9 +3215,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "semSensFuzz produces composited images saved in standard formats, but the composition pipeline involves blending operations whose perturbation persistence after standard image-file serialization is not explicitly analyzed. This matches the Medium criterion.",
+                    "evidence": "Section III describes the image-composition pipeline; explicit inactivation-rate analysis after serialization is not part of the evaluation."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3237,9 +3237,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated on the perception model under test; no cross-model transfer evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section IV reports per-model results without portability tests."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3283,9 +3283,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "ADAPT improves white-box neuron-coverage testing through adaptive neuron-selection, discovering misclassifications on undefended models. These are robustness errors rather than safeguard bypasses, satisfying the Low criterion.",
+                    "evidence": "Section 5 evaluates on standard classifiers without defense layers; the oracle (Section 3) is metamorphic prediction inconsistency."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3305,9 +3305,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Adaptive neuron selection improves coverage gain efficiency but does not steer toward attacker-chosen outputs. This satisfies the Low criterion.",
+                    "evidence": "Section 4 details the adaptive neuron-selection strategy; no target-output term appears in the objective."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3327,9 +3327,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper correlates failures with neuron characteristics (activation frequency, layer depth, position), providing correlational diagnostic insight at the model-internal level. This matches the Medium criterion.",
+                    "evidence": "Section 5 analyzes which neuron properties correlate with failure-triggering coverage gains."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3349,9 +3349,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "ADAPT bounds gradient-based perturbations by a small L∞ ball maintained relative to the original seed throughout the search, preventing cumulative drift beyond perceptual constraints. This satisfies the High criterion.",
+                    "evidence": "Section 4 enforces an L∞ perturbation budget anchored to the original input across all iterations of the search."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -3371,9 +3371,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Gradient updates operate in continuous floating-point image representations and are not clipped or rounded to integer pixel values, so failures may not survive serialization. This satisfies the Low criterion.",
+                    "evidence": "Section 4's mutation procedure applies in-memory floating-point gradient updates; no serialization-aware clipping is described."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3393,9 +3393,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated only on the model under test; no cross-model transfer experiment is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 5's evaluation reports per-model results without portability tests."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3439,9 +3439,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DeepEvolution uses search-based testing to discover misclassifications in undefended DNN classifiers via metamorphic transformations. These are robustness errors rather than defense bypasses, satisfying the Low criterion.",
+                    "evidence": "Section III evaluates on standard image classifiers without defenses; the oracle is metamorphic prediction consistency."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3461,9 +3461,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The evolutionary search optimizes for coverage gain and prediction divergence, without steering toward attacker-chosen outputs. This satisfies the Low criterion.",
+                    "evidence": "Section III defines the fitness function as coverage-and-divergence based; no target-output term appears."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3483,9 +3483,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DeepEvolution reports failure-discovery rates and search-strategy effectiveness comparisons but does not analyze input-property or model-internal causes of the discovered failures. This satisfies the Low criterion.",
+                    "evidence": "Section IV reports aggregate failure counts across configurations without diagnostic analysis of failure root causes."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3505,9 +3505,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Mutations apply bounded metamorphic image transformations, validated for naturalness on each candidate. This satisfies the High criterion.",
+                    "evidence": "Section III enumerates the bounded transformation operators with naturalness constraints."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -3527,9 +3527,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Transformations operate on standard image pixels but the paper does not explicitly clip or round to enforce serialization-safe perturbations. This matches the Medium criterion.",
+                    "evidence": "Section III's mutation operators work in pixel space without explicit serialization-aware constraints."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3549,9 +3549,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated only on the model under test; no cross-model transferability evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section IV reports per-model results; no held-out transfer-target evaluation appears."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3595,9 +3595,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "HDTest performs differential fuzzing of brain-inspired hyperdimensional computing systems, discovering misclassifications across HD model variants. The targets are undefended HD classifiers, satisfying the Low criterion.",
+                    "evidence": "Section III evaluates HD classifiers without defense mechanisms; the oracle compares predictions across HD model variants."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3617,9 +3617,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The differential search seeks any cross-variant disagreement without targeting a specific attacker-chosen output. This satisfies the Low criterion.",
+                    "evidence": "Section III's oracle treats any disagreement across HD variants as a finding; no target-output objective is specified."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3639,9 +3639,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper characterizes which input features and HD model components most often produce failures, providing correlational insight. No causal diagnosis appears.",
+                    "evidence": "Section IV characterizes per-feature and per-component failure distributions."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3661,9 +3661,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "HDTest's mutations operate within HD-encoding-validity bounds applied per candidate, with each mutation validated against the source HD vector. The discrete nature of HD encoding limits cumulative drift effects. This satisfies the High criterion.",
+                    "evidence": "Section III applies bounded mutations within HD-encoding constraints; the discrete encoding space inherently limits perturbation accumulation."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -3683,9 +3683,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Inputs are mutated in raw form within HD encoding bounds, but explicit serialization-aware clipping is not described. This matches the Medium criterion.",
+                    "evidence": "Section III's mutation operates in the raw input space without explicit reproducibility-aware constraints documented."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3705,9 +3705,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "HDTest uses cross-HD-variant disagreement as the search oracle but does not separately evaluate whether discovered fault-inducing inputs transfer to unseen HD systems as a transferability assessment. This satisfies the Low criterion.",
+                    "evidence": "Section III's differential oracle compares HD variants during fuzzing; held-out HD-system transfer evaluation is not part of the design."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3751,9 +3751,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DeepStellar performs model-based quantitative analysis and testing of stateful RNN systems, discovering inconsistencies on undefended models. These are robustness errors rather than safeguard bypasses, satisfying the Low criterion.",
+                    "evidence": "Section 4 evaluates RNN audio/text models without defense mechanisms; the property-based oracle flags state-trace anomalies."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3773,9 +3773,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration is guided by abstract-state coverage; no mechanism steers toward attacker-specified target outputs. This satisfies the Low criterion.",
+                    "evidence": "Section 3 defines the abstract state machine as the coverage target; no targeted-output objective is encoded."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3795,9 +3795,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper traces failures to specific abstract-state regions and transition patterns within the RNN, providing correlational diagnostic insight at the model-internal level. This matches the Medium criterion.",
+                    "evidence": "Section 4 analyzes failure-triggering abstract-state traces, linking failures to specific regions of the state machine."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3817,9 +3817,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "DeepStellar's mutations operate within input-space validity bounds per step, but the iterative state-coverage-guided search does not enforce cumulative drift constraints relative to the original seed. This matches the Medium criterion.",
+                    "evidence": "Section 3 applies per-step bounded mutations; the abstract-state-driven exploration does not enforce cumulative input-similarity bounds against the original."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3839,9 +3839,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Mutations operate on raw input values (audio waveform or text), but explicit serialization-aware clipping/rounding is not part of the design. This matches the Medium criterion.",
+                    "evidence": "Section 3 applies mutations in the raw input space without explicit serialization-aware enforcement."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3861,9 +3861,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated on the model under test only; no cross-model transferability evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 4's evaluation reports per-model results without portability tests."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -3907,9 +3907,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "TESTRNN evaluates RNNs on sentiment-analysis and image-captioning benchmarks where the metamorphic oracle flags prediction inconsistencies. These are robustness-relevant errors on undefended models without safety- or security-relevant consequences, satisfying the Low criterion.",
+                    "evidence": "Section IV evaluates standard RNN classifiers on benchmark datasets without defense mechanisms; reported failures are prediction inconsistencies under metamorphic transformations rather than demonstrated harmful outcomes."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3929,9 +3929,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration combines coverage and prediction-error feedback without steering toward attacker-chosen outputs. This satisfies the Low criterion.",
+                    "evidence": "Section III defines the joint coverage/prediction objective; no targeted-output term appears."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3951,9 +3951,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper analyzes how RNN-specific coverage signals correlate with failure discovery rates, providing correlational diagnostic insight. No causal diagnosis appears.",
+                    "evidence": "Section IV evaluates several RNN coverage criteria and correlates them with discovery rates."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3973,9 +3973,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "TESTRNN bounds per-step perturbations and the iterative pipeline maintains bounds anchored to the original seed for the supported input modalities. For text inputs, mutation operates on discrete tokens that inherently preserve semantic structure across iterations, satisfying the High criterion.",
+                    "evidence": "Section III applies bounded perturbations relative to the source input; the seed-anchored mutation policy maintains plausibility across the full search rather than only per-predecessor."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -3995,9 +3995,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "TESTRNN clips inputs to valid ranges in normalized form but does not ensure that perturbations survive denormalization to standard serialized formats. The text-input pathway preserves discrete tokens, but the numeric-input pathway has potential reproducibility gaps that are not explicitly analyzed. This matches the Medium criterion.",
+                    "evidence": "Section III applies clipping in normalized space without explicit denormalization-survival analysis; the paper does not report inactivation rates after I/O for the numeric-input experiments."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4017,9 +4017,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated only on the model under test; no cross-model transferability evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section IV reports per-model results without portability tests."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -4064,9 +4064,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "TACTIC evaluates on Udacity self-driving models without defense mechanisms in scope, and the discovered failures are steering errors under environmental conditions rather than violations of explicitly-specified safety policies. This satisfies the Low criterion.",
+                    "evidence": "Section 4 evaluates undefended self-driving DNNs; failures are characterized as prediction errors under generated conditions rather than as policy violations on safeguarded models."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4086,9 +4086,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "TACTIC steers exploration toward critical environmental conditions that broadly degrade performance — a class of failure scenarios — but does not target specific attacker-chosen steering outputs (e.g., a particular collision direction). This matches the Medium criterion.",
+                    "evidence": "Section 3 defines the search as finding environmental conditions that trigger failures; the oracle accepts a class of failures without a predefined target output."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4108,9 +4108,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper analyzes which environmental conditions most often trigger failures, providing correlational diagnostic insight at the input-property level. No causal model-internal diagnosis appears.",
+                    "evidence": "Section 4 reports per-condition failure rates and characterizes which environments are most challenging."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4130,9 +4130,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "GAN-based synthesis produces realistic environmental conditions (rain, snow, fog) within learned data distributions, with the source seed scene as the semantic anchor. This satisfies the High criterion.",
+                    "evidence": "Section 3.2's GAN renders environmental conditions while preserving the source scene structure."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4152,9 +4152,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "TACTIC's GAN-based environmental synthesis produces images in continuous floating-point representation without explicit clipping or rounding to standard image-format constraints, so perturbations may not survive serialization. This satisfies the Low criterion.",
+                    "evidence": "Section 3.2's GAN-based generation operates in continuous representation; explicit serialization-aware enforcement is not part of the design."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -4174,9 +4174,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated only on the steering models under test; no cross-architecture transferability evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 4 reports per-model results without portability tests."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -4221,9 +4221,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DistXplore uses distribution-guided testing to expose failures associated with distribution shift on undefended classifiers. These are robustness-related errors rather than safeguard bypasses, satisfying the Low criterion.",
+                    "evidence": "Section 4 evaluates standard classifiers without defense layers; the property-based oracle flags inputs whose feature distributions deviate sufficiently."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4243,9 +4243,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "DistXplore steers exploration toward distribution-shifted regions in feature space, with class drift emerging as a byproduct of distribution-distance optimization rather than from a predefined attacker-chosen target. The oracle accepts any class-shift outcome rather than requiring a specific target class output, satisfying the Low criterion.",
+                    "evidence": "Section 3 defines the search via distribution-distance optimization; the resulting class shifts are not bound to a specific target class chosen by the user, and Section 4's evaluation reports any class-shift as a finding."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4265,9 +4265,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "DistXplore attributes failures to distribution shift, demonstrating that discovered failures become statistically closer in logit space to the distribution of another class. This causal linkage between failures and distribution-shift mechanisms satisfies the High criterion.",
+                    "evidence": "Section 4 demonstrates that discovered failures shift toward other classes in logit-space distribution analysis, providing causal diagnosis tied to distribution shift."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4287,9 +4287,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "DistXplore applies feature-space perturbations that map back to image space, but the perturbation persistence after standard image-file serialization is not explicitly analyzed. This matches the Medium criterion.",
+                    "evidence": "Section 3 operates in continuous feature space with mapping back to images; explicit inactivation-rate analysis after serialization is not part of the evaluation."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4309,9 +4309,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated on the model under test only; no cross-model transferability evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 4 confines evaluation to the originally fuzzed models."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -4331,9 +4331,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Per-mutation bounds preserve plausibility per step, but cumulative drift across iterations is not constrained against the original seed. This matches the Medium criterion.",
+                    "evidence": "Section 3 applies per-step bounded mutations; cumulative drift bounds are not enforced."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4377,9 +4377,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "QATest discovers semantic inconsistencies in question-answering systems via metamorphic perturbations. These are robustness errors on undefended QA pipelines, satisfying the Low criterion.",
+                    "evidence": "Section 4 evaluates standard QA systems without defense layers; the oracle is metamorphic answer consistency."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -4399,9 +4399,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Question selection is guided by N-gram coverage and statistical naturalness criteria, without steering toward an attacker-chosen target answer. This satisfies the Low criterion.",
+                    "evidence": "Section 3 prioritizes questions for coverage and naturalness; the oracle accepts any inconsistency without a target-answer objective."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -4421,9 +4421,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper analyzes which question-mutation categories most often trigger failures, providing correlational input-property diagnostic insight. No model-internal diagnosis appears.",
+                    "evidence": "Section 4 reports per-mutation-category failure rates and characterizes failure-triggering question patterns."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4443,9 +4443,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "QATest's question mutations are filtered by per-step naturalness criteria (N-gram coverage, semantic coherence), but the iterative mutation process does not enforce cumulative similarity bounds against the original question. This matches the Medium criterion.",
+                    "evidence": "Section 3 enforces per-mutation naturalness checks; the iterative pipeline does not maintain a cumulative similarity constraint against the source question."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4465,9 +4465,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated on the QA system under test; no cross-system transferability evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 4 reports per-system results without portability tests."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -4487,9 +4487,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Test inputs are discrete text strings, the same form consumed by deployed QA systems. No floating-point intermediate representation could lose perturbations on serialization.",
+                    "evidence": "Section 3's pipeline operates entirely in the text domain; mutated questions are stored and reloaded as strings."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4533,9 +4533,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "BET performs efficient black-box testing of CNNs using integer pixel perturbations to find misclassifications on undefended classifiers. These are robustness errors rather than safeguard bypasses, satisfying the Low criterion.",
+                    "evidence": "Section 4 evaluates standard CNN classifiers without defense layers; the property-based oracle uses target-label divergence."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -4555,9 +4555,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "BET defines failure conditions using a specified target label and applies a label-specific objective function to iteratively mutate inputs toward the target output. This satisfies the High criterion of inducing attacker-chosen specific outputs.",
+                    "evidence": "Section 3 specifies the target-label-driven objective function and iteratively optimizes mutations toward producing the chosen label."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4577,9 +4577,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "BET reports attack-success rates and inactivation-rate statistics but does not analyze model-internal weaknesses or characterize causal failure properties beyond surface metrics. This satisfies the Low criterion.",
+                    "evidence": "Section 4 reports aggregate attack and inactivation rates without diagnostic analysis of model-internal causes of vulnerability."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4599,9 +4599,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "BET applies integer-pixel perturbations with bounded L0 changes anchored to the original seed throughout the search, preventing cumulative drift beyond perceptual constraints. This satisfies the High criterion.",
+                    "evidence": "Section 3 enforces L0 perturbation budgets relative to the original input; the iterative search maintains these bounds across all mutations."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4621,9 +4621,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "BET applies integer-pixel perturbations directly in the standard image format and reports a 0.0% inactivation rate, meaning all discovered failures persist after serialization. This deliberate design satisfies the High criterion.",
+                    "evidence": "Section 3 applies integer-byte perturbations in pixel space; Section 4 reports a 0.0% inactivation rate for discovered failures after standard image-file I/O."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4643,9 +4643,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated on the model under test; no cross-architecture transferability evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 4 reports per-model results without portability tests."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4689,9 +4689,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "KuK characterizes adversarial defects through model-uncertainty analysis and demonstrates failures that bypass adversarial-attack detection mechanisms on safeguarded models. This satisfies the High criterion.",
+                    "evidence": "Section IV evaluates against models equipped with adversarial-input detection defenses; KuK discovers failures that evade these explicit defense layers."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4711,9 +4711,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration uses uncertainty signals to identify high-uncertainty inputs broadly, without steering toward attacker-chosen specific outputs. This satisfies the Low criterion.",
+                    "evidence": "Section III defines the uncertainty-driven exploration; the oracle does not encode a target-output objective."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4733,9 +4733,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper analyzes how uncertainty correlates with failure-triggering inputs and characterizes failure patterns by uncertainty level, providing correlational diagnostic insight. No causal diagnosis appears.",
+                    "evidence": "Section IV correlates uncertainty measures with discovered failure rates."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4755,9 +4755,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "KuK's uncertainty-driven exploration applies bounded perturbations within standard adversarial-example budgets, with each mutation validated against the source seed for visual fidelity. This satisfies the High criterion.",
+                    "evidence": "Section III applies bounded perturbations consistent with standard adversarial-example constraints anchored to the original input."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4777,9 +4777,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "KuK's perturbations operate on continuous floating-point image representations without explicit clipping or rounding to integer pixel values, so fault-inducing perturbations may not survive standard image-format serialization. This satisfies the Low criterion.",
+                    "evidence": "Section III's mutation operates in continuous representation; explicit serialization-aware enforcement is not described."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -4799,9 +4799,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "KuK tests whether failures discovered on undefended models remain effective against defended variants of the same task, demonstrating cross-defense transfer post-hoc. This matches the Medium criterion.",
+                    "evidence": "Section IV evaluates whether failures transfer from undefended to defended model variants; the design itself is not transferability-driven."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -4845,9 +4845,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "MDPFuzz exposes unsafe behavior in sequential-decision-making policies (collisions, off-route maneuvers) on undefended controllers. These are concrete safety-relevant failures but no defense bypass is evaluated, placing the rating at Medium.",
+                    "evidence": "Section 4 evaluates RL policies and reports collision/crash failures without defense-aware controllers in scope."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4867,9 +4867,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Exploration steers toward broad classes of unsafe terminal events (any collision or task failure) rather than a specific attacker-chosen end state. This matches the Medium criterion.",
+                    "evidence": "Section 3 defines the oracle as any reward collapse or unsafe termination; the exploration prioritizes inputs likely to trigger such events broadly."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4889,9 +4889,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper characterizes which environmental and initial-state regions concentrate failures, providing correlational input-property diagnostic insight. No causal policy-internal diagnosis appears.",
+                    "evidence": "Section 4 reports failure-distribution analyses across environmental conditions and initial states."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -4911,9 +4911,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Mutations operate on initial-state and environmental parameters within physically valid bounds enforced by the simulator, with each mutation validated through actual simulator execution. This satisfies the High criterion.",
+                    "evidence": "Section 3 constrains mutations within simulator-enforced validity bounds; each candidate is validated through full rollout."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4933,9 +4933,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Each scenario is fully validated through simulator execution and only physically valid configurations are accepted, ensuring failures persist when scenarios are saved and reloaded.",
+                    "evidence": "Section 3's pipeline validates every candidate through simulator rollout; reproducibility is structurally guaranteed by the simulator's strict validity enforcement."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -4955,9 +4955,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated only on the policy used during fuzzing; no cross-policy transferability evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 4 reports per-policy results without portability tests."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5003,9 +5003,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "ORFuzz discovers over-refusal failures — cases where alignment training over-rejects benign queries — which are alignment quality issues rather than security-violating safeguard bypasses. The failures undermine usability rather than security, satisfying the Low criterion.",
+                    "evidence": "Section 3 frames the oracle as detecting refusal of benign queries; the discovered failures expose conservatism in alignment rather than security boundary violations."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5025,9 +5025,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "Exploration is guided toward eliciting refusal of benign queries — a broad class of over-refusal behavior — rather than steering toward a specific attacker-chosen response. This matches the Medium criterion.",
+                    "evidence": "Section 3 defines the oracle as detecting refusal on benign queries; the search broadly aims for over-refusal without targeting specific outputs."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5047,9 +5047,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper analyzes which query categories most often trigger over-refusal, providing correlational input-level diagnostic insight. No model-internal diagnosis of why alignment over-rejects appears.",
+                    "evidence": "Section 4 reports per-category over-refusal rates and characterizes triggering query patterns."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5069,9 +5069,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "ORFuzz's LLM-based query generation produces fluent benign queries throughout the iterative search, with perplexity and semantic-similarity filters applied against an initial reference query rather than only against the immediate predecessor. This anchored validation prevents cumulative drift, satisfying the High criterion.",
+                    "evidence": "Section 3 applies per-iteration perplexity and semantic-similarity filtering against an anchor reference; the LLM-based generation preserves semantic coherence and natural phrasing across all iterations."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5091,9 +5091,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "All inputs are natural-language strings consumed in their generated form by deployed LLMs. No floating-point representation could lose perturbations on serialization.",
+                    "evidence": "Section 3's pipeline operates entirely in the text domain; outputs are directly usable as API queries."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -5113,9 +5113,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "ORFuzz evaluates whether over-refusal-inducing benign prompts discovered on one LLM induce the same behavior in other LLMs, demonstrating cross-model effects post-hoc without explicit transferability-driven design. This matches the Medium criterion.",
+                    "evidence": "Section 4 reports cross-LLM over-refusal patterns; the search itself does not aggregate cross-model signals during discovery."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5159,9 +5159,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "RobOT performs robustness-oriented testing using first-order loss feedback to guide mutation, discovering misclassifications on undefended classifiers. These are robustness errors rather than safeguard bypasses, satisfying the Low criterion.",
+                    "evidence": "Section IV evaluates standard classifiers without defense layers; the metamorphic oracle flags robustness errors via loss-guided perturbations."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5181,9 +5181,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "First-order-loss-guided exploration aims at any failure-triggering perturbation, without steering toward attacker-chosen specific outputs. This satisfies the Low criterion.",
+                    "evidence": "Section III defines the FOL-based search as untargeted; no specific output objective is encoded."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5203,9 +5203,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper analyzes how FOL signal correlates with failure discovery rates, providing correlational diagnostic insight at the loss-landscape level. No causal diagnosis of training weaknesses appears.",
+                    "evidence": "Section IV correlates FOL signal strength with discovered-failure rates."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5225,9 +5225,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "RobOT's first-order-loss-guided perturbations are bounded per mutation step but the iterative search does not enforce cumulative drift constraints relative to the original seed. This matches the Medium criterion.",
+                    "evidence": "Section III applies per-step perturbation bounds; cumulative drift across iterations is not bounded against the original input."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5247,9 +5247,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Mutations operate on continuous floating-point representations with no explicit clipping or rounding to integer pixel values, so perturbations may not survive serialization. This satisfies the Low criterion.",
+                    "evidence": "Section III's gradient updates operate in continuous form; no explicit serialization-aware enforcement is described."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5269,9 +5269,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated on the model under test; no cross-architecture transferability evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section IV reports per-model results without portability tests."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5315,9 +5315,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "SneakyPrompt discovers jailbreak prompts in safeguarded text-to-image generative models, bypassing the closed-box safety filter of DALL·E 2 to produce prohibited NSFW images. This satisfies the High criterion of inducing failures that bypass deployed safeguards.",
+                    "evidence": "Section 4 evaluates against DALL·E 2 with its production safety filter; reported attack-success rates show bypass of the explicit content filter."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -5337,9 +5337,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Exploration is goal-directed: SneakyPrompt searches for prompts that bypass the safety filter while producing images semantically aligned with a specific malicious target description. This satisfies the High criterion.",
+                    "evidence": "Section 3 defines the goal as producing prohibited images that match a specific target malicious prompt; the search verifies semantic alignment with the target."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -5359,9 +5359,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "SneakyPrompt reports per-prompt-category attack-success rates and aggregate evasion statistics but does not characterize which model-internal weaknesses or input-property patterns explain the discovered safety-filter bypasses. The analysis remains at the level of aggregate outcomes, satisfying the Low criterion.",
+                    "evidence": "Section 4's evaluation reports attack rates without diagnostic analysis of the safety-filter mechanism that fails or the prompt characteristics that systematically bypass it."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5381,9 +5381,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "SneakyPrompt mutates text prompts via token-substitution within natural-language constraints, and the malicious semantic target is preserved as the verification anchor. This satisfies the High criterion.",
+                    "evidence": "Section 3's mutation operates on text tokens with semantic-similarity verification against the original target prompt."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -5403,9 +5403,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Test inputs are discrete text prompts in the form consumed by deployed text-to-image APIs. No continuous representation could lose perturbations on serialization.",
+                    "evidence": "Section 3's pipeline operates in the text-prompt domain; outputs are directly usable as API queries."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -5425,9 +5425,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated against DALL·E 2 specifically; no cross-model transfer evaluation to alternative text-to-image systems is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 4 confines evaluation to the targeted text-to-image system without portability tests."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5471,9 +5471,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "TWINFUZZ targets adversarially trained robust models and demonstrates failure discovery that bypasses their defenses, with the resistant model serving as a hardened evaluation target. This satisfies the High criterion.",
+                    "evidence": "Section 'Pre-adversarial Training' (p. 5) describes adversarially trained resistant models as targets; Tables 2-3 (p. 5-6) report robust-accuracy gains demonstrating that TWINFUZZ surfaces failures these defenses miss."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -5493,9 +5493,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Exploration steers toward decision-boundary regions broadly via the LIB metric and FOL gradient, without targeting attacker-chosen specific output classes. This satisfies the Low criterion.",
+                    "evidence": "Section 'Methodology' (p. 3-4) defines the joint LIB+FOL objective for boundary exploration; the agreement-mining oracle (p. 4) accepts any boundary-adjacent input without target-output specification."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5515,9 +5515,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "TWINFUZZ reports robust-accuracy gains from its dual-model fuzzing pipeline but does not analyze which specific weaknesses of the resistant model are exposed by the discovered failures. The ablation studies characterize fuzzing-component effects rather than diagnosing model vulnerabilities. This satisfies the Low criterion.",
+                    "evidence": "Tables 2-5 report aggregate robust-accuracy improvements and component ablations without analysis of which model-internal weaknesses the discovered edge samples expose."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5537,9 +5537,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "High",
+                    "why": "Task-Driven Seed Selection enforces SSIM-based perceptual similarity to the original seed across iterations, explicitly preventing cumulative drift. This satisfies the High criterion.",
+                    "evidence": "Section 'Task-Driven Seed Selection' (p. 4) enforces SSIM thresholds against the original input; samples that drift beyond the perceptual threshold are discarded throughout the fuzzing process."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -5559,9 +5559,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Gradient-based mutations operate in continuous floating-point image representations; the paper does not describe explicit clipping or rounding to integer pixel values to ensure perturbations survive serialization. This satisfies the Low criterion.",
+                    "evidence": "Section 'Seed Mutation and Model Refinement' (p. 4) describes gradient updates applied directly to floating-point inputs; no serialization-aware constraints are documented."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5581,9 +5581,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "TWINFUZZ evaluates cross-attack robustness (e.g., training on BIM-generated samples and testing on DeepFool/MIM) but does not assess transferability of discovered fault-inducing inputs across model architectures. The cross-attack evaluation tests defense generalization rather than failure-input portability across models. This satisfies the Low criterion.",
+                    "evidence": "Table 3 reports cross-attack robustness improvements within a single resistant-model architecture; no evaluation of discovered fault-inducing inputs against held-out target architectures is performed."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5627,9 +5627,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "CAGFuzz uses GAN-generated adversarial inputs guided by neuron coverage to discover misclassifications on undefended classifiers. These are robustness errors rather than safeguard bypasses, satisfying the Low criterion.",
+                    "evidence": "Section IV evaluates standard classifiers without defenses; the metamorphic oracle flags prediction inconsistency under GAN-perturbed inputs."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5649,9 +5649,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "GAN-based mutation seeks coverage-expanding adversarial inputs without steering toward attacker-chosen specific output classes. This satisfies the Low criterion.",
+                    "evidence": "Section III defines the coverage-guided generation objective; no target-output term appears in the GAN training or sampling procedure."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5671,9 +5671,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "CAGFuzz reports coverage gain and adversarial-input effectiveness statistics but does not analyze model-internal weaknesses or input-property causes of discovered failures. This satisfies the Low criterion.",
+                    "evidence": "Section IV reports aggregate coverage and adversarial-effectiveness statistics without diagnostic analysis of failure root causes."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5693,9 +5693,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "CAGFuzz uses CycleGAN to generate adversarial inputs with cycle-consistency constraints to the source image, but the generation operates per pair without enforcing cumulative drift bounds across iterative fuzzing rounds. This matches the Medium criterion.",
+                    "evidence": "Section III's CycleGAN imposes per-generation cycle consistency; iterative fuzzing rounds do not enforce cumulative similarity constraints against the original seed."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5715,9 +5715,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "GAN-generated images come from continuous floating-point sampling without explicit clipping or rounding to standard image format constraints, so perturbations may not survive serialization. This satisfies the Low criterion.",
+                    "evidence": "Section III's GAN-based synthesis operates in continuous representation; explicit serialization-aware enforcement is not part of the design."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -5737,9 +5737,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "CAGFuzz's CycleGAN is trained on cross-domain image distributions, but the paper evaluates discovered adversarial inputs only on the model that participated in fuzzing. No held-out cross-architecture transfer evaluation of fault-inducing inputs is reported, satisfying the Low criterion. The cross-distribution training of the generator does not by itself demonstrate transferability of the resulting failures.",
+                    "evidence": "Section IV reports failure-discovery results on the model under test; the cross-distribution training in Section III pertains to the generator, not to demonstrating that discovered adversarial inputs trigger failures across held-out target classifiers."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -5783,9 +5783,9 @@
         "assessments": {
             "Failure Severity": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The paper investigates pitfalls of error-triggering inputs in DNN testing and proposes a method to escape such pitfalls, discovering misclassifications on undefended classifiers. These are robustness errors rather than safeguard bypasses, satisfying the Low criterion.",
+                    "evidence": "Section 5 evaluates standard classifiers without defense layers; the metamorphic oracle flags prediction inconsistency."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5805,9 +5805,9 @@
             },
             "Targeted Attack Discovery": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The proposed method aims to escape pitfalls in error-triggering input discovery — broad failure exploration — without steering toward attacker-chosen specific outputs. This satisfies the Low criterion.",
+                    "evidence": "Section 4 defines the methodology as broadening discovered-failure diversity; no target-output objective is encoded."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5827,9 +5827,9 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The proposed method enforces semantic-equivalence checks per mutation step against the predecessor input, but does not maintain cumulative similarity bounds against the original seed throughout the iterative search. This matches the Medium criterion.",
+                    "evidence": "Section 4 applies per-step validity checks; the iterative pipeline does not maintain cumulative similarity constraints against the original seed."
                 },
                 "chatgpt": {
                     "value": "Medium",
@@ -5849,9 +5849,9 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "The mutation pipeline operates on continuous-domain transformations without explicit clipping or rounding to integer pixel values, so fault-inducing perturbations may not survive standard image-format serialization. This satisfies the Low criterion.",
+                    "evidence": "Section 4's mutation operates in continuous representation; explicit serialization-aware enforcement is not described."
                 },
                 "chatgpt": {
                     "value": "Low",
@@ -5871,9 +5871,9 @@
             },
             "Failure Diagnostics": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Medium",
+                    "why": "The paper characterizes pitfalls in error-triggering input collections — duplicate-failure clustering and seed-redundancy patterns — but these analyses describe properties of fuzzing-search dynamics rather than diagnosing causal weaknesses in the model under test. This correlational characterization satisfies the Medium criterion.",
+                    "evidence": "Section 4 characterizes failure-discovery diversity and pitfalls of redundant error-triggering inputs; the analysis stays at the level of fuzzing-process properties without linking discovered failures to causal model vulnerabilities."
                 },
                 "chatgpt": {
                     "value": "High",
@@ -5893,9 +5893,9 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "",
-                    "why": "",
-                    "evidence": ""
+                    "value": "Low",
+                    "why": "Failures are evaluated on the model under test; no cross-architecture transferability evaluation is reported. This satisfies the Low criterion.",
+                    "evidence": "Section 5 reports per-model results without portability tests."
                 },
                 "chatgpt": {
                     "value": "Low",

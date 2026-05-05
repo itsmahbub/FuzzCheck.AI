@@ -40,11 +40,12 @@ for paper_name, paper_data in data.items():
 rows = []
 
 for level in ["High", "Medium", "Low"]:
-    row = [f"{level} ({level_symbols[level]})"]
+    row = [f"{level_symbols[level]}"]
     for metric in metrics:
         count = counts[metric][level]
-        pct = round(100 * counts[metric][level] / total_papers, 1)
+        pct = round(100 * count / total_papers, 1)
         row.append(f"{pct:.1f}\\%")
+        row.append(f"({count}/38)")
     rows.append(" & ".join(row) + r" \\")
 
 for row in rows:
