@@ -6,7 +6,6 @@ import sys
 from copy import deepcopy
 from pathlib import Path
 
-DEFAULT_BASE = Path(__file__).parent / "results" / "assessments_mahbub.json"
 PROTECTED_PAPER_KEYS = {"key", "name", "year", "citation_count", "conf/journal", "type"}
 PROTECTED_ASSESSOR = "manual"
 

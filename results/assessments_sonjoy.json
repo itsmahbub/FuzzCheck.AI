@@ -5618,7 +5618,7 @@
         }
     },
     "Zhang et al. - 2021 - CAGFuzz Coverage-Guided Adversarial Generative Fuzzing Testing for Image-Based Deep Learning System": {
-        "key": "zhang2022cagfuzz",
+        "key": "zhang2021cagfuzz",
         "name": "CAGFuzz",
         "year": "2021",
         "conf/journal": "IEEE TSE",
