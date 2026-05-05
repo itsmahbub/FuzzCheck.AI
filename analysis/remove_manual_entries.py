@@ -29,7 +29,7 @@ def main():
         "input",
         nargs="?",
         default="results/assessments.json",
-        help="Path to the input JSON file. Defaults to results/assessments_sonjoy.json.",
+        help="Path to the input JSON file.",
     )
     parser.add_argument(
         "-o",
