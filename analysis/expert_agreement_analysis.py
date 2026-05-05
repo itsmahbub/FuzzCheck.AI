@@ -1,53 +1,77 @@
 #!/usr/bin/env python3
 """
-Compare manual assessments between two assessments.json files.
-Usage: python compare_manual.py <file1.json> <file2.json>
+Compare manual assessments across two or more assessments.json files.
+Usage: python expert_agreement_analysis.py <file1.json> <file2.json> [file3.json ...]
 """
 
 import json
 import sys
+from itertools import combinations
 
-file1, file2 = sys.argv[1], sys.argv[2]
+if len(sys.argv) < 3:
+    print("Usage: python expert_agreement_analysis.py <file1.json> <file2.json> [file3.json ...]")
+    sys.exit(1)
 
-with open(file1) as f:
-    data1 = json.load(f)
-with open(file2) as f:
-    data2 = json.load(f)
+filenames = sys.argv[1:]
 
+# Load all files
+datasets = {}
+for fname in filenames:
+    with open(fname) as f:
+        datasets[fname] = json.load(f)
+
+papers = datasets[filenames[0]].keys()
+
+# ── Overall disagreements (any two files differ) ─────────────────────────────
 diffs = []
 total = 0
 
-for paper in data1:
-    if paper not in data2:
-        continue
-    for metric, assessment in data1[paper]["assessments"].items():
-        v1 = assessment["manual"]["value"]
-        v2 = data2[paper]["assessments"][metric]["manual"]["value"]
+for paper in papers:
+    for metric, assessment in datasets[filenames[0]][paper]["assessments"].items():
+        entries = [
+            {"file": fname,
+             "value": datasets[fname][paper]["assessments"][metric]["manual"]["value"],
+             "why":   datasets[fname][paper]["assessments"][metric]["manual"]["why"]}
+            for fname in filenames
+        ]
         total += 1
-        if v1 != v2:
+        if len(set(e["value"] for e in entries)) > 1:
             diffs.append({
-                "paper": data1[paper].get("key", paper),
+                "paper": datasets[filenames[0]][paper].get("key", paper),
                 "metric": metric,
-                file1: v1,
-                file1 + "_why": assessment["manual"]["why"],
-                file2: v2,
-                file2 + "_why": data2[paper]["assessments"][metric]["manual"]["why"],
+                "entries": entries,
             })
 
-
+# ── Print overall disagreements ───────────────────────────────────────────────
 if not diffs:
     print("No differences found in manual assessments.")
 else:
-    print(f"Found {len(diffs)} difference(s):\n")
+    print(f"Found {len(diffs)} disagreement(s) (out of {total} metric×paper pairs):\n")
     for d in diffs:
-        print(f"Paper    : {d['paper']}")
-        print(f"Metric   : {d['metric']}")
-        print(f"  {file1}: {d[file1]}")
-        print(f"    Why: {d[file1 + '_why']}")
-        print(f"  {file2}: {d[file2]}")
-        print(f"    Why: {d[file2 + '_why']}")
+        print(f"Paper  : {d['paper']}")
+        print(f"Metric : {d['metric']}")
+        for e in d["entries"]:
+            print(f"  {e['file']}: {e['value']}")
+            print(f"    Why: {e['why']}")
         print()
 
-agreed = total - len(diffs)
-rate = (agreed / total * 100) if total > 0 else 0
-print(f"Agreement rate: {agreed}/{total} ({rate:.1f}%)\n")
+# ── Overall agreement rate (all files agree) ──────────────────────────────────
+agreed_all = total - len(diffs)
+rate_all = (agreed_all / total * 100) if total > 0 else 0
+print(f"Overall agreement (all {len(filenames)} files): {agreed_all}/{total} ({rate_all:.1f}%)")
+
+# ── Pairwise agreement rates ──────────────────────────────────────────────────
+if len(filenames) > 2:
+    print()
+    for f1, f2 in combinations(filenames, 2):
+        pair_total = 0
+        pair_agreed = 0
+        for paper in papers:
+            for metric in datasets[f1][paper]["assessments"]:
+                v1 = datasets[f1][paper]["assessments"][metric]["manual"]["value"]
+                v2 = datasets[f2][paper]["assessments"][metric]["manual"]["value"]
+                pair_total += 1
+                if v1 == v2:
+                    pair_agreed += 1
+        pair_rate = (pair_agreed / pair_total * 100) if pair_total > 0 else 0
+        print(f"Pairwise {f1} vs {f2}: {pair_agreed}/{pair_total} ({pair_rate:.1f}%)")
