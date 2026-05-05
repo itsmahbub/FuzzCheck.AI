@@ -472,6 +472,7 @@
         "name": "PAPILLON",
         "year": "2025",
         "citation_count": "12",
+        "conf/journal": "USENIX Security",
         "assessments": {
             "Failure Severity": {
                 "manual": {
@@ -5621,7 +5622,7 @@
         "key": "zhang2021cagfuzz",
         "name": "CAGFuzz",
         "year": "2021",
-        "conf/journal": "IEEE TSE",
+        "conf/journal": "TSE",
         "type": "journal",
         "citation_count": "",
         "assessments": {
