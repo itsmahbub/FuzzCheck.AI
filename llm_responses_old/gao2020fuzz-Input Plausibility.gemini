@@ -1,7 +1,0 @@
-```json
-{
-  "value": "High",
-  "why": "The paper's method, SENSEI, explicitly enforces input plausibility throughout its fuzzing-based augmentation process. It achieves this through two primary mechanisms. First, it utilizes a predefined set of realistic image transformations such as rotation, translation, shear, zoom, brightness, and contrast, with parameters constrained within bounded ranges to simulate plausible 'natural environmental variations'. Second, and most critically, it prevents the cumulative drift that can lead to unrealistic artifacts by always applying the generated transformation vector to the original seed image, rather than to an already mutated version. This design choice ensures that all generated inputs remain within a plausible distribution relative to the original, semantically valid input.",
-  "evidence": "Page 6, Section 3.3.2 Generation of population, states: 'Furthermore, SENSEI always applies the resulting transformation vector (chromosome) on the original image (as opposed to applying on an already transformed data) to prevent the resulting data from being unrealistic.' Additionally, Page 7, Section 4.2 Generation of Realistic Variations, details the specific transformations and their bounded ranges, noting: 'To make sure the translated images are visually similar to natural ones, we restrict the space of allowed perturbations... These image operations preserve the content of original image.'"
-}
-```

@@ -1,7 +1,0 @@
-```json
-{
-  "value": "High",
-  "why": "LLM-Fuzzer’s mutation design explicitly ensures that every mutated prompt remains semantically coherent and human-like by leveraging LLMs to perform rephrase, crossover, expand, shorten, and generate operations. Because each mutation step is guided by an LLM prompt that enforces preservation of meaning and naturalness, the fuzzer inherently maintains realistic, domain-appropriate inputs throughout all iterations. This approach goes beyond simple local magnitude bounds and provides a continual, model-driven plausibility check on every generated prompt, satisfying the criterion for a “High” rating.",
-  "evidence": "Section 3.3 Mutation: “To address this challenge, we introduce distinct mutation methods that leverage LLMs themselves to assist in the mutation process. LLMs, with their proficiency in understanding and generating human-like text, offer a promising approach for crafting coherent and contextually relevant mutations.”\n\nSection 3.3 Mutation: Description of five operators (Generate, Crossover, Expand, Shorten, Rephrase) that explicitly instruct the LLM to preserve semantic integrity and produce natural-language prompts at each mutation step."
-}
-```

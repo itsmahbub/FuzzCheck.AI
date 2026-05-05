@@ -1,7 +1,0 @@
-```json
-{
-  "value": "High",
-  "why": "The paper enforces input plausibility by using a global L∞ norm constraint on the total perturbation applied to the original seed inputs. This method ensures that the final error-inducing inputs remain within a small, bounded distance from the original, realistic images, thus preserving their perceptual similarity and semantic validity. The L∞ norm of 13/255 is a standard and strict constraint that prevents the cumulative effect of iterative mutations from causing the input to drift into an unrealistic state. By bounding the final output relative to the original seed, the method ensures that the generated inputs remain within a plausible distribution throughout the fuzzing process.",
-  "evidence": "Page 8, Section 4.1 Experimental Setup, Hyperparameters: \"We use the widely used L∞ metric [4] to restrict perturbations for error-inducing inputs on all compared methods. To set values of L∞, we first run all compared methods under different L∞ for multiple times, and then we choose values that make them perform relatively well, i.e., L∞ = 13/255 on all datasets (all compared methods use the same setting).\""
-}
-```

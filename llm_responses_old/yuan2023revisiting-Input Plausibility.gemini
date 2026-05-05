@@ -1,7 +1,0 @@
-```json
-{
-  "value": "Medium",
-  "why": "The paper's fuzzing algorithm incorporates an explicit plausibility check, `is_valid()`, which constrains mutations between successive steps. This check limits the number of modified pixels and the maximum change in pixel value, fitting the description of a bounded, rule-based constraint. However, this constraint is applied locally between a parent input and its immediate offspring. The method does not account for the cumulative drift that can occur over multiple fuzzing iterations, where a sequence of individually plausible mutations could result in a final input that is semantically invalid or unrealistic. This matches the 'Medium' rating, which acknowledges step-by-step constraints but overlooks cumulative effects.",
-  "evidence": "Page 10, Section VI-B, \"Triggered Faults\": \"We launch fuzzing using either prior coverage criteria or NLC as in Alg. 1. terminate() returns True when reaching 10K iterations or exceeding 6 hours. is_valid() is adopted from [47], which deems a mutation as valid if 1) the #changed-pixels is less than α × #pixels or 2) the maximum of changed pixel value is less than β × 255. We set α to 0.2 and β to 0.4.\" \n\nPage 10, Algorithm 1, line 7 shows this check in the fuzzing loop: `if is_valid(s',s) and coverage_inc(C,D) then` (assuming '$' in the OCR is s'). This confirms the validity check is performed between the current input `s` and the mutated input `s'`."
-}
-```

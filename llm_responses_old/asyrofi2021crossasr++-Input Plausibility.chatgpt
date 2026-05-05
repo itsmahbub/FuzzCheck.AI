@@ -1,7 +1,0 @@
-```json
-{
-  "value": "High",
-  "why": "CrossASR++ does not perform iterative, cumulative input mutations that can drift away from the natural domain. Instead, it synthesizes test inputs by generating audio from natural text using TTS each iteration (no chained perturbations of audio), classifies cases where the synthesized audio is itself invalid as \"indeterminable\", and explicitly notes that using more advanced TTSes reduces invalid/unnatural audios. These design choices ensure inputs remain realistic within the speech domain throughout testing and provide a mechanism to identify (and not treat as failures) implausible synthesized audios.",
-  "evidence": "Abstract (page 1575, Introduction): \"This method first utilizes Text-to-Speech (TTS) to generate audios from texts automatically and then feed these audios into different ASR systems for cross-referencing to uncover failed test cases.\"; Algorithm 1 / Section 2.1 (page 1576): \"audios = tts.generateAudio(texts);\" and description of cross-reference which shows audio is synthesized from text each iteration; Section 2.1 (page 1576): \"If all the ASR systems cannot recognize the audio correctly, we call it an indeterminable test case because a TTS may generate an invalid audio.\"; Section 2.2 (page 1576): \"The main reason is that more advanced TTSes generate fewer invalid audios that are more likely to be indeterminable test cases. As a result, using better TTSes can improve CrossASR++.\""
-}
-```

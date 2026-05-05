@@ -1,7 +1,0 @@
-```json
-{
-  "value": "Medium",
-  "why": "The paper enforces input plausibility through bounded, per-mutation constraints but does not explicitly address the cumulative effect of these mutations across fuzzing iterations. The method uses semantically meaningful image transformations (translation, rotation, brightness) and further constrains them using L0 and L-infinity norms to guarantee the validity of the generated inputs at each step. This approach aligns with enforcing plausibility between successive mutation steps. However, the paper does not describe a mechanism to ensure that the final, mutated input remains within a plausible global distribution after accumulating multiple transformations, which is the key weakness identified by the 'Medium' rating.",
-  "evidence": "Page 6, Section 3.2, Distribution-Guided Test Generation: \"In this paper, we mainly focus on image classification tasks. DistXplore can be easily extended to other domains. We select the diverse image transformations (e.g., translation, rotation, brightness) used in DeepTest [54] and DeepHunter [63]. For each selected gene, the mutation randomly selects a transformation function to mutate it. To guarantee the validity of the generated inputs, we adopt the conservative strategy [63] that constrains the transformation with both L0 and L∞.\""
-}
-```

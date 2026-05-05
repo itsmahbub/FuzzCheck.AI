@@ -1,7 +1,0 @@
-```json
-{
-  "value": "High",
-  "why": "The paper's method, CrossASR++, generates audio inputs from text using a Text-to-Speech (TTS) system. The authors explicitly acknowledge that the TTS system may generate unrealistic or 'invalid' audio. To enforce input plausibility, they implement a strong filtering mechanism. An audio-text pair is only considered a 'valid test case' if at least one of a diverse set of reference Automatic Speech Recognition (ASR) systems can correctly transcribe the synthesized audio. Any audio that fails this check is discarded as 'indeterminable'. This cross-referencing approach ensures that all inputs used to test the target system are machine-intelligible, which serves as a robust proxy for plausibility in the speech domain. This effectively constrains the test inputs to a plausible distribution and prevents the system from being evaluated on failures induced by garbled or nonsensical audio that no reasonable system could be expected to handle.",
-  "evidence": "Page 1, Introduction: 'Then, to avoid using the invalid audios synthesized by the TTS system, the generated audio-text pair is fed into multiple ASR systems for cross-referencing: If at least one ASR system correctly recognizes the audio, the audio-text pair is viewed as a valid test case.'"
-}
-```

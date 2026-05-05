@@ -1,7 +1,0 @@
-```json
-{
-  "value": "Medium",
-  "why": "QATest enforces plausibility on a per‐step basis via a ROUGE-1 similarity threshold between each generated question and its immediate parent, and further prioritizes seeds with lower perplexity to maintain authenticity. However, it does not enforce a global constraint that measures cumulative drift relative to the original distribution across multiple iterations. Thus, while it bounds each mutation step, it overlooks potential semantic drift accumulating over many rounds of transformations.",
-  "evidence": "Section 3.2.5 (Quality Assessment) and Algorithm 1: “quality_score ← Rouge1(s, s'); if quality_score > τ then …” enforces per‐step similarity to the parent. Section 3.3.2 (Perplexity Priority) uses abstract POS-sequence perplexity to guide seed retention, but no mechanism tracks distance to the original seed or an overall input distribution constraint across iterations."
-}
-```

@@ -1,7 +1,0 @@
-```json
-{
-  "value": "High",
-  "why": "The paper explicitly describes and implements a mechanism to enforce input plausibility throughout its fuzzing process. The method, HDTest, sets a distance-based threshold (specifically L2 < 1) to define an \"'invisible' range\" for perturbations. Any generated input that falls outside this range is considered \"unacceptable\" and is discarded. This acts as a filter, ensuring that only inputs that remain visually similar to the original, plausible seed are used to test the model. By constraining the total perturbation relative to the original input, this method effectively prevents the cumulative drift that can lead to semantically invalid or unrealistic inputs, thus ensuring that discovered failures are triggered by plausible inputs within the task domain.",
-  "evidence": "Page 4, Section IV. HDTEST FRAMEWORK: \"To ensure the added perturbations are within an 'invisible' range, we set a threshold for the distance metric during fuzzing (e.g., L2 < 1). When generated images are beyond this limit, it is regarded as unacceptable and then discarded. This constraint can be modified by the user to achieve customized and adaptive performance control when using HDTest.\""
-}
-```

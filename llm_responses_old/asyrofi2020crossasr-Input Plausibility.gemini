@@ -1,7 +1,0 @@
-```json
-{
-  "value": "High",
-  "why": "The paper's method, CrossASR, generates test inputs by synthesizing speech audio from text using Text-To-Speech (TTS) engines. This process inherently constrains the generated inputs to the distribution of human-like or at least structurally coherent speech, preventing the creation of completely random or semantically invalid audio. Crucially, the authors explicitly validate the plausibility of the failure-inducing inputs. They conduct a manual verification where a human listener confirms whether the audio that caused a failure is understandable. This step directly ensures that the generated test cases remain within a plausible input distribution, specifically targeting failures that occur under realistic speech conditions rather than those caused by unrealistic artifacts.",
-  "evidence": "Page 1, Abstract: \"Based on a manual verification carried out on statistically representative sample size, we found that most samples are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR), demonstrating that CrossASR is highly reliable in determining failed test cases.\"\n\nPage 10, Section VI. CONCLUSION AND FUTURE WORK: \"CrossASR is highly reliable in determining failed test cases, as demonstrated by manual verification. Almost all of the failed test case samples inspected are actual failed test cases (audio understandable to humans but cannot be transcribed properly by an ASR).\""
-}
-```

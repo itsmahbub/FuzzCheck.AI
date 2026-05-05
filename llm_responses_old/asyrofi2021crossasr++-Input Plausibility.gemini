@@ -1,7 +1,0 @@
-```json
-{
-  "value": "High",
-  "why": "The method generates test inputs by synthesizing audio from a text corpus using standard Text-to-Speech (TTS) engines. This design inherently constrains the inputs to a plausible distribution, as the explicit purpose of TTS systems is to generate intelligible, human-like speech from text. The methodology does not involve iterative mutation of existing audio files, thus it completely avoids the problem of cumulative perturbations causing inputs to drift into an unrealistic or semantically invalid state. The paper also describes a mechanism to handle cases where a TTS might produce low-quality output: if no ASR system can recognize the audio, it is classified as an 'indeterminable test case' rather than a failure. This acts as a filter for the most implausible generated inputs. By generating inputs directly from text via synthesis and filtering out unrecognizable audio, the framework ensures that discovered failures are induced by inputs that remain realistic within the speech recognition domain.",
-  "evidence": "Page 3, Section 2.1, Workflow: \"Then, TTS is used to generate an audio file for each piece of selected text (Line 9). [...] 3) If all the ASR systems cannot recognize the audio correctly, we call it an indeterminable test case because a TTS may generate an invalid audio.\""
-}
-```
