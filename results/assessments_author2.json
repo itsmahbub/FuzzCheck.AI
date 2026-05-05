@@ -32,7 +32,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "High",
-                    "why": "Steers model outputs toward attacker-chosen affirmative responses (e.g., outputs that begin with 'Sure, here is how to..'. Uses LLM to determine if a response is essentially answering the malicious query (Algo 11)",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -54,7 +54,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "It provides rationality why the discovered failures are more stealthy than the baselines but not how the failures are related to model weaknesses or any failure patterns",
+                    "why": "No explanation for model's weekness.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -76,7 +76,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Fixes the malicious question Q across all iterations and mutates only the surrounding jailbreak prompt. Ensures naturalness of the jailbreak prompt using LLM-based rewriting that preserves fluency and global meaning.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -120,7 +120,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Shows transferabilty but the fuzzing design is not explicit about trasferable attack discovery. It is a byproduct and the authors gives a hypothesis why they transfer",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -164,7 +164,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Uncovers crash-triggering scenarios (e.g., collisions, falls, or loss of control) across autonomous driving, aviation, and robotics systems.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -186,7 +186,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Steer toward safety faults (crash-triggering scenarios) in in autonomous driving and other sequential decision-making systems",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -208,7 +208,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Analyzes the distribution of crash-triggering scenarios ",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -229,8 +229,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "High",
-                    "why": "Use CARLA simulator to check validity of the mutated inputs",
+                    "value": "Medium",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -252,7 +252,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Mutates continuous feature vectors representing simulator states (positions, angles, velocities) and enforces validity checks to keep them within legal bounds.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -364,7 +364,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "GPT-4 generates  new jailbreak queries through prompt rewriting. Cumulative change may change the semantic meaning of the original prompt which was not considered. The jailbreak question is not fixed.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -408,7 +408,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "No analysis of fault transferability",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -430,7 +430,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Provides correlation with internal coverage",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -498,7 +498,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "High",
-                    "why": "Use two stage judge to evaluate  both harmfulness and relevance to the given question. RoBERTa (harmfulness) + ChatGPT (harmfulness and relevance to the specific query)",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -520,7 +520,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Provides rationale that semantic coherence of the input causes the failure to bypass perplexity based defense but not how the failures are related to model weakness.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -542,7 +542,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Use GPT-driven mutation operators to produce keep mutated prompts readable ",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -564,7 +564,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Mutate in text level which are inherently stable under IO operations",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -586,7 +586,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Performs experiments on transferability",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -674,7 +674,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Provides heuristic explanations by showing correlation with state variation",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -696,7 +696,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Constrains mutation at most once per transformation category (volume/speed/clearness) to ensure semantic consistency and naturalness.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -718,7 +718,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Apply semantic-preserving metamorphic transformations but does not enforce reproducility account serialization effect (clipping)",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -740,7 +740,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "mutation and coverage strategies are tightly coupled to a specific RNN-based ASR model and training setup",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -830,7 +830,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "shows correlation between coverage and errors.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -852,7 +852,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Checks number of pixel change between successive mutations but does not check if accumulated change over iterations crosses the threshold",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -874,7 +874,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Muated image pixels are clipped but not rounded",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -986,7 +986,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Correlates coverage with discovered failures",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1008,7 +1008,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Carefulf mutation sequence design to preserve plausibility across fuzzing iterations and enforces pixel-change bounds with respect to reference image",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1030,7 +1030,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Use metamorphic transformations (less sensitive to serialization-induced precision loss) but not consider IO effects (clipping, rounding).",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1052,7 +1052,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "The oracle definitions is that if same input produce different output to a model and its quanitized version, then it is fault-triggering input. But it is not transferability.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1120,7 +1120,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Discovers generic misclassification errors",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1142,7 +1142,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "Reports discovered failures but does not analyze model internals or failure patterns to provide diagnostic insight.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1164,7 +1164,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Perturbation is constrained with respect to the original seed",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1186,7 +1186,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Low",
-                    "why": "relies on imperceptible, float-level perturbations that can vanish after saving to disk, with no persistence verification.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1277,7 +1277,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Fine-tuned RoBERTa classifies the response as harmful/not harmful — no relevance verification",
+                    "why": "Target any harmful content",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1299,7 +1299,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "Does not provide any explanation why those errors occur.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1321,7 +1321,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": " Uses LLMs to perform rephrase, crossover, expand, shorten, and generate operations to ensure prompt remains realistic. Keeps the jailbreak question fixed,",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1343,7 +1343,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Mutations are purely at the text level",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1365,7 +1365,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "High",
-                    "why": "Transferability is encouraged in mutation by rewarding less to mutations that transfer less.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1411,7 +1411,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Violates safety expectation that enviornmental change cause incorrect steering",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1433,7 +1433,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Aims to find errors in steering angle predictions under realistic environmental variations. They do not define the oracle based on what deviation would be unsafe.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1455,7 +1455,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Shows correlation between coverage and errors",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1477,7 +1477,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Individual transformations are naturalistic but chained mutations might not be",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1499,7 +1499,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Performs semantic, real-world image transformations (brightness, contrast, blur, fog, rain, etc.) but does not ensure IO stability using clipping and rounding",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1521,7 +1521,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "No cross model failure analysis",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1611,7 +1611,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Performs phonetic analysis to correlated phonemes with errors.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1633,7 +1633,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Uses a differential testing oracle that does not assume semantic equivalence. Audio is synthesized using TTS, producing fluent and intelligible speech. Retains only synthesized audio that passes cross-referencing validity checks, filtering out low-quality or unrealistic final inputs.",
+                    "why": "Uses a filtering mechanism to ensure naturalness. Not doing in-memory changes or random purturbation.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1655,7 +1655,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "The speech input is generated using TTS library which are fed to the ASR model. There is not in memory mutation on the audio.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1745,7 +1745,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Objective function mechanism allows arbitrary user-defined checks to enable broader classes of problematic behaviour (e.g., numerical errors/NaNs, model vs quantized-model disagreements), but not specific attacker-chosen output",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1767,7 +1767,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Provides rationale why NaN error happened by inspecting logit value that broke loss calculation",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1789,7 +1789,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Constrain mutation to norm-bounded perturbation relative to original seed",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1811,7 +1811,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Applies clipping to keep the pixel values in valid range but does not consider quantization effect of IO operations",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1833,7 +1833,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "It is not cross-model transferability. They use the quantized model as part of the differential oracle that checks if the mutated input cause disagreement.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1901,7 +1901,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Uses Llama Guard to classify the prompt-response pair as harmful/not harmful — no relevance verification.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1923,7 +1923,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "Shows that it works across behavior categories, provides transferability rationale, and shows some strategies are more effective than other but not the characterstics of the failures or root cause",
+                    "why": "No root cause explanation.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1945,7 +1945,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Use LLM to mutate prompt to ensure prompt plausibility",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1967,7 +1967,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Fuzzed inputs are text prompts generated by another LLM, not numerical perturbations",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -1989,7 +1989,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Transferability is a byproduct in this paper, not a design goal",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2035,7 +2035,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Low",
-                    "why": "transcription error",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2079,7 +2079,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "No diagnsotic analysis",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2101,7 +2101,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Use TTS to generate the test input from mutated texts",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2123,7 +2123,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Uses TTS to generate the input audio - non in memory mutation",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2145,7 +2145,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "Utilize multiple ASRs to find faults using differential oracle but does not analyze if same error is reproducible to other model",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2235,7 +2235,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "No diagnsotic analysis",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2257,7 +2257,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Synthesizes test inputs by generating audio from natural text using TTS.",
+                    "why": "It use differential testing oracle using external Text-to-Speech (TTS) engines and also flag indeterminable inputs.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2301,7 +2301,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "Uses multiple ASRs in differential oracle, does not show transferability of failures across errors",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2391,7 +2391,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "No diagnsotic analysis",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2413,7 +2413,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Synthesizes test inputs by generating audio from natural text using TTS",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2457,7 +2457,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "Does not demonstrate if fuzzed input on one model aslo causes error in another model",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2503,7 +2503,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Low",
-                    "why": "It is designed to find prediction inconsistency between models and the malware bypasses are some instances of the discovered failures.",
+                    "why": "Finds incorrect corner case behaviors.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2525,7 +2525,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "performs untargeted exploration to reveal generic model faults (differential behaviour, inaccuracies). No targeted misclassification.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2547,7 +2547,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "High",
-                    "why": "They show how fuzzing discovered failures can trace polluted training data.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2569,7 +2569,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Applies domain-specific constraints in individual mutation steps but overlooks the effect when the same seed input is mutated multiple times within the fuzzing loop. Updates the seed in-place",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2591,7 +2591,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Enforces domain specific constraints like keeping pixel values between 0 and 255, rounding gradient to integer which satisfies the condition for failure reproduciblity",
+                    "why": "the modification can only increase or decrease all pixel values by the same amount",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2613,7 +2613,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "It is differential testing based oracle. Not transferability.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2682,7 +2682,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Aims to find generic misclassifications",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2726,7 +2726,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Apply large semantic level mutations and perform floating point operations (zoom, contrast, shear), which may produce non-discrete pixel values. They don't perform clipping/rounding to ensure IO persistence.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2748,7 +2748,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "No analysis of fault transferability in input level or mutation level",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2770,7 +2770,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Applies the resulting transformation on the original image (as opposed to applying on an already transformed data) to prevent the resulting data from being unrealistic",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2838,7 +2838,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Intargeted exploration for generic regression misclassifications - any inputs that cause the new model to misclassify examples previously classified correctly",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2860,7 +2860,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "High",
-                    "why": "Explains bias and overfitting of specific classes in regression process. Provides behavior-level explanations (which classes or behaviors regress, per-class fault heatmaps, and faulty-behavior tuples). Interprets regression faults as evidence of bias or overfitting (specific classes suffering more after retraining).",
+                    "why": "facilitate explaining the bias in each class.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2882,7 +2882,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Every batch of mutated inputs is passed through the GAN discriminator and only natural mutated inputs are kept for execution and further mutation.",
+                    "why": "Manually evaluate input fidelity",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2904,7 +2904,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Low",
-                    "why": "applies raw pixel-level noise (Gaussian, salt-and-pepper) directly to images and normalizes pixels into [0,1] but no mention of clipping/rounding on unnormalized mutated input.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2972,7 +2972,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Medium",
-                    "why": "It does not bypass permissions or authentication; instead, it tricks the VA into misinterpreting intent. The resulting misbehavior (e.g., invoking the wrong vApp or disclosing data to a malicious app). Expose semantically incorrect but functionally valid behaviors that breach user-intent and specification expectations—posing integrity and trust risks without directly bypassing safety or security mechanisms.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -2994,7 +2994,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Performs untargeted exploration where the oracle flags any incorrect intent classification, without encoding a predefined attacker goal or failure class. LLMs are crediting the security motivation rather than what the oracle actually checks.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3016,7 +3016,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "While it isolates the intent classifier as responsible, it does not explain what underlying vulnerability of the intent classifier model is the root cause. It peforms statistical analysis of failure patterns and correlates the failures with linguistic ambiguity",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3038,7 +3038,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Uses a probability-based cutoff to ensure that generated voice commands represent errors that are likely to be spoken by actual users.",
+                    "why": "Using cutoff",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3082,7 +3082,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "evaluates two voice assistant systems independently but does not analyze whether failures generalize",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3128,7 +3128,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Low",
-                    "why": "Discovers robustness failures (accuracy degradation with samentic preserving mutation)",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3150,7 +3150,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Discovers generic exception failures",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3172,7 +3172,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Provides correlations between input changes and output errors",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3194,7 +3194,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Peforms rigorous conformity check on the mutated inputs",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3216,7 +3216,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Perturbations occur at a semantic level but the mutation can introduce floating point values that are not clipped/quantized",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3237,8 +3237,8 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "Low",
-                    "why": "Mutated inputs are evaluated independently across multiple inputs but no measure whether same failures discovered by the fauzzer transfer to other models",
+                    "value": "Medium",
+                    "why": "They tested on five state-of-the-art models.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3328,7 +3328,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Correlates neuron features with faults",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3350,7 +3350,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Validates perturbation magnitude between the selected seed and its corresponding original seed so that perturbation does not exceed a given threshold",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3372,7 +3372,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Low",
-                    "why": "",
+                    "why": "There is no mention about clipping and rounding operations for in-memory mutation",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3484,7 +3484,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "Uses neuron coveage as heuristic guide, does not show correlation between coverage and neurons",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3506,7 +3506,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Enforces naturalness across iterations by computing SSIM after each mutation and rejecting any visually distorted image.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3528,7 +3528,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Semantic-level pixel transformations (contrast, blur, rotation, etc.) but no clipping/rounding to ensure IO persistence",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3550,7 +3550,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "Use quantized model for differntial testing based oracle, not for checking fauilure transferability",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3618,7 +3618,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Finds generic misclassifications",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3640,7 +3640,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Correlates difficulty of per-class failure generation with input characterstics",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3662,7 +3662,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Always mutates the original seed directly, making cumulative drift structurally impossible and enforces a hard perturbation threshold (L2 < 1) measured from the original image",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3683,8 +3683,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "Low",
-                    "why": "In memory floating point mutation, no safeguards for IO preservation",
+                    "value": "Medium",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3774,7 +3774,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Broad exploration to uncover functional errors",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3796,7 +3796,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Shows correlation between coverage criteria and faults",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3818,7 +3818,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "While each mutation is semantic preserving and plausible, cumulative effect is ignored.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3840,7 +3840,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Applies deephunter metamorphic mutations that are plausibly I/O-stable but does not apply clipping and rounding to ensure",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3908,7 +3908,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Low",
-                    "why": "Even though it can detect backdoor triggers, this is purely diagnostic. The fuzzer exposes low-level functional and robustness failures (misclassifications, metamorphic inconsistencies, and backdoor-induced activation anomalies) without breaching behavioral or safety boundaries.",
+                    "why": "Consider robustness failures",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3930,7 +3930,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "broadly explore the model's internal behavior and flag any unexpected classification (adversarial or backdoor) as a defect.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3952,7 +3952,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Linnks faulty behaviors to internal LSTM mechanisms. Correlates coverage with faults. identify where and how the failures arise internally. The analysis is correlational, not causal. ",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3974,7 +3974,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Validates perturbation magnitdue with respect to the original seed (keeps mapping of original seed for each mutated input)",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -3996,7 +3996,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Partially handle IO reproducibility by clipping image within 0-1 range (normalized) but did not consider that floating point precision may be lost.",
+                    "why": "Considered Normalized value not about actual pixel values.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4065,7 +4065,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Low",
-                    "why": "",
+                    "why": "harmful/unsafe failures are discovered, but there is no empirical demonstration of bypassing explicit safeguards",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4087,7 +4087,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Finds inconsistent steering under environmental variations",
+                    "why": "Discover erroneous behaviors only.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4109,7 +4109,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Relies on coverage-guided mutation and assumes based on prior work, that higher coverage correlates with fault discovery",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4131,7 +4131,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Test images are generated through a GAN trained to mimic real driving scenes, so naturalness is preserved throughout fuzzing iterations. Provides human evaluation.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4152,8 +4152,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "synthesizes driving scene images using image-to-image translation model (MUNIT) but does not mention if the model output is in serialized format or floating-point numbers that may be altered due to serialization.",
+                    "value": "Low",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4244,7 +4244,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "High",
-                    "why": "Guides test generation to minimize distribution differences between source class inputs and target class.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4266,7 +4266,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "High",
-                    "why": "links the occurrence and detectability of errors to the statistical closeness (measured via MMD) between the distribution of generated test inputs and the distribution of another class at the logits layer. They attribute it to distribution shift vulnerability and provide mitigation.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4288,7 +4288,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "metamorphic transformations can yield decimal-valued pixels internally which may change when re-quantized to integers.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4332,7 +4332,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Does not explicitly enforce naturalness across fuzzing iterations. Apply norm constraints in each mutation step but cumulative effect is ignored.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4444,7 +4444,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Checks quality drift between successive mutations but overlooks drift across many iterations",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4466,7 +4466,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "No cross model failure pattern analysis",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4488,7 +4488,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Text level mutation ",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4578,7 +4578,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "Only reports failures without any insight on root-cause. Label-Num is a test effectiveness metric and shows how diverse are the failures BET generates compared to the baseline.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4599,8 +4599,8 @@
             },
             "Input Plausibility": {
                 "manual": {
-                    "value": "High",
-                    "why": "Enforce norm-bounded perturbation with respect to original seed",
+                    "value": "Medium",
+                    "why": "They maintain semantic consistency but they don't care about the naturalness.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4622,7 +4622,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Applies integer perturbations. Shows failure stability empricaclly. Shows ADAPT, DLFUZZ, DeepExplore failures are unstable",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4644,7 +4644,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "Uses differential testing based oracle to detect failure, not to check transferability from one to another.",
+                    "why": "Test on quantized models and constructing differential models but not surrogate models.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4690,7 +4690,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "High",
-                    "why": "Demostrates its ability to bypass adversarail defense mechanisms",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4712,7 +4712,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "aims to maximize model uncertainty and reveal generic misclassifications",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4734,7 +4734,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Shows correlatin",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4756,7 +4756,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Validates and filters out mutated inputs that are beyound a threshould and they compute the perturbation magnitude with respect to original seed",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4777,8 +4777,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "Low",
-                    "why": "Applies small floating point perturbations without clipping/rounding",
+                    "value": "Medium",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4800,7 +4800,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Tests whether the same inputs still cause failures on the defended model (RQ4) but lacks explicit mechansim to discover transferable attacks",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4846,7 +4846,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Expose  safety critical violations that lead to crashes/collisions or unsafe actions in autonomous or multi-agent environments.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4868,7 +4868,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Targets a class of faults (collission or dangerous states)",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4890,7 +4890,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Provides correlation with internal coverage",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4912,7 +4912,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "After each mutation, it uses CARLA to validate and reject abnormal inputs ",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4934,7 +4934,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Perturbs continuous-valued initial state vectors within valid physical bounds and validates each mutated state through the simulator",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -4956,7 +4956,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "No cross model failure pattern analysis",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5004,7 +5004,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Low",
-                    "why": "Aims to find over-refusal cases where models erroneously refuse benign queries.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5026,7 +5026,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Steers exploration towards over-refusal of benign prompts",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5048,7 +5048,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Provides partial diagnosis by showing category level concentration of the discovered failures. Finds that different LLMs are sensitive to different safety categories.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5070,7 +5070,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "they measure toxicity of the mutated input to ensure semantic validity and performs LLM-based rewriting to ensure naturalness and fluency.",
+                    "why": "The mutator ensure input plasibility.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5092,7 +5092,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Performs mutations directly on textual prompts and produce concrete text edits like shorten, expand, translate.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5114,7 +5114,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Medium",
-                    "why": "While they demonstrate cross-model transferability of discovered failures, the design does not incorporate mechansim to achieve transferability.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5160,7 +5160,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Low",
-                    "why": "Finds generic misclassification errors in non-safeguarded models",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5182,7 +5182,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Untargeted exploration toward any misclassification errors",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5204,7 +5204,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "FOL distribution analysis correlates failures with loss gradient, but does not trace to root causes like dataset bias or spurious features.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5226,7 +5226,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "validates perturbation magnitude between successive mutations but cumulative accumulation of the perturbation is not considered. They check Lp norm distance between the seed and the mutated seed but the seed list already contains mutated seeds.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5248,7 +5248,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Low",
-                    "why": "Does not bound mutation so that the failure induced by mutated inputs remains reproducible. No clipping/clamping of the pixels.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5270,7 +5270,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "No demonstration of cross-model tranferability of the discovered failures or not mechansim to discover transferable failures",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5316,7 +5316,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "High",
-                    "why": "It is designed to bypass safeguards and produce prohibited NSFW images.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5338,7 +5338,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "High",
-                    "why": "Performs goal-directed exploration toward output image that is semantically similar to the original attacker-specified prompt. It is not just byapssing refusal, it steers to output images with precise NSFW semantics.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5360,7 +5360,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "provides partial diagnostic insight (Table 9) by showing that discovered failures has low filter probability and high semantic similarity to the original prompt, empirically corroborating the design hypothesis (fig 3) that there are some equivalent tokens in embedding space which safety filters can not distinguish. However, they do not trace the discovered failures to model weakness.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5382,7 +5382,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "oracle does not assume semantic equivalence between the adversarial prompt text and the original sensitive prompt, instead it aims to discover adversarial prompt that produces images which is semantically equivalent to the original prompt. Replace senstive words with non-sensitive while keeping the other words as is to retain the context which is plausible.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5404,7 +5404,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "High",
-                    "why": "Operates in text domain - replaces sensitive tokens, no  floating-point precision, clipping, or rounding issues. The paper's re-use attack demonstrates that adversarial prompts found in one session can be reproduced later.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5426,7 +5426,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "They do not demonstrate whether adversarial prompts discovered in one model transfer the attack to another model. Their re-use attack experiment shows reprorducibiby of the attacks on the same model. No cross-model transferability.",
+                    "why": "They only use a shadow text encoder, not cross model transferability.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5472,7 +5472,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "High",
-                    "why": "The fuzzing target is adversarially trained robust models and they discovers failures in robust models.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5494,7 +5494,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Untargeted exploration to find misclassifications on semantically equivalent inputs.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5516,7 +5516,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "Reports discovered failures and whether fine-tuining using them improves robustness but not diangosis why these failures occur or the patterns of the failures.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5538,7 +5538,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "High",
-                    "why": "They filter out mutated input whose SSIM with respect to original input is beyond a threshold.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5582,7 +5582,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "The dual-model design is used to identify the failures (oracle) but does not demonstrate whether fault-inducing inputs discovered on one model transfer to another.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5623,12 +5623,12 @@
         "year": "2021",
         "conf/journal": "IEEE TSE",
         "type": "journal",
-        "citation_count": "47",
+        "citation_count": "",
         "assessments": {
             "Failure Severity": {
                 "manual": {
                     "value": "Low",
-                    "why": "Targets standard image classifiers (VGG-16, VGG-19, ResNet, etc.) and discovers  mispredictions caused by adversarial perturbations.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5650,7 +5650,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Performs untargeted search toward finding misclassification inducing inputs.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5672,7 +5672,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Low",
-                    "why": "Reports discovered adversarial errors and shows model accuracy improvement after retraining, but provides no analysis of failure patterns.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5694,7 +5694,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Validates cosine similarity between the parent seed and the new mutated input but does not validate with respect to the initial seed. Over fuzzing iterations, mutated inputs are pushed back to seed pool and due to the lack of the validation with respect to the original seed, cumulative perturbation may exceed the cosine similarity with the original seed.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5716,7 +5716,7 @@
             "Failure Reproducibility": {
                 "manual": {
                     "value": "Low",
-                    "why": "Does not demonstrates that adversarial examples survive serialization. CycleGAN outputs floating-point tensors with no explicit clipping or rounding to integer pixel values.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5737,8 +5737,8 @@
             },
             "Attack Transferability": {
                 "manual": {
-                    "value": "Low",
-                    "why": "Does not demonstrates that fault-inducing inputs discovered on one model also trigger failures on another model. The transferability claim in RQ1 (Tables 3 and 4) is about whether fine tuning using the generated adversarial examples improves accuracy.",
+                    "value": "High",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5784,7 +5784,7 @@
             "Failure Severity": {
                 "manual": {
                     "value": "Low",
-                    "why": "Discovers mislcassifications errors on standard trained DNN models",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5806,7 +5806,7 @@
             "Targeted Attack Discovery": {
                 "manual": {
                     "value": "Low",
-                    "why": "Untargeted exploration to find any misclassification errors",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5828,7 +5828,7 @@
             "Input Plausibility": {
                 "manual": {
                     "value": "Medium",
-                    "why": "They add the mutated inputs back to the seed pool from where it gets picked up for further mutation. While they ensure that single transformation produce semantically equivalent and reaslitic input, they overlook the cumulative effect across iterations.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5849,8 +5849,8 @@
             },
             "Failure Reproducibility": {
                 "manual": {
-                    "value": "Medium",
-                    "why": "Does not enforce input representation constraints (integer pixels, clipping to valid range) but the tansformations are less sensitive to precision loss",
+                    "value": "Low",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5872,7 +5872,7 @@
             "Failure Diagnostics": {
                 "manual": {
                     "value": "Medium",
-                    "why": "Gives partial diagnosis by characterizing failure clustering by EP and correlating failures with decision boundary geometry.",
+                    "why": "It provide Erroneous Property based diagnostics.",
                     "evidence": ""
                 },
                 "chatgpt": {
@@ -5894,7 +5894,7 @@
             "Attack Transferability": {
                 "manual": {
                     "value": "Low",
-                    "why": "Does not demonstrate whether discovered failures transfer to other models.",
+                    "why": "",
                     "evidence": ""
                 },
                 "chatgpt": {
