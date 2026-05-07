@@ -37,18 +37,16 @@ for paper_title, paper_data in data.items():
             'arb_why': (vals.get('arbitrator', {}).get('why', '') or ''),
         })
 
-print("Total disagreements (manual != arbitrator): %d" % len(disagreements))
+print("Total disagreements (Expert != LLM): %d" % len(disagreements))
 print("=" * 90)
 
 for i, d in enumerate(disagreements, 1):
     print("\n[%d] %s (%s) [%s]" % (i, d['paper'], d['year'], d['key']))
     print("    Metric:         %s" % d['metric'])
-    print("    Manual:         %s" % d['manual'])
-    print("    Arbitrator:     %s" % d['arbitrator'])
-    print("    ChatGPT:        %s" % d['chatgpt'])
-    print("    Gemini:         %s" % d['gemini'])
-    print("    Manual why:     %s" % (d['manual_why'][:250] if d['manual_why'] else 'N/A'))
-    print("    Arbitrator why: %s" % (d['arb_why'][:250] if d['arb_why'] else 'N/A'))
+    print("    Expert:         %s" % d['manual'])
+    print("    LLM:            %s" % d['arbitrator'])
+    print("    Expert rationale:     %s" % (d['manual_why'][:250] if d['manual_why'] else 'N/A'))
+    print("    LLM rationale: %s" % (d['arb_why'][:250] if d['arb_why'] else 'N/A'))
     print("-" * 90)
 
 print("\n\nSUMMARY BY METRIC:")
