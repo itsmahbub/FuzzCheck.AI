@@ -1,8 +1,9 @@
-# SIFTER: On the Limitations of DNN Fuzzing to Discover Security Failures
+# SIFTER: Security Inspection of DNN Fuzzing Literature via LLM-Guided
+Targeted Expert Review
 
 This repository contains all artifacts necessary to independently verify the results reported in the paper:
 
-> **SoK: SIFTER: On the Limitations of DNN Fuzzing to Discover Security Failures**
+> **SoK: SIFTER: Security Inspection of DNN Fuzzing Literature via LLM-Guided Targeted Expert Review**
 
 ## Repository Structure
 
