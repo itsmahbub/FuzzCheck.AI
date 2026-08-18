@@ -1,5 +1,4 @@
-# SIFTER: Security Inspection of DNN Fuzzing Literature via LLM-Guided
-Targeted Expert Review
+# SIFTER: Security Inspection of DNN Fuzzing Literature via LLM-Guided Targeted Expert Review
 
 This repository contains all artifacts necessary to independently verify the results reported in the paper:
 
