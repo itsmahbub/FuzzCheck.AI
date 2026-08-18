@@ -1,8 +1,8 @@
-# FuzzCheck.AI: On the Limitations of DNN Fuzzing to Discover Security Failures
+# SIFTER: On the Limitations of DNN Fuzzing to Discover Security Failures
 
 This repository contains all artifacts necessary to independently verify the results reported in the paper:
 
-> **SoK: FuzzCheck.AI: On the Limitations of DNN Fuzzing to Discover Security Failures**
+> **SoK: SIFTER: On the Limitations of DNN Fuzzing to Discover Security Failures**
 
 ## Repository Structure
 
@@ -29,7 +29,7 @@ This repository contains all artifacts necessary to independently verify the res
 
 ### **Evaluation Codebook**
 **File:** `codebook.json`  
-Defines all *FuzzCheck.AI* metrics and the criteria for Low / Medium / High compliance. This codebook is used by both LLM assessment pipeline and human experts.
+Defines all *SIFTER* metrics and the criteria for Low / Medium / High compliance. This codebook is used by both LLM assessment pipeline and human experts.
 
 ---
 
@@ -49,7 +49,7 @@ Implements the LLM-assisted assessment procedure described in the paper. For eac
 ### **LLM-Generated Preliminary Assessments**
 **File:** `results/assessments.json`  
 
-For each evaluated paper and each *FuzzCheck.AI* metric, this file records the outputs produced by the LLM-assisted assessment pipeline, including:
+For each evaluated paper and each *SIFTER* metric, this file records the outputs produced by the LLM-assisted assessment pipeline, including:
 
 - Independent assessments from two LLMs (ChatGPT and Gemini), each providing:
   - A proposed compliance value
@@ -63,7 +63,7 @@ For each evaluated paper and each *FuzzCheck.AI* metric, this file records the o
 ### **Expert-Validated and Corrected Final Assessments**
 **File:** `results/assessments.json`  
 
-For each paper and each *FuzzCheck.AI* metric, this file also contains the final assessments produced after expert review.  
+For each paper and each *SIFTER* metric, this file also contains the final assessments produced after expert review.  
 During this process, human experts:
 
 - Verify the LLM-extracted evidence against the paper and assess whether the provided rationale aligns with the codebook criteria.
@@ -78,9 +78,9 @@ All empirical results and tables reported in the paper are computed from these e
 **Directory:** `analysis/`  
 Scripts used to generate the analysis tables reported in the paper:
 
-- `assessment_table_3.py` — Generates the per-paper compliance matrix reporting each fuzzer's compliance level across all *FuzzCheck.AI* metrics (Table 3).
+- `assessment_table_3.py` — Generates the per-paper compliance matrix reporting each fuzzer's compliance level across all *SIFTER* metrics (Table 3).
 
-- `summary_table_4.py` — Computes the distribution of studies across High / Medium / Low compliance levels for each *FuzzCheck.AI* metric (Table 4).
+- `summary_table_4.py` — Computes the distribution of studies across High / Medium / Low compliance levels for each *SIFTER* metric (Table 4).
 
 - `metrics_vs_design_5.py` — Generates Table 5 by computing the percentage of studies at each compliance level for each fuzzing design choice (mutation strategy, exploration strategy, oracle type, and access level).
 

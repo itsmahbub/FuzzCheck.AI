@@ -5617,7 +5617,7 @@
                 "Data-driven"
             ],
             "oracle": [
-                "Property-based"
+                "Differential"
             ]
         }
     },
